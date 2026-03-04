@@ -38,6 +38,7 @@ const Hero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null)
   const subtitleRef = useRef<HTMLDivElement>(null)
   const terminalRef = useRef<HTMLDivElement>(null)
+  const [terminalReady, setTerminalReady] = useState(false)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -62,7 +63,7 @@ const Hero = () => {
       tl.fromTo(
         terminalRef.current,
         { opacity: 0, scale: 0.95 },
-        { opacity: 1, scale: 1, duration: 0.5, ease: 'power2.out' },
+        { opacity: 1, scale: 1, duration: 0.5, ease: 'power2.out', onComplete: () => setTerminalReady(true) },
         '-=0.2'
       )
 
@@ -119,7 +120,7 @@ const Hero = () => {
             <span className="text-cyber-purple">|</span> Cybersec
           </p>
           <p className="font-mono text-sm text-gray-500 max-w-2xl mx-auto">
-            High-Velocity Engineering • LLM-Augmented Development • Security by Design
+            High-Velocity Engineering • LLM Development • Security by Design
           </p>
         </div>
 
@@ -197,31 +198,35 @@ const Hero = () => {
                                                .##.`}</pre>
             </div>
 
-            <div className="text-gray-500">
-              <Typewriter text="$ whoami" delay={2000} speed={50} />
-            </div>
-            <div className="text-cyber-blue mb-4">
-              <Typewriter text="wiktor_jelen" delay={2500} speed={40} />
-            </div>
+            {terminalReady && (
+              <>
+                <div className="text-gray-500">
+                  <Typewriter text="$ whoami" delay={100} speed={15} />
+                </div>
+                <div className="text-cyber-blue mb-4">
+                  <Typewriter text="Wiktor_Jelen" delay={250} speed={12} />
+                </div>
 
-            <div className="text-gray-500">
-              <Typewriter text="$ cat status.txt" delay={3200} speed={50} />
-            </div>
-            <div className="text-cyber-green mb-4">
-              <Typewriter text='"Root Access System Architect"' delay={4000} speed={35} />
-            </div>
+                <div className="text-gray-500">
+                  <Typewriter text="$ cat status.txt" delay={450} speed={15} />
+                </div>
+                <div className="text-cyber-green mb-4">
+                  <Typewriter text='"Backend Architect & Systems Engineer"' delay={700} speed={10} />
+                </div>
 
-            <div className="text-gray-500">
-              <Typewriter text="$ ls achievements/" delay={5200} speed={50} />
-            </div>
-            <div className="text-gray-300 mb-4">
-              <Typewriter text="36,000+ PyPI downloads • 450+ concurrent users • Shenzhen R&D" delay={6000} speed={25} />
-            </div>
+                <div className="text-gray-500">
+                  <Typewriter text="$ ls achievements/" delay={1200} speed={15} />
+                </div>
+                <div className="text-gray-300 mb-4">
+                  <Typewriter text="36,000+ PyPI downloads • 450+ concurrent users • Shenzhen R&D" delay={1500} speed={8} />
+                </div>
 
-            <div className="flex items-center text-gray-500">
-              <Typewriter text="$ " delay={7500} speed={100} />
-              <span className="text-cyber-blue cursor-blink">_</span>
-            </div>
+                <div className="flex items-center text-gray-500">
+                  <Typewriter text="$ " delay={2300} speed={30} />
+                  <span className="text-cyber-blue cursor-blink">_</span>
+                </div>
+              </>
+            )}
           </div>
         </div>
 
