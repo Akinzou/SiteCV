@@ -45,7 +45,7 @@ const Navbar = () => {
           data-cursor-hover
         >
           <span className="font-display font-bold text-xl text-white group-hover:text-cyber-blue transition-colors">
-            JELEŃ<span className="text-cyber-purple">_</span>
+            YELON<span className="text-cyber-purple">_</span>
           </span>
         </a>
 
