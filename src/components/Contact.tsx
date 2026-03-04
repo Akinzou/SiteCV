@@ -6,16 +6,16 @@ gsap.registerPlugin(ScrollTrigger)
 
 const contactInfo = [
   {
-    icon: '🐙',
-    label: 'GitHub',
-    value: 'github.com/Akinzou',
-    href: 'https://github.com/Akinzou',
-  },
-  {
     icon: '📄',
     label: 'Resume',
     value: 'Download CV',
     href: '/List_WiktorJelenCV_merged.pdf',
+  },
+  {
+    icon: '🐙',
+    label: 'GitHub',
+    value: 'github.com/Akinzou',
+    href: 'https://github.com/Akinzou',
   },
   {
     icon: '📧',
