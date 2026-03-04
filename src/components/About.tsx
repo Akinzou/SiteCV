@@ -7,8 +7,22 @@ gsap.registerPlugin(ScrollTrigger)
 const stats = [
   { value: 36000, suffix: '+', label: 'PyPI Downloads', color: 'cyber-blue' },
   { value: 450, suffix: '+', label: 'Concurrent Users', color: 'cyber-purple' },
-  { value: 50, suffix: '%+', label: 'Code Coverage', color: 'cyber-green' },
-  { value: 16, suffix: '+', label: 'API Endpoints', color: 'cyber-pink' },
+  { value: 4, suffix: '+', label: 'Years Experience', color: 'cyber-green' },
+]
+
+const education = [
+  {
+    period: '10.2024 – Present',
+    degree: 'B.Eng. in Computer Science, Cybersecurity',
+    school: 'WSB National Louis University',
+    location: 'Kraków, Poland',
+  },
+  {
+    period: 'Completed',
+    degree: 'Mechatronics Technician',
+    school: 'Technical School of Electrical Engineering and Mechanics',
+    location: 'Nowy Sącz, Poland',
+  },
 ]
 
 const experience = [
@@ -122,31 +136,45 @@ const About = () => {
           <div className="flex-1 h-[1px] bg-gradient-to-r from-cyber-blue/50 to-transparent" />
         </div>
 
-        {/* Paradigm statement */}
+        {/* Recommendation section */}
         <div className="glass rounded-lg p-8 mb-16 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-pink" />
-          <h3 className="font-display text-xl text-cyber-blue mb-4">PARADIGM & STRATEGY</h3>
-          <p className="text-gray-300 leading-relaxed max-w-3xl">
-            I operate within the <span className="text-cyber-green font-semibold">High-Velocity Engineering</span> paradigm.
-            I leverage LLMs as high-order compilers, allowing for rapid transition from business logic to stable production code.
-            My measurable impact – including a proprietary Quant library operating on real capital and hardware optimization
-            experience in Shenzhen – serves as hard evidence of my methodology in delivering high-stakes results.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <span className="px-3 py-1 text-xs font-mono border border-cyber-blue/30 text-cyber-blue rounded">
-              Security by Design
-            </span>
-            <span className="px-3 py-1 text-xs font-mono border border-cyber-purple/30 text-cyber-purple rounded">
-              LLM-Augmented Development
-            </span>
-            <span className="px-3 py-1 text-xs font-mono border border-cyber-green/30 text-cyber-green rounded">
-              High-Stakes Delivery
-            </span>
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyber-purple via-cyber-blue to-transparent" />
+          <div className="flex items-start gap-4">
+            <span className="text-4xl text-cyber-purple/50">"</span>
+            <div className="flex-1">
+              <p className="text-gray-300 leading-relaxed italic mb-4">
+                Wiktor consistently demonstrated a rare combination of technical depth, creativity, and hands-on problem-solving skills.
+                His technical expertise, inventive thinking, and dedication to continuous improvement set him apart as both a capable engineer and a collaborative problem solver.
+              </p>
+              <div className="flex items-center justify-between flex-wrap gap-4 mt-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-cyber-purple/20 flex items-center justify-center">
+                    <span className="text-cyber-purple font-bold">TH</span>
+                  </div>
+                  <div>
+                    <p className="font-mono text-sm text-white">Teddy Hu</p>
+                    <p className="font-mono text-xs text-cyber-blue">R&D Department, GEEETECH</p>
+                    <p className="font-mono text-xs text-gray-500">Shenzhen, China • August 2025</p>
+                  </div>
+                </div>
+                <a
+                  href="/List.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-cyber-purple/10 border border-cyber-purple/30 rounded font-mono text-sm text-cyber-purple hover:bg-cyber-purple/20 transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  View Full Letter
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Stats grid */}
-        <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+        <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           {stats.map((stat) => (
             <div
               key={stat.label}
@@ -204,6 +232,67 @@ const About = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Education section */}
+        <h3 className="font-display text-2xl text-white mb-8 mt-16 flex items-center gap-3">
+          <span className="text-cyber-green">&gt;</span>
+          Education_
+        </h3>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {education.map((edu, index) => (
+            <div
+              key={index}
+              className="education-item glass rounded-lg p-6 hover-glow relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyber-green to-transparent" />
+              <span className="font-mono text-xs text-cyber-green">{edu.period}</span>
+              <h4 className="font-display text-lg text-white mt-2">{edu.degree}</h4>
+              <p className="font-mono text-sm text-cyber-blue">{edu.school}</p>
+              <p className="font-mono text-xs text-gray-500">{edu.location}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Paradigm statement */}
+        <h3 className="font-display text-2xl text-white mb-8 mt-16 flex items-center gap-3">
+          <span className="text-cyber-blue">&gt;</span>
+          Paradigm_&_Strategy
+        </h3>
+
+        <div className="glass rounded-lg p-8 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-pink" />
+          <p className="text-gray-300 leading-relaxed max-w-3xl">
+            I operate within the <span className="text-cyber-green font-semibold">High-Velocity Engineering</span> paradigm.
+            I leverage LLMs as high-order compilers, allowing for rapid transition from business logic to stable production code.
+            My measurable impact – including a proprietary Quant library operating on real capital and hardware optimization
+            experience in Shenzhen – serves as hard evidence of my methodology in delivering high-stakes results.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+            <div className="flex flex-wrap gap-3">
+              <span className="px-3 py-1 text-xs font-mono border border-cyber-blue/30 text-cyber-blue rounded">
+                Security by Design
+              </span>
+              <span className="px-3 py-1 text-xs font-mono border border-cyber-purple/30 text-cyber-purple rounded">
+                LLM Development
+              </span>
+              <span className="px-3 py-1 text-xs font-mono border border-cyber-green/30 text-cyber-green rounded">
+                High-Stakes Delivery
+              </span>
+            </div>
+            <a
+              href="/List_WiktorJelenCV_merged.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-cyber-blue/10 border border-cyber-blue/30 rounded font-mono text-sm text-cyber-blue hover:bg-cyber-blue/20 transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              View CV
+            </a>
+          </div>
         </div>
       </div>
     </section>
