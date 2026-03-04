@@ -1,5 +1,37 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
+
+// Typewriter component
+const Typewriter = ({ text, delay = 0, speed = 30, className = '', onComplete }: {
+  text: string
+  delay?: number
+  speed?: number
+  className?: string
+  onComplete?: () => void
+}) => {
+  const [displayed, setDisplayed] = useState('')
+  const [started, setStarted] = useState(false)
+
+  useEffect(() => {
+    const startTimeout = setTimeout(() => setStarted(true), delay)
+    return () => clearTimeout(startTimeout)
+  }, [delay])
+
+  useEffect(() => {
+    if (!started) return
+    if (displayed.length < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayed(text.slice(0, displayed.length + 1))
+      }, speed)
+      return () => clearTimeout(timeout)
+    } else if (onComplete) {
+      onComplete()
+    }
+  }, [displayed, started, text, speed, onComplete])
+
+  if (!started) return null
+  return <span className={className}>{displayed}</span>
+}
 
 const Hero = () => {
   const heroRef = useRef<HTMLElement>(null)
@@ -83,7 +115,7 @@ const Hero = () => {
         <div ref={subtitleRef} className="mb-12">
           <p className="font-mono text-xl md:text-2xl text-gray-400 mb-4">
             <span className="text-cyber-blue">{'>'}</span> System Architect{' '}
-            <span className="text-cyber-purple">|</span> Backend Developer{' '}
+            <span className="text-cyber-purple">|</span> Fullstack Developer{' '}
             <span className="text-cyber-purple">|</span> Cybersec
           </p>
           <p className="font-mono text-sm text-gray-500 max-w-2xl mx-auto">
@@ -94,7 +126,7 @@ const Hero = () => {
         {/* Terminal window */}
         <div
           ref={terminalRef}
-          className="max-w-2xl mx-auto glass rounded-lg overflow-hidden text-left"
+          className="max-w-4xl mx-auto glass rounded-lg overflow-hidden text-left"
         >
           {/* Terminal header */}
           <div className="flex items-center gap-2 px-4 py-3 bg-cyber-dark border-b border-cyber-blue/10">
@@ -106,34 +138,93 @@ const Hero = () => {
 
           {/* Terminal content */}
           <div className="p-6 font-mono text-sm">
-            <div className="text-gray-500 mb-2">$ whoami</div>
-            <div className="text-cyber-blue mb-4">wiktor_jelen</div>
-
-            <div className="text-gray-500 mb-2">$ cat status.txt</div>
-            <div className="text-cyber-green mb-4">
-              "Root Access System Architect"
+            {/* ASCII Deer */}
+            <div className="flex justify-center mb-4">
+            <pre className="text-cyber-blue text-[5px] md:text-[7px] leading-none whitespace-pre">{`        +-                                                                              .-
+       #%%       =#+                                                          =#-       #%*
+      :%@      =%%*                                                            +%%-      %%
+      =%%     *@*                                                                *%+     %%-
+      =%#    *@*      -+                                                  =:      +%=    %%-
+ #%   :%%   .%#     =%%+                                                  *%#:     *%    %@.   %#
+ *%    #%+  +%+    *@*                                                      +%=    +%-  *%#   .%*
+ +%+   .%%- +%-   -@*                                                        +%-   +%= =%%    *%+
+  *%=   .%%*+%+   *%:     %#    #%-                            -%*   -%%:    :%+   +%**%%.   *@#
+   *%#    *%%%*   *%.      +%%: #%-     +-              =+     -%* +%%*.     :%*   *%%%*    %@#
+    -%%*    *%%+  :%+        *%%%%:    :%*              *#:    -%%%%*        *%=  +%%*    %@%-
+      :%%%%-   #%= .%#         #%%:    :%*              *#.    -%%+         %%- +%#   =%%%%:
+         .*@%%%%%%%%%%%#=       #%:    :%*              *#.    :%*       +#%%%%%@%%%%@@*.
+                .-=*#%%%%%%#*=  -%-    :%*              *#.    -%*  =*#%%%%%%#*=-.
+                          -*%%%%#%*    :%+              *#.    +%%%%%%*-
+                              :*%%%#:  .%+              *#.  -#%%%*:
+                *%%%*+-.         :*%%#--%*              *#--#%%*.         :=+#%%%*
+                +%#**%%%%%+:       .*%%%%*              #%%%%*        :*%%%%%**%%=
+                -%#.   .=#%%%%+.     -%%%%#.          :%%%%#:     .*%%%%*=.   :%@-
+                 #@=       +%%%%%=    =%#*-            :+#%=    =%%%%%+       +@#
+                 -%%.        #%%%%#.  :      .=*###+-         :#%%%%#        :%%-
+                  =%#         *%%%%#    =%%%%%%%%%%%%%%%%+    #%%%%*        :@%=
+                   =%%-        %%%%*  .#%%%%%%%%%%%%%%%%%%%:  #@@@#        +@@=
+                    .#%%+       -%#:  =%%%%%%%%%%%%%%%%%%%%=  .##:       *%@#
+                      .*%%%#+-       +%%%%%%%%%%%%%%%%%%%%%%+      :+*#%%%*
+                          -*%%%%*   #@%%%%%%%%%%%%%%%%%%%%%%%#.  *%%%#=.
+                                   #@@%%%%%%%%%%%%%%%%%%%%%%%%#
+                                  :%+. .=#%%%%%%%%%%%%%%%=. .+%-
+                                  -@+ :-  *%%%%%%%%%%%%*  := =%=
+                                  .%#-    .*%%%%%%%%%%#.    -#%:
+                                   .#%%%#. =%%%%%%%%%%*  +%%%#:
+                                     =%%%= -%%%%%%%%%%= -%@%=
+                                     =%%@#+*%%%%%%%%%%#*#@@%=
+                                     :%%%%%%%%%%%%%%%%%%%%%@:
+                                      +%%%%%%%%%@@@@%%%%%%@*
+                                       #%@@@@@%%###%@@@@%@#.
+                                   :=   *@@@:        -@@@*   =:
+                                   =%=  :%@@:        -@@%:  -%=
+                                   =%*   *@@@#+    *#@@@*   +%+
+                                   +%%:   .+*#*:  :*##+:   :%%+
+                                   +%%+                    *%%+
+                                   +%%%=    :*%@@@@@#:    +%%%+
+                                   =%%%%*                *%%%%=
+                                   :%%%%%%*            =%%%%%%-
+                                    #%%%%%%%%=      .#%%%%%%%%
+                                    =%%%%%%%%%%%%%%%%%%%%%%%%=
+                                     #%%%%%%%%%%%%%%%%%%%%%%#
+                                     .%%%%%%%%%%:.%%%%%%%%%%:
+                                      :%%%%%%%%#  #%%%%%%%%:
+                                       :%%%%%%%%%%%%%%%%%%:
+                                        .#%%%%%%%%%%%%%%#.
+                                          =%%%%%%%%%%%%+
+                                           .*%@@@@@%%#:
+                                             :#%@@%#:
+                                               .##.`}</pre>
             </div>
 
-            <div className="text-gray-500 mb-2">$ ls achievements/</div>
+            <div className="text-gray-500">
+              <Typewriter text="$ whoami" delay={2000} speed={50} />
+            </div>
+            <div className="text-cyber-blue mb-4">
+              <Typewriter text="wiktor_jelen" delay={2500} speed={40} />
+            </div>
+
+            <div className="text-gray-500">
+              <Typewriter text="$ cat status.txt" delay={3200} speed={50} />
+            </div>
+            <div className="text-cyber-green mb-4">
+              <Typewriter text='"Root Access System Architect"' delay={4000} speed={35} />
+            </div>
+
+            <div className="text-gray-500">
+              <Typewriter text="$ ls achievements/" delay={5200} speed={50} />
+            </div>
             <div className="text-gray-300 mb-4">
-              <span className="text-cyber-purple">36,000+</span> PyPI downloads •{' '}
-              <span className="text-cyber-purple">450+</span> concurrent users handled •{' '}
-              <span className="text-cyber-purple">Shenzhen</span> R&D
+              <Typewriter text="36,000+ PyPI downloads • 450+ concurrent users • Shenzhen R&D" delay={6000} speed={25} />
             </div>
 
             <div className="flex items-center text-gray-500">
-              $ <span className="ml-2 text-cyber-blue cursor-blink">_</span>
+              <Typewriter text="$ " delay={7500} speed={100} />
+              <span className="text-cyber-blue cursor-blink">_</span>
             </div>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <span className="font-mono text-xs text-gray-500">scroll</span>
-          <div className="w-6 h-10 border-2 border-cyber-blue/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-cyber-blue rounded-full mt-2 animate-bounce" />
-          </div>
-        </div>
       </div>
 
       {/* Decorative corner elements */}
