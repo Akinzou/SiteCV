@@ -8,7 +8,6 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import ParticleBackground from './components/three/ParticleBackground'
-import CustomCursor from './components/CustomCursor'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -16,7 +15,6 @@ function App() {
 
   return (
     <div className="relative min-h-screen bg-cyber-black noise">
-      <CustomCursor />
       <ParticleBackground />
       <div className="relative z-10">
         <Navbar />
