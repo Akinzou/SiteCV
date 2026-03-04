@@ -269,6 +269,10 @@ const About = () => {
             My measurable impact – including a proprietary Quant library operating on real capital and hardware optimization
             experience in Shenzhen – serves as hard evidence of my methodology in delivering high-stakes results.
           </p>
+          <p className="text-gray-400 leading-relaxed max-w-3xl mt-4 text-sm">
+            Experienced in cross-cultural remote collaboration (EU-China timezone coordination), async communication,
+            and translating technical requirements for non-technical stakeholders.
+          </p>
           <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-wrap gap-3">
               <span className="px-3 py-1 text-xs font-mono border border-cyber-blue/30 text-cyber-blue rounded">
