@@ -12,7 +12,7 @@ const projects = [
       'MetaTrader5 wrapper designed for algorithmic trading with real capital. Ensures data normalization and critical execution stability with comprehensive retcode handling.',
     stats: { downloads: '36,000+', status: 'Production', platform: 'PyPI' },
     tech: ['Python', 'MetaTrader5', 'Algorithmic Trading', 'PyPI'],
-    github: 'https://github.com/Akinzou/PythonMetaTrader5',
+    github: 'https://github.com/Akinzou/MetaTrader5-Python',
     color: 'cyber-blue',
     featured: true,
   },
