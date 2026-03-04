@@ -68,10 +68,22 @@ const Navbar = () => {
             href="/List_WiktorJelenCV_merged.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 border border-cyber-blue text-cyber-blue font-mono text-sm hover:bg-cyber-blue/10 transition-all gradient-border"
+            className="relative group px-6 py-2.5 font-mono text-sm font-semibold overflow-hidden"
             data-cursor-hover
           >
-            Resume.pdf
+            {/* Glowing background */}
+            <span className="absolute inset-0 bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-pink opacity-80 group-hover:opacity-100 transition-opacity" />
+            {/* Animated glow */}
+            <span className="absolute inset-0 bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-pink blur-md opacity-50 group-hover:opacity-80 transition-opacity animate-pulse" />
+            {/* Border */}
+            <span className="absolute inset-[1px] bg-cyber-black" />
+            {/* Text */}
+            <span className="relative flex items-center gap-2 text-white group-hover:text-cyber-blue transition-colors">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Resume.pdf
+            </span>
           </a>
         </div>
 
@@ -104,6 +116,22 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
+          <a
+            href="/List_WiktorJelenCV_merged.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative block mt-4 py-3 text-center font-mono text-sm font-semibold overflow-hidden rounded"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <span className="absolute inset-0 bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-pink opacity-80" />
+            <span className="absolute inset-[1px] bg-cyber-black rounded" />
+            <span className="relative flex items-center justify-center gap-2 text-white">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Resume.pdf
+            </span>
+          </a>
         </div>
       )}
     </nav>
