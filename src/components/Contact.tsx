@@ -6,18 +6,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 const contactInfo = [
   {
-    icon: '📧',
-    label: 'Email',
-    value: 'wiktorjn@gmail.com',
-    href: 'mailto:wiktorjn@gmail.com',
-  },
-  {
-    icon: '📱',
-    label: 'Phone',
-    value: '+48 798 859 023',
-    href: 'tel:+48798859023',
-  },
-  {
     icon: '🐙',
     label: 'GitHub',
     value: 'github.com/Akinzou',
@@ -28,6 +16,18 @@ const contactInfo = [
     label: 'Resume',
     value: 'Download CV',
     href: '/List_WiktorJelenCV_merged.pdf',
+  },
+  {
+    icon: '📧',
+    label: 'Email',
+    value: 'wiktorjn@gmail.com',
+    href: 'mailto:wiktorjn@gmail.com',
+  },
+  {
+    icon: '📱',
+    label: 'Phone',
+    value: '+48 798 859 023',
+    href: 'tel:+48798859023',
   },
 ]
 
