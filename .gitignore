@@ -21,8 +21,6 @@ Thumbs.db
 .env
 .env.local
 
-# CV data
-List_WiktorJelenCV_merged.pdf
 
 # Claude Code
 .claude/
