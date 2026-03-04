@@ -23,3 +23,6 @@ Thumbs.db
 
 # CV data
 List_WiktorJelenCV_merged.pdf
+
+# Claude Code
+.claude/
