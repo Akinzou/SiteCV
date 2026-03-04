@@ -44,11 +44,15 @@ const Navbar = () => {
           className="flex items-center gap-2 group"
           data-cursor-hover
         >
-          <img
-            src="/yelon.png"
-            alt="Jeleń Logo"
-            className="w-10 h-10 group-hover:brightness-125 transition-all"
-          />
+          <svg className="w-8 h-8" viewBox="0 0 100 100" fill="none">
+            <g stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" className="text-cyber-blue group-hover:text-cyber-purple transition-colors">
+              <path d="M25 45 L35 25 M35 25 L30 15 M35 25 L42 18"/>
+              <path d="M75 45 L65 25 M65 25 L70 15 M65 25 L58 18"/>
+              <path d="M35 50 Q50 38 65 50 L60 68 Q50 85 40 68 Z"/>
+            </g>
+            <circle cx="43" cy="55" r="3" className="fill-cyber-blue"/>
+            <circle cx="57" cy="55" r="3" className="fill-cyber-blue"/>
+          </svg>
           <span className="font-display font-bold text-xl text-white group-hover:text-cyber-blue transition-colors">
             JELEŃ<span className="text-cyber-purple">_</span>
           </span>
