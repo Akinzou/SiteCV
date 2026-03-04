@@ -38,13 +38,20 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo - Deer */}
         <a
           href="#"
-          className="font-display font-bold text-2xl text-cyber-blue hover:text-glow-blue transition-all"
+          className="flex items-center gap-2 group"
           data-cursor-hover
         >
-          WJ<span className="text-cyber-purple">_</span>
+          <img
+            src="/yelon.png"
+            alt="Jeleń Logo"
+            className="w-10 h-10 group-hover:brightness-125 transition-all"
+          />
+          <span className="font-display font-bold text-xl text-white group-hover:text-cyber-blue transition-colors">
+            JELEŃ<span className="text-cyber-purple">_</span>
+          </span>
         </a>
 
         {/* Desktop Links */}
