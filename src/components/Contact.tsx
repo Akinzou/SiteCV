@@ -24,10 +24,10 @@ const contactInfo = [
     href: 'https://github.com/Akinzou',
   },
   {
-    icon: '📍',
-    label: 'Location',
-    value: 'Kraków, Poland',
-    href: null,
+    icon: '📄',
+    label: 'Resume',
+    value: 'Download CV',
+    href: '/List_WiktorJelenCV_merged.pdf',
   },
 ]
 
