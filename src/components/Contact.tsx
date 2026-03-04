@@ -6,6 +6,12 @@ gsap.registerPlugin(ScrollTrigger)
 
 const contactInfo = [
   {
+    icon: '📍',
+    label: 'Location',
+    value: 'Kraków, Poland',
+    href: null,
+  },
+  {
     icon: '📄',
     label: 'Resume',
     value: 'Download CV',
@@ -16,6 +22,12 @@ const contactInfo = [
     label: 'GitHub',
     value: 'github.com/Akinzou',
     href: 'https://github.com/Akinzou',
+  },
+  {
+    icon: '💼',
+    label: 'LinkedIn',
+    value: 'wiktor-jelen',
+    href: 'https://www.linkedin.com/in/wiktor-jelen-8a658b293/',
   },
   {
     icon: '📧',
@@ -144,7 +156,7 @@ const Contact = () => {
             </p>
 
             {/* Contact cards */}
-            <div className="contact-grid grid grid-cols-2 gap-4 mb-8">
+            <div className="contact-grid grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
               {contactInfo.map((item) => (
                 <a
                   key={item.label}
@@ -158,7 +170,7 @@ const Contact = () => {
                 >
                   <span className="text-2xl mb-2 block">{item.icon}</span>
                   <span className="font-mono text-xs text-gray-500 block">{item.label}</span>
-                  <span className="font-mono text-sm text-cyber-blue block truncate">{item.value}</span>
+                  <span className="font-mono text-sm text-cyber-blue block">{item.value}</span>
                 </a>
               ))}
             </div>
