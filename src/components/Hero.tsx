@@ -98,7 +98,7 @@ const Hero = () => {
         {/* Status badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 glass rounded-full">
           <span className="w-2 h-2 bg-cyber-green rounded-full animate-pulse" />
-          <span className="font-mono text-sm text-cyber-green">Available for opportunities</span>
+          <span className="font-mono text-sm text-cyber-green">Seeking Backend / System Architect roles</span>
         </div>
 
         {/* Main title */}
