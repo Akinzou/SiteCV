@@ -136,6 +136,25 @@ const About = () => {
           <div className="flex-1 h-[1px] bg-gradient-to-r from-cyber-blue/50 to-transparent" />
         </div>
 
+        {/* Worked with */}
+        <div className="mb-12">
+          <p className="font-mono text-xs text-gray-500 text-center mb-6">WORKED WITH</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+            <div className="group flex flex-col items-center">
+              <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">GEEETECH</span>
+              <span className="font-mono text-xs text-gray-500">Shenzhen R&D</span>
+            </div>
+            <div className="group flex flex-col items-center">
+              <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-purple transition-colors">POLSAT PLUS</span>
+              <span className="font-mono text-xs text-gray-500">Cyfrowy Polsat Group</span>
+            </div>
+            <div className="group flex flex-col items-center">
+              <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">RANDLAB</span>
+              <span className="font-mono text-xs text-gray-500">Software House</span>
+            </div>
+          </div>
+        </div>
+
         {/* Recommendation section */}
         <div className="glass rounded-lg p-8 mb-16 relative overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyber-purple via-cyber-blue to-transparent" />
