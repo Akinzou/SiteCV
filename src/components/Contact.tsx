@@ -15,7 +15,7 @@ const contactInfo = [
     icon: '📄',
     label: 'Resume',
     value: 'Download CV',
-    href: '/List_WiktorJelenCV_merged.pdf',
+    href: '/CV_WiktorJelen.pdf',
   },
   {
     icon: '🐙',
@@ -49,7 +49,9 @@ const Contact = () => {
     name: '',
     email: '',
     message: '',
+    website: ''
   })
+  const [formTimestamp] = useState(() => Date.now())
   const [terminalLines, setTerminalLines] = useState<string[]>([
     '$ Establishing secure connection...',
     '$ Connection established.',
@@ -87,7 +89,7 @@ const Contact = () => {
         setTerminalLines((prev) => [...prev, `$ Location: ${value}`])
         break
       case 'Resume':
-        setTerminalLines((prev) => [...prev, `$ Downloading CV...`, `$ File: List_WiktorJelenCV_merged.pdf`])
+        setTerminalLines((prev) => [...prev, `$ Downloading CV...`, `$ File: CV_WiktorJelen.pdf`])
         break
       case 'GitHub':
         setTerminalLines((prev) => [...prev, `$ Redirecting to GitHub: ${href}`])
@@ -154,21 +156,46 @@ const Contact = () => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission with terminal output
     setTerminalLines((prev) => [...prev, `$ Sending message from ${formState.name}...`])
 
-    // In production, replace with actual form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      const response = await fetch('/api/contact/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+          website: formState.website,
+          timestamp: formTimestamp,
+        }),
+      })
 
-    setTerminalLines((prev) => [
-      ...prev,
-      `$ Message transmitted successfully.`,
-      `$ Recipient: root@yelon.pro`,
-      `$ Status: DELIVERED`,
-    ])
+      if (response.ok) {
+        setTerminalLines((prev) => [
+          ...prev,
+          `$ Message transmitted successfully.`,
+          `$ Recipient: root@yelon.pro`,
+          `$ Status: DELIVERED`,
+        ])
+        setFormState({ name: '', email: '', message: '', website: '' })
+      } else {
+        const error = await response.json()
+        setTerminalLines((prev) => [
+          ...prev,
+          `$ Error: ${error.detail || 'Failed to send message'}`,
+          `$ Status: FAILED`,
+        ])
+      }
+    } catch {
+      setTerminalLines((prev) => [
+        ...prev,
+        `$ Error: Network error`,
+        `$ Status: FAILED`,
+      ])
+    }
 
     setIsSubmitting(false)
-    setFormState({ name: '', email: '', message: '' })
   }
 
   return (
@@ -310,6 +337,15 @@ const Contact = () => {
               </h3>
 
               <div className="space-y-6">
+                <input
+                  type="text"
+                  name="website"
+                  value={formState.website}
+                  onChange={(e) => setFormState({ ...formState, website: e.target.value })}
+                  className="absolute -left-[9999px] opacity-0 h-0 w-0"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
                 {/* Name input */}
                 <div>
                   <label className="font-mono text-sm text-gray-400 block mb-2">
