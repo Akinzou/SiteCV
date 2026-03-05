@@ -9,6 +9,20 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  server: {
+    proxy: {
+      '/api/pepy': {
+        target: 'https://pepy.tech',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/pepy/, ''),
+      },
+      '/api/contact': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/contact/, ''),
+      },
+    },
+  },
   build: {
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
