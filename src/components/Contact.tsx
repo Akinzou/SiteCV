@@ -8,7 +8,7 @@ const contactInfo = [
   {
     icon: '📍',
     label: 'Location',
-    value: 'Kraków, Poland',
+    value: 'Cracow, Poland',
     href: null,
   },
   {

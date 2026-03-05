@@ -35,6 +35,7 @@ const Typewriter = ({ text, delay = 0, speed = 30, className = '', onComplete }:
 
 const Hero = () => {
   const heroRef = useRef<HTMLElement>(null)
+  const badgeRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
   const subtitleRef = useRef<HTMLDivElement>(null)
   const terminalRef = useRef<HTMLDivElement>(null)
@@ -44,11 +45,19 @@ const Hero = () => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ delay: 0.8 })
 
+      // Badge fade in
+      tl.fromTo(
+        badgeRef.current,
+        { opacity: 0, y: -20 },
+        { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }
+      )
+
       // Glitch effect on title
       tl.fromTo(
         titleRef.current,
         { opacity: 0, y: 50, skewX: -5 },
-        { opacity: 1, y: 0, skewX: 0, duration: 0.8, ease: 'power3.out' }
+        { opacity: 1, y: 0, skewX: 0, duration: 0.8, ease: 'power3.out' },
+        '-=0.2'
       )
 
       // Subtitle fade in
@@ -96,7 +105,7 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         {/* Status badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 glass rounded-full">
+        <div ref={badgeRef} className="inline-flex items-center gap-2 px-4 py-2 mb-8 glass rounded-full opacity-0">
           <span className="w-2 h-2 bg-cyber-green rounded-full animate-pulse" />
           <span className="font-mono text-sm text-cyber-green">Seeking complex technical challenges</span>
         </div>
@@ -104,7 +113,7 @@ const Hero = () => {
         {/* Main title */}
         <h1
           ref={titleRef}
-          className="font-display font-black text-5xl md:text-7xl lg:text-8xl mb-6"
+          className="font-display font-black text-5xl md:text-7xl lg:text-8xl mb-6 opacity-0"
         >
           <span className="text-white">WIKTOR</span>{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-pink">
@@ -113,7 +122,7 @@ const Hero = () => {
         </h1>
 
         {/* Subtitle */}
-        <div ref={subtitleRef} className="mb-12">
+        <div ref={subtitleRef} className="mb-12 opacity-0">
           <p className="font-mono text-xl md:text-2xl text-gray-400 mb-4">
             <span className="text-cyber-blue">{'>'}</span> System Architect{' '}
             <span className="text-cyber-purple">|</span> Fullstack Developer{' '}
@@ -127,7 +136,7 @@ const Hero = () => {
         {/* Terminal window */}
         <div
           ref={terminalRef}
-          className="max-w-4xl mx-auto glass rounded-lg overflow-hidden text-left"
+          className="max-w-4xl mx-auto glass rounded-lg overflow-hidden text-left opacity-0"
         >
           {/* Terminal header */}
           <div className="flex items-center gap-2 px-4 py-3 bg-cyber-dark border-b border-cyber-blue/10">
