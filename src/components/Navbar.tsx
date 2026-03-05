@@ -65,7 +65,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="/List_WiktorJelenCV_merged.pdf"
+            href="/CV_WiktorJelen.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="relative group px-6 py-2.5 font-mono text-sm font-semibold overflow-hidden"
@@ -117,7 +117,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="/List_WiktorJelenCV_merged.pdf"
+            href="/CV_WiktorJelen.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="relative block mt-4 py-3 text-center font-mono text-sm font-semibold overflow-hidden rounded"

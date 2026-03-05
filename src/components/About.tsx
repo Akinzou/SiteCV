@@ -327,7 +327,7 @@ const About = () => {
               </span>
             </div>
             <a
-              href="/List_WiktorJelenCV_merged.pdf"
+              href="/CV_WiktorJelen.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 bg-cyber-blue/10 border border-cyber-blue/30 rounded font-mono text-sm text-cyber-blue hover:bg-cyber-blue/20 transition-colors"
