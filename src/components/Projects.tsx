@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { usePyPIDownloads } from '../hooks/usePyPIDownloads'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -10,9 +11,10 @@ const projects = [
     subtitle: 'Production-Ready Quant Library',
     description:
       'MetaTrader5 wrapper designed for algorithmic trading with real capital. Ensures data normalization and critical execution stability with comprehensive retcode handling.',
-    stats: { downloads: '36,000+', status: 'Production', platform: 'PyPI' },
+    stats: { downloads: 'dynamic', status: 'Production', platform: 'PyPI' },
     tech: ['Python', 'MetaTrader5', 'Algorithmic Trading', 'PyPI'],
     github: 'https://github.com/Akinzou/MetaTrader5-Python',
+    pypiPackage: 'pythonmetatrader5',
     color: 'cyber-blue',
     featured: true,
   },
@@ -61,6 +63,7 @@ const projects = [
 
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null)
+  const { downloads: pypiDownloads, pepyUrl } = usePyPIDownloads('pythonmetatrader5')
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -157,14 +160,29 @@ const Projects = () => {
                     {Object.entries(project.stats).map(([key, value]) => (
                       <div key={key}>
                         <span className="text-cyber-purple">{key}:</span>{' '}
-                        <span className="text-white">{value}</span>
+                        <span className="text-white">
+                          {key === 'downloads' && (project as any).pypiPackage
+                            ? pypiDownloads || 'Loading...'
+                            : value}
+                        </span>
+                        {key === 'downloads' && (project as any).pypiPackage && (
+                          <a
+                            href={pepyUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="ml-2 px-1 bg-cyber-blue/20 text-cyber-blue hover:bg-cyber-green/20 hover:text-cyber-green transition-colors text-[10px] rounded relative z-10 cursor-pointer"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            [verify]
+                          </a>
+                        )}
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-cyber-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-cyber-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                 {/* Corner decorations */}
                 <div className={`absolute top-2 left-2 w-8 h-8 border-l-2 border-t-2 border-${project.color}/50`} />
