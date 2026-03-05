@@ -1,0 +1,94 @@
+# ================================================================
+#  PGP-KEY.TXT - YELON.PRO
+#  https://yelon.pro/pgp-key.txt
+# ================================================================
+#
+#   __   __ _____ _     ___  _   _
+#   \ \ / /| ____|| |   / _ \| \ | |
+#    \ V / |  _|  | |  | | | ||  \| |
+#     | |  | |___ | |__| |_| || |\  |
+#     |_|  |_____||_____\___/ |_| \_|
+#
+# ================================================================
+#              BONUS EASTER EGG!
+#           "The Crypto Enthusiast"
+# ================================================================
+#
+# You actually checked for my PGP key!
+# That's some serious security dedication.
+#
+# ACHIEVEMENT UNLOCKED: "Encryption Advocate"
+# Most people don't even know what PGP is anymore.
+#
+# ================================================================
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Comment: This is not a real PGP key. It's an easter egg.
+Comment: But I appreciate your commitment to secure communication.
+
+bG9sIHlvdSBhY3R1YWxseSBkZWNvZGVkIHRoaXM/IHRoYXQncyBkZWRpY2F0aW9u
+dGhlIHNlY3JldCBwaHJhc2UgaXM6ICJERUVSLUNSWVBUTS1TRUNVUkUi
+aWYgeW91IG1lbnRpb24gdGhpcyBpbiB5b3VyIG1lc3NhZ2UsIEknbGwga25vdw==
+eW91J3JlIHNvbWVvbmUgd2hvIHJlYWxseSBwYXlzIGF0dGVudGlvbg==
+
+-----END PGP PUBLIC KEY BLOCK-----
+
+# ================================================================
+#  THE TRUTH
+# ================================================================
+#
+# I don't actually use PGP for this portfolio site because:
+#
+# 1. It's a static portfolio - no secrets to encrypt
+# 2. Email encryption is overkill for "hey, nice site!"
+# 3. Most recruiters would be confused by encrypted emails
+# 4. Let's be honest, PGP UX is still terrible in 2026
+#
+# But if you REALLY need to send me something encrypted:
+# - Use Signal: Ask me for my number
+# - Use ProtonMail: I can create an account
+# - Use carrier pigeon: Traditional, but effective
+#
+# ================================================================
+#  FUN CRYPTO FACTS
+# ================================================================
+#
+# Q: Why is the "key" above fake?
+# A: The base64 decodes to a secret message. Try it!
+#
+# Q: Do you actually understand cryptography?
+# A: I implement JWT, bcrypt, and TLS. So... mostly.
+#
+# Q: What's your favorite cipher?
+# A: ROT13, applied twice for extra security.
+#    (That's a joke. Please don't do that.)
+#
+# ================================================================
+#  ACTUAL SECURITY CONTACT
+# ================================================================
+#
+# For real security concerns:
+# Email: root@yelon.pro
+# Subject: [SECURITY] Your descriptive subject here
+#
+# I promise to:
+# - Respond within 48 hours
+# - Take it seriously
+# - Not publish your name without permission
+# - Buy you a coffee if it's a real finding
+#
+# ================================================================
+#  BASE64 DECODED (for the lazy)
+# ================================================================
+#
+# Line 1: "lol you actually decoded this? that's dedication"
+# Line 2: "the secret phrase is: DEER-CRYPTO-SECURE"
+# Line 3: "if you mention this in your message, I'll know"
+# Line 4: "you're someone who really pays attention"
+#
+# ================================================================
+#  EOF - You found the secret PGP easter egg!
+#        Now go touch grass. Or email me. Your choice.
+#
+#        root@yelon.pro
+# ================================================================

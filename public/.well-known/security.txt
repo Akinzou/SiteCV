@@ -23,11 +23,10 @@
 # ================================================================
 
 # Contact for security issues
-Contact: mailto:security@yelon.pro
 Contact: mailto:root@yelon.pro
 
-# PGP key (just kidding, I trust you)
-# Encryption: https://yelon.pro/pgp-key.txt
+# PGP key
+Encryption: https://yelon.pro/pgp-key.txt
 
 # Preferred languages
 Preferred-Languages: en, pl
@@ -47,7 +46,7 @@ Hiring: https://yelon.pro/#contact
 #
 # Found a vulnerability? Here's the deal:
 #
-# 1. Email me at security@yelon.pro
+# 1. Email me at root@yelon.pro
 # 2. I'll buy you a coffee (virtual or real)
 # 3. I'll fix it faster than you can say "SQL injection"
 # 4. You'll get credit in my eternal gratitude
