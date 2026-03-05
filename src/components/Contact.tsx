@@ -56,6 +56,47 @@ const Contact = () => {
     '$ Ready to receive transmission.',
   ])
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [copiedEmail, setCopiedEmail] = useState(false)
+  const [copiedPhone, setCopiedPhone] = useState(false)
+
+  const handleCopyEmail = async (email: string) => {
+    try {
+      await navigator.clipboard.writeText(email)
+      setCopiedEmail(true)
+      setTerminalLines((prev) => [...prev, `$ Email copied to clipboard: ${email}`])
+      setTimeout(() => setCopiedEmail(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy email:', err)
+    }
+  }
+
+  const handleCopyPhone = async (phone: string) => {
+    try {
+      await navigator.clipboard.writeText(phone)
+      setCopiedPhone(true)
+      setTerminalLines((prev) => [...prev, `$ Phone number copied to clipboard: ${phone}`])
+      setTimeout(() => setCopiedPhone(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy phone:', err)
+    }
+  }
+
+  const handleCardClick = (label: string, value: string, href: string | null) => {
+    switch (label) {
+      case 'Location':
+        setTerminalLines((prev) => [...prev, `$ Location: ${value}`])
+        break
+      case 'Resume':
+        setTerminalLines((prev) => [...prev, `$ Downloading CV...`, `$ File: List_WiktorJelenCV_merged.pdf`])
+        break
+      case 'GitHub':
+        setTerminalLines((prev) => [...prev, `$ Redirecting to GitHub: ${href}`])
+        break
+      case 'LinkedIn':
+        setTerminalLines((prev) => [...prev, `$ Redirecting to LinkedIn profile...`])
+        break
+    }
+  }
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -157,22 +198,75 @@ const Contact = () => {
 
             {/* Contact cards */}
             <div className="contact-grid grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-              {contactInfo.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href || '#'}
-                  target={item.href?.startsWith('http') ? '_blank' : undefined}
-                  rel={item.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className={`contact-card glass rounded-lg p-4 hover-glow transition-all ${
-                    item.href ? 'cursor-pointer' : 'cursor-default'
-                  }`}
-                  data-cursor-hover
-                >
-                  <span className="text-2xl mb-2 block">{item.icon}</span>
-                  <span className="font-mono text-xs text-gray-500 block">{item.label}</span>
-                  <span className="font-mono text-sm text-cyber-blue block">{item.value}</span>
-                </a>
-              ))}
+              {contactInfo.map((item) => {
+                if (item.label === 'Email') {
+                  return (
+                    <button
+                      key={item.label}
+                      onClick={() => handleCopyEmail(item.value)}
+                      className="contact-card glass rounded-lg p-4 hover-glow transition-all cursor-pointer text-left relative"
+                      data-cursor-hover
+                    >
+                      <span className="text-2xl mb-2 block">{item.icon}</span>
+                      <span className="font-mono text-xs text-gray-500 block">{item.label}</span>
+                      <span className="font-mono text-sm text-cyber-blue block">{item.value}</span>
+                      {copiedEmail && (
+                        <span className="absolute top-2 right-2 font-mono text-xs text-cyber-green bg-cyber-dark/90 px-2 py-1 rounded">
+                          Copied!
+                        </span>
+                      )}
+                    </button>
+                  )
+                }
+                if (item.label === 'Phone') {
+                  return (
+                    <button
+                      key={item.label}
+                      onClick={() => handleCopyPhone(item.value)}
+                      className="contact-card glass rounded-lg p-4 hover-glow transition-all cursor-pointer text-left relative"
+                      data-cursor-hover
+                    >
+                      <span className="text-2xl mb-2 block">{item.icon}</span>
+                      <span className="font-mono text-xs text-gray-500 block">{item.label}</span>
+                      <span className="font-mono text-sm text-cyber-blue block">{item.value}</span>
+                      {copiedPhone && (
+                        <span className="absolute top-2 right-2 font-mono text-xs text-cyber-green bg-cyber-dark/90 px-2 py-1 rounded">
+                          Copied!
+                        </span>
+                      )}
+                    </button>
+                  )
+                }
+                if (item.label === 'Location') {
+                  return (
+                    <button
+                      key={item.label}
+                      onClick={() => handleCardClick(item.label, item.value, item.href)}
+                      className="contact-card glass rounded-lg p-4 hover-glow transition-all cursor-pointer text-left"
+                      data-cursor-hover
+                    >
+                      <span className="text-2xl mb-2 block">{item.icon}</span>
+                      <span className="font-mono text-xs text-gray-500 block">{item.label}</span>
+                      <span className="font-mono text-sm text-cyber-blue block">{item.value}</span>
+                    </button>
+                  )
+                }
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => handleCardClick(item.label, item.value, item.href)}
+                    className="contact-card glass rounded-lg p-4 hover-glow transition-all cursor-pointer"
+                    data-cursor-hover
+                  >
+                    <span className="text-2xl mb-2 block">{item.icon}</span>
+                    <span className="font-mono text-xs text-gray-500 block">{item.label}</span>
+                    <span className="font-mono text-sm text-cyber-blue block">{item.value}</span>
+                  </a>
+                )
+              })}
             </div>
 
             {/* Terminal output */}
@@ -188,10 +282,14 @@ const Contact = () => {
                   <div
                     key={index}
                     className={`mb-1 ${
-                      line.includes('successfully') || line.includes('DELIVERED')
+                      line.includes('successfully') || line.includes('DELIVERED') || line.includes('copied')
                         ? 'text-cyber-green'
-                        : line.includes('Sending')
+                        : line.includes('Sending') || line.includes('Downloading')
                         ? 'text-cyber-yellow'
+                        : line.includes('Redirecting')
+                        ? 'text-cyber-blue'
+                        : line.includes('Location')
+                        ? 'text-cyber-purple'
                         : 'text-gray-400'
                     }`}
                   >
@@ -284,16 +382,21 @@ const Contact = () => {
           <p className="font-mono text-gray-500 mb-4">
             Prefer a direct approach?
           </p>
-          <a
-            href="mailto:root@yelon.pro"
-            className="inline-flex items-center gap-3 px-8 py-4 border-2 border-cyber-blue text-cyber-blue font-display font-bold text-lg hover:bg-cyber-blue/10 transition-colors rounded gradient-border"
+          <button
+            onClick={() => handleCopyEmail('root@yelon.pro')}
+            className="inline-flex items-center gap-3 px-8 py-4 border-2 border-cyber-blue text-cyber-blue font-display font-bold text-lg hover:bg-cyber-blue/10 transition-colors rounded gradient-border relative"
             data-cursor-hover
           >
             <span>root@yelon.pro</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
-          </a>
+            {copiedEmail && (
+              <span className="absolute -top-8 left-1/2 -translate-x-1/2 font-mono text-sm text-cyber-green bg-cyber-dark/90 px-3 py-1 rounded whitespace-nowrap">
+                Copied to clipboard!
+              </span>
+            )}
+          </button>
         </div>
       </div>
     </section>
