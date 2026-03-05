@@ -31,6 +31,13 @@ console.log(`
 %c  🌐 https://yelon.pro
 %c
 %c  P.S. Try typing: yelon() in console ;)
+%c
+%c  ┌─────────────────────────────────────┐
+%c  │  EASTER EGG HUNT: Console is #0    │
+%c  │  There are 9 more hidden eggs!     │
+%c  │                                     │
+%c  │  Next hint: /humans.txt            │
+%c  └─────────────────────────────────────┘
 `,
 'color: #00ff88; font-weight: bold; font-size: 14px',
 'color: #00ff88; font-weight: bold; font-size: 14px',
@@ -57,8 +64,28 @@ console.log(`
 'color: #ff6688',
 'color: #ff6688',
 'color: #888',
-'color: #888; font-style: italic'
+'color: #888; font-style: italic',
+'color: #888',
+'color: #ffaa00',
+'color: #ffaa00',
+'color: #ffaa00',
+'color: #ffaa00',
+'color: #ffaa00',
+'color: #ffaa00'
 );
+
+// Handle hash navigation on page load
+window.addEventListener('load', () => {
+  const hash = window.location.hash;
+  if (hash) {
+    setTimeout(() => {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  }
+});
 
 // Secret function easter egg
 (window as unknown as Record<string, unknown>).yelon = () => {
