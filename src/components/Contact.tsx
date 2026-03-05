@@ -32,14 +32,14 @@ const contactInfo = [
   {
     icon: '📧',
     label: 'Email',
-    value: 'wiktorjn@gmail.com',
-    href: 'mailto:wiktorjn@gmail.com',
+    value: 'root@yelon.pro',
+    href: 'mailto:root@yelon.pro',
   },
   {
     icon: '📱',
     label: 'Phone',
-    value: '+48 798 859 023',
-    href: 'tel:+48798859023',
+    value: '+48 576 706 766',
+    href: 'tel:+48576706766',
   },
 ]
 
@@ -122,7 +122,7 @@ const Contact = () => {
     setTerminalLines((prev) => [
       ...prev,
       `$ Message transmitted successfully.`,
-      `$ Recipient: wiktorjn@gmail.com`,
+      `$ Recipient: root@yelon.pro`,
       `$ Status: DELIVERED`,
     ])
 
@@ -285,11 +285,11 @@ const Contact = () => {
             Prefer a direct approach?
           </p>
           <a
-            href="mailto:wiktorjn@gmail.com"
+            href="mailto:root@yelon.pro"
             className="inline-flex items-center gap-3 px-8 py-4 border-2 border-cyber-blue text-cyber-blue font-display font-bold text-lg hover:bg-cyber-blue/10 transition-colors rounded gradient-border"
             data-cursor-hover
           >
-            <span>wiktorjn@gmail.com</span>
+            <span>root@yelon.pro</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
