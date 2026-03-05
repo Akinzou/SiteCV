@@ -1,13 +1,14 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { usePyPIDownloads } from '../hooks/usePyPIDownloads'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const stats = [
-  { value: 36000, suffix: '+', label: 'PyPI Downloads', color: 'cyber-blue' },
-  { value: 450, suffix: '+', label: 'Concurrent Users', color: 'cyber-purple' },
-  { value: 4, suffix: '+', label: 'Years Experience', color: 'cyber-green' },
+const defaultStats = [
+  { value: 36000, suffix: '+', label: 'PyPI Downloads', color: 'cyber-blue', isPyPI: true },
+  { value: 450, suffix: '+', label: 'Concurrent Users', color: 'cyber-purple', isPyPI: false },
+  { value: 4, suffix: '+', label: 'Years Experience', color: 'cyber-green', isPyPI: false },
 ]
 
 const education = [
@@ -64,6 +65,15 @@ const About = () => {
   const sectionRef = useRef<HTMLElement>(null)
   const statsRef = useRef<HTMLDivElement>(null)
   const timelineRef = useRef<HTMLDivElement>(null)
+  const { downloads: pypiDownloads, pepyUrl } = usePyPIDownloads('pythonmetatrader5')
+
+  // Parse PyPI downloads number for animation
+  const pypiValue = pypiDownloads ? parseInt(pypiDownloads.replace(/\s/g, ''), 10) : 36000
+
+  // Update stats with dynamic PyPI value
+  const stats = defaultStats.map(stat =>
+    stat.isPyPI ? { ...stat, value: pypiValue, suffix: '' } : stat
+  )
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -120,7 +130,7 @@ const About = () => {
     }, sectionRef)
 
     return () => ctx.revert()
-  }, [])
+  }, [pypiValue])
 
   return (
     <section
@@ -177,7 +187,7 @@ const About = () => {
                   </div>
                 </div>
                 <a
-                  href="/List.pdf"
+                  href="/Technical_Recommendation_Letter.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-cyber-purple/10 border border-cyber-purple/30 rounded font-mono text-sm text-cyber-purple hover:bg-cyber-purple/20 transition-colors"
@@ -203,7 +213,19 @@ const About = () => {
                 <span className="stat-value" data-value={stat.value}>0</span>
                 {stat.suffix}
               </div>
-              <div className="font-mono text-sm text-gray-400">{stat.label}</div>
+              <div className="font-mono text-sm text-gray-400 flex items-center justify-center gap-2">
+                {stat.label}
+                {stat.isPyPI && (
+                  <a
+                    href={pepyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-1 bg-cyber-blue/20 text-cyber-blue hover:bg-cyber-green/20 hover:text-cyber-green transition-colors text-[10px] rounded"
+                  >
+                    [verify]
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
