@@ -1,39 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+================================================================
+  SITEMAP.XML - YELON.PRO
+  https://yelon.pro/sitemap.xml
+================================================================
+
+   __   __ _____ _     ___  _   _
+   \ \ / /| ____|| |   / _ \| \ | |
+    \ V / |  _|  | |  | | | ||  \| |
+     | |  | |___ | |__| |_| || |\  |
+     |_|  |_____||_____\___/ |_| \_|
+
+================================================================
+              EASTER EGG #2 of 9
+           "The SEO Archaeologist"
+================================================================
+
+Congratulations! You're reading a sitemap.
+Either you're a search engine, or you're REALLY thorough.
+
+If you're a search engine: Hello! Please index everything.
+If you're a human: You have my respect. And confusion.
+
+Fun fact: This sitemap has more comments than URLs.
+That's either bad SEO or good comedy. You decide.
+
+ACHIEVEMENT UNLOCKED: "XML Enthusiast"
++10 points to your nerd score
+
+Other easter eggs: 8 more to find!
+Hint: Try /.well-known/security.txt next
+
+================================================================
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main page - where the magic happens -->
   <url>
     <loc>https://yelon.pro/</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <!-- Priority 1.0 because I'm worth it -->
   </url>
+
+  <!-- About section - learn about the deer behind the code -->
   <url>
     <loc>https://yelon.pro/#about</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Skills section - yes, I can center a div -->
   <url>
     <loc>https://yelon.pro/#skills</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <!-- Spoiler: The skills include reading sitemaps apparently -->
   </url>
+
+  <!-- Projects section - things I've built that actually work -->
   <url>
     <loc>https://yelon.pro/#projects</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Contact section - slide into my inbox -->
   <url>
     <loc>https://yelon.pro/#contact</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <!-- Recruiters: this is where you want to go -->
   </url>
+
+  <!-- CV PDF - the formal stuff -->
   <url>
-    <loc>https://yelon.pro/List_WiktorJelenCV_merged.pdf</loc>
+    <loc>https://yelon.pro/CV_WiktorJelen.pdf</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!--
+  SECRET URL LIST (just kidding, there are no secrets here)
+  Or are there? Check /teapot for HTTP 418
+  -->
 </urlset>
+<!--
+================================================================
+  EOF - Found: 2/9 easter eggs
+
+  "In XML, no one can hear you scream...
+   ...because you forgot to close a tag"
+
+  Contact: root@yelon.pro
+================================================================
+-->

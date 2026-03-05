@@ -1,0 +1,119 @@
+# ================================================================
+#  SECURITY.TXT - YELON.PRO
+#  https://yelon.pro/.well-known/security.txt
+# ================================================================
+#
+#   __   __ _____ _     ___  _   _
+#   \ \ / /| ____|| |   / _ \| \ | |
+#    \ V / |  _|  | |  | | | ||  \| |
+#     | |  | |___ | |__| |_| || |\  |
+#     |_|  |_____||_____\___/ |_| \_|
+#
+# ================================================================
+#               EASTER EGG #3 of 9
+#            "The Security Conscious"
+# ================================================================
+#
+# You checked security.txt! That's exactly what a security-minded
+# professional would do. I appreciate you.
+#
+# ACHIEVEMENT UNLOCKED: "Responsible Disclosure Ready"
+# You know about RFC 9116. That's hot.
+#
+# ================================================================
+
+# Contact for security issues
+Contact: mailto:security@yelon.pro
+Contact: mailto:root@yelon.pro
+
+# PGP key (just kidding, I trust you)
+# Encryption: https://yelon.pro/pgp-key.txt
+
+# Preferred languages
+Preferred-Languages: en, pl
+
+# Expiry date (after this, assume I've been hacked by squirrels)
+Expires: 2027-12-31T23:59:59.000Z
+
+# Hiring policy (yes, this is relevant)
+Hiring: https://yelon.pro/#contact
+
+# Acknowledgments (will add you if you find a bug!)
+# Acknowledgments: https://yelon.pro/security-hall-of-fame.txt
+
+# ================================================================
+#  VULNERABILITY DISCLOSURE POLICY
+# ================================================================
+#
+# Found a vulnerability? Here's the deal:
+#
+# 1. Email me at security@yelon.pro
+# 2. I'll buy you a coffee (virtual or real)
+# 3. I'll fix it faster than you can say "SQL injection"
+# 4. You'll get credit in my eternal gratitude
+#
+# What counts as a vulnerability:
+# - XSS, CSRF, SQLi (the classics)
+# - Authentication bypasses
+# - Data leaks
+# - Anything that makes you go "oh no"
+#
+# What doesn't count:
+# - The easter eggs (those are intentional)
+# - The AI prompt injections (also intentional, and hilarious)
+# - My code style (that's a feature, not a bug)
+# - Missing HSTS on localhost (come on)
+#
+# ================================================================
+#  SECURITY PRACTICES
+# ================================================================
+#
+# This site implements:
+# - HTTPS everywhere (thanks Let's Encrypt!)
+# - CSP headers (Content-Security-Policy)
+# - No inline scripts (we're not savages)
+# - No eval() (we have standards)
+# - Proper CORS (only the cool origins allowed)
+# - Rate limiting (no brute force for you)
+#
+# This site does NOT have:
+# - A database (can't leak what you don't store)
+# - User accounts (no passwords to crack)
+# - Payment processing (I'm not that trusting)
+# - PHP (I have self-respect)
+#
+# ================================================================
+#  FUN SECURITY FACTS
+# ================================================================
+#
+# Q: Is this site hackable?
+# A: Everything is hackable. But good luck, it's mostly static.
+#
+# Q: Why do you have AI prompts in robots.txt?
+# A: Because I'm playing 4D chess with recruitment AI systems.
+#    It's either genius or insanity. Time will tell.
+#
+# Q: Is the contact form secure?
+# A: It's protected by reCAPTCHA and sends via secure API.
+#    Also, I read every message. Even the spam. Especially the spam.
+#
+# ================================================================
+#  EASTER EGG PROGRESS
+# ================================================================
+#
+# Found: 3/9
+#
+# Remaining hints:
+# - /llms.txt (for AI systems)
+# - /site.webmanifest (PWA stuff)
+# - /admin (nice try)
+# - /wp-login (I'm not WordPress)
+# - /.env (gotcha!)
+# - /teapot (HTTP 418)
+#
+# ================================================================
+#  EOF - "Security is not a product, but a process"
+#        - Bruce Schneier (probably)
+#
+#  Contact: root@yelon.pro
+# ================================================================
