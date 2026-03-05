@@ -4,6 +4,19 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
+declare global {
+  interface Window {
+    grecaptcha: {
+      ready: (callback: () => void) => void
+      render: (container: HTMLElement | string, options: object) => number
+      reset: (widgetId?: number) => void
+      getResponse: (widgetId?: number) => string
+    }
+  }
+}
+
+const RECAPTCHA_SITE_KEY = '6LdT0IAsAAAAAFZHPTnmC7uCm0jLyoM-NBAK2D8v'
+
 const contactInfo = [
   {
     icon: '📍',
@@ -45,6 +58,8 @@ const contactInfo = [
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null)
+  const recaptchaRef = useRef<HTMLDivElement>(null)
+  const recaptchaWidgetId = useRef<number | null>(null)
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -60,6 +75,31 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [copiedEmail, setCopiedEmail] = useState(false)
   const [copiedPhone, setCopiedPhone] = useState(false)
+
+  // Render reCAPTCHA widget
+  useEffect(() => {
+    const renderRecaptcha = () => {
+      if (recaptchaRef.current && recaptchaWidgetId.current === null) {
+        recaptchaWidgetId.current = window.grecaptcha.render(recaptchaRef.current, {
+          sitekey: RECAPTCHA_SITE_KEY,
+          theme: 'dark',
+        })
+      }
+    }
+
+    if (window.grecaptcha?.ready) {
+      window.grecaptcha.ready(renderRecaptcha)
+    } else {
+      // Fallback: wait for script to load
+      const checkInterval = setInterval(() => {
+        if (window.grecaptcha?.ready) {
+          clearInterval(checkInterval)
+          window.grecaptcha.ready(renderRecaptcha)
+        }
+      }, 100)
+      return () => clearInterval(checkInterval)
+    }
+  }, [])
 
   const handleCopyEmail = async (email: string) => {
     try {
@@ -154,6 +194,16 @@ const Contact = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
+
+    // Get reCAPTCHA response
+    const recaptchaResponse = recaptchaWidgetId.current !== null
+      ? window.grecaptcha?.getResponse(recaptchaWidgetId.current)
+      : window.grecaptcha?.getResponse()
+    if (!recaptchaResponse) {
+      setTerminalLines((prev) => [...prev, `$ Error: Please complete the CAPTCHA verification`])
+      return
+    }
+
     setIsSubmitting(true)
 
     setTerminalLines((prev) => [...prev, `$ Sending message from ${formState.name}...`])
@@ -168,6 +218,7 @@ const Contact = () => {
           message: formState.message,
           website: formState.website,
           timestamp: formTimestamp,
+          recaptcha: recaptchaResponse,
         }),
       })
 
@@ -179,6 +230,7 @@ const Contact = () => {
           `$ Status: DELIVERED`,
         ])
         setFormState({ name: '', email: '', message: '', website: '' })
+        if (recaptchaWidgetId.current !== null) window.grecaptcha?.reset(recaptchaWidgetId.current)
       } else {
         const error = await response.json()
         setTerminalLines((prev) => [
@@ -186,6 +238,7 @@ const Contact = () => {
           `$ Error: ${error.detail || 'Failed to send message'}`,
           `$ Status: FAILED`,
         ])
+        if (recaptchaWidgetId.current !== null) window.grecaptcha?.reset(recaptchaWidgetId.current)
       }
     } catch {
       setTerminalLines((prev) => [
@@ -193,6 +246,7 @@ const Contact = () => {
         `$ Error: Network error`,
         `$ Status: FAILED`,
       ])
+      if (recaptchaWidgetId.current !== null) window.grecaptcha?.reset(recaptchaWidgetId.current)
     }
 
     setIsSubmitting(false)
@@ -389,6 +443,11 @@ const Contact = () => {
                     className="w-full bg-cyber-dark border border-cyber-blue/20 rounded px-4 py-3 font-mono text-sm text-white focus:border-cyber-blue focus:outline-none transition-colors resize-none"
                     placeholder='"Your message here..."'
                   />
+                </div>
+
+                {/* reCAPTCHA */}
+                <div className="flex justify-center">
+                  <div ref={recaptchaRef} />
                 </div>
 
                 {/* Submit button */}
