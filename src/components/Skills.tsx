@@ -9,7 +9,7 @@ const skillCategories = [
     title: 'Backend',
     icon: '⚡',
     color: 'cyber-blue',
-    skills: ['NestJS 11', 'TypeScript', 'FastAPI', 'TypeORM', 'MySQL', 'PostgreSQL'],
+    skills: ['Python', 'NestJS 11', 'TypeScript', 'FastAPI', 'TypeORM', 'MySQL', 'PostgreSQL'],
   },
   {
     title: 'Frontend',
@@ -21,7 +21,7 @@ const skillCategories = [
     title: 'Infrastructure',
     icon: '🔧',
     color: 'cyber-purple',
-    skills: ['Linux (Ubuntu/Debian)', 'Nginx', 'PM2', 'Docker', 'GitHub Actions', 'AWS'],
+    skills: ['Linux (Ubuntu/Debian)', 'Nginx', 'PM2', 'Docker', 'GitHub Actions', 'AWS', 'Python'],
   },
   {
     title: 'Cybersec Logic',
@@ -33,7 +33,7 @@ const skillCategories = [
     title: 'Low-Level',
     icon: '🔌',
     color: 'cyber-yellow',
-    skills: ['C++ (Embedded)', 'SPI/I2C', 'Klipper Firmware', 'Fusion 360', 'Hardware Optimization'],
+    skills: ['C++ (Embedded)', 'Python (Raspberry Pi)', 'SPI/I2C', 'Klipper Firmware', 'Fusion 360', 'Hardware Optimization'],
   },
   {
     title: 'Tools & Testing',
