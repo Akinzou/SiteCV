@@ -33,6 +33,13 @@ const Typewriter = ({ text, delay = 0, speed = 30, className = '', onComplete }:
   return <span className={className}>{displayed}</span>
 }
 
+// Detect in-app browsers (Messenger, Instagram, Facebook, etc.)
+const isInAppBrowser = () => {
+  if (typeof navigator === 'undefined') return false
+  const ua = navigator.userAgent || navigator.vendor
+  return /FBAN|FBAV|Instagram|Messenger|Twitter|Line|Snapchat|Pinterest/i.test(ua)
+}
+
 const Hero = () => {
   const heroRef = useRef<HTMLElement>(null)
   const badgeRef = useRef<HTMLDivElement>(null)
@@ -40,6 +47,13 @@ const Hero = () => {
   const subtitleRef = useRef<HTMLDivElement>(null)
   const terminalRef = useRef<HTMLDivElement>(null)
   const [terminalReady, setTerminalReady] = useState(false)
+  const [showDeer, setShowDeer] = useState(true)
+
+  useEffect(() => {
+    if (isInAppBrowser()) {
+      setShowDeer(false)
+    }
+  }, [])
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -148,9 +162,10 @@ const Hero = () => {
 
           {/* Terminal content */}
           <div className="p-4 md:p-6 font-mono text-sm overflow-x-auto">
-            {/* ASCII Deer */}
-            <div className="flex justify-center mb-4 w-full overflow-hidden">
-            <pre className="text-cyber-blue text-[7px] leading-none whitespace-pre origin-center scale-[0.55] sm:scale-[0.7] md:scale-100">{`        +-                                                                              .-
+            {/* ASCII Deer - hidden in WebView in-app browsers */}
+            {showDeer && (
+            <div className="flex justify-center mb-4">
+            <pre className="text-cyber-blue text-[5px] sm:text-[6px] md:text-[7px] leading-none whitespace-pre">{`        +-                                                                              .-
        #%%       =#+                                                          =#-       #%*
       :%@      =%%*                                                            +%%-      %%
       =%%     *@*                                                                *%+     %%-
@@ -206,6 +221,7 @@ const Hero = () => {
                                              :#%@@%#:
                                                .##.`}</pre>
             </div>
+            )}
 
             {terminalReady && (
               <>
