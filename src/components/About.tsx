@@ -11,6 +11,40 @@ const defaultStats = [
   { value: 4, suffix: '+', label: 'Years Experience', color: 'cyber-green', isPyPI: false },
 ]
 
+const reviews = [
+  { name: 'jakemedia207', country: 'US', rating: 5, time: '1 month ago', text: 'Helped me with my p1s 10/10 would recommend', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'tob_hu', country: 'CH', rating: 4, time: '6 months ago', text: 'Thank you for your Support!', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'skilnotfound', country: 'US', rating: 5, time: '6 months ago', text: 'Was very helpful and willing to help immediately. Was also very flexible in helping with the issue we were in vastly different time zones which meant it was difficult for us to always be online at the same time, But i would frequently get very early morning replies. 10/10 would reach out for consulting again.', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'kendrickcharles', country: 'US', rating: 5, time: '6 months ago', text: 'He was great and very attentive.', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'azproperties16', country: 'US', rating: 5, time: '7 months ago', text: "Amazing job! Wiktor helped me set up my 3d printer in a fraction of the time that I spent trying to set it up myself. He's absolutely worth it!", category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'atalavera3', country: 'US', rating: 5, time: '7 months ago', text: 'Very professional and helpful, quick to the point', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'jmwilson125', country: 'US', rating: 5, time: '7 months ago', text: 'Wiktor was very knowledgeable in klipper and helped me out a lot with my project', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'aaronw12', country: 'US', rating: 5, time: '7 months ago', text: 'Went above and beyond my initial requests. Very responsive and will be my Go-To for all my 3D printer needs.', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'jschanaker', country: 'US', rating: 5, time: '2 years ago', text: 'Wiktor did a great job and was very helpful along the way. Would recommend.', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'ccburton11', country: 'US', rating: 5, time: '2 years ago', text: "He was very helpful, knowledgeable, and responsive. I went in with bad print settings I couldn't figure out and left with a working printer, printing perfectly!", category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'redvsgoo', country: 'US', rating: 5, time: '2 years ago', text: 'Great service, excellent communication, and good to work with. I got the top tier service, and it was shown through his work. 100% would recommend his work to anyone looking to have marlin firmware made for their 3D printer.', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'ccrank85', country: 'US', rating: 5, time: '3 years ago', text: "This guy knows what he's doing. Helped me get my modified ender 3 printing again. I've been scratching my head on the problems with it for months and he helped me get it working in a couple days.", category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'the6thcrow', country: 'US', rating: 5, time: '3 years ago', text: 'Had some weird issues going on with my ender 3 pro after I tried to compile my own firmware, but we were able to fix it. Quick communication and very friendly. I extremely recommend him to do your custom firmware.', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'malikeost', country: 'US', rating: 5, time: '3 years ago', text: 'Good communication from seller, even with limited knowledge and still completed help setting up my printer.', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'owenland681', country: 'GB', rating: 5, time: '3 years ago', text: 'Absolutely Great!', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'keyven343', country: 'CA', rating: 5, time: '3 years ago', text: 'He give a very great support, gave me the courage to go back to my big project in 3d printing', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'keyven343', country: 'CA', rating: 5, time: '3 years ago', text: 'Hes my tech now, very nice in comunication and very nice :)', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'keithbfiver', country: 'US', rating: 5, time: '3 years ago', text: 'Amazing service. Super fast. Same day. And great communication. Got my printer working perfectly and fast. Thank you!', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'marlonvella', country: 'MT', rating: 5, time: '3 years ago', text: 'He stayed with me all the way he is amazing thank you', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'amarokstudios', country: 'US', rating: 5, time: '3 years ago', text: 'Absolutely amazing. If you are having issues with your 3D printer/Marlin firmware, this seller is definitely the place to go. I have an Ender 3 V1 with a CR Touch and filament runout sensor installed and I needed some help getting the firmware updated to use it. Definitely would recommend!', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'thee_kkid', country: 'US', rating: 5, time: '3 years ago', text: 'Thanks for helping me adjust my Easter and explaining to me what was wrong with my Internet', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'hendriski', country: 'GB', rating: 5, time: '3 years ago', text: "Great and Fast service. My Ender 3 is working perfect now. Am running the latest Marlin firmware and all done in an hour. He even added a little extra for the same price. Definitely gonna order from him again.", category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'lztechs', country: 'PL', rating: 5, time: '3 years ago', text: 'Incredible seller! Very helpful and patient. Would definitely recommend!!', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'sure4thing', country: 'US', rating: 5, time: '3 years ago', text: 'They worked nonstop with me to get my printer back up and running. Very knowledgeable and fast at replying. Will go to again in the future!', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'ggabs_does', country: 'US', rating: 5, time: '3 years ago', text: 'Fixed my printer! Had a max temp error and he helped me within a day! I will definitely be back!!', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'ritchie176', country: 'IE', rating: 5, time: '3 years ago', text: "Absolutely fantastic help! Was willing to work through the issue with me in a comprehensive manner. Overall just a great service. I can't give you one reason to not choose Wiktor's service :D", category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'fallenlight1', country: 'US', rating: 5, time: '3 years ago', text: 'Wonderful I have used him twice now and will reach out again if needed', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'user03095544', country: 'NZ', rating: 5, time: '3 years ago', text: 'Seller has been really amazing. He knew exactly what to do and guided me through the process. I would recommend him to anyone who is having difficulties. Great service and will definitely work with him again.', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'lztechs', country: 'PL', rating: 5, time: '3 years ago', text: 'Incredible experience, this seller has huge knowledge. Totally recommend!', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'bellemalcolm', country: 'HK', rating: 5, time: '3 years ago', text: 'Have a lot of knowledge about 3D printers, very nice to work with, wonderful service!', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'lztechs', country: 'PL', rating: 5, time: '3 years ago', text: '20/10, he has huge knowledge in 3d printing. I would love to work with him again', category: 'Embedded Linux (Armbian) for 3D printers' },
+]
+
 const education = [
   {
     period: '10.2024 – Present',
@@ -198,6 +232,62 @@ const About = () => {
                   View Full Letter
                 </a>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Client Reviews - Infinite Scroll */}
+        <div className="glass rounded-lg p-6 mb-16 relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyber-green via-cyber-blue to-transparent" />
+          <div className="flex items-center justify-between mb-6">
+            <h3 className="font-display text-xl text-white flex items-center gap-3">
+              <span className="text-cyber-green">&gt;</span>
+              Client_Reviews
+              <span className="text-sm font-mono text-gray-500">({reviews.length})</span>
+            </h3>
+            <div className="flex items-center gap-2">
+              <span className="text-cyber-green text-lg">{'★'.repeat(5)}</span>
+              <span className="font-mono text-sm text-gray-400">4.9 avg</span>
+              <a
+                href="https://www.fiverr.com/akinzouent"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-1.5 bg-cyber-green/20 text-cyber-green hover:bg-cyber-blue/20 hover:text-cyber-blue transition-colors text-[10px] font-mono rounded"
+              >
+                [verify]
+              </a>
+            </div>
+          </div>
+
+          <div className="reviews-scroll-container h-[400px]">
+            <div className="reviews-scroll">
+              {/* Duplicate reviews for seamless loop */}
+              {[...reviews, ...reviews].map((review, index) => (
+                <div
+                  key={index}
+                  className="mb-4 p-4 bg-cyber-dark/50 rounded-lg border border-cyber-blue/10 hover:border-cyber-blue/30 transition-colors"
+                >
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-cyber-blue/20 flex items-center justify-center">
+                        <span className="text-cyber-blue font-bold text-xs">{review.name.slice(0, 2).toUpperCase()}</span>
+                      </div>
+                      <div>
+                        <p className="font-mono text-sm text-white">{review.name}</p>
+                        <p className="font-mono text-xs text-gray-500">{review.country} • {review.time}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <span className="text-cyber-green text-sm">{'★'.repeat(review.rating)}</span>
+                      {review.rating < 5 && <span className="text-gray-600 text-sm">{'★'.repeat(5 - review.rating)}</span>}
+                    </div>
+                  </div>
+                  <p className="text-gray-300 text-sm leading-relaxed">{review.text}</p>
+                  <span className="inline-block mt-2 px-2 py-0.5 text-xs font-mono bg-cyber-purple/10 text-cyber-purple rounded">
+                    {review.category}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
