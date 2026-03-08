@@ -151,3 +151,39 @@ body {
     linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
 }
+
+/* Reviews infinite scroll */
+.reviews-scroll-container {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.reviews-scroll {
+  animation: scrollUp 60s linear infinite;
+}
+
+.reviews-scroll:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
