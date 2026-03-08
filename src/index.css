@@ -19,6 +19,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Fix for in-app browsers (Messenger, Telegram, etc.) */
+@supports (height: 100dvh) {
+  .min-h-screen {
+    min-height: 100dvh;
+  }
+}
+
 body {
   font-family: 'JetBrains Mono', monospace;
   background-color: #0a0a0f;
