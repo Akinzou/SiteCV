@@ -18,6 +18,8 @@ Live: https://yelon.pro
 - Responsive design
 - Contact form with reCAPTCHA v2
 - Real-time PyPI download counter
+- Client reviews section with infinite scroll (31 Fiverr testimonials)
+- CI/CD pipeline with GitHub Actions (auto-deploy to VPS)
 
 ## Easter Eggs
 
@@ -63,8 +65,18 @@ npm run build
 docker build -t sitecv .
 
 # Run container
-docker run -d --name sitecv -p 3000:80 sitecv
+docker run -d --name sitecv -p 8080:80 sitecv
 ```
+
+## CI/CD
+
+GitHub Actions workflow automatically deploys to VPS on push to `master`.
+
+Required secrets:
+- `VPS_HOST` - VPS hostname
+- `VPS_PORT` - SSH port
+- `VPS_USER` - SSH username
+- `VPS_SSH_KEY` - Private SSH key (ed25519, no passphrase)
 
 ## Project Structure
 
