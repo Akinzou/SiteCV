@@ -239,13 +239,13 @@ const About = () => {
         {/* Client Reviews - Infinite Scroll */}
         <div className="glass rounded-lg p-6 mb-16 relative overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyber-green via-cyber-blue to-transparent" />
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
             <h3 className="font-display text-xl text-white flex items-center gap-3">
               <span className="text-cyber-green">&gt;</span>
               Client_Reviews
               <span className="text-sm font-mono text-gray-500">({reviews.length})</span>
             </h3>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <span className="text-cyber-green text-lg">{'★'.repeat(5)}</span>
               <span className="font-mono text-sm text-gray-400">4.9 avg</span>
               <a
