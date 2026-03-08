@@ -136,7 +136,7 @@ const Hero = () => {
         {/* Terminal window */}
         <div
           ref={terminalRef}
-          className="max-w-4xl mx-auto glass rounded-lg overflow-hidden text-left opacity-0 w-full"
+          className="max-w-4xl w-full mx-auto glass rounded-lg overflow-hidden text-left opacity-0"
         >
           {/* Terminal header */}
           <div className="flex items-center gap-2 px-4 py-3 bg-cyber-dark border-b border-cyber-blue/10">
@@ -148,9 +148,9 @@ const Hero = () => {
 
           {/* Terminal content */}
           <div className="p-4 md:p-6 font-mono text-sm overflow-x-auto">
-            {/* ASCII Deer - scaled down on small screens */}
-            <div className="flex justify-center mb-4">
-            <pre className="text-cyber-blue text-[3px] xs:text-[4px] sm:text-[5px] md:text-[7px] leading-none whitespace-pre scale-[0.6] sm:scale-100 origin-center">{`        +-                                                                              .-
+            {/* ASCII Deer */}
+            <div className="flex justify-center mb-4 max-w-full overflow-hidden">
+            <pre className="text-cyber-blue text-[5px] md:text-[7px] leading-none whitespace-pre">{`        +-                                                                              .-
        #%%       =#+                                                          =#-       #%*
       :%@      =%%*                                                            +%%-      %%
       =%%     *@*                                                                *%+     %%-
