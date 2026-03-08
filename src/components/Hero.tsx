@@ -149,8 +149,8 @@ const Hero = () => {
           {/* Terminal content */}
           <div className="p-4 md:p-6 font-mono text-sm overflow-x-auto">
             {/* ASCII Deer */}
-            <div className="flex justify-center mb-4 max-w-full overflow-hidden">
-            <pre className="text-cyber-blue text-[5px] md:text-[7px] leading-none whitespace-pre">{`        +-                                                                              .-
+            <div className="flex justify-center mb-4 w-full overflow-hidden">
+            <pre className="text-cyber-blue text-[7px] leading-none whitespace-pre origin-center scale-[0.55] sm:scale-[0.7] md:scale-100">{`        +-                                                                              .-
        #%%       =#+                                                          =#-       #%*
       :%@      =%%*                                                            +%%-      %%
       =%%     *@*                                                                *%+     %%-
