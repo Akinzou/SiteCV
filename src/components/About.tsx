@@ -196,6 +196,10 @@ const About = () => {
               <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">RANDLAB</span>
               <span className="font-mono text-xs text-gray-500">Software House</span>
             </div>
+            <div className="group flex flex-col items-center">
+              <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">CTS AUDIO</span>
+              <span className="font-mono text-xs text-gray-500">Audio Systems</span>
+            </div>
           </div>
         </div>
 
@@ -225,6 +229,42 @@ const About = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-cyber-purple/10 border border-cyber-purple/30 rounded font-mono text-sm text-cyber-purple hover:bg-cyber-purple/20 transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  View Full Letter
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Second Recommendation section - CTS */}
+        <div className="glass rounded-lg p-8 mb-16 relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyber-blue via-cyber-purple to-transparent" />
+          <div className="flex items-start gap-4">
+            <span className="text-4xl text-cyber-blue/50">"</span>
+            <div className="flex-1">
+              <p className="text-gray-300 leading-relaxed italic mb-4">
+                Wiktor Jeleń is a reliable, independent, and highly organized individual. He stands out with his analytical approach to technical problems and his ability to quickly find effective solutions. We wholeheartedly recommend Wiktor Jeleń as a specialist in Linux systems, Python programming, and cybersecurity. We are confident that his knowledge and dedication will be a valuable contribution to any technology organization.
+              </p>
+              <div className="flex items-center justify-between flex-wrap gap-4 mt-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-cyber-blue/20 flex items-center justify-center">
+                    <span className="text-cyber-blue font-bold">SŁ</span>
+                  </div>
+                  <div>
+                    <p className="font-mono text-sm text-white">Sebastian Łatka</p>
+                    <p className="font-mono text-xs text-cyber-blue">R&D Director & CEO, CTS TECHNOLOGY</p>
+                    <p className="font-mono text-xs text-gray-500">Poland • March 2026</p>
+                  </div>
+                </div>
+                <a
+                  href="/RecomendationLetterCTS.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-cyber-blue/10 border border-cyber-blue/30 rounded font-mono text-sm text-cyber-blue hover:bg-cyber-blue/20 transition-colors"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
