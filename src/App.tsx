@@ -26,7 +26,7 @@ function App() {
           <Contact />
         </main>
         <footer className="py-8 text-center text-cyber-blue/50 font-mono text-sm border-t border-cyber-blue/10">
-          <p>© 2026 Wiktor Jeleń | Built with React + Three.js + GSAP</p>
+          <p>© 2026 Wiktor Jeleń | Built with React + Three.js + GSAP | <a href="https://github.com/Akinzou/SiteCV" target="_blank" rel="noopener noreferrer" className="text-cyber-purple hover:text-cyber-blue transition-colors">[source]</a></p>
           <p className="mt-2 text-xs">root@portfolio:~$ echo "High-Velocity Engineering"</p>
         </footer>
       </div>
