@@ -121,7 +121,7 @@ const Hero = () => {
         {/* Status badge */}
         <div ref={badgeRef} className="inline-flex items-center gap-2 px-4 py-2 mb-8 glass rounded-full opacity-0">
           <span className="w-2 h-2 bg-cyber-green rounded-full animate-pulse" />
-          <span className="font-mono text-sm text-cyber-green">Seeking complex technical challenges</span>
+          <span className="font-mono text-sm text-cyber-green">Build-Test-Deploy</span>
         </div>
 
         {/* Main title */}
