@@ -48,7 +48,7 @@ const reviews = [
 const education = [
   {
     period: '10.2024 – Present',
-    degree: 'B.Eng. in Computer Science, Cybersecurity',
+    degree: 'B.Eng. in Computer Science, Cybersecurity (Part-time, Weekends)',
     school: 'WSB National Louis University',
     location: 'Kraków, Poland',
   },
