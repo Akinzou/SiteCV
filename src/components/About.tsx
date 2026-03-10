@@ -184,48 +184,118 @@ const About = () => {
         <div className="mb-12">
           <p className="font-mono text-xs text-gray-500 text-center mb-6">WORKED WITH</p>
           <div className="marquee-container">
-            <div className="marquee-scroll">
+            <div className="marquee-track">
               {/* First set */}
-              <div className="group flex flex-col items-center flex-shrink-0">
-                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">RANDLAB</span>
-                <span className="font-mono text-xs text-gray-500">Software House</span>
+              <div className="marquee-content">
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">RANDLAB</span>
+                  <span className="font-mono text-xs text-gray-500">Software House</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">CTS AUDIO</span>
+                  <span className="font-mono text-xs text-gray-500">Audio Systems</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">GEEETECH</span>
+                  <span className="font-mono text-xs text-gray-500">Shenzhen R&D</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-purple transition-colors">POLSAT PLUS</span>
+                  <span className="font-mono text-xs text-gray-500">Cyfrowy Polsat Group</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">WSB-NLU</span>
+                  <span className="font-mono text-xs text-gray-500">National Louis University</span>
+                </div>
               </div>
-              <div className="group flex flex-col items-center flex-shrink-0">
-                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">CTS AUDIO</span>
-                <span className="font-mono text-xs text-gray-500">Audio Systems</span>
+              {/* Duplicate sets for seamless loop */}
+              <div className="marquee-content">
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">RANDLAB</span>
+                  <span className="font-mono text-xs text-gray-500">Software House</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">CTS AUDIO</span>
+                  <span className="font-mono text-xs text-gray-500">Audio Systems</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">GEEETECH</span>
+                  <span className="font-mono text-xs text-gray-500">Shenzhen R&D</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-purple transition-colors">POLSAT PLUS</span>
+                  <span className="font-mono text-xs text-gray-500">Cyfrowy Polsat Group</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">WSB-NLU</span>
+                  <span className="font-mono text-xs text-gray-500">National Louis University</span>
+                </div>
               </div>
-              <div className="group flex flex-col items-center flex-shrink-0">
-                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">GEEETECH</span>
-                <span className="font-mono text-xs text-gray-500">Shenzhen R&D</span>
+              <div className="marquee-content">
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">RANDLAB</span>
+                  <span className="font-mono text-xs text-gray-500">Software House</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">CTS AUDIO</span>
+                  <span className="font-mono text-xs text-gray-500">Audio Systems</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">GEEETECH</span>
+                  <span className="font-mono text-xs text-gray-500">Shenzhen R&D</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-purple transition-colors">POLSAT PLUS</span>
+                  <span className="font-mono text-xs text-gray-500">Cyfrowy Polsat Group</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">WSB-NLU</span>
+                  <span className="font-mono text-xs text-gray-500">National Louis University</span>
+                </div>
               </div>
-              <div className="group flex flex-col items-center flex-shrink-0">
-                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-purple transition-colors">POLSAT PLUS</span>
-                <span className="font-mono text-xs text-gray-500">Cyfrowy Polsat Group</span>
+              <div className="marquee-content">
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">RANDLAB</span>
+                  <span className="font-mono text-xs text-gray-500">Software House</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">CTS AUDIO</span>
+                  <span className="font-mono text-xs text-gray-500">Audio Systems</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">GEEETECH</span>
+                  <span className="font-mono text-xs text-gray-500">Shenzhen R&D</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-purple transition-colors">POLSAT PLUS</span>
+                  <span className="font-mono text-xs text-gray-500">Cyfrowy Polsat Group</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">WSB-NLU</span>
+                  <span className="font-mono text-xs text-gray-500">National Louis University</span>
+                </div>
               </div>
-              <div className="group flex flex-col items-center flex-shrink-0">
-                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">WSB-NLU</span>
-                <span className="font-mono text-xs text-gray-500">National Louis University</span>
-              </div>
-              {/* Duplicate set for seamless loop */}
-              <div className="group flex flex-col items-center flex-shrink-0">
-                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">RANDLAB</span>
-                <span className="font-mono text-xs text-gray-500">Software House</span>
-              </div>
-              <div className="group flex flex-col items-center flex-shrink-0">
-                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">CTS AUDIO</span>
-                <span className="font-mono text-xs text-gray-500">Audio Systems</span>
-              </div>
-              <div className="group flex flex-col items-center flex-shrink-0">
-                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">GEEETECH</span>
-                <span className="font-mono text-xs text-gray-500">Shenzhen R&D</span>
-              </div>
-              <div className="group flex flex-col items-center flex-shrink-0">
-                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-purple transition-colors">POLSAT PLUS</span>
-                <span className="font-mono text-xs text-gray-500">Cyfrowy Polsat Group</span>
-              </div>
-              <div className="group flex flex-col items-center flex-shrink-0">
-                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">WSB-NLU</span>
-                <span className="font-mono text-xs text-gray-500">National Louis University</span>
+              <div className="marquee-content">
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">RANDLAB</span>
+                  <span className="font-mono text-xs text-gray-500">Software House</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">CTS AUDIO</span>
+                  <span className="font-mono text-xs text-gray-500">Audio Systems</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">GEEETECH</span>
+                  <span className="font-mono text-xs text-gray-500">Shenzhen R&D</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-purple transition-colors">POLSAT PLUS</span>
+                  <span className="font-mono text-xs text-gray-500">Cyfrowy Polsat Group</span>
+                </div>
+                <div className="group flex flex-col items-center flex-shrink-0">
+                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">WSB-NLU</span>
+                  <span className="font-mono text-xs text-gray-500">National Louis University</span>
+                </div>
               </div>
             </div>
           </div>
