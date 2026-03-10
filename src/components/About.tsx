@@ -348,7 +348,7 @@ const About = () => {
                 I recommend Mr. Wiktor Jeleń as a highly qualified specialist. His technical proactivity, cold analytics, and ability to communicate complex architectural concepts make him an engineer ready to execute the most critical technological projects.
               </p>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-cyber-green/20 flex items-center justify-center">
+                <div className="w-10 h-10 flex-shrink-0 rounded-full bg-cyber-green/20 flex items-center justify-center">
                   <span className="text-cyber-green font-bold">MS</span>
                 </div>
                 <div>
@@ -458,7 +458,7 @@ const About = () => {
               </p>
               <div className="flex items-center justify-between flex-wrap gap-4 mt-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-cyber-blue/20 flex items-center justify-center">
+                  <div className="w-10 h-10 flex-shrink-0 rounded-full bg-cyber-blue/20 flex items-center justify-center">
                     <span className="text-cyber-blue font-bold">SŁ</span>
                   </div>
                   <div>
