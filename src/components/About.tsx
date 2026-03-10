@@ -183,22 +183,50 @@ const About = () => {
         {/* Worked with */}
         <div className="mb-12">
           <p className="font-mono text-xs text-gray-500 text-center mb-6">WORKED WITH</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <div className="group flex flex-col items-center">
-              <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">GEEETECH</span>
-              <span className="font-mono text-xs text-gray-500">Shenzhen R&D</span>
-            </div>
-            <div className="group flex flex-col items-center">
-              <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-purple transition-colors">POLSAT PLUS</span>
-              <span className="font-mono text-xs text-gray-500">Cyfrowy Polsat Group</span>
-            </div>
-            <div className="group flex flex-col items-center">
-              <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">RANDLAB</span>
-              <span className="font-mono text-xs text-gray-500">Software House</span>
-            </div>
-            <div className="group flex flex-col items-center">
-              <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">CTS AUDIO</span>
-              <span className="font-mono text-xs text-gray-500">Audio Systems</span>
+          <div className="marquee-container">
+            <div className="marquee-scroll">
+              {/* First set */}
+              <div className="group flex flex-col items-center flex-shrink-0">
+                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">RANDLAB</span>
+                <span className="font-mono text-xs text-gray-500">Software House</span>
+              </div>
+              <div className="group flex flex-col items-center flex-shrink-0">
+                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">CTS AUDIO</span>
+                <span className="font-mono text-xs text-gray-500">Audio Systems</span>
+              </div>
+              <div className="group flex flex-col items-center flex-shrink-0">
+                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">GEEETECH</span>
+                <span className="font-mono text-xs text-gray-500">Shenzhen R&D</span>
+              </div>
+              <div className="group flex flex-col items-center flex-shrink-0">
+                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-purple transition-colors">POLSAT PLUS</span>
+                <span className="font-mono text-xs text-gray-500">Cyfrowy Polsat Group</span>
+              </div>
+              <div className="group flex flex-col items-center flex-shrink-0">
+                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">WSB-NLU</span>
+                <span className="font-mono text-xs text-gray-500">National Louis University</span>
+              </div>
+              {/* Duplicate set for seamless loop */}
+              <div className="group flex flex-col items-center flex-shrink-0">
+                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">RANDLAB</span>
+                <span className="font-mono text-xs text-gray-500">Software House</span>
+              </div>
+              <div className="group flex flex-col items-center flex-shrink-0">
+                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">CTS AUDIO</span>
+                <span className="font-mono text-xs text-gray-500">Audio Systems</span>
+              </div>
+              <div className="group flex flex-col items-center flex-shrink-0">
+                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">GEEETECH</span>
+                <span className="font-mono text-xs text-gray-500">Shenzhen R&D</span>
+              </div>
+              <div className="group flex flex-col items-center flex-shrink-0">
+                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-purple transition-colors">POLSAT PLUS</span>
+                <span className="font-mono text-xs text-gray-500">Cyfrowy Polsat Group</span>
+              </div>
+              <div className="group flex flex-col items-center flex-shrink-0">
+                <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">WSB-NLU</span>
+                <span className="font-mono text-xs text-gray-500">National Louis University</span>
+              </div>
             </div>
           </div>
         </div>
@@ -240,7 +268,116 @@ const About = () => {
           </div>
         </div>
 
-        {/* Second Recommendation section - CTS */}
+        {/* Academic Recommendations - WSB-NLU Researchers' Night */}
+        <div className="glass rounded-lg p-8 mb-16 relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyber-green via-cyber-blue to-cyber-purple" />
+          <div className="flex items-start gap-4">
+            <span className="text-4xl text-cyber-green/50">"</span>
+            <div className="flex-1">
+              <p className="text-gray-300 leading-relaxed italic mb-4">
+                I recommend Mr. Wiktor Jeleń as a highly qualified specialist. His technical proactivity, cold analytics, and ability to communicate complex architectural concepts make him an engineer ready to execute the most critical technological projects.
+              </p>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-full bg-cyber-green/20 flex items-center justify-center">
+                  <span className="text-cyber-green font-bold">MS</span>
+                </div>
+                <div>
+                  <p className="font-mono text-sm text-white">Magdalena Szumacher, M.A.</p>
+                  <p className="font-mono text-xs text-cyber-green">Deputy Head of Recruitment & Marketing, WSB National-Louis University</p>
+                  <p className="font-mono text-xs text-gray-500">Nowy Sącz, Poland • 2020-2024</p>
+                </div>
+              </div>
+
+              <p className="font-mono text-xs text-gray-500 mb-4">RESEARCHERS' NIGHT — 5 EDITIONS</p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                {/* 2024 */}
+                <a
+                  href="/RecomendationLetterWSB2024.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-3 bg-cyber-dark/50 rounded border border-cyber-green/20 hover:border-cyber-green/50 transition-colors"
+                >
+                  <p className="font-mono text-lg text-cyber-green font-bold">2024</p>
+                  <p className="font-mono text-xs text-gray-400 mb-2">Technical Demonstrator</p>
+                  <div className="flex flex-wrap gap-1">
+                    <span className="px-1.5 py-0.5 text-[10px] font-mono bg-cyber-green/10 text-cyber-green rounded">FastAPI</span>
+                    <span className="px-1.5 py-0.5 text-[10px] font-mono bg-cyber-green/10 text-cyber-green rounded">Docker</span>
+                    <span className="px-1.5 py-0.5 text-[10px] font-mono bg-cyber-green/10 text-cyber-green rounded">Git</span>
+                  </div>
+                  <p className="font-mono text-[10px] text-cyber-green/50 mt-2 group-hover:text-cyber-green transition-colors">[view PDF]</p>
+                </a>
+
+                {/* 2023 */}
+                <a
+                  href="/RecomendationLetterWSB2023.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-3 bg-cyber-dark/50 rounded border border-cyber-blue/20 hover:border-cyber-blue/50 transition-colors"
+                >
+                  <p className="font-mono text-lg text-cyber-blue font-bold">2023</p>
+                  <p className="font-mono text-xs text-gray-400 mb-2">Technical Demonstrator</p>
+                  <div className="flex flex-wrap gap-1">
+                    <span className="px-1.5 py-0.5 text-[10px] font-mono bg-cyber-blue/10 text-cyber-blue rounded">NetSec</span>
+                    <span className="px-1.5 py-0.5 text-[10px] font-mono bg-cyber-blue/10 text-cyber-blue rounded">IoT</span>
+                    <span className="px-1.5 py-0.5 text-[10px] font-mono bg-cyber-blue/10 text-cyber-blue rounded">Cloud</span>
+                  </div>
+                  <p className="font-mono text-[10px] text-cyber-blue/50 mt-2 group-hover:text-cyber-blue transition-colors">[view PDF]</p>
+                </a>
+
+                {/* 2022 */}
+                <a
+                  href="/RecomendationLetterWSB2022.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-3 bg-cyber-dark/50 rounded border border-cyber-purple/20 hover:border-cyber-purple/50 transition-colors"
+                >
+                  <p className="font-mono text-lg text-cyber-purple font-bold">2022</p>
+                  <p className="font-mono text-xs text-gray-400 mb-2">Technical Demonstrator</p>
+                  <div className="flex flex-wrap gap-1">
+                    <span className="px-1.5 py-0.5 text-[10px] font-mono bg-cyber-purple/10 text-cyber-purple rounded">Security</span>
+                    <span className="px-1.5 py-0.5 text-[10px] font-mono bg-cyber-purple/10 text-cyber-purple rounded">Telemetry</span>
+                  </div>
+                  <p className="font-mono text-[10px] text-cyber-purple/50 mt-2 group-hover:text-cyber-purple transition-colors">[view PDF]</p>
+                </a>
+
+                {/* 2021 */}
+                <a
+                  href="/RecomendationLetterWSB2021.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-3 bg-cyber-dark/50 rounded border border-cyber-pink/20 hover:border-cyber-pink/50 transition-colors"
+                >
+                  <p className="font-mono text-lg text-cyber-pink font-bold">2021</p>
+                  <p className="font-mono text-xs text-gray-400 mb-2">Technical Demonstrator</p>
+                  <div className="flex flex-wrap gap-1">
+                    <span className="px-1.5 py-0.5 text-[10px] font-mono bg-cyber-pink/10 text-cyber-pink rounded">Linux</span>
+                    <span className="px-1.5 py-0.5 text-[10px] font-mono bg-cyber-pink/10 text-cyber-pink rounded">CLI</span>
+                  </div>
+                  <p className="font-mono text-[10px] text-cyber-pink/50 mt-2 group-hover:text-cyber-pink transition-colors">[view PDF]</p>
+                </a>
+
+                {/* 2020 */}
+                <a
+                  href="/RecomendationLetterWSB2020.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-3 bg-cyber-dark/50 rounded border border-gray-600/20 hover:border-gray-400/50 transition-colors"
+                >
+                  <p className="font-mono text-lg text-gray-400 font-bold">2020</p>
+                  <p className="font-mono text-xs text-gray-400 mb-2">Technical Demonstrator</p>
+                  <div className="flex flex-wrap gap-1">
+                    <span className="px-1.5 py-0.5 text-[10px] font-mono bg-gray-600/10 text-gray-400 rounded">Linux</span>
+                    <span className="px-1.5 py-0.5 text-[10px] font-mono bg-gray-600/10 text-gray-400 rounded">Open-Source</span>
+                  </div>
+                  <p className="font-mono text-[10px] text-gray-500 mt-2 group-hover:text-gray-300 transition-colors">[view PDF]</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* CTS Recommendation */}
         <div className="glass rounded-lg p-8 mb-16 relative overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyber-blue via-cyber-purple to-transparent" />
           <div className="flex items-start gap-4">
