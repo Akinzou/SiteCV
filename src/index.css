@@ -226,7 +226,8 @@ html, body {
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee 8s linear infinite;
+  animation: marquee 10s linear infinite;
+  will-change: transform;
 }
 
 .marquee-track:hover {
@@ -247,15 +248,15 @@ html, body {
   }
 
   .marquee-track {
-    animation-duration: 6s;
+    animation-duration: 8s;
   }
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(0);
+  from {
+    transform: translate3d(0, 0, 0);
   }
-  100% {
-    transform: translateX(-20%);
+  to {
+    transform: translate3d(-20%, 0, 0);
   }
 }
