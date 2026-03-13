@@ -433,7 +433,7 @@ const Contact = () => {
                 {/* Message input */}
                 <div>
                   <label className="font-mono text-sm text-gray-400 block mb-2">
-                    <span className="text-cyber-purple">const</span> message <span className="text-gray-500">=</span>
+                    <span className="text-cyber-purple">string</span> message <span className="text-gray-500">=</span>
                   </label>
                   <textarea
                     value={formState.message}
