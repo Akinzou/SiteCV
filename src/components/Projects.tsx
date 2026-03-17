@@ -97,29 +97,12 @@ const Projects = () => {
           },
         }
       )
-
-      // Other projects grid
-      gsap.fromTo(
-        '.project-card',
-        { opacity: 0, scale: 0.9 },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.5,
-          stagger: 0.15,
-          scrollTrigger: {
-            trigger: '.other-projects',
-            start: 'top 85%',
-          },
-        }
-      )
     }, sectionRef)
 
     return () => ctx.revert()
   }, [])
 
   const featuredProjects = projects.filter((p) => p.featured)
-  const otherProjects = projects.filter((p) => !p.featured)
 
   return (
     <section
@@ -230,57 +213,6 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Other projects */}
-        <h3 className="font-display text-xl text-white mb-8 flex items-center gap-3">
-          <span className="text-cyber-purple">&gt;</span>
-          Other_Notable_Work
-        </h3>
-
-        <div className="other-projects grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {otherProjects.map((project) => (
-            <div
-              key={project.title}
-              className="project-card glass rounded-lg p-6 hover-glow group relative overflow-hidden cursor-pointer"
-            >
-              {/* Top accent line */}
-              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-${project.color} to-transparent`} />
-
-              {/* Folder icon */}
-              <div className="flex justify-between items-start mb-4">
-                <svg
-                  className={`w-10 h-10 text-${project.color}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
-                  />
-                </svg>
-              </div>
-
-              <h4 className="font-display font-bold text-lg text-white mb-1">{project.title}</h4>
-              <p className={`font-mono text-xs text-${project.color} mb-3`}>{project.subtitle}</p>
-              <p className="text-gray-400 text-sm mb-4 line-clamp-3">{project.description}</p>
-
-              <div className="flex flex-wrap gap-2 mt-auto">
-                {project.tech.slice(0, 4).map((t) => (
-                  <span key={t} className="text-xs font-mono text-gray-500">
-                    {t}
-                  </span>
-                ))}
-              </div>
-
-              {/* Hover glow effect */}
-              <div
-                className={`absolute inset-0 bg-${project.color}/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}
-              />
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   )

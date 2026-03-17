@@ -66,7 +66,8 @@ const experience = [
     title: 'System Architect',
     company: 'Randlab Software (Anatomy Project)',
     location: 'Remote',
-    description: 'Backend architecture for 450+ concurrent users. NestJS 11, LDAP auth, OWASP audits, CI/CD pipelines.',
+    team: '3-person team, sole full-time engineer',
+    description: 'Designed and built complete backend architecture for Medical University of Silesia. Delivered REST API, LDAP SSO integration, OWASP security audits, and CI/CD pipelines. Production system handling 450+ concurrent users during exam periods.',
     tech: ['NestJS', 'TypeORM', 'MySQL', 'JWT', 'GitHub Actions'],
   },
   {
@@ -74,7 +75,8 @@ const experience = [
     title: 'R&D Systems Engineer',
     company: 'GEEETECH',
     location: 'Shenzhen, China / Remote',
-    description: 'Hardware enhancement & firmware optimization. Bridge between EU standards and Chinese R&D velocity.',
+    team: 'Solo engineer, direct R&D collaboration',
+    description: 'Complete structural redesign of A10M printer components. Klipper firmware optimization, stepper motor control enhancement, CAD modeling in Fusion 360. Acted as bridge between EU quality standards and Chinese R&D velocity.',
     tech: ['Klipper', 'Fusion 360', 'C++', 'Linux'],
   },
   {
@@ -82,7 +84,8 @@ const experience = [
     title: 'Sales Systems Consultant',
     company: 'Randlab Software (Polsat Plus Group)',
     location: 'Remote',
-    description: 'Automated documentation generation for POS, telemarketing, and mobile sales channels.',
+    team: '10-person cross-functional team',
+    description: 'Automated documentation generation for POS, telemarketing, and mobile sales channels across Polsat Plus Group. Streamlined workflows for sales operations documentation.',
     tech: ['Automation', 'Documentation', 'Sales Systems'],
   },
   {
@@ -90,8 +93,9 @@ const experience = [
     title: 'Embedded / Thingsboard Specialist',
     company: 'Randlab Software',
     location: 'Nowy Sącz, Poland',
-    description: 'Pipe impedance monitoring system for heating industry. Hardware-web integration with AWS alerting.',
-    tech: ['ThingsBoard', 'C++', 'AWS', 'IoT'],
+    team: '2-person team, ThingsBoard & Arduino focus',
+    description: 'Pipe impedance monitoring system for heating industry. Configured ThingsBoard platform with custom plugins, built Arduino mock devices for data simulation and testing without production hardware. AWS-based alerting integration.',
+    tech: ['ThingsBoard', 'Arduino', 'AWS', 'IoT'],
   },
 ]
 
@@ -595,7 +599,8 @@ const About = () => {
                 <span className="font-mono text-xs text-cyber-green">{exp.period}</span>
                 <h4 className="font-display text-lg text-white mt-2">{exp.title}</h4>
                 <p className="font-mono text-sm text-cyber-blue">{exp.company}</p>
-                <p className="font-mono text-xs text-gray-500 mb-3">{exp.location}</p>
+                <p className="font-mono text-xs text-gray-500">{exp.location}</p>
+                <p className="font-mono text-xs text-cyber-purple mb-3">{exp.team}</p>
                 <p className="text-gray-400 text-sm mb-4">{exp.description}</p>
                 <div className={`flex flex-wrap gap-2 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
                   {exp.tech.map((t) => (
@@ -642,8 +647,7 @@ const About = () => {
         <div className="glass rounded-lg p-8 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-pink" />
           <p className="text-gray-300 leading-relaxed max-w-3xl">
-            I operate within the <span className="text-cyber-green font-semibold">High-Velocity Engineering</span> paradigm.
-            I leverage LLMs as high-order compilers, allowing for rapid transition from business logic to stable production code.
+            I use AI tools (Claude, Cursor) for code generation and iteration - focusing on architecture decisions, code review, and system design rather than manual typing.
             My measurable impact – including a proprietary Quant library operating on real capital and hardware optimization
             experience in Shenzhen – serves as hard evidence of my methodology in delivering high-stakes results.
           </p>
