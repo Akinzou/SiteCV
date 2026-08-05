@@ -38,7 +38,7 @@ export const usePyPIDownloads = (packageName: string) => {
         }
       } catch (error) {
         console.error('Failed to fetch PyPI downloads:', error)
-        setDownloads('36,000+') // fallback
+        setDownloads('40,000+') // fallback
       } finally {
         setLoading(false)
       }

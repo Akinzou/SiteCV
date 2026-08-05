@@ -6,43 +6,43 @@ import { usePyPIDownloads } from '../hooks/usePyPIDownloads'
 gsap.registerPlugin(ScrollTrigger)
 
 const defaultStats = [
-  { value: 36000, suffix: '+', label: 'PyPI Downloads', color: 'cyber-blue', isPyPI: true },
+  { value: 40000, suffix: '+', label: 'PyPI Downloads', color: 'cyber-blue', isPyPI: true },
   { value: 450, suffix: '+', label: 'Concurrent Users', color: 'cyber-purple', isPyPI: false },
   { value: 4, suffix: '+', label: 'Years Experience', color: 'cyber-green', isPyPI: false },
 ]
 
 const reviews = [
-  { name: 'jakemedia207', country: 'US', rating: 5, time: 'February 2026', text: 'Helped me with my p1s 10/10 would recommend', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'tob_hu', country: 'CH', rating: 4, time: 'September 2025', text: 'Thank you for your Support!', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'skilnotfound', country: 'US', rating: 5, time: 'September 2025', text: 'Was very helpful and willing to help immediately. Was also very flexible in helping with the issue we were in vastly different time zones which meant it was difficult for us to always be online at the same time, But i would frequently get very early morning replies. 10/10 would reach out for consulting again.', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'kendrickcharles', country: 'US', rating: 5, time: 'October 2025', text: 'He was great and very attentive.', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'azproperties16', country: 'US', rating: 5, time: 'August 2025', text: "Amazing job! Wiktor helped me set up my 3d printer in a fraction of the time that I spent trying to set it up myself. He's absolutely worth it!", category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'atalavera3', country: 'US', rating: 5, time: 'August 2025', text: 'Very professional and helpful, quick to the point', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'jmwilson125', country: 'US', rating: 5, time: 'July 2025', text: 'Wiktor was very knowledgeable in klipper and helped me out a lot with my project', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'aaronw12', country: 'US', rating: 5, time: 'August 2025', text: 'Went above and beyond my initial requests. Very responsive and will be my Go-To for all my 3D printer needs.', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'jschanaker', country: 'US', rating: 5, time: 'March 2024', text: 'Wiktor did a great job and was very helpful along the way. Would recommend.', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'ccburton11', country: 'US', rating: 5, time: 'January 2024', text: "He was very helpful, knowledgeable, and responsive. I went in with bad print settings I couldn't figure out and left with a working printer, printing perfectly!", category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'jakemedia207', country: 'US', rating: 5, time: 'February 2026', text: 'Helped me with my p1s 10/10 would recommend', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'tob_hu', country: 'CH', rating: 4, time: 'September 2025', text: 'Thank you for your Support!', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'skilnotfound', country: 'US', rating: 5, time: 'September 2025', text: 'Was very helpful and willing to help immediately. Was also very flexible in helping with the issue we were in vastly different time zones which meant it was difficult for us to always be online at the same time, But i would frequently get very early morning replies. 10/10 would reach out for consulting again.', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'kendrickcharles', country: 'US', rating: 5, time: 'October 2025', text: 'He was great and very attentive.', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'azproperties16', country: 'US', rating: 5, time: 'August 2025', text: "Amazing job! Wiktor helped me set up my 3d printer in a fraction of the time that I spent trying to set it up myself. He's absolutely worth it!", category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'atalavera3', country: 'US', rating: 5, time: 'August 2025', text: 'Very professional and helpful, quick to the point', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'jmwilson125', country: 'US', rating: 5, time: 'July 2025', text: 'Wiktor was very knowledgeable in klipper and helped me out a lot with my project', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'aaronw12', country: 'US', rating: 5, time: 'August 2025', text: 'Went above and beyond my initial requests. Very responsive and will be my Go-To for all my 3D printer needs.', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'jschanaker', country: 'US', rating: 5, time: 'March 2024', text: 'Wiktor did a great job and was very helpful along the way. Would recommend.', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'ccburton11', country: 'US', rating: 5, time: 'January 2024', text: "He was very helpful, knowledgeable, and responsive. I went in with bad print settings I couldn't figure out and left with a working printer, printing perfectly!", category: 'Embedded Linux / DevOps (Armbian)' },
   { name: 'redvsgoo', country: 'US', rating: 5, time: 'February 2024', text: 'Great service, excellent communication, and good to work with. I got the top tier service, and it was shown through his work. 100% would recommend his work to anyone looking to have marlin firmware made for their 3D printer.', category: 'Embedded C++ for 3D printers' },
-  { name: 'ccrank85', country: 'US', rating: 5, time: 'November 2023', text: "This guy knows what he's doing. Helped me get my modified ender 3 printing again. I've been scratching my head on the problems with it for months and he helped me get it working in a couple days.", category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'the6thcrow', country: 'US', rating: 5, time: 'October 2023', text: 'Had some weird issues going on with my ender 3 pro after I tried to compile my own firmware, but we were able to fix it. Quick communication and very friendly. I extremely recommend him to do your custom firmware.', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'malikeost', country: 'US', rating: 5, time: 'September 2023', text: 'Good communication from seller, even with limited knowledge and still completed help setting up my printer.', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'owenland681', country: 'GB', rating: 5, time: 'August 2023', text: 'Absolutely Great!', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'keyven343', country: 'CA', rating: 5, time: 'July 2023', text: 'He give a very great support, gave me the courage to go back to my big project in 3d printing', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'keyven343', country: 'CA', rating: 5, time: 'June 2023', text: 'Hes my tech now, very nice in comunication and very nice :)', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'keithbfiver', country: 'US', rating: 5, time: 'May 2023', text: 'Amazing service. Super fast. Same day. And great communication. Got my printer working perfectly and fast. Thank you!', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'marlonvella', country: 'MT', rating: 5, time: 'April 2023', text: 'He stayed with me all the way he is amazing thank you', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'ccrank85', country: 'US', rating: 5, time: 'November 2023', text: "This guy knows what he's doing. Helped me get my modified ender 3 printing again. I've been scratching my head on the problems with it for months and he helped me get it working in a couple days.", category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'the6thcrow', country: 'US', rating: 5, time: 'October 2023', text: 'Had some weird issues going on with my ender 3 pro after I tried to compile my own firmware, but we were able to fix it. Quick communication and very friendly. I extremely recommend him to do your custom firmware.', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'malikeost', country: 'US', rating: 5, time: 'September 2023', text: 'Good communication from seller, even with limited knowledge and still completed help setting up my printer.', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'owenland681', country: 'GB', rating: 5, time: 'August 2023', text: 'Absolutely Great!', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'keyven343', country: 'CA', rating: 5, time: 'July 2023', text: 'He give a very great support, gave me the courage to go back to my big project in 3d printing', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'keyven343', country: 'CA', rating: 5, time: 'June 2023', text: 'Hes my tech now, very nice in comunication and very nice :)', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'keithbfiver', country: 'US', rating: 5, time: 'May 2023', text: 'Amazing service. Super fast. Same day. And great communication. Got my printer working perfectly and fast. Thank you!', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'marlonvella', country: 'MT', rating: 5, time: 'April 2023', text: 'He stayed with me all the way he is amazing thank you', category: 'Embedded Linux / DevOps (Armbian)' },
   { name: 'amarokstudios', country: 'US', rating: 5, time: 'March 2023', text: 'Absolutely amazing. If you are having issues with your 3D printer/Marlin firmware, this seller is definitely the place to go. I have an Ender 3 V1 with a CR Touch and filament runout sensor installed and I needed some help getting the firmware updated to use it. Definitely would recommend!', category: 'Embedded C++ for 3D printers' },
-  { name: 'thee_kkid', country: 'US', rating: 5, time: 'February 2023', text: 'Thanks for helping me adjust my Easter and explaining to me what was wrong with my Internet', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'thee_kkid', country: 'US', rating: 5, time: 'February 2023', text: 'Thanks for helping me adjust my Easter and explaining to me what was wrong with my Internet', category: 'Embedded Linux / DevOps (Armbian)' },
   { name: 'hendriski', country: 'GB', rating: 5, time: 'January 2023', text: "Great and Fast service. My Ender 3 is working perfect now. Am running the latest Marlin firmware and all done in an hour. He even added a little extra for the same price. Definitely gonna order from him again.", category: 'Embedded C++ for 3D printers' },
-  { name: 'lztechs', country: 'PL', rating: 5, time: 'December 2022', text: 'Incredible seller! Very helpful and patient. Would definitely recommend!!', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'sure4thing', country: 'US', rating: 5, time: 'November 2022', text: 'They worked nonstop with me to get my printer back up and running. Very knowledgeable and fast at replying. Will go to again in the future!', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'ggabs_does', country: 'US', rating: 5, time: 'October 2022', text: 'Fixed my printer! Had a max temp error and he helped me within a day! I will definitely be back!!', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'ritchie176', country: 'IE', rating: 5, time: 'September 2022', text: "Absolutely fantastic help! Was willing to work through the issue with me in a comprehensive manner. Overall just a great service. I can't give you one reason to not choose Wiktor's service :D", category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'fallenlight1', country: 'US', rating: 5, time: 'August 2022', text: 'Wonderful I have used him twice now and will reach out again if needed', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'user03095544', country: 'NZ', rating: 5, time: 'July 2022', text: 'Seller has been really amazing. He knew exactly what to do and guided me through the process. I would recommend him to anyone who is having difficulties. Great service and will definitely work with him again.', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'lztechs', country: 'PL', rating: 5, time: 'June 2022', text: 'Incredible experience, this seller has huge knowledge. Totally recommend!', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'bellemalcolm', country: 'HK', rating: 5, time: 'May 2022', text: 'Have a lot of knowledge about 3D printers, very nice to work with, wonderful service!', category: 'Embedded Linux (Armbian) for 3D printers' },
-  { name: 'lztechs', country: 'PL', rating: 5, time: 'April 2022', text: '20/10, he has huge knowledge in 3d printing. I would love to work with him again', category: 'Embedded Linux (Armbian) for 3D printers' },
+  { name: 'lztechs', country: 'PL', rating: 5, time: 'December 2022', text: 'Incredible seller! Very helpful and patient. Would definitely recommend!!', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'sure4thing', country: 'US', rating: 5, time: 'November 2022', text: 'They worked nonstop with me to get my printer back up and running. Very knowledgeable and fast at replying. Will go to again in the future!', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'ggabs_does', country: 'US', rating: 5, time: 'October 2022', text: 'Fixed my printer! Had a max temp error and he helped me within a day! I will definitely be back!!', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'ritchie176', country: 'IE', rating: 5, time: 'September 2022', text: "Absolutely fantastic help! Was willing to work through the issue with me in a comprehensive manner. Overall just a great service. I can't give you one reason to not choose Wiktor's service :D", category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'fallenlight1', country: 'US', rating: 5, time: 'August 2022', text: 'Wonderful I have used him twice now and will reach out again if needed', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'user03095544', country: 'NZ', rating: 5, time: 'July 2022', text: 'Seller has been really amazing. He knew exactly what to do and guided me through the process. I would recommend him to anyone who is having difficulties. Great service and will definitely work with him again.', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'lztechs', country: 'PL', rating: 5, time: 'June 2022', text: 'Incredible experience, this seller has huge knowledge. Totally recommend!', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'bellemalcolm', country: 'HK', rating: 5, time: 'May 2022', text: 'Have a lot of knowledge about 3D printers, very nice to work with, wonderful service!', category: 'Embedded Linux / DevOps (Armbian)' },
+  { name: 'lztechs', country: 'PL', rating: 5, time: 'April 2022', text: '20/10, he has huge knowledge in 3d printing. I would love to work with him again', category: 'Embedded Linux / DevOps (Armbian)' },
 ]
 
 const education = [
@@ -60,53 +60,13 @@ const education = [
   },
 ]
 
-const experience = [
-  {
-    period: '09.2025 – 02.2026',
-    title: 'System Architect',
-    company: 'Randlab Software (Anatomy Project)',
-    location: 'Remote',
-    team: '3-person team, sole full-time engineer',
-    description: 'Designed and built complete backend architecture for Medical University of Silesia. Delivered REST API, LDAP SSO integration, OWASP security audits, and CI/CD pipelines. Production system handling 450+ concurrent users during exam periods.',
-    tech: ['NestJS', 'TypeORM', 'MySQL', 'JWT', 'GitHub Actions'],
-  },
-  {
-    period: '08.2024 – 08.2025',
-    title: 'R&D Systems Engineer',
-    company: 'GEEETECH',
-    location: 'Shenzhen, China / Remote',
-    team: 'Solo engineer, direct R&D collaboration',
-    description: 'Complete structural redesign of A10M printer components. Klipper firmware optimization, stepper motor control enhancement, CAD modeling in Fusion 360. Acted as bridge between EU quality standards and Chinese R&D velocity.',
-    tech: ['Klipper', 'Fusion 360', 'C++', 'Linux'],
-  },
-  {
-    period: '04.2023 – 07.2024',
-    title: 'Sales Systems Consultant',
-    company: 'Randlab Software (Polsat Plus Group)',
-    location: 'Remote',
-    team: '10-person cross-functional team',
-    description: 'Automated documentation generation for POS, telemarketing, and mobile sales channels across Polsat Plus Group. Streamlined workflows for sales operations documentation.',
-    tech: ['Automation', 'Documentation', 'Sales Systems'],
-  },
-  {
-    period: '09.2022 – 03.2023',
-    title: 'Embedded / Thingsboard Specialist',
-    company: 'Randlab Software',
-    location: 'Nowy Sącz, Poland',
-    team: '2-person team, ThingsBoard & Arduino focus',
-    description: 'Pipe impedance monitoring system for heating industry. Configured ThingsBoard platform with custom plugins, built Arduino mock devices for data simulation and testing without production hardware. AWS-based alerting integration.',
-    tech: ['ThingsBoard', 'Arduino', 'AWS', 'IoT'],
-  },
-]
-
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null)
   const statsRef = useRef<HTMLDivElement>(null)
-  const timelineRef = useRef<HTMLDivElement>(null)
   const { downloads: pypiDownloads, pepyUrl } = usePyPIDownloads('pythonmetatrader5')
 
   // Parse PyPI downloads number for animation
-  const pypiValue = pypiDownloads ? parseInt(pypiDownloads.replace(/\s/g, ''), 10) : 36000
+  const pypiValue = pypiDownloads ? parseInt(pypiDownloads.replace(/\s/g, ''), 10) : 40000
 
   // Update stats with dynamic PyPI value
   const stats = defaultStats.map(stat =>
@@ -149,22 +109,6 @@ const About = () => {
           }
         )
       })
-
-      // Timeline items stagger
-      gsap.fromTo(
-        '.timeline-item',
-        { opacity: 0, x: -30 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.6,
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: timelineRef.current,
-            start: 'top 80%',
-          },
-        }
-      )
     }, sectionRef)
 
     return () => ctx.revert()
@@ -571,52 +515,6 @@ const About = () => {
           ))}
         </div>
 
-        {/* Experience timeline */}
-        <h3 className="font-display text-2xl text-white mb-8 flex items-center gap-3">
-          <span className="text-cyber-purple">&gt;</span>
-          Experience_Timeline
-        </h3>
-
-        <div ref={timelineRef} className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyber-blue via-cyber-purple to-cyber-pink" />
-
-          {experience.map((exp, index) => (
-            <div
-              key={index}
-              className={`timeline-item relative mb-12 md:mb-16 ${
-                index % 2 === 0 ? 'md:pr-[50%] md:text-right' : 'md:pl-[50%] md:ml-auto'
-              }`}
-            >
-              {/* Timeline dot */}
-              <div
-                className={`absolute top-0 w-4 h-4 bg-cyber-dark border-2 border-cyber-blue rounded-full z-10 ${
-                  index % 2 === 0 ? 'left-[-7px] md:left-auto md:right-[calc(50%-7px)]' : 'left-[-7px] md:left-[calc(50%-7px)]'
-                }`}
-              />
-
-              <div className={`glass rounded-lg p-6 ml-8 md:ml-0 ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'}`}>
-                <span className="font-mono text-xs text-cyber-green">{exp.period}</span>
-                <h4 className="font-display text-lg text-white mt-2">{exp.title}</h4>
-                <p className="font-mono text-sm text-cyber-blue">{exp.company}</p>
-                <p className="font-mono text-xs text-gray-500">{exp.location}</p>
-                <p className="font-mono text-xs text-cyber-purple mb-3">{exp.team}</p>
-                <p className="text-gray-400 text-sm mb-4">{exp.description}</p>
-                <div className={`flex flex-wrap gap-2 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
-                  {exp.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="px-2 py-1 text-xs font-mono bg-cyber-blue/10 text-cyber-blue rounded"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
         {/* Education section */}
         <h3 className="font-display text-2xl text-white mb-8 mt-16 flex items-center gap-3">
           <span className="text-cyber-green">&gt;</span>
@@ -647,37 +545,27 @@ const About = () => {
         <div className="glass rounded-lg p-8 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-pink" />
           <p className="text-gray-300 leading-relaxed max-w-3xl">
-            I use AI tools (Claude, Cursor) for code generation and iteration - focusing on architecture decisions, code review, and system design rather than manual typing.
-            My measurable impact – including a proprietary Quant library operating on real capital and hardware optimization
-            experience in Shenzhen – serves as hard evidence of my methodology in delivering high-stakes results.
+            Backend &amp; systems engineer focused on architecture, security, and production reliability.
+            Most recently I designed and solo-built an end-to-end, AI-powered marketing platform
+            (~110k LOC TypeScript, multi-tenant and security-audited). I use AI tools (Claude, Cursor)
+            for code generation and iteration — concentrating on architecture decisions, code review,
+            and system design. Earlier impact includes a proprietary Quant library operating on real
+            capital (40,000+ PyPI downloads) and hardware R&amp;D in Shenzhen.
           </p>
           <p className="text-gray-400 leading-relaxed max-w-3xl mt-4 text-sm">
-            Experienced in cross-cultural remote collaboration (EU-China timezone coordination), async communication,
-            and translating technical requirements for non-technical stakeholders.
+            I work best where automation-first and security-by-design are baseline requirements, and I'm
+            comfortable with fully-remote, cross-cultural collaboration (EU–China).
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
-            <div className="flex flex-wrap gap-3">
-              <span className="px-3 py-1 text-xs font-mono border border-cyber-blue/30 text-cyber-blue rounded">
-                Security by Design
-              </span>
-              <span className="px-3 py-1 text-xs font-mono border border-cyber-purple/30 text-cyber-purple rounded">
-                LLM Development
-              </span>
-              <span className="px-3 py-1 text-xs font-mono border border-cyber-green/30 text-cyber-green rounded">
-                High-Stakes Delivery
-              </span>
-            </div>
-            <a
-              href="/CV_WiktorJelen.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-cyber-blue/10 border border-cyber-blue/30 rounded font-mono text-sm text-cyber-blue hover:bg-cyber-blue/20 transition-colors"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              View CV
-            </a>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <span className="px-3 py-1 text-xs font-mono border border-cyber-blue/30 text-cyber-blue rounded">
+              Security by Design
+            </span>
+            <span className="px-3 py-1 text-xs font-mono border border-cyber-purple/30 text-cyber-purple rounded">
+              AI-Assisted Development
+            </span>
+            <span className="px-3 py-1 text-xs font-mono border border-cyber-green/30 text-cyber-green rounded">
+              Production Systems
+            </span>
           </div>
         </div>
       </div>

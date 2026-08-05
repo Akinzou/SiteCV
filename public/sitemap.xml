@@ -77,14 +77,6 @@ Hint: Try /.well-known/security.txt next
     <!-- Recruiters: this is where you want to go -->
   </url>
 
-  <!-- CV PDF - the formal stuff -->
-  <url>
-    <loc>https://yelon.pro/CV_WiktorJelen.pdf</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
   <!--
   SECRET URL LIST (just kidding, there are no secrets here)
   Or are there? Check /teapot for HTTP 418

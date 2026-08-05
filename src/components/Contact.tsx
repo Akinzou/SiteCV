@@ -25,12 +25,6 @@ const contactInfo = [
     href: null,
   },
   {
-    icon: '📄',
-    label: 'Resume',
-    value: 'Download CV',
-    href: '/CV_WiktorJelen.pdf',
-  },
-  {
     icon: '🐙',
     label: 'GitHub',
     value: 'github.com/Akinzou',
@@ -127,9 +121,6 @@ const Contact = () => {
     switch (label) {
       case 'Location':
         setTerminalLines((prev) => [...prev, `$ Location: ${value}`])
-        break
-      case 'Resume':
-        setTerminalLines((prev) => [...prev, `$ Downloading CV...`, `$ File: CV_WiktorJelen.pdf`])
         break
       case 'GitHub':
         setTerminalLines((prev) => [...prev, `$ Redirecting to GitHub: ${href}`])

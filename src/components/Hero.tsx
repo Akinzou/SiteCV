@@ -143,7 +143,7 @@ const Hero = () => {
             <span className="text-cyber-purple">|</span> Cybersec
           </p>
           <p className="font-mono text-sm text-gray-500 max-w-2xl mx-auto">
-            High-Velocity Engineering • LLM Development • Security by Design
+            AI-Assisted Development • Production Systems • Security by Design
           </p>
         </div>
 
@@ -243,7 +243,7 @@ const Hero = () => {
                   <Typewriter text="$ ls achievements/" delay={1200} speed={15} />
                 </div>
                 <div className="text-gray-300 mb-4">
-                  <Typewriter text="36,000+ PyPI downloads • 450+ concurrent users • Shenzhen R&D" delay={1500} speed={8} />
+                  <Typewriter text="40,000+ PyPI downloads • 450+ concurrent users • Shenzhen R&D" delay={1500} speed={8} />
                 </div>
 
                 <div className="flex items-center text-gray-500">

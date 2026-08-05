@@ -24,7 +24,7 @@ const skillCategories = [
     skills: ['Linux (Ubuntu/Debian)', 'Nginx', 'PM2', 'Docker', 'GitHub Actions', 'AWS', 'Python'],
   },
   {
-    title: 'Cybersec Logic',
+    title: 'Security & IAM',
     icon: '🔒',
     color: 'cyber-green',
     skills: ['IAM (LDAP/AD)', 'JWT', 'Zod Validation', 'OWASP Top 10', 'SSL/TLS'],

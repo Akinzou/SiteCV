@@ -27,3 +27,6 @@ Thumbs.db
 
 # Docker build artifacts
 *.tar.gz
+
+# Local CV — open in browser, print to PDF via Ctrl+P (not committed / not published)
+public/CV_WiktorJelen.html
