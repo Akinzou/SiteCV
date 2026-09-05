@@ -60,8 +60,12 @@ Core skills:
 - Additional: React, Three.js, C++, embedded systems, Fusion 360
 
 Independent R&D:
-- Evolutionary optimization applied to algorithmic trading: genetic algorithms and
-  StrategyQuant X for strategy generation and robustness testing
+- Built the execution layer first: PythonMetaTrader5, an open-source order-execution
+  library for MetaTrader 5 (42,000+ downloads)
+- Now working a layer above it, in machine learning: evolutionary computation, where
+  genetic algorithms breed and select trading strategies instead of them being
+  hand-written. StrategyQuant X generates strategy populations; survivors are
+  stress-tested for robustness before they go near real capital
 
 All figures above are verifiable via the links on the site (GitHub, PyPI / pepy.tech).
 
