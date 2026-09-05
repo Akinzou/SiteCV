@@ -44,7 +44,7 @@ const Skills = () => {
 
       <div className="relative max-w-6xl mx-auto">
         <div className="flex items-center gap-4 mb-16 skills-title">
-          <span className="font-mono text-cyber-purple">03.</span>
+          <span className="font-mono text-cyber-purple">02.</span>
           <h2 className="font-display font-bold text-3xl md:text-4xl text-white">
             Technical_Skills
           </h2>

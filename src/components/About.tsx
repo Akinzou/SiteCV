@@ -129,11 +129,22 @@ const About = () => {
           <div className="flex-1 h-[1px] bg-gradient-to-r from-cyber-blue/50 to-transparent" />
         </div>
 
-        {/* Who the name belongs to, in the third person — this is the sentence a
-            search engine or an AI summary can actually quote. */}
-        <p className="text-gray-300 leading-relaxed max-w-3xl mb-12 text-lg">
-          {identity.definition}
-        </p>
+        {/* Same card treatment as Interests_&_R&D below. */}
+        <div className="glass rounded-lg p-8 mb-12 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-pink" />
+          <p className="text-gray-300 leading-relaxed max-w-3xl">{identity.definition}</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <span className="px-3 py-1 text-xs font-mono border border-cyber-blue/30 text-cyber-blue rounded">
+              {identity.role}
+            </span>
+            <span className="px-3 py-1 text-xs font-mono border border-cyber-purple/30 text-cyber-purple rounded">
+              {identity.location}
+            </span>
+            <span className="px-3 py-1 text-xs font-mono border border-cyber-green/30 text-cyber-green rounded">
+              Open to opportunities
+            </span>
+          </div>
+        </div>
 
         {/* Worked with */}
         <div className="mb-12">

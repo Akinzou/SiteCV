@@ -63,7 +63,8 @@ Core skills:
 - Additional: React, C++, embedded systems, Fusion 360
 - Languages: Polish (native), English (working proficiency)
 
-Employment history:
+Employment history (kept here for reference; the site itself does not list roles,
+they belong to the CV, which is tailored per application):
 - 03.2026-08.2026  Lead Developer / System Architect, KonikSystems (KONIK), remote.
   Multi-tenant automation platform: TypeScript/NestJS backend, Temporal.io orchestration,
   React dashboard, PostgreSQL row-level security with isolation-leak tests in CI,
@@ -111,9 +112,7 @@ sections:
   - name: Hero
     description: Name, role, positioning statement and the four focus areas
   - name: About
-    description: References, client reviews, education, working paradigm, interests
-  - name: Experience
-    description: Full employment history with per-role responsibilities
+    description: Intro, references, client reviews, education, working paradigm, interests
   - name: Skills
     description: Technical skills grouped by domain
   - name: Projects

@@ -15,12 +15,12 @@ export const identity = {
   statement:
     'I design and build backend systems, infrastructure and production-grade platforms.',
   /**
-   * The same fact in the third person. Entity extractors and AI summaries quote
-   * "X is a Y" and cannot do anything with "I design and build Y" — the page
-   * needs to state, in plain text, who the name belongs to.
+   * First person, but the name and the job title stay inside one sentence.
+   * "I'm X, a Y based in Z" is still an apposition an entity extractor can
+   * read, which "I design and build things" on its own is not.
    */
   definition:
-    'Wiktor Jeleń is a backend and platform engineer based in Kraków, Poland. He builds multi-tenant production systems, infrastructure and security-critical backends, and is the author of PythonMetaTrader5, an open-source library with over 42,000 PyPI downloads.',
+    "I'm Wiktor Jeleń, a backend and platform engineer based in Kraków, Poland. I build multi-tenant production systems, infrastructure and security-critical backends, and I wrote PythonMetaTrader5, an open-source library with over 42,000 PyPI downloads.",
   location: 'Kraków, Poland',
   email: 'root@yelon.pro',
   phone: '+48 576 706 766',
@@ -61,90 +61,6 @@ export const focusAreas: { title: string; accent: Accent; items: string[] }[] = 
       'Model Context Protocol',
       'Evaluation harnesses',
       'Media & speech pipelines',
-    ],
-  },
-]
-
-export type Role = {
-  role: string
-  project: string
-  company: string
-  location: string
-  period: string
-  start: string
-  end: string
-  bullets: string[]
-}
-
-export const experience: Role[] = [
-  {
-    role: 'Lead Developer / System Architect',
-    project: 'KONIK',
-    company: 'KonikSystems',
-    location: 'Remote',
-    period: '03.2026 – 08.2026',
-    start: '2026-03',
-    end: '2026-08',
-    bullets: [
-      'Lead developer and architect of a multi-tenant automation platform with a TypeScript/NestJS backend, Temporal.io orchestration and a React dashboard; primary contributor to the codebase.',
-      'Designed tenant isolation in PostgreSQL using row-level security, with automated isolation-leak tests running in CI.',
-      'Built the test and delivery pipeline: unit and integration tests, Temporal TestWorkflowEnvironment, Playwright, and a multi-stage GitHub Actions CI/CD.',
-      'Designed the integration layer: Stripe, Google Ads/Analytics, Meta API, social publishing, scraping and enrichment, and a video processing pipeline.',
-      'Built the LLM and generative-AI integration layer — Claude, GPT and Gemini APIs, MCP, Flux/LoRA and Whisper — together with the evaluation harness for AI output quality.',
-    ],
-  },
-  {
-    role: 'System Architect',
-    project: 'Anatomy Project',
-    company: 'Randlab Software',
-    location: 'Remote',
-    period: '09.2025 – 02.2026',
-    start: '2025-09',
-    end: '2026-02',
-    bullets: [
-      'Designed and deployed a scalable backend (NestJS 11, TypeORM, MySQL 8) for 450+ concurrent users of a Medical University of Silesia platform.',
-      'Integrated authentication with the university Active Directory (LDAP) and JWT-based authorization; hardened the API with OWASP Top 10 audits, strict input validation (Zod) and data sanitization.',
-      'Designed a REST API with a Swagger/OpenAPI contract — pagination, filtering and sorting pushed down to the database rather than into application memory — plus unit and integration tests in Jest.',
-      'Set up production environments (Ubuntu, Nginx reverse proxy, SSL, PM2) and CI/CD pipelines in GitHub Actions.',
-    ],
-  },
-  {
-    role: 'R&D Systems Engineer',
-    project: 'Hardware Enhancement',
-    company: 'GEEETECH, R&D Department',
-    location: 'Shenzhen, China / Remote',
-    period: '08.2024 – 08.2025',
-    start: '2024-08',
-    end: '2025-08',
-    bullets: [
-      'Owned system integration and Klipper firmware optimization for the Shenzhen R&D hub, working fully remotely and self-directed.',
-      'Redesigned structural components of the A10M printer in Fusion 360 and optimized stepper motor control.',
-      'Coordinated technical requirements between European stakeholders and the Shenzhen R&D team.',
-    ],
-  },
-  {
-    role: 'Sales Systems Consultant',
-    project: '',
-    company: 'Randlab Software (Polsat Plus Group)',
-    location: 'Remote',
-    period: '04.2023 – 07.2024',
-    start: '2023-04',
-    end: '2024-07',
-    bullets: [
-      'Automated client documentation generation and configured complex sales offers for POS, telemarketing and mobile sales channels.',
-    ],
-  },
-  {
-    role: 'Embedded / ThingsBoard Specialist',
-    project: 'IoT Pipe Monitoring',
-    company: 'Randlab Software',
-    location: 'Nowy Sącz, Poland',
-    period: '09.2022 – 03.2023',
-    start: '2022-09',
-    end: '2023-03',
-    bullets: [
-      'Built a pipe impedance monitoring system for the heating industry on ThingsBoard.',
-      'Integrated hardware (C++) with web interfaces and implemented AWS-based alerting.',
     ],
   },
 ]

@@ -1,7 +1,6 @@
 import type { Plugin } from 'vite'
 import {
   education,
-  experience,
   focusAreas,
   identity,
   languages,
@@ -77,16 +76,6 @@ const renderSnapshot = (): string => {
   parts.push(`<section id="snap-focus"><h2>Focus areas</h2><div class="snap-grid snap-grid-4">${focusAreas
     .map((area) => `<div><h3>${esc(area.title)}</h3>${list(area.items)}</div>`)
     .join('')}</div></section>`)
-
-  parts.push(`<section id="snap-experience"><h2>Experience</h2>${experience
-    .map(
-      (role) => `<article class="snap-block">
-<h3>${esc(role.role)}${role.project ? ` — ${esc(role.project)}` : ''}</h3>
-<p class="snap-sub">${esc(role.company)} · ${esc(role.location)} · ${esc(role.period)}</p>
-<ul>${role.bullets.map((bullet) => `<li>${esc(bullet)}</li>`).join('')}</ul>
-</article>`,
-    )
-    .join('')}</section>`)
 
   parts.push(`<section id="snap-projects"><h2>Projects</h2>${projects
     .map(
