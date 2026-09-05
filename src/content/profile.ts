@@ -112,7 +112,7 @@ export const experience: Role[] = [
     bullets: [
       'Owned system integration and Klipper firmware optimization for the Shenzhen R&D hub, working fully remotely and self-directed.',
       'Redesigned structural components of the A10M printer in Fusion 360 and optimized stepper motor control.',
-      'Acted as the technical bridge between European engineering standards and the pace of Chinese R&D.',
+      'Coordinated technical requirements between European stakeholders and the Shenzhen R&D team.',
     ],
   },
   {
