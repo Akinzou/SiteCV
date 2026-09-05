@@ -2,72 +2,28 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { usePyPIDownloads } from '../hooks/usePyPIDownloads'
+import { projects } from '../content/profile'
+import { accentBorder, accentText } from '../lib/accents'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const projects = [
-  {
-    title: 'PythonMetaTrader5',
-    subtitle: 'Production-Ready Quant Library',
-    description:
-      'MetaTrader5 wrapper designed for algorithmic trading with real capital. Ensures data normalization and critical execution stability with comprehensive retcode handling.',
-    stats: { downloads: 'dynamic', status: 'Production', platform: 'PyPI' },
-    tech: ['Python', 'MetaTrader5', 'Algorithmic Trading', 'PyPI'],
-    github: 'https://github.com/Akinzou/MetaTrader5-Python',
-    pypiPackage: 'pythonmetatrader5',
-    color: 'cyber-blue',
-    featured: true,
-  },
-  {
-    title: 'TradeLockerBot',
-    subtitle: 'Trading Automation System',
-    description:
-      'FastAPI backend integrated with TradingView webhooks. Fully containerized via Docker with automated CI/CD pipelines for deployment.',
-    stats: { status: 'Active', type: 'Automation', deployment: 'Docker' },
-    tech: ['FastAPI', 'Docker', 'TradingView', 'CI/CD', 'Webhooks'],
-    github: 'https://github.com/Akinzou/TradeLockerBot',
-    color: 'cyber-purple',
-    featured: true,
-  },
-  {
-    title: 'Anatomy Project',
-    subtitle: 'Medical University Platform',
-    description:
-      'Scalable backend architecture for Medical University of Silesia. Handles 450+ concurrent users with LDAP authentication and comprehensive API design.',
-    stats: { users: '450+', endpoints: '16+', coverage: '50%+' },
-    tech: ['NestJS', 'TypeORM', 'MySQL', 'LDAP', 'JWT', 'Jest'],
-    color: 'cyber-green',
-    featured: false,
-  },
-  {
-    title: 'GEEETECH A10M Enhancement',
-    subtitle: 'Hardware R&D Project',
-    description:
-      'Complete structural redesign of A10M printer components. Firmware optimization with Klipper and stepper motor control enhancement.',
-    stats: { location: 'Shenzhen', type: 'Hardware', methodology: 'R&D' },
-    tech: ['Fusion 360', 'Klipper', 'C++', 'CAD', 'Firmware'],
-    color: 'cyber-pink',
-    featured: false,
-  },
-  {
-    title: 'IoT Pipe Monitoring',
-    subtitle: 'ThingsBoard Integration',
-    description:
-      'Pipe impedance monitoring system for the heating industry. Hardware-web integration with AWS-based alerting systems.',
-    stats: { industry: 'Heating', cloud: 'AWS', platform: 'ThingsBoard' },
-    tech: ['ThingsBoard', 'C++', 'AWS', 'IoT', 'Embedded'],
-    color: 'cyber-yellow',
-    featured: false,
-  },
-]
+const GitHubIcon = () => (
+  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12" />
+  </svg>
+)
 
+/**
+ * Case-study shape (problem → solution → stack → links) rather than a title and
+ * a row of technology tags. The tags say what was touched; only the problem
+ * says whether the work was worth doing.
+ */
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null)
   const { downloads: pypiDownloads, pepyUrl } = usePyPIDownloads('pythonmetatrader5')
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Section title
       gsap.fromTo(
         '.projects-title',
         { opacity: 0, x: -50 },
@@ -75,26 +31,19 @@ const Projects = () => {
           opacity: 1,
           x: 0,
           duration: 0.8,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%',
-          },
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' },
         }
       )
 
-      // Featured projects
       gsap.fromTo(
-        '.featured-project',
-        { opacity: 0, y: 60 },
+        '.project-case',
+        { opacity: 0, y: 50 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
-          stagger: 0.3,
-          scrollTrigger: {
-            trigger: '.featured-projects',
-            start: 'top 80%',
-          },
+          duration: 0.7,
+          stagger: 0.2,
+          scrollTrigger: { trigger: '.projects-list', start: 'top 85%' },
         }
       )
     }, sectionRef)
@@ -102,117 +51,98 @@ const Projects = () => {
     return () => ctx.revert()
   }, [])
 
-  const featuredProjects = projects.filter((p) => p.featured)
-
   return (
-    <section
-      ref={sectionRef}
-      id="projects"
-      className="relative py-32 px-6"
-    >
-      <div className="max-w-6xl mx-auto">
-        {/* Section header */}
+    <section ref={sectionRef} id="projects" className="relative py-32 px-6">
+      <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-4 mb-16 projects-title">
-          <span className="font-mono text-cyber-purple">03.</span>
+          <span className="font-mono text-cyber-purple">04.</span>
           <h2 className="font-display font-bold text-3xl md:text-4xl text-white">Projects_</h2>
           <div className="flex-1 h-[1px] bg-gradient-to-r from-cyber-green/50 to-transparent" />
         </div>
 
-        {/* Featured projects */}
-        <div className="featured-projects space-y-16 mb-20">
-          {featuredProjects.map((project, index) => (
-            <div
-              key={project.title}
-              className={`featured-project relative grid md:grid-cols-2 gap-8 items-center ${
-                index % 2 === 1 ? 'md:flex-row-reverse' : ''
-              }`}
-            >
-              {/* Project image/visualization placeholder */}
-              <div
-                className={`relative aspect-video glass rounded-lg overflow-hidden group ${
-                  index % 2 === 1 ? 'md:order-2' : ''
-                }`}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark to-cyber-black" />
-                <div className={`absolute inset-0 bg-${project.color}/5`} />
+        <div className="projects-list space-y-8">
+          {projects.map((project) => {
+            const metric =
+              project.pypiPackage && pypiDownloads
+                ? `${pypiDownloads} PyPI downloads`
+                : project.metric
 
-                {/* Terminal-style visualization */}
-                <div className="absolute inset-4 border border-cyber-blue/20 rounded p-4 font-mono text-xs">
-                  <div className="text-cyber-green mb-2">$ npm info {project.title.toLowerCase().replace(/\s/g, '-')}</div>
-                  <div className="text-gray-400">
-                    {Object.entries(project.stats).map(([key, value]) => (
-                      <div key={key}>
-                        <span className="text-cyber-purple">{key}:</span>{' '}
-                        <span className="text-white">
-                          {key === 'downloads' && (project as any).pypiPackage
-                            ? pypiDownloads || 'Loading...'
-                            : value}
-                        </span>
-                        {key === 'downloads' && (project as any).pypiPackage && (
-                          <a
-                            href={pepyUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="ml-2 px-1 bg-cyber-blue/20 text-cyber-blue hover:bg-cyber-green/20 hover:text-cyber-green transition-colors text-[10px] rounded relative z-10 cursor-pointer"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            [verify]
-                          </a>
-                        )}
-                      </div>
-                    ))}
+            return (
+              <article
+                key={project.name}
+                className={`project-case glass rounded-lg p-6 md:p-8 border ${accentBorder[project.accent]} relative overflow-hidden`}
+              >
+                <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 mb-1">
+                  <h3 className="font-display font-bold text-2xl text-white">{project.name}</h3>
+                  <span className="font-mono text-xs text-gray-400 flex items-center gap-2">
+                    {metric}
+                    {project.pypiPackage && (
+                      <a
+                        href={pepyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-1 bg-cyber-blue/20 text-cyber-blue hover:bg-cyber-green/20 hover:text-cyber-green transition-colors text-[10px] rounded"
+                      >
+                        [verify]
+                      </a>
+                    )}
+                  </span>
+                </div>
+
+                <p className={`font-mono text-sm mb-6 ${accentText[project.accent]}`}>
+                  {project.tagline}
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-widest text-cyber-pink mb-2">
+                      Problem
+                    </p>
+                    <p className="text-sm text-gray-300 leading-relaxed">{project.problem}</p>
+                  </div>
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-widest text-cyber-green mb-2">
+                      Solution
+                    </p>
+                    <p className="text-sm text-gray-300 leading-relaxed">{project.solution}</p>
                   </div>
                 </div>
 
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-cyber-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-
-                {/* Corner decorations */}
-                <div className={`absolute top-2 left-2 w-8 h-8 border-l-2 border-t-2 border-${project.color}/50`} />
-                <div className={`absolute bottom-2 right-2 w-8 h-8 border-r-2 border-b-2 border-${project.color}/50`} />
-              </div>
-
-              {/* Project info */}
-              <div className={index % 2 === 1 ? 'md:order-1 md:text-right' : ''}>
-                <span className={`font-mono text-sm text-${project.color}`}>{project.subtitle}</span>
-                <h3 className="font-display font-bold text-2xl md:text-3xl text-white mt-2 mb-4">
-                  {project.title}
-                </h3>
-
-                <div className="glass rounded-lg p-6 mb-4">
-                  <p className="text-gray-300 text-sm leading-relaxed">{project.description}</p>
-                </div>
-
-                <div className={`flex flex-wrap gap-2 mb-6 ${index % 2 === 1 ? 'md:justify-end' : ''}`}>
-                  {project.tech.map((t) => (
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="font-mono text-xs uppercase tracking-widest text-gray-500 mr-2">
+                    Stack
+                  </span>
+                  {project.stack.map((item) => (
                     <span
-                      key={t}
-                      className={`px-2 py-1 text-xs font-mono text-${project.color} bg-${project.color}/10 rounded`}
+                      key={item}
+                      className="px-2.5 py-1 text-xs font-mono text-gray-300 border border-gray-600/40 rounded"
                     >
-                      {t}
+                      {item}
                     </span>
                   ))}
                 </div>
 
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-2 font-mono text-sm text-${project.color} hover:underline`}
-                    data-cursor-hover
-                  >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12" />
-                    </svg>
-                    View on GitHub
-                  </a>
+                {project.links.length > 0 && (
+                  <div className="flex flex-wrap gap-6 mt-6 pt-6 border-t border-gray-700/40">
+                    {project.links.map((link) => (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex items-center gap-2 font-mono text-sm hover:underline ${accentText[project.accent]}`}
+                        data-cursor-hover
+                      >
+                        {link.label === 'GitHub' && <GitHubIcon />}
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
                 )}
-              </div>
-            </div>
-          ))}
+              </article>
+            )
+          })}
         </div>
-
       </div>
     </section>
   )

@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/yelon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/yelon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0a0a0f" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta Tags -->
@@ -19,6 +23,10 @@
     <meta property="og:title" content="Wiktor Jeleń | Backend &amp; Platform Engineer" />
     <meta property="og:description" content="Backend &amp; platform engineer — TypeScript, NestJS, Temporal.io, PostgreSQL, security." />
     <meta property="og:image" content="https://yelon.pro/yelon.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="Wiktor Jelen - Backend &amp; Platform Engineer" />
+    <meta property="og:locale" content="en_GB" />
     <meta property="og:site_name" content="YELON.PRO" />
 
     <!-- Twitter -->
@@ -62,7 +70,7 @@
           "email": "root@yelon.pro",
           "telephone": "+48576706766",
           "url": "https://yelon.pro",
-          "image": "https://yelon.pro/og-image.png",
+          "image": "https://yelon.pro/yelon.png",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Kraków",
@@ -233,7 +241,7 @@
           "@id": "https://yelon.pro/#website",
           "url": "https://yelon.pro",
           "name": "Wiktor Jeleń Portfolio",
-          "description": "Professional portfolio of System Architect & Backend Developer",
+          "description": "Portfolio of Wiktor Jelen - backend and platform engineer working on multi-tenant production systems, infrastructure and security.",
           "author": {"@id": "https://yelon.pro/#person"},
           "inLanguage": ["en", "pl"],
           "potentialAction": {
@@ -250,18 +258,5 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
-    <!-- Structured Data Fallback for Non-JS Crawlers -->
-    <noscript>
-      <div itemscope itemtype="https://schema.org/Person">
-        <meta itemprop="name" content="Wiktor Jelen" />
-        <meta itemprop="jobTitle" content="System Architect" />
-        <meta itemprop="email" content="root@yelon.pro" />
-        <meta itemprop="url" content="https://yelon.pro" />
-        <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-          <meta itemprop="addressLocality" content="Krakow" />
-          <meta itemprop="addressCountry" content="Poland" />
-        </div>
-      </div>
-    </noscript>
   </body>
 </html>

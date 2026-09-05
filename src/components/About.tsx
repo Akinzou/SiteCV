@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { usePyPIDownloads } from '../hooks/usePyPIDownloads'
+import { research } from '../content/profile'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -587,30 +588,16 @@ const About = () => {
 
         <div className="glass rounded-lg p-8 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyber-purple via-cyber-pink to-cyber-blue" />
-          <p className="text-gray-300 leading-relaxed max-w-3xl">
-            The execution layer came first: PythonMetaTrader5, my open-source order-execution library
-            for MetaTrader 5, now past 42,000 downloads. My R&amp;D since then has moved up the stack
-            into machine learning — specifically evolutionary computation, where genetic algorithms
-            breed and select trading strategies instead of them being hand-written. I use
-            StrategyQuant X to generate strategy populations and stress-test the survivors for
-            robustness before anything touches real capital.
-          </p>
+          <p className="text-gray-300 leading-relaxed max-w-3xl">{research.body}</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <span className="px-3 py-1 text-xs font-mono border border-cyber-purple/30 text-cyber-purple rounded">
-              Machine Learning
-            </span>
-            <span className="px-3 py-1 text-xs font-mono border border-cyber-green/30 text-cyber-green rounded">
-              Genetic Algorithms
-            </span>
-            <span className="px-3 py-1 text-xs font-mono border border-cyber-blue/30 text-cyber-blue rounded">
-              Evolutionary Computation
-            </span>
-            <span className="px-3 py-1 text-xs font-mono border border-cyber-pink/30 text-cyber-pink rounded">
-              StrategyQuant X
-            </span>
-            <span className="px-3 py-1 text-xs font-mono border border-cyber-purple/30 text-cyber-purple rounded">
-              Algorithmic Trading
-            </span>
+            {research.tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 text-xs font-mono border border-cyber-purple/30 text-cyber-purple rounded"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
       </div>
