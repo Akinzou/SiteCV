@@ -29,4 +29,4 @@ Thumbs.db
 *.tar.gz
 
 # Local CV — open in browser, print to PDF via Ctrl+P (not committed / not published)
-public/CV_WiktorJelen.html
+public/CV_WiktorJelen*

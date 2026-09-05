@@ -6,7 +6,7 @@ import { usePyPIDownloads } from '../hooks/usePyPIDownloads'
 gsap.registerPlugin(ScrollTrigger)
 
 const defaultStats = [
-  { value: 40000, suffix: '+', label: 'PyPI Downloads', color: 'cyber-blue', isPyPI: true },
+  { value: 42000, suffix: '+', label: 'PyPI Downloads', color: 'cyber-blue', isPyPI: true },
   { value: 450, suffix: '+', label: 'Concurrent Users', color: 'cyber-purple', isPyPI: false },
   { value: 4, suffix: '+', label: 'Years Experience', color: 'cyber-green', isPyPI: false },
 ]
@@ -66,7 +66,7 @@ const About = () => {
   const { downloads: pypiDownloads, pepyUrl } = usePyPIDownloads('pythonmetatrader5')
 
   // Parse PyPI downloads number for animation
-  const pypiValue = pypiDownloads ? parseInt(pypiDownloads.replace(/\s/g, ''), 10) : 40000
+  const pypiValue = pypiDownloads ? parseInt(pypiDownloads.replace(/\s/g, ''), 10) : 42000
 
   // Update stats with dynamic PyPI value
   const stats = defaultStats.map(stat =>
@@ -545,26 +545,65 @@ const About = () => {
         <div className="glass rounded-lg p-8 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-pink" />
           <p className="text-gray-300 leading-relaxed max-w-3xl">
-            Backend &amp; systems engineer focused on architecture, security, and production reliability.
-            Most recently I designed and solo-built an end-to-end, AI-powered marketing platform
-            (~110k LOC TypeScript, multi-tenant and security-audited). I use AI tools (Claude, Cursor)
-            for code generation and iteration — concentrating on architecture decisions, code review,
-            and system design. Earlier impact includes a proprietary Quant library operating on real
-            capital (40,000+ PyPI downloads) and hardware R&amp;D in Shenzhen.
+            I work system-first: define architecture, invariants and failure modes before implementation.
+            I use automation and modern development tooling aggressively to shorten the feedback loop,
+            while relying on tests, observability and explicit system constraints to verify behavior.
+          </p>
+          <p className="text-gray-300 leading-relaxed max-w-3xl mt-4">
+            Most recently primary contributor to a large multi-tenant TypeScript platform. Earlier work
+            includes a quant library operating on real capital (42,000+ PyPI downloads) and hardware
+            R&amp;D in Shenzhen.
           </p>
           <p className="text-gray-400 leading-relaxed max-w-3xl mt-4 text-sm">
-            I work best where automation-first and security-by-design are baseline requirements, and I'm
-            comfortable with fully-remote, cross-cultural collaboration (EU–China).
+            I'm comfortable with fully-remote, cross-cultural collaboration (EU–China).
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <span className="px-3 py-1 text-xs font-mono border border-cyber-blue/30 text-cyber-blue rounded">
-              Security by Design
+              Temporal Orchestration
             </span>
             <span className="px-3 py-1 text-xs font-mono border border-cyber-purple/30 text-cyber-purple rounded">
-              AI-Assisted Development
+              PostgreSQL RLS
             </span>
             <span className="px-3 py-1 text-xs font-mono border border-cyber-green/30 text-cyber-green rounded">
-              Production Systems
+              CI/CD
+            </span>
+            <span className="px-3 py-1 text-xs font-mono border border-cyber-pink/30 text-cyber-pink rounded">
+              Integration &amp; e2e Testing
+            </span>
+            <span className="px-3 py-1 text-xs font-mono border border-cyber-blue/30 text-cyber-blue rounded">
+              Multi-provider AI
+            </span>
+            <span className="px-3 py-1 text-xs font-mono border border-cyber-purple/30 text-cyber-purple rounded">
+              External API Integrations
+            </span>
+          </div>
+        </div>
+
+        {/* Interests / R&D */}
+        <h3 className="font-display text-2xl text-white mb-8 mt-16 flex items-center gap-3">
+          <span className="text-cyber-purple">&gt;</span>
+          Interests_&_R&D
+        </h3>
+
+        <div className="glass rounded-lg p-8 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyber-purple via-cyber-pink to-cyber-blue" />
+          <p className="text-gray-300 leading-relaxed max-w-3xl">
+            My own R&amp;D time goes into evolutionary approaches to algorithmic trading — using genetic
+            algorithms and StrategyQuant X to generate strategy candidates and stress-test them for
+            robustness before anything touches real capital.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <span className="px-3 py-1 text-xs font-mono border border-cyber-purple/30 text-cyber-purple rounded">
+              Evolutionary Optimization
+            </span>
+            <span className="px-3 py-1 text-xs font-mono border border-cyber-pink/30 text-cyber-pink rounded">
+              Algorithmic Trading
+            </span>
+            <span className="px-3 py-1 text-xs font-mono border border-cyber-blue/30 text-cyber-blue rounded">
+              StrategyQuant X
+            </span>
+            <span className="px-3 py-1 text-xs font-mono border border-cyber-green/30 text-cyber-green rounded">
+              Genetic Algorithms
             </span>
           </div>
         </div>

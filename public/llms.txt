@@ -42,7 +42,7 @@ Wiktor Jelen is a backend / systems engineer based in Krakow, Poland (EU citizen
 
 Background:
 - Architected a backend serving 450+ concurrent users for the Medical University of Silesia
-- Open source author: PythonMetaTrader5, 40,000+ PyPI downloads
+- Open source author: PythonMetaTrader5, 42,000+ PyPI downloads
 - Cross-cultural R&D experience (EU-China collaboration, Shenzhen)
 - Security-focused engineering (OWASP Top 10, LDAP/AD IAM, JWT)
 
