@@ -55,7 +55,7 @@ const Projects = () => {
     <section ref={sectionRef} id="projects" className="relative py-32 px-6">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-4 mb-16 projects-title">
-          <span className="font-mono text-cyber-purple">04.</span>
+          <span className="font-mono text-cyber-purple">03.</span>
           <h2 className="font-display font-bold text-3xl md:text-4xl text-white">Projects_</h2>
           <div className="flex-1 h-[1px] bg-gradient-to-r from-cyber-green/50 to-transparent" />
         </div>
