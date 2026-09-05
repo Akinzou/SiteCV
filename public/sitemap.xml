@@ -37,7 +37,7 @@ Hint: Try /.well-known/security.txt next
   <!-- Main page - where the magic happens -->
   <url>
     <loc>https://yelon.pro/</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <!-- Priority 1.0 because I'm worth it -->
@@ -46,7 +46,7 @@ Hint: Try /.well-known/security.txt next
   <!-- About section - learn about the deer behind the code -->
   <url>
     <loc>https://yelon.pro/#about</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -54,7 +54,7 @@ Hint: Try /.well-known/security.txt next
   <!-- Skills section - yes, I can center a div -->
   <url>
     <loc>https://yelon.pro/#skills</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <!-- Spoiler: The skills include reading sitemaps apparently -->
@@ -63,7 +63,7 @@ Hint: Try /.well-known/security.txt next
   <!-- Projects section - things I've built that actually work -->
   <url>
     <loc>https://yelon.pro/#projects</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -71,7 +71,7 @@ Hint: Try /.well-known/security.txt next
   <!-- Contact section - slide into my inbox -->
   <url>
     <loc>https://yelon.pro/#contact</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <!-- Recruiters: this is where you want to go -->
