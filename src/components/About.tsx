@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { usePyPIDownloads } from '../hooks/usePyPIDownloads'
-import { research } from '../content/profile'
+import { identity, research } from '../content/profile'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -128,6 +128,12 @@ const About = () => {
           <h2 className="font-display font-bold text-3xl md:text-4xl text-white">About_Me</h2>
           <div className="flex-1 h-[1px] bg-gradient-to-r from-cyber-blue/50 to-transparent" />
         </div>
+
+        {/* Who the name belongs to, in the third person — this is the sentence a
+            search engine or an AI summary can actually quote. */}
+        <p className="text-gray-300 leading-relaxed max-w-3xl mb-12 text-lg">
+          {identity.definition}
+        </p>
 
         {/* Worked with */}
         <div className="mb-12">

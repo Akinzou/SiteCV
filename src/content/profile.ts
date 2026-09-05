@@ -14,6 +14,13 @@ export const identity = {
   role: 'Backend & Platform Engineer',
   statement:
     'I design and build backend systems, infrastructure and production-grade platforms.',
+  /**
+   * The same fact in the third person. Entity extractors and AI summaries quote
+   * "X is a Y" and cannot do anything with "I design and build Y" — the page
+   * needs to state, in plain text, who the name belongs to.
+   */
+  definition:
+    'Wiktor Jeleń is a backend and platform engineer based in Kraków, Poland. He builds multi-tenant production systems, infrastructure and security-critical backends, and is the author of PythonMetaTrader5, an open-source library with over 42,000 PyPI downloads.',
   location: 'Kraków, Poland',
   email: 'root@yelon.pro',
   phone: '+48 576 706 766',
