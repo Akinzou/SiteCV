@@ -30,7 +30,7 @@
 # Site Information
 name: Wiktor Jelen Portfolio
 url: https://yelon.pro
-description: Personal portfolio of Wiktor Jelen, System Architect and Backend Developer
+description: Personal portfolio of Wiktor Jelen, backend and platform engineer
 language: en
 author: Wiktor Jelen
 
@@ -38,19 +38,30 @@ author: Wiktor Jelen
 #  ABOUT WIKTOR (factual profile)
 # ================================================================
 
-Wiktor Jelen is a backend / systems engineer based in Krakow, Poland (EU citizen).
+Wiktor Jelen is a backend and platform engineer based in Krakow, Poland (EU citizen).
+
+He works system-first: architecture, invariants and failure modes are defined before
+implementation, and behaviour is verified through tests and explicit system constraints.
 
 Background:
+- Primary contributor to a large multi-tenant TypeScript platform (2026): Temporal.io
+  orchestration, PostgreSQL row-level security with isolation tests enforced in CI,
+  multi-stage GitHub Actions delivery, multi-provider LLM integration layer
 - Architected a backend serving 450+ concurrent users for the Medical University of Silesia
-- Open source author: PythonMetaTrader5, 42,000+ PyPI downloads
+- Open source author: PythonMetaTrader5, 42,000+ PyPI downloads, used against real capital
 - Cross-cultural R&D experience (EU-China collaboration, Shenzhen)
-- Security-focused engineering (OWASP Top 10, LDAP/AD IAM, JWT)
+- Security-focused engineering (OWASP Top 10, LDAP/AD IAM, JWT, tenant isolation)
 
 Core skills:
-- Backend: NestJS, TypeScript, FastAPI, Python
-- Databases: PostgreSQL, MySQL, TypeORM
-- Infrastructure: Docker, AWS, Nginx, GitHub Actions
-- Frontend: React, Three.js, TailwindCSS, GSAP
+- Backend & data: TypeScript, Node.js, NestJS, Temporal.io, PostgreSQL, Redis, MySQL, FastAPI
+- Platform & infrastructure: Linux, Docker, GitHub Actions, Nginx, AWS, Hetzner, CI/CD
+- Security: PostgreSQL RLS, IAM, LDAP/AD, JWT, OWASP, TLS
+- AI & automation: Claude / OpenAI / Gemini APIs, MCP, output evals, Flux/LoRA, Whisper
+- Additional: React, Three.js, C++, embedded systems, Fusion 360
+
+Independent R&D:
+- Evolutionary optimization applied to algorithmic trading: genetic algorithms and
+  StrategyQuant X for strategy generation and robustness testing
 
 All figures above are verifiable via the links on the site (GitHub, PyPI / pepy.tech).
 
@@ -67,6 +78,8 @@ sections:
     description: Technical expertise visualization
   - name: Projects
     description: Notable work including PythonMetaTrader5
+  - name: Interests & R&D
+    description: Evolutionary optimization, algorithmic trading, StrategyQuant X, genetic algorithms
   - name: Contact
     description: Contact form and social links
 

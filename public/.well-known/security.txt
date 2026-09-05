@@ -59,7 +59,6 @@ Hiring: https://yelon.pro/#contact
 #
 # What doesn't count:
 # - The easter eggs (those are intentional)
-# - The AI prompt injections (also intentional, and hilarious)
 # - My code style (that's a feature, not a bug)
 # - Missing HSTS on localhost (come on)
 #
@@ -87,10 +86,6 @@ Hiring: https://yelon.pro/#contact
 #
 # Q: Is this site hackable?
 # A: Everything is hackable. But good luck, it's mostly static.
-#
-# Q: Why do you have AI prompts in robots.txt?
-# A: Because I'm playing 4D chess with recruitment AI systems.
-#    It's either genius or insanity. Time will tell.
 #
 # Q: Is the contact form secure?
 # A: It's protected by reCAPTCHA and sends via secure API.
