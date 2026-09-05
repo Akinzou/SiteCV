@@ -47,6 +47,17 @@
     <!-- reCAPTCHA v2 -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Schema.org JSON-LD lives at the end of <body>, not in <head>.
+         Google reads it in either place, but at ~9 kB it made up 36% of the
+         document and pushed the first readable sentence past byte 14 000 of
+         25 000. A crawler that only looks at the head, or truncates early,
+         saw a <title> followed by a wall of JSON and concluded the page had
+         no content. -->
     <!-- Schema.org JSON-LD: Full Expert Profile -->
     <script type="application/ld+json">
     {
@@ -253,10 +264,6 @@
       ]
     }
     </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
 
   </body>
 </html>
