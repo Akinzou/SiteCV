@@ -69,8 +69,9 @@ const renderSnapshot = (): string => {
   parts.push(`<header>
 <h1>${esc(identity.name)}</h1>
 <p class="snap-role">${esc(identity.role)}</p>
+<p class="snap-statement">${esc(identity.definition)}</p>
 <p class="snap-statement">${esc(identity.statement)}</p>
-<p class="snap-meta">${esc(identity.location)} &middot; <a href="mailto:${esc(identity.email)}">${esc(identity.email)}</a> &middot; <a href="tel:${identity.phone.replace(/\s/g, '')}">${esc(identity.phone)}</a> &middot; <a href="${esc(identity.github)}">GitHub</a> &middot; <a href="${esc(identity.linkedin)}">LinkedIn</a></p>
+<p class="snap-meta">${esc(identity.location)} · <a href="mailto:${esc(identity.email)}">${esc(identity.email)}</a> · <a href="tel:${identity.phone.replace(/\s/g, '')}">${esc(identity.phone)}</a> · <a href="${esc(identity.github)}">GitHub</a> · <a href="${esc(identity.linkedin)}">LinkedIn</a></p>
 </header>`)
 
   parts.push(`<section id="snap-focus"><h2>Focus areas</h2><div class="snap-grid snap-grid-4">${focusAreas
@@ -80,8 +81,8 @@ const renderSnapshot = (): string => {
   parts.push(`<section id="snap-experience"><h2>Experience</h2>${experience
     .map(
       (role) => `<article class="snap-block">
-<h3>${esc(role.role)}${role.project ? ` &mdash; ${esc(role.project)}` : ''}</h3>
-<p class="snap-sub">${esc(role.company)} &middot; ${esc(role.location)} &middot; ${esc(role.period)}</p>
+<h3>${esc(role.role)}${role.project ? ` — ${esc(role.project)}` : ''}</h3>
+<p class="snap-sub">${esc(role.company)} · ${esc(role.location)} · ${esc(role.period)}</p>
 <ul>${role.bullets.map((bullet) => `<li>${esc(bullet)}</li>`).join('')}</ul>
 </article>`,
     )
@@ -91,7 +92,7 @@ const renderSnapshot = (): string => {
     .map(
       (project) => `<article class="snap-block">
 <h3>${esc(project.name)}</h3>
-<p class="snap-sub">${esc(project.tagline)} &middot; ${esc(project.metric)}</p>
+<p class="snap-sub">${esc(project.tagline)} · ${esc(project.metric)}</p>
 <p><span class="snap-label">Problem</span><br>${esc(project.problem)}</p>
 <p><span class="snap-label">Solution</span><br>${esc(project.solution)}</p>
 <p class="snap-label">Stack</p>${list(project.stack)}
@@ -99,7 +100,7 @@ ${
   project.links.length
     ? `<p>${project.links
         .map((link) => `<a href="${esc(link.href)}" rel="noopener">${esc(link.label)}</a>`)
-        .join(' &middot; ')}</p>`
+        .join(' · ')}</p>`
     : ''
 }
 </article>`,
@@ -119,7 +120,7 @@ ${list(research.tags)}
     .map(
       (entry) => `<article class="snap-block">
 <h3>${esc(entry.degree)}</h3>
-<p class="snap-sub">${esc(entry.school)} &middot; ${esc(entry.location)} &middot; ${esc(entry.period)}</p>
+<p class="snap-sub">${esc(entry.school)} · ${esc(entry.location)} · ${esc(entry.period)}</p>
 </article>`,
     )
     .join('')}
@@ -127,8 +128,8 @@ ${list(research.tags)}
 </section>`)
 
   parts.push(`<section id="snap-contact"><h2>Contact</h2>
-<p>Open to backend, platform and system-architecture work &mdash; remote or ${esc(identity.location)}.</p>
-<p><a href="mailto:${esc(identity.email)}">${esc(identity.email)}</a> &middot; <a href="tel:${identity.phone.replace(/\s/g, '')}">${esc(identity.phone)}</a></p>
+<p>Open to backend, platform and system-architecture work — remote or ${esc(identity.location)}.</p>
+<p><a href="mailto:${esc(identity.email)}">${esc(identity.email)}</a> · <a href="tel:${identity.phone.replace(/\s/g, '')}">${esc(identity.phone)}</a></p>
 </section>`)
 
   return `<div id="seo-snapshot">${parts.join('')}</div>`
