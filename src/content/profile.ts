@@ -20,8 +20,8 @@ export const identity = {
    * read, which "I design and build things" on its own is not.
    */
   definition:
-    "I'm Wiktor Jeleń, a backend and platform engineer based in Kraków, Poland. I build multi-tenant production systems, infrastructure and security-critical backends, and I wrote PythonMetaTrader5, an open-source library with over 42,000 PyPI downloads.",
-  location: 'Kraków, Poland',
+    "I'm Wiktor Jeleń, a backend and platform engineer based in Cracow, Poland. I build multi-tenant production systems, infrastructure and security-critical backends, and I wrote PythonMetaTrader5, an open-source library with over 42,000 PyPI downloads.",
+  location: 'Cracow, Poland',
   email: 'root@yelon.pro',
   phone: '+48 576 706 766',
   site: 'https://yelon.pro',
@@ -106,11 +106,11 @@ export const projects: Project[] = [
     accent: 'purple',
     featured: true,
     problem:
-      'TradingView emits signals as webhooks while the broker expects authenticated API calls. Nothing bridges the two, and a dropped signal is a missed trade.',
+      'TradingView can only fire a plain, unauthenticated HTTP webhook. Anything listening on a guessable URL is eventually found by a scanner — and this endpoint opens positions on a live account.',
     solution:
-      'FastAPI backend integrated with TradingView webhooks, fully containerized and deployed through automated CI/CD.',
-    stack: ['Python', 'FastAPI', 'Docker', 'GitHub Actions'],
-    metric: 'Docker · CI/CD',
+      'FastAPI service translating TradingView alerts into TradeLocker orders, with the webhook path generated as a random secret that is printed once at startup and never again. Shipped as a Docker image built by GitHub Actions.',
+    stack: ['Python', 'FastAPI', 'uvicorn', 'Docker', 'GitHub Actions'],
+    metric: 'Docker image · CI/CD',
     links: [{ label: 'GitHub', href: 'https://github.com/Akinzou/TradeLockerBot' }],
   },
   {
@@ -203,7 +203,7 @@ export const education = [
     period: '10.2024 – Present',
     degree: 'B.Eng. in Computer Science, Cybersecurity (part-time)',
     school: 'WSB National Louis University',
-    location: 'Kraków, Poland',
+    location: 'Cracow, Poland',
   },
   {
     period: 'Completed',

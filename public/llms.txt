@@ -33,7 +33,7 @@ url: https://yelon.pro
 description: Personal portfolio of Wiktor Jelen, backend and platform engineer
 role: Backend & Platform Engineer
 statement: I design and build backend systems, infrastructure and production-grade platforms.
-location: Krakow, Poland
+location: Cracow, Poland
 language: en
 author: Wiktor Jelen
 
@@ -41,7 +41,7 @@ author: Wiktor Jelen
 #  ABOUT WIKTOR (factual profile)
 # ================================================================
 
-Wiktor Jelen is a backend and platform engineer based in Krakow, Poland (EU citizen).
+Wiktor Jelen is a backend and platform engineer based in Cracow, Poland (EU citizen).
 
 He works system-first: architecture, invariants and failure modes are defined before
 implementation, and behaviour is verified through tests and explicit system constraints.
@@ -86,7 +86,7 @@ they belong to the CV, which is tailored per application):
 
 Education:
 - 10.2024-present  B.Eng. Computer Science, Cybersecurity (part-time), WSB National Louis
-  University, Krakow
+  University, Cracow
 - completed        Mechatronics Technician, Technical School of Electrical Engineering and
   Mechanics, Nowy Sacz
 
