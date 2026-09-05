@@ -84,12 +84,20 @@ const Hero = () => {
         '-=0.4'
       )
 
+      // Focus areas, one card after another
+      tl.fromTo(
+        '.focus-card',
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: 0.45, stagger: 0.12, ease: 'power2.out' },
+        '-=0.3'
+      )
+
       // Terminal typing animation
       tl.fromTo(
         terminalRef.current,
         { opacity: 0, scale: 0.95 },
         { opacity: 1, scale: 1, duration: 0.5, ease: 'power2.out', onComplete: () => setTerminalReady(true) },
-        '-=0.2'
+        '-=0.1'
       )
 
       // Floating animation for decorative elements
@@ -152,7 +160,7 @@ const Hero = () => {
           {focusAreas.map((area) => (
             <div
               key={area.title}
-              className={`glass rounded-lg p-4 border ${accentBorder[area.accent]}`}
+              className={`focus-card glass rounded-lg p-4 border opacity-0 ${accentBorder[area.accent]}`}
             >
               <h2 className={`font-display font-bold text-sm mb-2 ${accentText[area.accent]}`}>
                 {area.title}
