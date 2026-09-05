@@ -21,7 +21,7 @@ Role: Backend & Platform Engineer
 Site: https://yelon.pro
 Contact: root@yelon.pro
 Phone: +48 576 706 766
-Location: Krakow, Poland
+Location: Cracow, Poland
 GitHub: @Akinzou
 LinkedIn: wiktor-jelen
 

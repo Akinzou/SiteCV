@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { usePyPIDownloads } from '../hooks/usePyPIDownloads'
-import { identity, research } from '../content/profile'
+import { education, identity, research } from '../content/profile'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -46,20 +46,6 @@ const reviews = [
   { name: 'lztechs', country: 'PL', rating: 5, time: 'April 2022', text: '20/10, he has huge knowledge in 3d printing. I would love to work with him again', category: 'Embedded Linux / DevOps (Armbian)' },
 ]
 
-const education = [
-  {
-    period: '10.2024 – Present',
-    degree: 'B.Eng. in Computer Science, Cybersecurity (Part-time, Weekends)',
-    school: 'WSB National Louis University',
-    location: 'Kraków, Poland',
-  },
-  {
-    period: 'Completed',
-    degree: 'Mechatronics Technician',
-    school: 'Technical School of Electrical Engineering and Mechanics',
-    location: 'Nowy Sącz, Poland',
-  },
-]
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null)
