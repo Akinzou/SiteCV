@@ -75,7 +75,8 @@ Employment history:
   contract, Jest tests, Ubuntu/Nginx/PM2 production environments and GitHub Actions CI/CD.
 - 08.2024-08.2025  R&D Systems Engineer, GEEETECH R&D Department, Shenzhen China / remote.
   System integration and Klipper firmware optimization; A10M structural redesign in
-  Fusion 360; technical bridge between EU engineering standards and Chinese R&D pace.
+  Fusion 360; coordinated technical requirements between European stakeholders and the
+  Shenzhen R&D team.
 - 04.2023-07.2024  Sales Systems Consultant, Randlab Software (Polsat Plus Group), remote.
   Automated client documentation generation for POS, telemarketing and mobile sales.
 - 09.2022-03.2023  Embedded / ThingsBoard Specialist, Randlab Software, Nowy Sacz.
