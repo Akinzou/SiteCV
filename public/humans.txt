@@ -17,6 +17,7 @@
 /* TEAM */
 
 Developer & Designer: Wiktor Jelen
+Role: Backend & Platform Engineer
 Site: https://yelon.pro
 Contact: root@yelon.pro
 Phone: +48 576 706 766
@@ -31,7 +32,7 @@ Language: English / Polish
 Standards: HTML5, CSS3, ES2022
 Stack: React 18, TypeScript 5, Three.js, GSAP, TailwindCSS
 Build: Vite 5
-IDE: VS Code + Claude Code
+IDE: VS Code
 Build time: ~3 seconds
 
 /* THANKS */

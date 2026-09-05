@@ -255,7 +255,7 @@ const Contact = () => {
       <div className="relative max-w-6xl mx-auto">
         {/* Section header */}
         <div className="flex items-center gap-4 mb-16 contact-title">
-          <span className="font-mono text-cyber-purple">04.</span>
+          <span className="font-mono text-cyber-purple">05.</span>
           <h2 className="font-display font-bold text-3xl md:text-4xl text-white">Contact_</h2>
           <div className="flex-1 h-[1px] bg-gradient-to-r from-cyber-pink/50 to-transparent" />
         </div>

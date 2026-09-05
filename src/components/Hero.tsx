@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
+import { focusAreas, identity } from '../content/profile'
+import { accentBorder, accentText } from '../lib/accents'
 
 // Typewriter component
 const Typewriter = ({ text, delay = 0, speed = 30, className = '', onComplete }: {
@@ -135,16 +137,31 @@ const Hero = () => {
           </span>
         </h1>
 
-        {/* Subtitle */}
+        {/* Subtitle — one positioning, one sentence. */}
         <div ref={subtitleRef} className="mb-12 opacity-0">
-          <p className="font-mono text-xl md:text-2xl text-gray-400 mb-4">
-            <span className="text-cyber-blue">{'>'}</span> System Architect{' '}
-            <span className="text-cyber-purple">|</span> Fullstack Developer{' '}
-            <span className="text-cyber-purple">|</span> Cybersec
+          <p className="font-mono text-xl md:text-2xl text-cyber-blue mb-4">
+            <span className="text-gray-500">{'>'}</span> {identity.role}
           </p>
-          <p className="font-mono text-sm text-gray-500 max-w-2xl mx-auto">
-            System Architecture • Production Systems • Security by Design
+          <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
+            {identity.statement}
           </p>
+        </div>
+
+        {/* Focus areas — what to know in the first five seconds. */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12 text-left">
+          {focusAreas.map((area) => (
+            <div
+              key={area.title}
+              className={`glass rounded-lg p-4 border ${accentBorder[area.accent]}`}
+            >
+              <h2 className={`font-display font-bold text-sm mb-2 ${accentText[area.accent]}`}>
+                {area.title}
+              </h2>
+              <p className="font-mono text-xs text-gray-400 leading-relaxed">
+                {area.items.join(' · ')}
+              </p>
+            </div>
+          ))}
         </div>
 
         {/* Terminal window */}
@@ -236,7 +253,7 @@ const Hero = () => {
                   <Typewriter text="$ cat status.txt" delay={450} speed={15} />
                 </div>
                 <div className="text-cyber-green mb-4">
-                  <Typewriter text='"Backend Architect & Systems Engineer"' delay={700} speed={10} />
+                  <Typewriter text={`"${identity.role}"`} delay={700} speed={10} />
                 </div>
 
                 <div className="text-gray-500">

@@ -34,53 +34,61 @@ Hint: Try /.well-known/security.txt next
 ================================================================
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main page - where the magic happens -->
+  <!--
+    One page, one URL. The #about / #skills / #projects fragments that used to
+    be listed here are not separate documents - search engines drop fragments
+    before fetching, so they resolved to five duplicates of the home page.
+  -->
   <url>
     <loc>https://yelon.pro/</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <!-- Priority 1.0 because I'm worth it -->
   </url>
 
-  <!-- About section - learn about the deer behind the code -->
+  <!-- Recommendation letters: real documents, and they rank for the name. -->
   <url>
-    <loc>https://yelon.pro/#about</loc>
+    <loc>https://yelon.pro/Technical_Recommendation_Letter.pdf</loc>
     <lastmod>2026-09-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
-
-  <!-- Skills section - yes, I can center a div -->
   <url>
-    <loc>https://yelon.pro/#skills</loc>
+    <loc>https://yelon.pro/RecomendationLetterCTS.pdf</loc>
     <lastmod>2026-09-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <!-- Spoiler: The skills include reading sitemaps apparently -->
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
-
-  <!-- Projects section - things I've built that actually work -->
   <url>
-    <loc>https://yelon.pro/#projects</loc>
+    <loc>https://yelon.pro/RecomendationLetterWSB2024.pdf</loc>
     <lastmod>2026-09-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
-
-  <!-- Contact section - slide into my inbox -->
   <url>
-    <loc>https://yelon.pro/#contact</loc>
+    <loc>https://yelon.pro/RecomendationLetterWSB2023.pdf</loc>
     <lastmod>2026-09-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <!-- Recruiters: this is where you want to go -->
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
-
-  <!--
-  SECRET URL LIST (just kidding, there are no secrets here)
-  Or are there? Check /teapot for HTTP 418
-  -->
+  <url>
+    <loc>https://yelon.pro/RecomendationLetterWSB2022.pdf</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://yelon.pro/RecomendationLetterWSB2021.pdf</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://yelon.pro/RecomendationLetterWSB2020.pdf</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
 </urlset>
 <!--
 ================================================================

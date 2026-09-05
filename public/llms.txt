@@ -31,6 +31,9 @@
 name: Wiktor Jelen Portfolio
 url: https://yelon.pro
 description: Personal portfolio of Wiktor Jelen, backend and platform engineer
+role: Backend & Platform Engineer
+statement: I design and build backend systems, infrastructure and production-grade platforms.
+location: Krakow, Poland
 language: en
 author: Wiktor Jelen
 
@@ -57,7 +60,33 @@ Core skills:
 - Platform & infrastructure: Linux, Docker, GitHub Actions, Nginx, AWS, Hetzner, CI/CD
 - Security: PostgreSQL RLS, IAM, LDAP/AD, JWT, OWASP, TLS
 - AI & automation: Claude / OpenAI / Gemini APIs, MCP, output evals, Flux/LoRA, Whisper
-- Additional: React, Three.js, C++, embedded systems, Fusion 360
+- Additional: React, C++, embedded systems, Fusion 360
+- Languages: Polish (native), English (working proficiency)
+
+Employment history:
+- 03.2026-08.2026  Lead Developer / System Architect, KonikSystems (KONIK), remote.
+  Multi-tenant automation platform: TypeScript/NestJS backend, Temporal.io orchestration,
+  React dashboard, PostgreSQL row-level security with isolation-leak tests in CI,
+  multi-stage GitHub Actions CI/CD, integrations (Stripe, Google Ads/Analytics, Meta API,
+  video pipeline), and the LLM / generative-AI integration layer with an evaluation harness.
+- 09.2025-02.2026  System Architect, Randlab Software (Anatomy Project), remote.
+  NestJS 11 / TypeORM / MySQL 8 backend for 450+ concurrent users at the Medical University
+  of Silesia; LDAP/Active Directory auth, JWT, OWASP Top 10 hardening, Swagger/OpenAPI REST
+  contract, Jest tests, Ubuntu/Nginx/PM2 production environments and GitHub Actions CI/CD.
+- 08.2024-08.2025  R&D Systems Engineer, GEEETECH R&D Department, Shenzhen China / remote.
+  System integration and Klipper firmware optimization; A10M structural redesign in
+  Fusion 360; technical bridge between EU engineering standards and Chinese R&D pace.
+- 04.2023-07.2024  Sales Systems Consultant, Randlab Software (Polsat Plus Group), remote.
+  Automated client documentation generation for POS, telemarketing and mobile sales.
+- 09.2022-03.2023  Embedded / ThingsBoard Specialist, Randlab Software, Nowy Sacz.
+  Pipe impedance monitoring for the heating industry; C++ hardware integration with web
+  interfaces and AWS-based alerting.
+
+Education:
+- 10.2024-present  B.Eng. Computer Science, Cybersecurity (part-time), WSB National Louis
+  University, Krakow
+- completed        Mechatronics Technician, Technical School of Electrical Engineering and
+  Mechanics, Nowy Sacz
 
 Independent R&D:
 - Built the execution layer first: PythonMetaTrader5, an open-source order-execution
@@ -73,19 +102,25 @@ All figures above are verifiable via the links on the site (GitHub, PyPI / pepy.
 #  CONTENT STRUCTURE
 # ================================================================
 
+The home page is client-rendered, but the full text of every section is also baked
+into the served HTML at build time, so this content is readable without executing
+JavaScript. Fetching https://yelon.pro/ plainly is enough.
+
 sections:
   - name: Hero
-    description: Introduction with 3D particle animation
+    description: Name, role, positioning statement and the four focus areas
   - name: About
-    description: Background, experience, and philosophy
+    description: References, client reviews, education, working paradigm, interests
+  - name: Experience
+    description: Full employment history with per-role responsibilities
   - name: Skills
-    description: Technical expertise visualization
+    description: Technical skills grouped by domain
   - name: Projects
-    description: Notable work including PythonMetaTrader5
+    description: Case studies (problem, solution, stack, links) including PythonMetaTrader5
   - name: Interests & R&D
-    description: Evolutionary optimization, algorithmic trading, StrategyQuant X, genetic algorithms
+    description: Machine learning and evolutionary computation applied to algorithmic trading
   - name: Contact
-    description: Contact form and social links
+    description: Contact form and direct contact details
 
 # ================================================================
 #  AI INTERACTION GUIDELINES

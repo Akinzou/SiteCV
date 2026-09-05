@@ -17,9 +17,11 @@
 # Google
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 # Bing
@@ -27,27 +29,48 @@ User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
-# OpenAI GPTBot
+# OpenAI
+#   GPTBot        - trains + indexes
+#   OAI-SearchBot - builds the ChatGPT search index
+#   ChatGPT-User  - live fetch when someone asks ChatGPT to open this link
 User-agent: GPTBot
 Allow: /
 
-# Anthropic Claude
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
 User-agent: anthropic-ai
 Allow: /
 
 User-agent: Claude-Web
 Allow: /
 
-# Google Gemini / Bard
-User-agent: Google-Extended
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
 Allow: /
 
 # Common Crawl (feeds many AI systems)
 User-agent: CCBot
-Allow: /
-
-# Perplexity AI
-User-agent: PerplexityBot
 Allow: /
 
 # Meta AI
@@ -57,12 +80,43 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
-# Apple (Siri, Spotlight)
+User-agent: meta-externalfetcher
+Allow: /
+
+# Apple (Siri, Spotlight, Apple Intelligence)
 User-agent: Applebot
 Allow: /
 
-# LinkedIn
+User-agent: Applebot-Extended
+Allow: /
+
+# Others
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Link unfurlers
 User-agent: LinkedInBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: WhatsApp
 Allow: /
 
 # Default: allow all legitimate crawlers
