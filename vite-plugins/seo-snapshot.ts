@@ -1,5 +1,6 @@
 import type { Plugin } from 'vite'
 import {
+  clientWork,
   education,
   focusAreas,
   identity,
@@ -99,6 +100,19 @@ ${
   parts.push(`<section id="snap-skills"><h2>Technical skills</h2><div class="snap-grid">${skillGroups
     .map((group) => `<div><h3>${esc(group.title)}</h3>${list(group.items)}</div>`)
     .join('')}</div></section>`)
+
+  parts.push(`<section id="snap-clients"><h2>Client work</h2>
+<h3>${esc(clientWork.headline)}</h3>
+<p>${esc(clientWork.body)}</p>
+${list(clientWork.stats.map((stat) => `${stat.value} ${stat.label.toLowerCase()}`))}
+${clientWork.quotes
+  .map(
+    (quote) =>
+      `<blockquote class="snap-block"><p>${esc(quote.text)}</p><p class="snap-sub">${esc(quote.author)} · ${esc(quote.country)}</p></blockquote>`,
+  )
+  .join('')}
+<p><a href="${esc(clientWork.profileUrl)}" rel="noopener">Verify on ${esc(clientWork.platform)}</a></p>
+</section>`)
 
   parts.push(`<section id="snap-research"><h2>${esc(research.title)}</h2>
 <p>${esc(research.body)}</p>
