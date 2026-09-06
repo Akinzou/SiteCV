@@ -440,7 +440,7 @@ const About = () => {
             unless you hovered a [verify] chip. */}
         <h3 className="font-display text-2xl text-white mb-8 mt-16 flex items-center gap-3">
           <span className="text-cyber-green">&gt;</span>
-          Client_Work
+          Consulting_
         </h3>
 
         <div className="glass rounded-lg p-6 md:p-8 mb-16 relative overflow-hidden">

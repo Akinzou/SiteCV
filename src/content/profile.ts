@@ -200,9 +200,11 @@ export const skillGroups: { title: string; accent: Accent; items: string[] }[] =
 
 /**
  * Verifiable third-party proof, which is the rarest thing on a portfolio.
- * Framed as independent consulting rather than as a marketplace profile: the
- * work is embedded Linux and firmware, and it should read as a second area of
- * depth next to the backend track, not as a change of career level.
+ * Framed as paid client work rather than as a marketplace profile: embedded
+ * Linux, firmware and hardware are a second area of depth standing next to the
+ * software track, not an appendix to it — hence "software and infrastructure
+ * work" rather than "the backend work", which narrowed it unnecessarily. The
+ * platform is named once, in the sentence that offers verification.
  *
  * Counts are derived from the review list rendered in About.tsx — 30 of 31 at
  * five stars, nine countries, 2022 through 2026 — so the numbers below and the
@@ -211,9 +213,9 @@ export const skillGroups: { title: string; accent: Accent; items: string[] }[] =
 export const clientWork = {
   platform: 'Fiverr',
   profileUrl: 'https://www.fiverr.com/akinzouent',
-  headline: 'Independent consulting — embedded Linux & firmware',
+  headline: 'Paid Client Work — Embedded Linux, Firmware & Hardware',
   body:
-    'Alongside the backend work I take paid consulting jobs on Fiverr: Armbian and embedded Linux, Klipper and Marlin firmware, and the hardware that runs them. 31 public reviews since 2022, 30 of them at five stars, from clients in nine countries. Every one is verifiable on the profile.',
+    'Alongside my software and infrastructure work, I take on independent technical consulting projects involving embedded Linux, Armbian, Klipper, Marlin and 3D-printer hardware. 31 public reviews since 2022, 30 of them at five stars, from clients in nine countries. Every review is publicly verifiable on Fiverr.',
   stats: [
     { label: 'Public reviews', value: '31' },
     { label: 'Five-star', value: '30 of 31' },
