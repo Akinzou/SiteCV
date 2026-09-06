@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { usePyPIDownloads } from '../hooks/usePyPIDownloads'
-import { education, identity, research } from '../content/profile'
+import { clientWork, education, identity, research } from '../content/profile'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -435,28 +435,51 @@ const About = () => {
           </div>
         </div>
 
-        {/* Client Reviews - Infinite Scroll */}
-        <div className="glass rounded-lg p-6 mb-16 relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyber-green via-cyber-blue to-transparent" />
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
-            <h3 className="font-display text-xl text-white flex items-center gap-3">
-              <span className="text-cyber-green">&gt;</span>
-              Client_Reviews
-              <span className="text-sm font-mono text-gray-500">({reviews.length})</span>
-            </h3>
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-cyber-green text-lg">{'★'.repeat(5)}</span>
-              <span className="font-mono text-sm text-gray-400">4.9 avg</span>
-              <a
-                href="https://www.fiverr.com/akinzouent"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-1.5 bg-cyber-green/20 text-cyber-green hover:bg-cyber-blue/20 hover:text-cyber-blue transition-colors text-[10px] font-mono rounded"
-              >
-                [verify]
-              </a>
-            </div>
+        {/* Client work. The platform used to appear only inside an href, so the
+            one piece of independently verifiable proof on the page was invisible
+            unless you hovered a [verify] chip. */}
+        <h3 className="font-display text-2xl text-white mb-8 mt-16 flex items-center gap-3">
+          <span className="text-cyber-green">&gt;</span>
+          Client_Work
+        </h3>
+
+        <div className="glass rounded-lg p-6 md:p-8 mb-16 relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyber-green via-cyber-blue to-cyber-purple" />
+
+          <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-4">
+            <h4 className="font-display text-lg text-white">{clientWork.headline}</h4>
+            <span className="font-mono text-sm text-cyber-green whitespace-nowrap">
+              {'★'.repeat(5)} on {clientWork.platform}
+            </span>
           </div>
+
+          <p className="text-gray-300 leading-relaxed max-w-3xl mb-6">{clientWork.body}</p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            {clientWork.stats.map((stat) => (
+              <div key={stat.label} className="border border-cyber-green/20 rounded p-3">
+                <p className="font-display font-bold text-xl text-cyber-green">{stat.value}</p>
+                <p className="font-mono text-xs text-gray-500 mt-1">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href={clientWork.profileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded border border-cyber-green/30 text-cyber-green font-mono text-sm hover:bg-white/5 transition-colors"
+            data-cursor-hover
+          >
+            Verify on {clientWork.platform}
+            <span aria-hidden="true" className="text-xs opacity-60">
+              ↗
+            </span>
+          </a>
+
+          <p className="font-mono text-xs uppercase tracking-widest text-gray-500 mb-4">
+            All {reviews.length} reviews
+          </p>
 
           <div className="reviews-scroll-container h-[400px]">
             <div className="reviews-scroll">

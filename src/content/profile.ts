@@ -198,6 +198,43 @@ export const skillGroups: { title: string; accent: Accent; items: string[] }[] =
   },
 ]
 
+/**
+ * Verifiable third-party proof, which is the rarest thing on a portfolio.
+ * Framed as independent consulting rather than as a marketplace profile: the
+ * work is embedded Linux and firmware, and it should read as a second area of
+ * depth next to the backend track, not as a change of career level.
+ *
+ * Counts are derived from the review list rendered in About.tsx — 30 of 31 at
+ * five stars, nine countries, 2022 through 2026 — so the numbers below and the
+ * feed on the page cannot disagree.
+ */
+export const clientWork = {
+  platform: 'Fiverr',
+  profileUrl: 'https://www.fiverr.com/akinzouent',
+  headline: 'Independent consulting — embedded Linux & firmware',
+  body:
+    'Alongside the backend work I take paid consulting jobs on Fiverr: Armbian and embedded Linux, Klipper and Marlin firmware, and the hardware that runs them. 31 public reviews since 2022, 30 of them at five stars, from clients in nine countries. Every one is verifiable on the profile.',
+  stats: [
+    { label: 'Public reviews', value: '31' },
+    { label: 'Five-star', value: '30 of 31' },
+    { label: 'Countries', value: '9' },
+    { label: 'Active since', value: '2022' },
+  ],
+  /** Quoted verbatim; each one is on the public profile. */
+  quotes: [
+    {
+      text: 'This guy knows what he is doing. Helped me get my modified ender 3 printing again. I have been scratching my head on the problems with it for months and he helped me get it working in a couple days.',
+      author: 'ccrank85',
+      country: 'US',
+    },
+    {
+      text: 'Was very helpful and willing to help immediately. Was also very flexible in helping with the issue we were in vastly different time zones. 10/10 would reach out for consulting again.',
+      author: 'skilnotfound',
+      country: 'US',
+    },
+  ],
+}
+
 export const education = [
   {
     period: '10.2024 – Present',
