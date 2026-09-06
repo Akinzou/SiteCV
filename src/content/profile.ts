@@ -218,7 +218,6 @@ export const clientWork = {
     { label: 'Public reviews', value: '31' },
     { label: 'Five-star', value: '30 of 31' },
     { label: 'Countries', value: '9' },
-    { label: 'Active since', value: '2022' },
   ],
   /** Quoted verbatim; each one is on the public profile. */
   quotes: [
