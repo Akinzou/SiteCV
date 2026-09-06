@@ -90,6 +90,13 @@ Education:
 - completed        Mechatronics Technician, Technical School of Electrical Engineering and
   Mechanics, Nowy Sacz
 
+Paid client work (second track, alongside software and infrastructure):
+- Independent technical consulting in embedded Linux, Armbian, Klipper, Marlin and
+  3D-printer hardware
+- 31 public reviews since 2022, 30 of them at five stars, from clients in nine
+  countries (US, PL, GB, CA, CH, MT, IE, NZ, HK)
+- Publicly verifiable at https://www.fiverr.com/akinzouent
+
 Independent R&D:
 - Built the execution layer first: PythonMetaTrader5, an open-source order-execution
   library for MetaTrader 5 (42,000+ downloads)
@@ -115,6 +122,8 @@ sections:
     description: Intro, references, client reviews, education, working paradigm, interests
   - name: Skills
     description: Technical skills grouped by domain
+  - name: Client Work
+    description: Paid consulting in embedded Linux, firmware and hardware, with public reviews
   - name: Projects
     description: Case studies (problem, solution, stack, links) including PythonMetaTrader5
   - name: Interests & R&D
