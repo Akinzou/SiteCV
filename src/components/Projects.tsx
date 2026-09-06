@@ -122,19 +122,25 @@ const Projects = () => {
                   ))}
                 </div>
 
+                {/* Bordered rather than bare text: as plain links these read as
+                    body copy and get missed entirely on the cards that carry no
+                    [verify] badge to hint that anything here is clickable. */}
                 {project.links.length > 0 && (
-                  <div className="flex flex-wrap gap-6 mt-6 pt-6 border-t border-gray-700/40">
+                  <div className="flex flex-wrap gap-3 mt-6 pt-6 border-t border-gray-700/40">
                     {project.links.map((link) => (
                       <a
                         key={link.href}
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`inline-flex items-center gap-2 font-mono text-sm hover:underline ${accentText[project.accent]}`}
+                        className={`inline-flex items-center gap-2 px-4 py-2 rounded border font-mono text-sm transition-colors hover:bg-white/5 ${accentText[project.accent]} ${accentBorder[project.accent]}`}
                         data-cursor-hover
                       >
                         {link.label === 'GitHub' && <GitHubIcon />}
                         {link.label}
+                        <span aria-hidden="true" className="text-xs opacity-60">
+                          ↗
+                        </span>
                       </a>
                     ))}
                   </div>
