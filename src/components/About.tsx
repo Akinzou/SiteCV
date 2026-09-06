@@ -455,7 +455,7 @@ const About = () => {
 
           <p className="text-gray-300 leading-relaxed max-w-3xl mb-6">{clientWork.body}</p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
             {clientWork.stats.map((stat) => (
               <div key={stat.label} className="border border-cyber-green/20 rounded p-3">
                 <p className="font-display font-bold text-xl text-cyber-green">{stat.value}</p>
