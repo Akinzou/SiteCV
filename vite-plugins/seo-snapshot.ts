@@ -101,7 +101,7 @@ ${
     .map((group) => `<div><h3>${esc(group.title)}</h3>${list(group.items)}</div>`)
     .join('')}</div></section>`)
 
-  parts.push(`<section id="snap-clients"><h2>Client work</h2>
+  parts.push(`<section id="snap-clients"><h2>Consulting</h2>
 <h3>${esc(clientWork.headline)}</h3>
 <p>${esc(clientWork.body)}</p>
 ${list(clientWork.stats.map((stat) => `${stat.value} ${stat.label.toLowerCase()}`))}
