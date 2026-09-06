@@ -41,9 +41,21 @@ Hint: Try /.well-known/security.txt next
   -->
   <url>
     <loc>https://yelon.pro/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!--
+    The second real document on the domain. Plain HTML, no JavaScript: who
+    Wiktor Jelen is, in the words someone would actually search for, plus the
+    short answers a generative result can quote.
+  -->
+  <url>
+    <loc>https://yelon.pro/about</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!-- Recommendation letters: real documents, and they rank for the name. -->

@@ -130,6 +130,19 @@ const About = () => {
               Open to opportunities
             </span>
           </div>
+          {/* A real second URL, not an anchor: /about is a static page built
+              from the same profile.ts, and it is the one a search engine or an
+              assistant can quote when asked who this is. */}
+          <a
+            href="/about"
+            className="inline-flex items-center gap-2 mt-6 font-mono text-sm text-cyber-blue hover:text-cyber-green transition-colors"
+            data-cursor-hover
+          >
+            Full profile
+            <span aria-hidden="true" className="text-xs opacity-60">
+              →
+            </span>
+          </a>
         </div>
 
         {/* Worked with */}
