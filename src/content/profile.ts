@@ -29,6 +29,67 @@ export const identity = {
   linkedin: 'https://www.linkedin.com/in/wiktor-jelen-8a658b293/',
 }
 
+/**
+ * Every public account that is unambiguously this person.
+ *
+ * Feeds schema.org `sameAs` and the visible link list on /about. Two rules:
+ * each entry is a *profile* of the person (a project page identifies a project,
+ * not its author), and each one should eventually link back here — a search
+ * engine merges two accounts into one entity when both ends agree, and treats
+ * a one-way claim as something the site says about itself.
+ */
+export const profiles = [
+  { label: 'GitHub', handle: '@Akinzou', href: 'https://github.com/Akinzou' },
+  {
+    label: 'LinkedIn',
+    handle: 'wiktor-jelen',
+    href: 'https://www.linkedin.com/in/wiktor-jelen-8a658b293/',
+  },
+  { label: 'PyPI', handle: 'Akinzou', href: 'https://pypi.org/user/Akinzou/' },
+  { label: 'Fiverr', handle: 'akinzouent', href: 'https://www.fiverr.com/akinzouent' },
+]
+
+/**
+ * Short answers to the questions someone actually types about a person.
+ *
+ * Written to be liftable: every answer opens with the full name instead of a
+ * pronoun and survives being quoted on its own, away from the question. That is
+ * the shape an AI Overview or a chat assistant can reuse; a paragraph that
+ * starts with "He also..." is not.
+ */
+export const qa: { question: string; answer: string }[] = [
+  {
+    question: 'Who is Wiktor Jeleń?',
+    answer:
+      'Wiktor Jeleń is a backend and platform engineer based in Cracow, Poland. He builds multi-tenant production systems, infrastructure and security-critical backends, and is the author of PythonMetaTrader5, an open-source order-execution library with more than 42,000 downloads on PyPI.',
+  },
+  {
+    question: 'What does Wiktor Jeleń work on?',
+    answer:
+      'Wiktor Jeleń works across four areas: backend systems (TypeScript, NestJS, Python, FastAPI, PostgreSQL), platform and infrastructure (Linux, Docker, Nginx, GitHub Actions, AWS, CI/CD), system architecture (multi-tenant isolation, workflow orchestration, failure modes, integration testing) and AI integration (multi-provider LLM layers, Model Context Protocol, evaluation harnesses).',
+  },
+  {
+    question: 'Where is Wiktor Jeleń based?',
+    answer:
+      'Wiktor Jeleń is based in Cracow, Poland, and is an EU citizen. He works remotely with clients in Europe, North America and Asia, and has run hardware R&D directly with a team in Shenzhen, China.',
+  },
+  {
+    question: 'What is PythonMetaTrader5?',
+    answer:
+      'PythonMetaTrader5 is an open-source Python library written by Wiktor Jeleń that wraps the MetaTrader 5 terminal API for algorithmic trading. It normalizes order placement, handles the full set of broker return codes and adds the safeguards the native API leaves out, so a strategy can run against a live account. It has passed 42,000 downloads on PyPI.',
+  },
+  {
+    question: 'Does Wiktor Jeleń take client work?',
+    answer:
+      'Yes. Alongside software and infrastructure work, Wiktor Jeleń takes independent consulting projects in embedded Linux, Armbian, Klipper, Marlin and 3D-printer hardware. That track has 31 public reviews since 2022, 30 of them at five stars, from clients in nine countries, all readable on his public Fiverr profile.',
+  },
+  {
+    question: 'Why is the site called Yelon?',
+    answer:
+      '"Jeleń" is the Polish word for deer, and "Yelon" is roughly how it sounds to an English speaker. Wiktor Jeleń uses Yelon as an online handle and as the name of this site, yelon.pro.',
+  },
+]
+
 export type Accent = 'blue' | 'purple' | 'green' | 'pink' | 'yellow'
 
 /** The four things worth knowing in the first five seconds. */

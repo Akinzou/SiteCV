@@ -2,9 +2,10 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
 import { seoSnapshot } from './vite-plugins/seo-snapshot'
+import { aboutPage } from './vite-plugins/about-page'
 
 export default defineConfig({
-  plugins: [react(), seoSnapshot()],
+  plugins: [react(), seoSnapshot(), aboutPage()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
