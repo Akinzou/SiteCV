@@ -19,7 +19,7 @@ trap 'rm -rf "$tmp"' EXIT
 # checkout would produce anyway.
 tar -C dist -czf "$tmp/dist.tar.gz" --exclude='CV_WiktorJelen*' .
 tar -C frog -czf "$tmp/server.tar.gz" --exclude=__pycache__ \
-  server.py requirements.txt run.sh
+  server.py requirements.txt run.sh watchdog.sh
 
 ssh frog "mkdir -p ~/site/dist ~/site/logs"
 scp "$tmp/dist.tar.gz" frog:~/site/dist.tar.gz
