@@ -2,10 +2,39 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr
 from collections import defaultdict
+import ipaddress
 import time
 import os
 import resend
 import httpx
+
+# Only trust X-Real-IP when the TCP connection itself comes from one of these
+# ranges (loopback / private networks) - i.e. an internal reverse proxy on the
+# docker network or localhost. Anyone connecting directly from the public
+# internet cannot spoof their way past the rate limit by setting this header.
+TRUSTED_PROXY_NETWORKS = [
+    ipaddress.ip_network("127.0.0.0/8"),
+    ipaddress.ip_network("10.0.0.0/8"),
+    ipaddress.ip_network("172.16.0.0/12"),
+    ipaddress.ip_network("192.168.0.0/16"),
+]
+
+
+def get_client_ip(request: Request) -> str:
+    peer = request.client.host if request.client else ""
+    try:
+        is_trusted_proxy = any(
+            ipaddress.ip_address(peer) in network for network in TRUSTED_PROXY_NETWORKS
+        )
+    except ValueError:
+        is_trusted_proxy = False
+
+    if is_trusted_proxy:
+        real_ip = request.headers.get("X-Real-IP")
+        if real_ip:
+            return real_ip
+
+    return peer
 
 resend.api_key = os.environ.get("RESEND_API_KEY")
 if not resend.api_key:
@@ -66,7 +95,7 @@ def check_rate_limit(ip: str) -> bool:
 
 @app.post("/send")
 async def send_message(form: ContactForm, request: Request):
-    client_ip = request.headers.get("X-Real-IP", request.client.host)
+    client_ip = get_client_ip(request)
 
     # 1. Honeypot check - if filled, it's a bot
     if form.website:
