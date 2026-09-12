@@ -1,8 +1,8 @@
-# yelon.pro ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?logo=typescript&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white) ![Three.js](https://img.shields.io/badge/Three.js-0.170-000000?logo=threedotjs&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4-06B6D4?logo=tailwindcss&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white) ![License](https://img.shields.io/badge/License-MIT-green) [![Live](https://img.shields.io/badge/Live-yelon.pro-00f0ff)](https://yelon.pro)
+# yelon.dev ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?logo=typescript&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white) ![Three.js](https://img.shields.io/badge/Three.js-0.170-000000?logo=threedotjs&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4-06B6D4?logo=tailwindcss&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white) ![License](https://img.shields.io/badge/License-MIT-green) [![Live](https://img.shields.io/badge/Live-yelon.dev-00f0ff)](https://yelon.dev)
 
 Personal portfolio website built with React, Three.js, and a healthy dose of easter eggs.
 
-Live: https://yelon.pro
+Live: https://yelon.dev
 
 ## Tech Stack
 
@@ -93,7 +93,7 @@ public/
 
 ## Contact
 
-- Email: root@yelon.pro
+- Email: root@yelon.dev
 - LinkedIn: wiktor-jelen
 - GitHub: Akinzou
 

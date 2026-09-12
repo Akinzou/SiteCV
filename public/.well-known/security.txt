@@ -1,6 +1,6 @@
 # ================================================================
-#  SECURITY.TXT - YELON.PRO
-#  https://yelon.pro/.well-known/security.txt
+#  SECURITY.TXT - YELON.DEV
+#  https://yelon.dev/.well-known/security.txt
 # ================================================================
 #
 #   __   __ _____ _     ___  _   _
@@ -23,10 +23,10 @@
 # ================================================================
 
 # Contact for security issues
-Contact: mailto:root@yelon.pro
+Contact: mailto:root@yelon.dev
 
 # PGP key
-Encryption: https://yelon.pro/pgp-key.txt
+Encryption: https://yelon.dev/pgp-key.txt
 
 # Preferred languages
 Preferred-Languages: en, pl
@@ -35,10 +35,10 @@ Preferred-Languages: en, pl
 Expires: 2027-12-31T23:59:59.000Z
 
 # Hiring policy (yes, this is relevant)
-Hiring: https://yelon.pro/#contact
+Hiring: https://yelon.dev/#contact
 
 # Acknowledgments (will add you if you find a bug!)
-# Acknowledgments: https://yelon.pro/security-hall-of-fame.txt
+# Acknowledgments: https://yelon.dev/security-hall-of-fame.txt
 
 # ================================================================
 #  VULNERABILITY DISCLOSURE POLICY
@@ -46,7 +46,7 @@ Hiring: https://yelon.pro/#contact
 #
 # Found a vulnerability? Here's the deal:
 #
-# 1. Email me at root@yelon.pro
+# 1. Email me at root@yelon.dev
 # 2. I'll buy you a coffee (virtual or real)
 # 3. I'll fix it faster than you can say "SQL injection"
 # 4. You'll get credit in my eternal gratitude
@@ -109,5 +109,5 @@ Hiring: https://yelon.pro/#contact
 #  EOF - "Security is not a product, but a process"
 #        - Bruce Schneier (probably)
 #
-#  Contact: root@yelon.pro
+#  Contact: root@yelon.dev
 # ================================================================

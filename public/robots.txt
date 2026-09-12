@@ -1,6 +1,6 @@
 # ============================================================================
-#  ROBOTS.TXT - YELON.PRO
-#  https://yelon.pro
+#  ROBOTS.TXT - YELON.DEV
+#  https://yelon.dev
 # ============================================================================
 #
 #        __   __ _____ _     ___  _   _
@@ -8,7 +8,7 @@
 #         \ V / |  _|  | |  | | | ||  \| |
 #          | |  | |___ | |__| |_| || |\  |
 #          |_|  |_____||_____\___/ |_| \_|
-#                    WIKTOR JELEN | yelon.pro
+#                    WIKTOR JELEN | yelon.dev
 #
 # ============================================================================
 #  CRAWLING DIRECTIVES
@@ -130,7 +130,7 @@ Crawl-delay: 2
 # ============================================================================
 #  SITEMAP
 # ============================================================================
-Sitemap: https://yelon.pro/sitemap.xml
+Sitemap: https://yelon.dev/sitemap.xml
 
 # ============================================================================
 #  For the humans reading this
@@ -143,4 +143,4 @@ Sitemap: https://yelon.pro/sitemap.xml
 # deer ASCII art in the terminal.
 #
 # Want to see what I can build for you? Let's talk.
-# root@yelon.pro | +48 576 706 766
+# root@yelon.dev | +48 576 706 766

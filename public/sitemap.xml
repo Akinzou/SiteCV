@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 ================================================================
-  SITEMAP.XML - YELON.PRO
-  https://yelon.pro/sitemap.xml
+  SITEMAP.XML - YELON.DEV
+  https://yelon.dev/sitemap.xml
 ================================================================
 
    __   __ _____ _     ___  _   _
@@ -40,7 +40,7 @@ Hint: Try /.well-known/security.txt next
     before fetching, so they resolved to five duplicates of the home page.
   -->
   <url>
-    <loc>https://yelon.pro/</loc>
+    <loc>https://yelon.dev/</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -52,7 +52,7 @@ Hint: Try /.well-known/security.txt next
     short answers a generative result can quote.
   -->
   <url>
-    <loc>https://yelon.pro/about</loc>
+    <loc>https://yelon.dev/about</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -60,43 +60,43 @@ Hint: Try /.well-known/security.txt next
 
   <!-- Recommendation letters: real documents, and they rank for the name. -->
   <url>
-    <loc>https://yelon.pro/Technical_Recommendation_Letter.pdf</loc>
+    <loc>https://yelon.dev/Technical_Recommendation_Letter.pdf</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://yelon.pro/RecomendationLetterCTS.pdf</loc>
+    <loc>https://yelon.dev/RecomendationLetterCTS.pdf</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://yelon.pro/RecomendationLetterWSB2024.pdf</loc>
+    <loc>https://yelon.dev/RecomendationLetterWSB2024.pdf</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://yelon.pro/RecomendationLetterWSB2023.pdf</loc>
+    <loc>https://yelon.dev/RecomendationLetterWSB2023.pdf</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://yelon.pro/RecomendationLetterWSB2022.pdf</loc>
+    <loc>https://yelon.dev/RecomendationLetterWSB2022.pdf</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://yelon.pro/RecomendationLetterWSB2021.pdf</loc>
+    <loc>https://yelon.dev/RecomendationLetterWSB2021.pdf</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://yelon.pro/RecomendationLetterWSB2020.pdf</loc>
+    <loc>https://yelon.dev/RecomendationLetterWSB2020.pdf</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
@@ -109,6 +109,6 @@ Hint: Try /.well-known/security.txt next
   "In XML, no one can hear you scream...
    ...because you forgot to close a tag"
 
-  Contact: root@yelon.pro
+  Contact: root@yelon.dev
 ================================================================
 -->

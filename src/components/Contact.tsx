@@ -39,8 +39,8 @@ const contactInfo = [
   {
     icon: '📧',
     label: 'Email',
-    value: 'root@yelon.pro',
-    href: 'mailto:root@yelon.pro',
+    value: 'root@yelon.dev',
+    href: 'mailto:root@yelon.dev',
   },
   {
     icon: '📱',
@@ -217,7 +217,7 @@ const Contact = () => {
         setTerminalLines((prev) => [
           ...prev,
           `$ Message transmitted successfully.`,
-          `$ Recipient: root@yelon.pro`,
+          `$ Recipient: root@yelon.dev`,
           `$ Status: DELIVERED`,
         ])
         setFormState({ name: '', email: '', message: '', website: '' })
@@ -469,11 +469,11 @@ const Contact = () => {
             Prefer a direct approach?
           </p>
           <button
-            onClick={() => handleCopyEmail('root@yelon.pro')}
+            onClick={() => handleCopyEmail('root@yelon.dev')}
             className="inline-flex items-center gap-3 px-8 py-4 border-2 border-cyber-blue text-cyber-blue font-display font-bold text-lg hover:bg-cyber-blue/10 transition-colors rounded gradient-border relative"
             data-cursor-hover
           >
-            <span>root@yelon.pro</span>
+            <span>root@yelon.dev</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
