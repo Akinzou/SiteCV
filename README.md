@@ -41,7 +41,7 @@ The site contains 10 hidden easter eggs for curious visitors. They're scattered 
 
 Each egg contains hints pointing to the next one. Finding all of them reveals secret codes.
 
-> **Note:** `/admin`, `/wp-login`, `/teapot`, and `/about` are served extensionless (e.g. `/admin` → `admin.html`) via explicit `rewrites` in `vercel.json`, replacing the nginx `try_files` rule (see `nginx.conf`) the old VPS deployment used for the same thing.
+> **Note:** `/admin`, `/wp-login`, `/teapot`, and `/about` are served extensionless (e.g. `/admin` → `admin.html`) via explicit `rewrites` in `vercel.json`, replacing the nginx `try_files` rule (see `nginx.conf`) the old VPS deployment used for the same thing. `/about.html` itself 301s to `/about` (also in `vercel.json`) so the two URLs can't both get indexed as duplicate content.
 
 ## AI Prompt Injection
 
@@ -66,7 +66,9 @@ The site is deployed on Vercel:
 
 - `vercel.json` builds the frontend (`npm run build` → `dist/`) and rewrites `/api/*` to the
   serverless function in `api/index.py`, except `/api/pepy/*`, which is proxied straight to
-  `pepy.tech` for the PyPI download counter (avoids a CORS request from the browser).
+  `pepy.tech` for the PyPI download counter (avoids a CORS request from the browser). Vercel
+  applies the first matching `rewrites` entry, so the `/api/pepy/*` rule has to stay above the
+  generic `/api/(.*)` one.
 - Vercel's GitHub App creates a preview deployment on every PR and deploys to production on
   every push to `master` - there's no separate GitHub Actions workflow.
 - `yelon.pro` and `www.yelon.pro` 301-redirect to `yelon.dev` (also configured in

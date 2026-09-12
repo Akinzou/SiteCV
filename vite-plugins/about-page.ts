@@ -32,8 +32,9 @@ import { esc, list, pageStyles } from './shared'
  * disagree with the crawler's view of it — because there is only one view.
  * It reads the same `profile.ts` the app does, so the copy stays in one place.
  *
- * Served extensionless as `/about` by the `try_files $uri $uri.html` rule in
- * nginx.conf.
+ * Served extensionless as `/about` by a rewrite in vercel.json (`/about.html`
+ * itself 301s to `/about` there too, so the two URLs can't both get indexed).
+ * nginx.conf has the equivalent rule for the old, unused VPS deployment.
  */
 
 const extraStyles = (root: string): string => `
