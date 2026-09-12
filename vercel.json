@@ -2,7 +2,12 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api" }
+    { "source": "/api/pepy/:path*", "destination": "https://pepy.tech/:path*" },
+    { "source": "/api/(.*)", "destination": "/api" },
+    { "source": "/admin", "destination": "/admin.html" },
+    { "source": "/wp-login", "destination": "/wp-login.html" },
+    { "source": "/teapot", "destination": "/teapot.html" },
+    { "source": "/about", "destination": "/about.html" }
   ],
   "redirects": [
     {
