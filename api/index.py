@@ -44,14 +44,11 @@ redis = Redis.from_env()
 
 app = FastAPI()
 
-# CORS - yelon.pro during the migration to yelon.dev, drop yelon.pro once
-# the domain switch is complete and it's just a 301 redirect.
+# CORS - only allow yelon.dev. yelon.pro now just 301s here (see
+# vercel.json), so no page is ever served from that origin anymore.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://yelon.pro", "https://www.yelon.pro",
-        "https://yelon.dev", "https://www.yelon.dev",
-    ],
+    allow_origins=["https://yelon.dev", "https://www.yelon.dev"],
     allow_methods=["POST"],
     allow_headers=["*"],
 )

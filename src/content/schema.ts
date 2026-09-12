@@ -15,7 +15,7 @@
  *
  * One entity, two pages
  * ---------------------
- * Every node has a stable absolute `@id`. `https://yelon.pro/#person` is the
+ * Every node has a stable absolute `@id`. `https://yelon.dev/#person` is the
  * same node whether it is reached from `/` or from `/about`, so a crawler that
  * sees both merges them into one entity instead of inventing two people.
  */
@@ -30,7 +30,7 @@ import {
   research,
 } from './profile'
 
-const SITE = 'https://yelon.pro'
+const SITE = 'https://yelon.dev'
 
 export const ids = {
   person: `${SITE}/#person`,
@@ -84,7 +84,7 @@ const knowsAbout = [
  * *project* page appears further down as the library's `downloadUrl`, which is
  * where it actually belongs.
  *
- * These are claims yelon.pro makes about itself, and a one-way claim is weak
+ * These are claims yelon.dev makes about itself, and a one-way claim is weak
  * evidence. They only carry real weight once each profile links back here.
  */
 const sameAs = profiles.map((profile) => profile.href)

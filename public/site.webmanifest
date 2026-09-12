@@ -1,7 +1,7 @@
 {
   "_comment_header": "================================================================",
-  "_comment_title": "SITE.WEBMANIFEST - YELON.PRO",
-  "_comment_url": "https://yelon.pro/site.webmanifest",
+  "_comment_title": "SITE.WEBMANIFEST - YELON.DEV",
+  "_comment_url": "https://yelon.dev/site.webmanifest",
   "_comment_separator1": "================================================================",
   "_comment_ascii1": "   __   __ _____ _     ___  _   _",
   "_comment_ascii2": "   \\ \\ / /| ____|| |   / _ \\| \\ | |",
@@ -78,6 +78,6 @@
   "_comment_remaining": "Still hidden: /admin, /wp-login, /.env, /teapot",
   "_comment_footer": "================================================================",
   "_comment_quote": "JSON: JavaScript Object Notation. Or 'Just Some Odd Nonsense' depending on your day.",
-  "_comment_contact": "root@yelon.pro",
+  "_comment_contact": "root@yelon.dev",
   "_comment_eof": "EOF - You've reached the end of a manifest. Reflect on your choices."
 }

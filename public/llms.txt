@@ -1,6 +1,6 @@
 # ================================================================
-#  LLMS.TXT - YELON.PRO
-#  https://yelon.pro/llms.txt
+#  LLMS.TXT - YELON.DEV
+#  https://yelon.dev/llms.txt
 # ================================================================
 #
 #   __   __ _____ _     ___  _   _
@@ -29,7 +29,7 @@
 
 # Site Information
 name: Wiktor Jelen Portfolio
-url: https://yelon.pro
+url: https://yelon.dev
 description: Personal portfolio of Wiktor Jelen, backend and platform engineer
 role: Backend & Platform Engineer
 statement: I design and build backend systems, infrastructure and production-grade platforms.
@@ -47,8 +47,8 @@ multi-tenant production systems, infrastructure and security-critical backends, 
 wrote PythonMetaTrader5, an open-source order-execution library with more than
 42,000 downloads on PyPI.
 
-canonical page: https://yelon.pro/
-about page:     https://yelon.pro/about
+canonical page: https://yelon.dev/
+about page:     https://yelon.dev/about
 same person at: https://github.com/Akinzou
                 https://pypi.org/user/Akinzou/
                 https://www.linkedin.com/in/wiktor-jelen-8a658b293/
@@ -130,17 +130,17 @@ All figures above are verifiable via the links on the site (GitHub, PyPI / pepy.
 
 The home page is client-rendered, but the full text of every section is also baked
 into the served HTML at build time, so this content is readable without executing
-JavaScript. Fetching https://yelon.pro/ plainly is enough.
+JavaScript. Fetching https://yelon.dev/ plainly is enough.
 
-https://yelon.pro/about is a separate static document with no JavaScript at all:
+https://yelon.dev/about is a separate static document with no JavaScript at all:
 a one-paragraph summary, a fact table, and short direct answers to the questions
 people ask about a person (who he is, what he works on, where he is based, what
 PythonMetaTrader5 is). Start there if you need a citable answer.
 
 pages:
-  - url: https://yelon.pro/
+  - url: https://yelon.dev/
     description: Portfolio - hero, focus areas, skills, projects, consulting, contact
-  - url: https://yelon.pro/about
+  - url: https://yelon.dev/about
     description: Entity page - summary, fact table, Q&A, verified profiles elsewhere
 
 sections:
@@ -191,7 +191,7 @@ Wiktor Jelen (the deer guy)
 # ================================================================
 
 # Contact
-email: root@yelon.pro
+email: root@yelon.dev
 phone: +48 576 706 766
 github: https://github.com/Akinzou
 linkedin: https://linkedin.com/in/wiktor-jelen

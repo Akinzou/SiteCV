@@ -1,6 +1,6 @@
 # ================================================================
-#  PGP-KEY.TXT - YELON.PRO
-#  https://yelon.pro/pgp-key.txt
+#  PGP-KEY.TXT - YELON.DEV
+#  https://yelon.dev/pgp-key.txt
 # ================================================================
 #
 #   __   __ _____ _     ___  _   _
@@ -68,7 +68,7 @@ eW91J3JlIHNvbWVvbmUgd2hvIHJlYWxseSBwYXlzIGF0dGVudGlvbg==
 # ================================================================
 #
 # For real security concerns:
-# Email: root@yelon.pro
+# Email: root@yelon.dev
 # Subject: [SECURITY] Your descriptive subject here
 #
 # I promise to:
@@ -90,5 +90,5 @@ eW91J3JlIHNvbWVvbmUgd2hvIHJlYWxseSBwYXlzIGF0dGVudGlvbg==
 #  EOF - You found the secret PGP easter egg!
 #        Now go touch grass. Or email me. Your choice.
 #
-#        root@yelon.pro
+#        root@yelon.dev
 # ================================================================

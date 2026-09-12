@@ -18,7 +18,7 @@ import { esc, list, pageStyles } from './shared'
  *
  * Why a second URL exists at all
  * ------------------------------
- * yelon.pro was a single page. A one-URL domain gives a search engine almost
+ * yelon.dev was a single page. A one-URL domain gives a search engine almost
  * nothing to work with: one title, one description, one set of signals, and no
  * way to tell "the site" apart from "the person the site is about". /about is
  * the page that answers "who is Wiktor Jeleń" directly, in the words someone
@@ -56,7 +56,7 @@ const renderAbout = (): string => {
   const parts: string[] = []
 
   parts.push(
-    `<p class="doc-nav"><a href="/">← yelon.pro</a> &nbsp;/&nbsp; About</p>`,
+    `<p class="doc-nav"><a href="/">← yelon.dev</a> &nbsp;/&nbsp; About</p>`,
   )
 
   parts.push(`<header>
@@ -149,7 +149,7 @@ ${list(research.tags)}
   parts.push(`<section id="contact"><h2>Contact</h2>
 <p>Open to backend, platform and system-architecture work — remote or ${esc(identity.location)}.</p>
 <p><a href="mailto:${esc(identity.email)}">${esc(identity.email)}</a> · <a href="tel:${identity.phone.replace(/\s/g, '')}">${esc(identity.phone)}</a></p>
-<p class="doc-foot"><a href="/">Back to yelon.pro</a> — projects, skills and the full review feed.</p>
+<p class="doc-foot"><a href="/">Back to yelon.dev</a> — projects, skills and the full review feed.</p>
 </section>`)
 
   return parts.join('')
@@ -164,18 +164,18 @@ const document = (): string => `<!DOCTYPE html>
     <meta name="description" content="Who Wiktor Jeleń is: a backend and platform engineer based in Cracow, Poland, author of PythonMetaTrader5 (42,000+ PyPI downloads), working on multi-tenant systems, infrastructure and AI integration." />
     <meta name="author" content="${esc(identity.name)}" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-    <link rel="canonical" href="https://yelon.pro/about" />
+    <link rel="canonical" href="https://yelon.dev/about" />
     <link rel="icon" type="image/png" href="/yelon.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#0a0a0f" />
 
     <meta property="og:type" content="profile" />
-    <meta property="og:url" content="https://yelon.pro/about" />
+    <meta property="og:url" content="https://yelon.dev/about" />
     <meta property="og:title" content="About Wiktor Jeleń — Backend &amp; Platform Engineer" />
     <meta property="og:description" content="Backend and platform engineer based in Cracow, Poland. Author of PythonMetaTrader5. Multi-tenant systems, infrastructure, security and AI integration." />
-    <meta property="og:image" content="https://yelon.pro/yelon.png" />
+    <meta property="og:image" content="https://yelon.dev/yelon.png" />
     <meta property="og:locale" content="en_GB" />
-    <meta property="og:site_name" content="YELON.PRO" />
+    <meta property="og:site_name" content="YELON.DEV" />
     <meta property="profile:first_name" content="Wiktor" />
     <meta property="profile:last_name" content="Jeleń" />
 

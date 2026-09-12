@@ -22,9 +22,9 @@ export const identity = {
   definition:
     "I'm Wiktor Jeleń, a backend and platform engineer based in Cracow, Poland. I build multi-tenant production systems, infrastructure and security-critical backends, and I wrote PythonMetaTrader5, an open-source library with over 42,000 PyPI downloads.",
   location: 'Cracow, Poland',
-  email: 'root@yelon.pro',
+  email: 'root@yelon.dev',
   phone: '+48 576 706 766',
-  site: 'https://yelon.pro',
+  site: 'https://yelon.dev',
   github: 'https://github.com/Akinzou',
   linkedin: 'https://www.linkedin.com/in/wiktor-jelen-8a658b293/',
 }
@@ -86,7 +86,7 @@ export const qa: { question: string; answer: string }[] = [
   {
     question: 'Why is the site called Yelon?',
     answer:
-      '"Jeleń" is the Polish word for deer, and "Yelon" is roughly how it sounds to an English speaker. Wiktor Jeleń uses Yelon as an online handle and as the name of this site, yelon.pro.',
+      '"Jeleń" is the Polish word for deer, and "Yelon" is roughly how it sounds to an English speaker. Wiktor Jeleń uses Yelon as an online handle and as the name of this site, yelon.dev.',
   },
 ]
 

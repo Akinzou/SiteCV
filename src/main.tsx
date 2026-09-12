@@ -27,8 +27,8 @@ console.log(`
 %c  │  of your job offer. 🦌✨            │
 %c  └─────────────────────────────────────┘
 %c
-%c  📧 root@yelon.pro
-%c  🌐 https://yelon.pro
+%c  📧 root@yelon.dev
+%c  🌐 https://yelon.dev
 %c
 %c  P.S. Try typing: yelon() in console ;)
 %c
