@@ -20,7 +20,9 @@ Requires these environment variables (Vercel project settings):
 Vercel integration).
 
 vercel.json rewrites /api/(.*) to this function, so the routes below are
-declared at their full public path.
+declared at their full public path - except /api/pepy/*, which vercel.json
+carves out ahead of that rule and proxies straight to pepy.tech, so it never
+reaches this app. Don't add a route here for it.
 """
 
 from fastapi import FastAPI, HTTPException, Request

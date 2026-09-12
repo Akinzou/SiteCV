@@ -1,5 +1,19 @@
 import { useState, useEffect } from 'react'
 
+// About.tsx and Projects.tsx both call this hook for the same package, so
+// share one in-flight request instead of firing two identical ones at pepy.tech.
+const htmlCache = new Map<string, Promise<string>>()
+
+const fetchProjectHtml = (packageName: string): Promise<string> => {
+  let promise = htmlCache.get(packageName)
+  if (!promise) {
+    promise = fetch(`/api/pepy/projects/${packageName}`).then((r) => r.text())
+    promise.catch(() => htmlCache.delete(packageName))
+    htmlCache.set(packageName, promise)
+  }
+  return promise
+}
+
 export const usePyPIDownloads = (packageName: string) => {
   const [downloads, setDownloads] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
@@ -7,9 +21,7 @@ export const usePyPIDownloads = (packageName: string) => {
   useEffect(() => {
     const fetchDownloads = async () => {
       try {
-        // Use proxy to bypass CORS
-        const response = await fetch(`/api/pepy/projects/${packageName}`)
-        const html = await response.text()
+        const html = await fetchProjectHtml(packageName)
 
         // Extract downloads - try multiple patterns
         // Pattern 1: totalDownloads in JSON

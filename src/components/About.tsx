@@ -500,7 +500,7 @@ const About = () => {
               {/* Duplicate reviews for seamless loop */}
               {[...reviews, ...reviews].map((review, index) => (
                 <div
-                  key={index}
+                  key={`${index < reviews.length ? 'a' : 'b'}-${review.name}-${review.time}`}
                   className="mb-4 p-4 bg-cyber-dark/50 rounded-lg border border-cyber-blue/10 hover:border-cyber-blue/30 transition-colors"
                 >
                   <div className="flex items-start justify-between mb-2">
