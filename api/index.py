@@ -44,10 +44,14 @@ redis = Redis.from_env()
 
 app = FastAPI()
 
-# CORS - only allow yelon.pro
+# CORS - yelon.pro during the migration to yelon.dev, drop yelon.pro once
+# the domain switch is complete and it's just a 301 redirect.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://yelon.pro", "https://www.yelon.pro"],
+    allow_origins=[
+        "https://yelon.pro", "https://www.yelon.pro",
+        "https://yelon.dev", "https://www.yelon.dev",
+    ],
     allow_methods=["POST"],
     allow_headers=["*"],
 )
@@ -132,11 +136,11 @@ async def send_message(form: ContactForm, request: Request):
     # 6. Send email via Resend
     try:
         resend.Emails.send({
-            "from": "Contact Form <contact@yelon.pro>",
-            "to": ["root@yelon.pro"],
+            "from": "Contact Form <contact@yelon.dev>",
+            "to": ["root@yelon.dev"],
             "reply_to": form.email,
-            "subject": f"[yelon.pro] Message from {form.name}",
-            "text": f"""New message from yelon.pro contact form:
+            "subject": f"[yelon.dev] Message from {form.name}",
+            "text": f"""New message from yelon.dev contact form:
 
 Name: {form.name}
 Email: {form.email}
@@ -146,7 +150,7 @@ Message:
 {form.message}
 
 ---
-Sent via yelon.pro contact form"""
+Sent via yelon.dev contact form"""
         })
         return {"status": "success", "message": "Message sent"}
     except Exception as e:
