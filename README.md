@@ -8,18 +8,18 @@ Live: https://yelon.dev
 
 - **Frontend:** React 18, TypeScript, Three.js, GSAP, TailwindCSS
 - **Build:** Vite 5
-- **Deployment:** Docker + Nginx on OVH VPS
-- **Contact API:** FastAPI + Resend (separate container)
+- **Deployment:** Vercel (static frontend + a Python serverless function)
+- **Contact API:** FastAPI, deployed as a single Vercel serverless function (`api/index.py`)
 
 ## Features
 
 - 3D particle background with Three.js
 - Smooth scroll animations with GSAP
 - Responsive design
-- Contact form with reCAPTCHA v2
+- Contact form with reCAPTCHA v2, Upstash Redis rate limiting, and email delivery via Resend
 - Real-time PyPI download counter
 - Client reviews section with infinite scroll (31 Fiverr testimonials)
-- CI/CD pipeline with GitHub Actions (auto-deploy to VPS)
+- Auto-deploy on every push to `master` via Vercel's GitHub integration (preview deployments on PRs, production on merge)
 
 ## Easter Eggs
 
@@ -41,6 +41,8 @@ The site contains 10 hidden easter eggs for curious visitors. They're scattered 
 
 Each egg contains hints pointing to the next one. Finding all of them reveals secret codes.
 
+> **Note:** `/admin`, `/wp-login`, `/teapot`, and `/about` are served extensionless (e.g. `/admin` → `admin.html`) via explicit `rewrites` in `vercel.json`, replacing the nginx `try_files` rule (see `nginx.conf`) the old VPS deployment used for the same thing.
+
 ## AI Prompt Injection
 
 The robots.txt and llms.txt files contain intentional "prompt injections" for AI recruitment systems. This is a demonstration of understanding how modern AI crawlers work, not an actual attempt to manipulate results. It's also a conversation starter.
@@ -58,37 +60,46 @@ npm run dev
 npm run build
 ```
 
-## Docker Deployment
+## Deployment
 
-```bash
-# Build image
-docker build -t sitecv .
+The site is deployed on Vercel:
 
-# Run container
-docker run -d --name sitecv -p 8080:80 sitecv
-```
+- `vercel.json` builds the frontend (`npm run build` → `dist/`) and rewrites `/api/*` to the
+  serverless function in `api/index.py`, except `/api/pepy/*`, which is proxied straight to
+  `pepy.tech` for the PyPI download counter (avoids a CORS request from the browser).
+- Vercel's GitHub App creates a preview deployment on every PR and deploys to production on
+  every push to `master` - there's no separate GitHub Actions workflow.
+- `yelon.pro` and `www.yelon.pro` 301-redirect to `yelon.dev` (also configured in
+  `vercel.json`, via host-matching `redirects`), from the earlier `yelon.pro` domain.
 
-## CI/CD
+Required environment variables (Vercel project settings → Environment Variables):
+- `RESEND_API_KEY` - Resend API key used to send contact-form emails
+- `RECAPTCHA_SECRET_KEY` - classic reCAPTCHA v2 secret key (matches the site key in `Contact.tsx`)
+- `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` - Upstash Redis REST credentials, used
+  to rate-limit contact-form submissions per IP across serverless invocations
 
-GitHub Actions workflow automatically deploys to VPS on push to `master`.
+### Legacy VPS deployment (unused)
 
-Required secrets:
-- `VPS_HOST` - VPS hostname
-- `VPS_PORT` - SSH port
-- `VPS_USER` - SSH username
-- `VPS_SSH_KEY` - Private SSH key (ed25519, no passphrase)
+`Dockerfile`, `nginx.conf`, and `contact-api/` are left over from an earlier deployment on an
+OVH VPS (Docker + nginx, with the contact API as a separate container) and are no longer part
+of the live site. They still reference the old `yelon.pro` domain and aren't kept in sync with
+`api/index.py`.
 
 ## Project Structure
 
 ```
 src/
   components/     # React components (Hero, About, Skills, Projects, Contact)
+  content/        # profile.ts / schema.ts - the copy the app and the /about page both read
   hooks/          # Custom hooks (PyPI download fetcher)
   main.tsx        # Entry point with console easter egg
+api/
+  index.py        # Vercel serverless function backing the contact form
 public/
   .well-known/    # security.txt
   *.html          # Easter egg pages
   *.txt           # robots.txt, humans.txt, llms.txt, etc.
+vite-plugins/     # Build-time plugins (SEO snapshot, static /about page)
 ```
 
 ## Contact
