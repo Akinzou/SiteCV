@@ -1,3 +1,4 @@
+import { useReducedMotion } from '../../hooks/useReducedMotion'
 import { useRef, useMemo, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Points, PointMaterial } from '@react-three/drei'
@@ -130,8 +131,10 @@ function FloatingOrbs() {
 }
 
 const ParticleBackground = () => {
+  const reducedMotion = useReducedMotion()
+  if (reducedMotion) return null
   return (
-    <div className="fixed inset-0 z-0">
+    <div aria-hidden="true" className="fixed inset-0 z-0 pointer-events-none">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 75 }}
         dpr={[1, 2]}

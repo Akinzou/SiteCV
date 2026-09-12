@@ -7,6 +7,7 @@ import About from './components/About'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
+import Experience from './components/Experience'
 import ParticleBackground from './components/three/ParticleBackground'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -17,12 +18,14 @@ function App() {
     <div className="relative min-h-screen bg-cyber-black noise">
       <ParticleBackground />
       <div className="relative z-10">
+        <a href="#main" className="skip-link">Skip to content</a>
         <Navbar />
-        <main>
+        <main id="main" tabIndex={-1}>
           <Hero />
-          <About />
-          <Skills />
           <Projects />
+          <Experience />
+          <Skills />
+          <About />
           <Contact />
         </main>
         <footer className="py-8 text-center text-cyber-blue/50 font-mono text-sm border-t border-cyber-blue/10">

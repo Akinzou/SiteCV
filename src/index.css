@@ -194,6 +194,16 @@ html, body {
   animation-play-state: paused;
 }
 
+.reviews-scroll-container:focus-within .reviews-scroll {
+  animation: none;
+}
+.reviews-scroll-container:focus-within {
+  overflow-y: auto;
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+.reviews-scroll-container:focus-within [data-review-copy] { display: none; }
+
 @keyframes scrollUp {
   0% {
     transform: translateY(0);
@@ -259,4 +269,17 @@ html, body {
   to {
     transform: translate3d(-20%, 0, 0);
   }
+}
+
+/* Keep anchor targets clear of the fixed navigation. */
+section[id], main[id] { scroll-margin-top: 6rem; }
+:focus-visible { outline: 2px solid var(--cyber-blue); outline-offset: 5px; }
+.skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 100; padding: .75rem 1rem; background: #0a0a0f; color: #00f0ff; transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reviews-scroll-container { overflow-y: auto; mask-image: none; -webkit-mask-image: none; }
+  .review-pause, [data-review-copy] { display: none; }
 }

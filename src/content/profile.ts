@@ -147,6 +147,19 @@ export type Project = {
  */
 export const projects: Project[] = [
   {
+    name: 'KONIK',
+    tagline: 'Multi-tenant automation platform · Lead developer & architect',
+    accent: 'purple',
+    featured: true,
+    problem:
+      'An automation platform needs to coordinate external services and AI workflows while keeping each tenant’s data isolated.',
+    solution:
+      'Designed the TypeScript/NestJS backend with Temporal workflow orchestration and PostgreSQL row-level security. Built isolation-leak tests in CI, external-service integrations and a multi-provider AI layer with an evaluation harness.',
+    stack: ['TypeScript', 'NestJS', 'Temporal.io', 'PostgreSQL RLS', 'GitHub Actions'],
+    metric: '03–08.2026 · Architecture & delivery',
+    links: [],
+  },
+  {
     name: 'PythonMetaTrader5',
     tagline: 'Open-source order-execution library',
     accent: 'blue',
@@ -214,6 +227,35 @@ export const projects: Project[] = [
     stack: ['ThingsBoard', 'C++', 'AWS', 'Embedded'],
     metric: 'AWS alerting',
     links: [],
+  },
+]
+
+/** Dates and responsibilities from the existing CV; keep the public timeline concise. */
+export const experience = [
+  {
+    period: '03.2026 - 08.2026', role: 'Lead Developer / System Architect',
+    company: 'KonikSystems · KONIK', location: 'Remote',
+    highlights: ['Owned architecture and development of a multi-tenant automation platform.', 'Delivered tenant isolation, workflow orchestration, integrations and automated test and delivery pipelines.'],
+  },
+  {
+    period: '09.2025 - 02.2026', role: 'System Architect',
+    company: 'Randlab Software · Anatomy Project', location: 'Remote',
+    highlights: ['Designed and deployed the backend for a Medical University of Silesia education platform.', 'Integrated university Active Directory authentication and built the API, production environments and CI/CD.'],
+  },
+  {
+    period: '08.2024 - 08.2025', role: 'R&D Systems Engineer',
+    company: 'GEEETECH', location: 'Remote · Shenzhen R&D team',
+    highlights: ['Owned system integration, Klipper firmware optimization and A10M component redesign.', 'Coordinated technical requirements between European stakeholders and the Shenzhen team.'],
+  },
+  {
+    period: '04.2023 - 07.2024', role: 'Sales Systems Consultant',
+    company: 'Randlab Software (Polsat Plus Group)', location: 'Remote',
+    highlights: ['Automated client documentation and configured sales offers for POS, telemarketing and mobile channels.'],
+  },
+  {
+    period: '09.2022 - 03.2023', role: 'Embedded / ThingsBoard Specialist',
+    company: 'Randlab Software', location: 'Nowy Sącz, Poland',
+    highlights: ['Built pipe impedance monitoring with ThingsBoard, embedded C++ firmware, web interfaces and AWS alerts.'],
   },
 ]
 
@@ -321,7 +363,7 @@ export const languages = [
 export const research = {
   title: 'Interests & R&D',
   body:
-    'The execution layer came first: PythonMetaTrader5, my open-source order-execution library for MetaTrader 5, now past 42,000 downloads. My R&D since then has moved up the stack into machine learning — specifically evolutionary computation, where genetic algorithms breed and select trading strategies instead of them being hand-written. I use StrategyQuant X to generate strategy populations and stress-test the survivors for robustness before anything touches real capital.',
+    'I explore evolutionary computation for algorithmic trading: generating strategy populations in StrategyQuant X, then stress-testing their robustness before live execution.',
   tags: [
     'Machine Learning',
     'Genetic Algorithms',

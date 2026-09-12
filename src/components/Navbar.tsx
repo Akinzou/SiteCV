@@ -1,14 +1,18 @@
+import { useReducedMotion } from '../hooks/useReducedMotion'
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 
 const navLinks = [
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'About', href: '#about' },
   { name: 'Contact', href: '#contact' },
 ]
 
 const Navbar = () => {
+  const reducedMotion = useReducedMotion()
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
   const navRef = useRef<HTMLElement>(null)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -23,16 +27,31 @@ const Navbar = () => {
   }, [])
 
   useEffect(() => {
-    gsap.fromTo(
+    if (reducedMotion) return
+    const ctx = gsap.context(() => gsap.fromTo(
       navRef.current,
       { y: -100, opacity: 0 },
       { y: 0, opacity: 1, duration: 1, ease: 'power3.out', delay: 0.5 }
-    )
-  }, [])
+    ), navRef)
+    return () => ctx.revert()
+  }, [reducedMotion])
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsMobileMenuOpen(false)
+        menuButtonRef.current?.focus()
+      }
+    }
+    document.addEventListener('keydown', handleKey)
+    return () => document.removeEventListener('keydown', handleKey)
+  }, [isMobileMenuOpen])
 
   return (
     <nav
       ref={navRef}
+      aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'glass py-4' : 'py-6'
       }`}
@@ -68,7 +87,12 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-cyber-blue"
+          ref={menuButtonRef}
+          type="button"
+          aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
+          className="md:hidden text-cyber-blue p-3 -mr-3"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -82,8 +106,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden glass mt-4 mx-6 p-6 rounded-lg">
+      <div id="mobile-menu" hidden={!isMobileMenuOpen} className="md:hidden glass mt-4 mx-6 p-6 rounded-lg">
           {navLinks.map((link, index) => (
             <a
               key={link.name}
@@ -96,7 +119,6 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-      )}
     </nav>
   )
 }

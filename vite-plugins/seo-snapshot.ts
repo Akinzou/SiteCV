@@ -3,6 +3,7 @@ import { homeGraph, scriptTag } from '../src/content/schema'
 import {
   clientWork,
   education,
+  experience,
   focusAreas,
   identity,
   languages,
@@ -71,6 +72,8 @@ ${
 </article>`,
     )
     .join('')}</section>`)
+
+  parts.push(`<section id="work-experience"><h2>Experience</h2>${experience.map((entry) => `<article class="snap-block"><h3>${esc(entry.role)}</h3><p class="snap-sub">${esc(entry.company)} &middot; ${esc(entry.period)} &middot; ${esc(entry.location)}</p>${list(entry.highlights, '')}</article>`).join('')}</section>`)
 
   parts.push(`<section id="snap-skills"><h2>Technical skills</h2><div class="snap-grid">${skillGroups
     .map((group) => `<div><h3>${esc(group.title)}</h3>${list(group.items)}</div>`)

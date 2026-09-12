@@ -1,83 +1,22 @@
-import { useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { usePyPIDownloads } from '../hooks/usePyPIDownloads'
+import { useRef, useState } from 'react'
 import { clientWork, education, identity, research } from '../content/profile'
 import { reviews } from '../content/reviews'
-
-gsap.registerPlugin(ScrollTrigger)
-
-const defaultStats = [
-  { value: 42000, suffix: '+', label: 'PyPI Downloads', color: 'cyber-blue', isPyPI: true },
-  { value: 450, suffix: '+', label: 'Concurrent Users', color: 'cyber-purple', isPyPI: false },
-  { value: 4, suffix: '+', label: 'Years Experience', color: 'cyber-green', isPyPI: false },
-]
 
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null)
-  const statsRef = useRef<HTMLDivElement>(null)
-  const { downloads: pypiDownloads, pepyUrl } = usePyPIDownloads('pythonmetatrader5')
-
-  // Parse PyPI downloads number for animation
-  const pypiValue = pypiDownloads ? parseInt(pypiDownloads.replace(/\s/g, ''), 10) : 42000
-
-  // Update stats with dynamic PyPI value
-  const stats = defaultStats.map(stat =>
-    stat.isPyPI ? { ...stat, value: pypiValue, suffix: '' } : stat
-  )
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Section title animation
-      gsap.fromTo(
-        '.about-title',
-        { opacity: 0, x: -50 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%',
-          },
-        }
-      )
-
-      // Stats counter animation
-      const statElements = statsRef.current?.querySelectorAll('.stat-value')
-      statElements?.forEach((stat) => {
-        const target = parseInt(stat.getAttribute('data-value') || '0')
-        gsap.fromTo(
-          stat,
-          { innerText: 0 },
-          {
-            innerText: target,
-            duration: 2,
-            ease: 'power2.out',
-            snap: { innerText: 1 },
-            scrollTrigger: {
-              trigger: stat,
-              start: 'top 85%',
-            },
-          }
-        )
-      })
-    }, sectionRef)
-
-    return () => ctx.revert()
-  }, [pypiValue])
+  const [reviewsPaused, setReviewsPaused] = useState(false)
 
   return (
     <section
       ref={sectionRef}
       id="about"
-      className="relative py-32 px-6"
+      className="relative py-20 px-6"
     >
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="flex items-center gap-4 mb-16 about-title">
-          <span className="font-mono text-cyber-purple">01.</span>
+          <span className="font-mono text-cyber-purple">04.</span>
           <h2 className="font-display font-bold text-3xl md:text-4xl text-white">About_Me</h2>
           <div className="flex-1 h-[1px] bg-gradient-to-r from-cyber-blue/50 to-transparent" />
         </div>
@@ -110,127 +49,6 @@ const About = () => {
               →
             </span>
           </a>
-        </div>
-
-        {/* Worked with */}
-        <div className="mb-12">
-          <p className="font-mono text-xs text-gray-500 text-center mb-6">WORKED WITH</p>
-          <div className="marquee-container">
-            <div className="marquee-track">
-              {/* First set */}
-              <div className="marquee-content">
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">RANDLAB</span>
-                  <span className="font-mono text-xs text-gray-500">Software House</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">CTS AUDIO</span>
-                  <span className="font-mono text-xs text-gray-500">Audio Systems</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">GEEETECH</span>
-                  <span className="font-mono text-xs text-gray-500">Shenzhen R&D</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-purple transition-colors">POLSAT PLUS</span>
-                  <span className="font-mono text-xs text-gray-500">Cyfrowy Polsat Group</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">WSB-NLU</span>
-                  <span className="font-mono text-xs text-gray-500">National Louis University</span>
-                </div>
-              </div>
-              {/* Duplicate sets for seamless loop */}
-              <div className="marquee-content">
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">RANDLAB</span>
-                  <span className="font-mono text-xs text-gray-500">Software House</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">CTS AUDIO</span>
-                  <span className="font-mono text-xs text-gray-500">Audio Systems</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">GEEETECH</span>
-                  <span className="font-mono text-xs text-gray-500">Shenzhen R&D</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-purple transition-colors">POLSAT PLUS</span>
-                  <span className="font-mono text-xs text-gray-500">Cyfrowy Polsat Group</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">WSB-NLU</span>
-                  <span className="font-mono text-xs text-gray-500">National Louis University</span>
-                </div>
-              </div>
-              <div className="marquee-content">
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">RANDLAB</span>
-                  <span className="font-mono text-xs text-gray-500">Software House</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">CTS AUDIO</span>
-                  <span className="font-mono text-xs text-gray-500">Audio Systems</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">GEEETECH</span>
-                  <span className="font-mono text-xs text-gray-500">Shenzhen R&D</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-purple transition-colors">POLSAT PLUS</span>
-                  <span className="font-mono text-xs text-gray-500">Cyfrowy Polsat Group</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">WSB-NLU</span>
-                  <span className="font-mono text-xs text-gray-500">National Louis University</span>
-                </div>
-              </div>
-              <div className="marquee-content">
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">RANDLAB</span>
-                  <span className="font-mono text-xs text-gray-500">Software House</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">CTS AUDIO</span>
-                  <span className="font-mono text-xs text-gray-500">Audio Systems</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">GEEETECH</span>
-                  <span className="font-mono text-xs text-gray-500">Shenzhen R&D</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-purple transition-colors">POLSAT PLUS</span>
-                  <span className="font-mono text-xs text-gray-500">Cyfrowy Polsat Group</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">WSB-NLU</span>
-                  <span className="font-mono text-xs text-gray-500">National Louis University</span>
-                </div>
-              </div>
-              <div className="marquee-content">
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">RANDLAB</span>
-                  <span className="font-mono text-xs text-gray-500">Software House</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">CTS AUDIO</span>
-                  <span className="font-mono text-xs text-gray-500">Audio Systems</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-blue transition-colors">GEEETECH</span>
-                  <span className="font-mono text-xs text-gray-500">Shenzhen R&D</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-purple transition-colors">POLSAT PLUS</span>
-                  <span className="font-mono text-xs text-gray-500">Cyfrowy Polsat Group</span>
-                </div>
-                <div className="group flex flex-col items-center flex-shrink-0">
-                  <span className="font-display font-bold text-2xl md:text-3xl text-white/60 group-hover:text-cyber-green transition-colors">WSB-NLU</span>
-                  <span className="font-mono text-xs text-gray-500">National Louis University</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Recommendation section */}
@@ -461,12 +279,17 @@ const About = () => {
             All {reviews.length} reviews
           </p>
 
-          <div className="reviews-scroll-container h-[400px]">
-            <div className="reviews-scroll">
+          <button type="button" aria-pressed={reviewsPaused} onClick={() => setReviewsPaused(!reviewsPaused)} className="review-pause mb-4 px-3 py-2 border border-cyber-blue/30 rounded text-sm text-cyber-blue">
+            {reviewsPaused ? 'Resume reviews' : 'Pause reviews'}
+          </button>
+          <div tabIndex={0} role="region" aria-label="Client reviews" className="reviews-scroll-container h-[400px]">
+            <div className="reviews-scroll" style={{ animationPlayState: reviewsPaused ? 'paused' : undefined }}>
               {/* Duplicate reviews for seamless loop */}
               {[...reviews, ...reviews].map((review, index) => (
                 <div
                   key={`${index < reviews.length ? 'a' : 'b'}-${review.name}-${review.time}`}
+                  aria-hidden={index >= reviews.length ? true : undefined}
+                  data-review-copy={index >= reviews.length ? true : undefined}
                   className="mb-4 p-4 bg-cyber-dark/50 rounded-lg border border-cyber-blue/10 hover:border-cyber-blue/30 transition-colors"
                 >
                   <div className="flex items-start justify-between mb-2">
@@ -494,34 +317,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Stats grid */}
-        <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="glass rounded-lg p-6 text-center hover-glow group"
-            >
-              <div className={`font-display font-bold text-4xl md:text-5xl text-${stat.color} mb-2`}>
-                <span className="stat-value" data-value={stat.value}>0</span>
-                {stat.suffix}
-              </div>
-              <div className="font-mono text-sm text-gray-400 flex items-center justify-center gap-2">
-                {stat.label}
-                {stat.isPyPI && (
-                  <a
-                    href={pepyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-1 bg-cyber-blue/20 text-cyber-blue hover:bg-cyber-green/20 hover:text-cyber-green transition-colors text-[10px] rounded"
-                  >
-                    [verify]
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-
         {/* Education section */}
         <h3 className="font-display text-2xl text-white mb-8 mt-16 flex items-center gap-3">
           <span className="text-cyber-green">&gt;</span>
@@ -546,7 +341,7 @@ const About = () => {
         {/* Paradigm statement */}
         <h3 className="font-display text-2xl text-white mb-8 mt-16 flex items-center gap-3">
           <span className="text-cyber-blue">&gt;</span>
-          Paradigm_&_Strategy
+          How_I_Work
         </h3>
 
         <div className="glass rounded-lg p-8 relative overflow-hidden">
@@ -555,11 +350,6 @@ const About = () => {
             I work system-first: define architecture, invariants and failure modes before implementation.
             I use automation and modern development tooling aggressively to shorten the feedback loop,
             while relying on tests, observability and explicit system constraints to verify behavior.
-          </p>
-          <p className="text-gray-300 leading-relaxed max-w-3xl mt-4">
-            Most recently primary contributor to a large multi-tenant TypeScript platform. Earlier work
-            includes a quant library operating on real capital (42,000+ PyPI downloads) and hardware
-            R&amp;D in Shenzhen.
           </p>
           <p className="text-gray-400 leading-relaxed max-w-3xl mt-4 text-sm">
             I'm comfortable with fully-remote, cross-cultural collaboration (EU–China).

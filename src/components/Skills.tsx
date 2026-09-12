@@ -1,3 +1,4 @@
+import { useReducedMotion } from '../hooks/useReducedMotion'
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -7,10 +8,12 @@ import { accentBorder, accentText } from '../lib/accents'
 gsap.registerPlugin(ScrollTrigger)
 
 const Skills = () => {
+  const reducedMotion = useReducedMotion()
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      if (reducedMotion) return
       gsap.fromTo(
         '.skills-title',
         { opacity: 0, x: -50 },
@@ -36,15 +39,15 @@ const Skills = () => {
     }, sectionRef)
 
     return () => ctx.revert()
-  }, [])
+  }, [reducedMotion])
 
   return (
-    <section ref={sectionRef} id="skills" className="relative py-32 px-6">
+    <section ref={sectionRef} id="skills" className="relative py-20 px-6">
       <div className="absolute inset-0 grid-bg opacity-30" />
 
       <div className="relative max-w-6xl mx-auto">
         <div className="flex items-center gap-4 mb-16 skills-title">
-          <span className="font-mono text-cyber-purple">02.</span>
+          <span className="font-mono text-cyber-purple">03.</span>
           <h2 className="font-display font-bold text-3xl md:text-4xl text-white">
             Technical_Skills
           </h2>

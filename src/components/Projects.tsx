@@ -1,3 +1,4 @@
+import { useReducedMotion } from '../hooks/useReducedMotion'
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -19,11 +20,13 @@ const GitHubIcon = () => (
  * says whether the work was worth doing.
  */
 const Projects = () => {
+  const reducedMotion = useReducedMotion()
   const sectionRef = useRef<HTMLElement>(null)
   const { downloads: pypiDownloads, pepyUrl } = usePyPIDownloads('pythonmetatrader5')
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      if (reducedMotion) return
       gsap.fromTo(
         '.projects-title',
         { opacity: 0, x: -50 },
@@ -49,13 +52,13 @@ const Projects = () => {
     }, sectionRef)
 
     return () => ctx.revert()
-  }, [])
+  }, [reducedMotion])
 
   return (
-    <section ref={sectionRef} id="projects" className="relative py-32 px-6">
+    <section ref={sectionRef} id="projects" className="relative py-20 px-6">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-4 mb-16 projects-title">
-          <span className="font-mono text-cyber-purple">03.</span>
+          <span className="font-mono text-cyber-purple">01.</span>
           <h2 className="font-display font-bold text-3xl md:text-4xl text-white">Projects_</h2>
           <div className="flex-1 h-[1px] bg-gradient-to-r from-cyber-green/50 to-transparent" />
         </div>
@@ -73,7 +76,7 @@ const Projects = () => {
                 className={`project-case glass rounded-lg p-6 md:p-8 border ${accentBorder[project.accent]} relative overflow-hidden`}
               >
                 <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 mb-1">
-                  <h3 className="font-display font-bold text-2xl text-white">{project.name}</h3>
+                  <h3 className="min-w-0 break-words font-display font-bold text-xl sm:text-2xl text-white">{project.name}</h3>
                   <span className="font-mono text-xs text-gray-400 flex items-center gap-2">
                     {metric}
                     {project.pypiPackage && (

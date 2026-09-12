@@ -3,6 +3,7 @@ import { aboutGraph, scriptTag } from '../src/content/schema'
 import {
   clientWork,
   education,
+  experience,
   focusAreas,
   identity,
   languages,
@@ -82,6 +83,8 @@ const renderAbout = (): string => {
 <dt>Contact</dt><dd><a href="mailto:${esc(identity.email)}">${esc(identity.email)}</a></dd>
 </dl>
 </section>`)
+
+  parts.push(`<section id="work-experience"><h2>Experience</h2>${experience.map((entry) => `<article class="snap-block"><h3>${esc(entry.role)}</h3><p class="snap-sub">${esc(entry.company)} &middot; ${esc(entry.period)} &middot; ${esc(entry.location)}</p>${list(entry.highlights, '')}</article>`).join('')}</section>`)
 
   parts.push(`<section id="questions"><h2>Common questions</h2>${qa
     .map(

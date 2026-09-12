@@ -1,3 +1,4 @@
+import { useReducedMotion } from '../hooks/useReducedMotion'
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { focusAreas, identity } from '../content/profile'
@@ -11,16 +12,18 @@ const Typewriter = ({ text, delay = 0, speed = 30, className = '', onComplete }:
   className?: string
   onComplete?: () => void
 }) => {
+  const reducedMotion = useReducedMotion()
   const [displayed, setDisplayed] = useState('')
   const [started, setStarted] = useState(false)
 
   useEffect(() => {
+    if (reducedMotion) return
     const startTimeout = setTimeout(() => setStarted(true), delay)
     return () => clearTimeout(startTimeout)
-  }, [delay])
+  }, [delay, reducedMotion])
 
   useEffect(() => {
-    if (!started) return
+    if (reducedMotion || !started) return
     if (displayed.length < text.length) {
       const timeout = setTimeout(() => {
         setDisplayed(text.slice(0, displayed.length + 1))
@@ -29,8 +32,9 @@ const Typewriter = ({ text, delay = 0, speed = 30, className = '', onComplete }:
     } else if (onComplete) {
       onComplete()
     }
-  }, [displayed, started, text, speed, onComplete])
+  }, [displayed, started, text, speed, onComplete, reducedMotion])
 
+  if (reducedMotion) return <span className={className}>{text}</span>
   if (!started) return null
   return <span className={className}>{displayed}</span>
 }
@@ -43,6 +47,7 @@ const isInAppBrowser = () => {
 }
 
 const Hero = () => {
+  const reducedMotion = useReducedMotion()
   const heroRef = useRef<HTMLElement>(null)
   const badgeRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
@@ -59,6 +64,11 @@ const Hero = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      if (reducedMotion) {
+        gsap.set([badgeRef.current, titleRef.current, subtitleRef.current, terminalRef.current, ...heroRef.current!.querySelectorAll('.focus-card')], { opacity: 1, clearProps: 'transform' })
+        setTerminalReady(true)
+        return
+      }
       const tl = gsap.timeline({ delay: 0.8 })
 
       // Badge fade in
@@ -112,13 +122,13 @@ const Hero = () => {
     }, heroRef)
 
     return () => ctx.revert()
-  }, [])
+  }, [reducedMotion])
 
   return (
     <section
       ref={heroRef}
       id="hero"
-      className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center px-6 pt-28 pb-12 overflow-hidden"
     >
       {/* Grid overlay */}
       <div className="absolute inset-0 grid-bg opacity-50" />
@@ -155,6 +165,11 @@ const Hero = () => {
           </p>
         </div>
 
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
+          <a href="#projects" className="px-5 py-3 rounded border border-cyber-blue/50 bg-cyber-blue/10 text-cyber-blue hover:bg-cyber-blue/20 transition-colors">Explore projects <span aria-hidden="true">&darr;</span></a>
+          <a href="#contact" className="px-5 py-3 rounded border border-gray-600 text-gray-200 hover:bg-white/5 transition-colors">Get in touch</a>
+        </div>
+
         {/* Focus areas — what to know in the first five seconds. */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12 text-left">
           {focusAreas.map((area) => (
@@ -175,7 +190,7 @@ const Hero = () => {
         {/* Terminal window */}
         <div
           ref={terminalRef}
-          className="max-w-4xl w-full mx-auto glass rounded-lg overflow-hidden text-left opacity-0"
+          className="hidden lg:block max-w-4xl w-full mx-auto glass rounded-lg overflow-hidden text-left opacity-0"
         >
           {/* Terminal header */}
           <div className="flex items-center gap-2 px-4 py-3 bg-cyber-dark border-b border-cyber-blue/10">
@@ -186,11 +201,11 @@ const Hero = () => {
           </div>
 
           {/* Terminal content */}
-          <div className="p-4 md:p-6 font-mono text-sm overflow-x-auto">
+          <div className={`p-4 md:p-6 font-mono text-sm overflow-x-auto grid ${showDeer ? 'grid-cols-[160px_1fr]' : 'grid-cols-1'} items-center gap-6`}>
             {/* ASCII Deer - hidden in WebView in-app browsers */}
             {showDeer && (
-            <div className="flex justify-center mb-4">
-            <pre className="text-cyber-blue text-[5px] sm:text-[6px] md:text-[7px] leading-none whitespace-pre">{`        +-                                                                              .-
+            <div aria-hidden="true" className="flex justify-center">
+            <pre className="text-cyber-blue text-[3px] leading-none whitespace-pre">{`        +-                                                                              .-
        #%%       =#+                                                          =#-       #%*
       :%@      =%%*                                                            +%%-      %%
       =%%     *@*                                                                *%+     %%-
@@ -249,7 +264,7 @@ const Hero = () => {
             )}
 
             {terminalReady && (
-              <>
+              <div>
                 <div className="text-gray-500">
                   <Typewriter text="$ whoami" delay={100} speed={15} />
                 </div>
@@ -268,14 +283,14 @@ const Hero = () => {
                   <Typewriter text="$ ls achievements/" delay={1200} speed={15} />
                 </div>
                 <div className="text-gray-300 mb-4">
-                  <Typewriter text="42,000+ PyPI downloads • 450+ concurrent users • Shenzhen R&D" delay={1500} speed={8} />
+                  <Typewriter text="Backend systems | Open source | Hardware R&D" delay={1500} speed={8} />
                 </div>
 
                 <div className="flex items-center text-gray-500">
                   <Typewriter text="$ " delay={2300} speed={30} />
                   <span className="text-cyber-blue cursor-blink">_</span>
                 </div>
-              </>
+              </div>
             )}
           </div>
         </div>
