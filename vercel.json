@@ -3,5 +3,19 @@
   "outputDirectory": "dist",
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api" }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "yelon.pro" }],
+      "destination": "https://yelon.dev/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.yelon.pro" }],
+      "destination": "https://yelon.dev/:path*",
+      "statusCode": 301
+    }
   ]
 }
