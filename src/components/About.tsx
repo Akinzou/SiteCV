@@ -13,6 +13,7 @@ const defaultStats = [
 ]
 
 const reviews = [
+  { name: 'tzem98', country: 'DE', rating: 5, time: 'September 2026', text: 'This is what I call the highest level of quality. I’m extremely impressed with him. He gave it his all, fulfilled every single one of my wishes, and made sure everything was exactly how I wanted it. I had absolutely no problems. He was always committed, responsive, and went the extra mile to make everything perfect. The quality, effort, and professionalism were outstanding. I couldn’t be happier with the result. Truly top-quality work!', category: 'Embedded Linux / DevOps (Armbian)' },
   { name: 'jakemedia207', country: 'US', rating: 5, time: 'February 2026', text: 'Helped me with my p1s 10/10 would recommend', category: 'Embedded Linux / DevOps (Armbian)' },
   { name: 'tob_hu', country: 'CH', rating: 4, time: 'September 2025', text: 'Thank you for your Support!', category: 'Embedded Linux / DevOps (Armbian)' },
   { name: 'skilnotfound', country: 'US', rating: 5, time: 'September 2025', text: 'Was very helpful and willing to help immediately. Was also very flexible in helping with the issue we were in vastly different time zones which meant it was difficult for us to always be online at the same time, But i would frequently get very early morning replies. 10/10 would reach out for consulting again.', category: 'Embedded Linux / DevOps (Armbian)' },

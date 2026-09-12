@@ -110,8 +110,8 @@ Education:
 Paid client work (second track, alongside software and infrastructure):
 - Independent technical consulting in embedded Linux, Armbian, Klipper, Marlin and
   3D-printer hardware
-- 31 public reviews since 2022, 30 of them at five stars, from clients in nine
-  countries (US, PL, GB, CA, CH, MT, IE, NZ, HK)
+- 32 public reviews since 2022, 31 of them at five stars, from clients in ten
+  countries (US, PL, GB, CA, CH, MT, IE, NZ, HK, DE)
 - Publicly verifiable at https://www.fiverr.com/akinzouent
 
 Independent R&D:

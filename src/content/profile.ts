@@ -81,7 +81,7 @@ export const qa: { question: string; answer: string }[] = [
   {
     question: 'Does Wiktor Jeleń take client work?',
     answer:
-      'Yes. Alongside software and infrastructure work, Wiktor Jeleń takes independent consulting projects in embedded Linux, Armbian, Klipper, Marlin and 3D-printer hardware. That track has 31 public reviews since 2022, 30 of them at five stars, from clients in nine countries, all readable on his public Fiverr profile.',
+      'Yes. Alongside software and infrastructure work, Wiktor Jeleń takes independent consulting projects in embedded Linux, Armbian, Klipper, Marlin and 3D-printer hardware. That track has 32 public reviews since 2022, 31 of them at five stars, from clients in ten countries, all readable on his public Fiverr profile.',
   },
   {
     question: 'Why is the site called Yelon?',
@@ -267,8 +267,8 @@ export const skillGroups: { title: string; accent: Accent; items: string[] }[] =
  * work" rather than "the backend work", which narrowed it unnecessarily. The
  * platform is named once, in the sentence that offers verification.
  *
- * Counts are derived from the review list rendered in About.tsx — 30 of 31 at
- * five stars, nine countries, 2022 through 2026 — so the numbers below and the
+ * Counts are derived from the review list rendered in About.tsx — 31 of 32 at
+ * five stars, ten countries, 2022 through 2026 — so the numbers below and the
  * feed on the page cannot disagree.
  */
 export const clientWork = {
@@ -276,11 +276,11 @@ export const clientWork = {
   profileUrl: 'https://www.fiverr.com/akinzouent',
   headline: 'Paid Client Work — Embedded Linux, Firmware & Hardware',
   body:
-    'Alongside my software and infrastructure work, I take on independent technical consulting projects involving embedded Linux, Armbian, Klipper, Marlin and 3D-printer hardware. 31 public reviews since 2022, 30 of them at five stars, from clients in nine countries. Every review is publicly verifiable on Fiverr.',
+    'Alongside my software and infrastructure work, I take on independent technical consulting projects involving embedded Linux, Armbian, Klipper, Marlin and 3D-printer hardware. 32 public reviews since 2022, 31 of them at five stars, from clients in ten countries. Every review is publicly verifiable on Fiverr.',
   stats: [
-    { label: 'Public reviews', value: '31' },
-    { label: 'Five-star', value: '30 of 31' },
-    { label: 'Countries', value: '9' },
+    { label: 'Public reviews', value: '32' },
+    { label: 'Five-star', value: '31 of 32' },
+    { label: 'Countries', value: '10' },
   ],
   /** Quoted verbatim; each one is on the public profile. */
   quotes: [

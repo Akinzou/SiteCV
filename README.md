@@ -18,7 +18,7 @@ Live: https://yelon.dev
 - Responsive design
 - Contact form with reCAPTCHA v2, Upstash Redis rate limiting, and email delivery via Resend
 - Real-time PyPI download counter
-- Client reviews section with infinite scroll (31 Fiverr testimonials)
+- Client reviews section with infinite scroll (32 Fiverr testimonials)
 - Auto-deploy on every push to `master` via Vercel's GitHub integration (preview deployments on PRs, production on merge)
 
 ## Easter Eggs
