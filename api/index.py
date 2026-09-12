@@ -1,8 +1,7 @@
 """Vercel serverless entry point for the contact form API.
 
-This mirrors contact-api/main.py (the VPS/Docker deployment) but adapted for
-Vercel's serverless runtime, where every invocation may land on a fresh,
-short-lived instance:
+Adapted for Vercel's serverless runtime, where every invocation may land on a
+fresh, short-lived instance:
 
 - Rate limiting can no longer live in an in-process dict (each instance would
   have its own, and it wouldn't survive between invocations), so it's backed

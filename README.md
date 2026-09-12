@@ -1,4 +1,4 @@
-# yelon.dev ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?logo=typescript&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white) ![Three.js](https://img.shields.io/badge/Three.js-0.170-000000?logo=threedotjs&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4-06B6D4?logo=tailwindcss&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white) ![License](https://img.shields.io/badge/License-MIT-green) [![Live](https://img.shields.io/badge/Live-yelon.dev-00f0ff)](https://yelon.dev)
+# yelon.dev ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?logo=typescript&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white) ![Three.js](https://img.shields.io/badge/Three.js-0.170-000000?logo=threedotjs&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4-06B6D4?logo=tailwindcss&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?logo=vercel&logoColor=white) ![License](https://img.shields.io/badge/License-MIT-green) [![Live](https://img.shields.io/badge/Live-yelon.dev-00f0ff)](https://yelon.dev)
 
 Personal portfolio website built with React, Three.js, and a healthy dose of easter eggs.
 
@@ -41,7 +41,7 @@ The site contains 10 hidden easter eggs for curious visitors. They're scattered 
 
 Each egg contains hints pointing to the next one. Finding all of them reveals secret codes.
 
-> **Note:** `/admin`, `/wp-login`, `/teapot`, and `/about` are served extensionless (e.g. `/admin` → `admin.html`) via explicit `rewrites` in `vercel.json`, replacing the nginx `try_files` rule (see `nginx.conf`) the old VPS deployment used for the same thing. `/about.html` itself 301s to `/about` (also in `vercel.json`) so the two URLs can't both get indexed as duplicate content.
+> **Note:** `/admin`, `/wp-login`, `/teapot`, and `/about` are served extensionless (e.g. `/admin` → `admin.html`) via explicit `rewrites` in `vercel.json`. `/about.html` itself 301s to `/about` (also in `vercel.json`) so the two URLs can't both get indexed as duplicate content.
 
 ## AI Prompt Injection
 
@@ -80,19 +80,12 @@ Required environment variables (Vercel project settings → Environment Variable
 - `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` - Upstash Redis REST credentials, used
   to rate-limit contact-form submissions per IP across serverless invocations
 
-### Legacy VPS deployment (unused)
-
-`Dockerfile`, `nginx.conf`, and `contact-api/` are left over from an earlier deployment on an
-OVH VPS (Docker + nginx, with the contact API as a separate container) and are no longer part
-of the live site. They still reference the old `yelon.pro` domain and aren't kept in sync with
-`api/index.py`.
-
 ## Project Structure
 
 ```
 src/
   components/     # React components (Hero, About, Skills, Projects, Contact)
-  content/        # profile.ts / schema.ts - the copy the app and the /about page both read
+  content/        # profile.ts / schema.ts / reviews.ts - the copy the app and the /about page both read
   hooks/          # Custom hooks (PyPI download fetcher)
   main.tsx        # Entry point with console easter egg
 api/

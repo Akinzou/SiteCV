@@ -34,7 +34,6 @@ import { esc, list, pageStyles } from './shared'
  *
  * Served extensionless as `/about` by a rewrite in vercel.json (`/about.html`
  * itself 301s to `/about` there too, so the two URLs can't both get indexed).
- * nginx.conf has the equivalent rule for the old, unused VPS deployment.
  */
 
 const extraStyles = (root: string): string => `
