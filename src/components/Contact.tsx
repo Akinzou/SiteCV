@@ -224,9 +224,14 @@ const Contact = () => {
         if (recaptchaWidgetId.current !== null) window.grecaptcha?.reset(recaptchaWidgetId.current)
       } else {
         const error = await response.json()
+        // FastAPI's own validation errors (422) put an array of
+        // {msg, loc, ...} objects in `detail` instead of a string.
+        const detail = Array.isArray(error.detail)
+          ? error.detail.map((e: { msg?: string }) => e.msg).filter(Boolean).join(', ')
+          : error.detail
         setTerminalLines((prev) => [
           ...prev,
-          `$ Error: ${error.detail || 'Failed to send message'}`,
+          `$ Error: ${detail || 'Failed to send message'}`,
           `$ Status: FAILED`,
         ])
         if (recaptchaWidgetId.current !== null) window.grecaptcha?.reset(recaptchaWidgetId.current)
