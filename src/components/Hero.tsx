@@ -52,6 +52,7 @@ const Hero = () => {
   const badgeRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
   const subtitleRef = useRef<HTMLDivElement>(null)
+  const ctaRef = useRef<HTMLDivElement>(null)
   const terminalRef = useRef<HTMLDivElement>(null)
   const [terminalReady, setTerminalReady] = useState(false)
   const [showDeer, setShowDeer] = useState(true)
@@ -65,7 +66,7 @@ const Hero = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (reducedMotion) {
-        gsap.set([badgeRef.current, titleRef.current, subtitleRef.current, terminalRef.current, ...heroRef.current!.querySelectorAll('.focus-card')], { opacity: 1, clearProps: 'transform' })
+        gsap.set([badgeRef.current, titleRef.current, subtitleRef.current, ctaRef.current, terminalRef.current, ...heroRef.current!.querySelectorAll('.focus-card')], { opacity: 1, clearProps: 'transform' })
         setTerminalReady(true)
         return
       }
@@ -92,6 +93,14 @@ const Hero = () => {
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' },
         '-=0.4'
+      )
+
+      // CTA buttons fade in
+      tl.fromTo(
+        ctaRef.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' },
+        '-=0.3'
       )
 
       // Focus areas, one card after another
@@ -165,9 +174,9 @@ const Hero = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
-          <a href="#projects" className="px-5 py-3 rounded border border-cyber-blue/50 bg-cyber-blue/10 text-cyber-blue hover:bg-cyber-blue/20 transition-colors">Explore projects <span aria-hidden="true">&darr;</span></a>
-          <a href="#contact" className="px-5 py-3 rounded border border-gray-600 text-gray-200 hover:bg-white/5 transition-colors">Get in touch</a>
+        <div ref={ctaRef} className="flex flex-wrap justify-center gap-3 mb-10 opacity-0">
+          <a href="#projects" className="w-56 flex items-center justify-center gap-1 px-5 py-3 rounded border border-cyber-blue/50 bg-cyber-blue/10 text-cyber-blue hover:bg-cyber-blue/20 transition-colors">Explore projects <span aria-hidden="true">&darr;</span></a>
+          <a href="#contact" className="w-56 flex items-center justify-center px-5 py-3 rounded border border-gray-600 text-gray-200 hover:bg-white/5 transition-colors">Get in touch</a>
         </div>
 
         {/* Focus areas — what to know in the first five seconds. */}
@@ -190,7 +199,7 @@ const Hero = () => {
         {/* Terminal window */}
         <div
           ref={terminalRef}
-          className="hidden lg:block max-w-4xl w-full mx-auto glass rounded-lg overflow-hidden text-left opacity-0"
+          className="hidden lg:block w-full glass rounded-lg overflow-hidden text-left opacity-0"
         >
           {/* Terminal header */}
           <div className="flex items-center gap-2 px-4 py-3 bg-cyber-dark border-b border-cyber-blue/10">
@@ -201,7 +210,7 @@ const Hero = () => {
           </div>
 
           {/* Terminal content */}
-          <div className={`p-4 md:p-6 font-mono text-sm overflow-x-auto grid ${showDeer ? 'grid-cols-[160px_1fr]' : 'grid-cols-1'} items-center gap-6`}>
+          <div className={`p-4 md:p-6 font-mono text-sm overflow-x-auto grid ${showDeer ? 'grid-cols-[160px_1fr]' : 'grid-cols-1'} items-stretch gap-6`}>
             {/* ASCII Deer - hidden in WebView in-app browsers */}
             {showDeer && (
             <div aria-hidden="true" className="flex justify-center">
@@ -264,7 +273,7 @@ const Hero = () => {
             )}
 
             {terminalReady && (
-              <div>
+              <div className="h-full flex flex-col justify-center">
                 <div className="text-gray-500">
                   <Typewriter text="$ whoami" delay={100} speed={15} />
                 </div>
