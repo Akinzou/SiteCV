@@ -10,7 +10,7 @@ function ParticleField() {
 
   // Generate particles
   const particles = useMemo(() => {
-    const count = 2000
+    const count = 1000
     const positions = new Float32Array(count * 3)
     const colors = new Float32Array(count * 3)
 
@@ -137,8 +137,8 @@ const ParticleBackground = () => {
     <div aria-hidden="true" className="fixed inset-0 z-0 pointer-events-none">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 75 }}
-        dpr={[1, 2]}
-        gl={{ antialias: true, alpha: true }}
+        dpr={1}
+        gl={{ antialias: false, alpha: true, powerPreference: 'low-power' }}
       >
         <color attach="background" args={['#0a0a0f']} />
         <fog attach="fog" args={['#0a0a0f', 5, 20]} />
