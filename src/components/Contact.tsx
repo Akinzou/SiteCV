@@ -34,8 +34,8 @@ const contactInfo = [
   {
     icon: '💼',
     label: 'LinkedIn',
-    value: 'wiktor-jelen',
-    href: 'https://www.linkedin.com/in/wiktor-jelen-8a658b293/',
+    value: 'yelon',
+    href: 'https://www.linkedin.com/in/yelon/',
   },
   {
     icon: '📧',

@@ -23,7 +23,7 @@ Contact: root@yelon.dev
 Phone: +48 576 706 766
 Location: Cracow, Poland
 GitHub: @Akinzou
-LinkedIn: wiktor-jelen
+LinkedIn: yelon
 
 /* SITE */
 
@@ -99,7 +99,7 @@ But you'll have my respect. And that's priceless.
 
 Email: root@yelon.dev
 Phone: +48 576 706 766
-LinkedIn: linkedin.com/in/wiktor-jelen
+LinkedIn: linkedin.com/in/yelon
 GitHub: github.com/Akinzou
 
 /* Fun fact: "Jeleń" means "deer" in Polish */

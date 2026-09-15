@@ -100,7 +100,7 @@ vite-plugins/     # Build-time plugins (SEO snapshot, static /about page)
 ## Contact
 
 - Email: root@yelon.dev
-- LinkedIn: wiktor-jelen
+- LinkedIn: yelon
 - GitHub: Akinzou
 
 ## License

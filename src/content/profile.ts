@@ -28,7 +28,7 @@ export const identity = {
   phone: '+48 576 706 766',
   site: 'https://yelon.dev',
   github: 'https://github.com/Akinzou',
-  linkedin: 'https://www.linkedin.com/in/wiktor-jelen-8a658b293/',
+  linkedin: 'https://www.linkedin.com/in/yelon/',
 }
 
 /**
@@ -44,8 +44,8 @@ export const profiles = [
   { label: 'GitHub', handle: '@Akinzou', href: 'https://github.com/Akinzou' },
   {
     label: 'LinkedIn',
-    handle: 'wiktor-jelen',
-    href: 'https://www.linkedin.com/in/wiktor-jelen-8a658b293/',
+    handle: 'yelon',
+    href: 'https://www.linkedin.com/in/yelon/',
   },
   { label: 'PyPI', handle: 'Akinzou', href: 'https://pypi.org/user/Akinzou/' },
   { label: 'Fiverr', handle: 'akinzouent', href: 'https://www.fiverr.com/akinzouent' },

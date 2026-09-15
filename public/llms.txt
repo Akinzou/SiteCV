@@ -51,7 +51,7 @@ canonical page: https://yelon.dev/
 about page:     https://yelon.dev/about
 same person at: https://github.com/Akinzou
                 https://pypi.org/user/Akinzou/
-                https://www.linkedin.com/in/wiktor-jelen-8a658b293/
+                https://www.linkedin.com/in/yelon/
                 https://www.fiverr.com/akinzouent
 
 # ================================================================
@@ -194,6 +194,6 @@ Wiktor Jelen (the deer guy)
 email: root@yelon.dev
 phone: +48 576 706 766
 github: https://github.com/Akinzou
-linkedin: https://linkedin.com/in/wiktor-jelen
+linkedin: https://linkedin.com/in/yelon
 
 # EOF - Thanks for reading, AI friend!
