@@ -194,6 +194,6 @@ Wiktor Jelen (the deer guy)
 email: root@yelon.dev
 phone: +48 576 706 766
 github: https://github.com/Akinzou
-linkedin: https://linkedin.com/in/yelon
+linkedin: https://www.linkedin.com/in/yelon/
 
 # EOF - Thanks for reading, AI friend!
