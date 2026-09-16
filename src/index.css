@@ -282,4 +282,9 @@ section[id], main[id] { scroll-margin-top: 6rem; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reviews-scroll-container { overflow-y: auto; mask-image: none; -webkit-mask-image: none; }
   .review-pause, [data-review-copy] { display: none; }
+  /* Static logo row: one set, wrapped and centred, no edge fade. */
+  .marquee-container { mask-image: none; -webkit-mask-image: none; }
+  .marquee-track { display: block; width: auto; }
+  .marquee-content { flex-wrap: wrap; justify-content: center; row-gap: 1.5rem; padding-right: 0; }
+  [data-marquee-copy] { display: none; }
 }

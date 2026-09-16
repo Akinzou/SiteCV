@@ -259,6 +259,50 @@ export const experience = [
   },
 ]
 
+/** "MM.YYYY" at the start of an `experience` period, as epoch ms. */
+const periodStart = (period: string) => {
+  const [month, year] = period.split(' - ')[0].split('.').map(Number)
+  return new Date(year, month - 1).getTime()
+}
+const careerStart = Math.min(...experience.map((entry) => periodStart(entry.period)))
+/**
+ * Tenure since the first job, to one decimal and floored (3.86 → 3.8) so it
+ * never claims more than has actually passed. Evaluated when the bundle loads,
+ * so every visit recomputes it — nothing to update by hand.
+ */
+const yearsOfExperience = Math.floor((Date.now() - careerStart) / (365.25 * 24 * 60 * 60 * 1000) * 10) / 10
+
+export type Stat = {
+  label: string
+  value: number
+  suffix: string
+  accent: Accent
+  /** Decimal places to show; the count-up animation respects it too. */
+  decimals?: number
+  /** When set, the tile shows the live pepy.tech count and links to it. */
+  pypiPackage?: string
+}
+
+/**
+ * Headline numbers under the About intro. Deliberately just these three —
+ * the two hard figures that survived the CV, plus tenure computed from the
+ * first `experience` entry so it never goes stale.
+ */
+export const stats: Stat[] = [
+  { label: 'PyPI Downloads', value: 42000, suffix: '+', accent: 'blue', pypiPackage: 'pythonmetatrader5' },
+  { label: 'Concurrent Users', value: 450, suffix: '+', accent: 'purple' },
+  { label: 'Years Commercial Experience', value: yearsOfExperience, suffix: '', accent: 'green', decimals: 1 },
+]
+
+/** Text-only logo strip; most recent first. */
+export const workedWith: { name: string; detail: string; accent: Accent }[] = [
+  { name: 'RANDLAB', detail: 'Software House', accent: 'green' },
+  { name: 'CTS AUDIO', detail: 'Audio Systems', accent: 'blue' },
+  { name: 'GEEETECH', detail: 'Shenzhen R&D', accent: 'blue' },
+  { name: 'POLSAT PLUS', detail: 'Cyfrowy Polsat Group', accent: 'purple' },
+  { name: 'WSB-NLU', detail: 'National Louis University', accent: 'green' },
+]
+
 export const skillGroups: { title: string; accent: Accent; items: string[] }[] = [
   {
     title: 'Backend & Data',

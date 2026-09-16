@@ -38,3 +38,11 @@ export const accentRule: Record<Accent, string> = {
   pink: 'from-cyber-pink',
   yellow: 'from-cyber-yellow',
 }
+
+export const accentGroupHoverText: Record<Accent, string> = {
+  blue: 'group-hover:text-cyber-blue',
+  purple: 'group-hover:text-cyber-purple',
+  green: 'group-hover:text-cyber-green',
+  pink: 'group-hover:text-cyber-pink',
+  yellow: 'group-hover:text-cyber-yellow',
+}

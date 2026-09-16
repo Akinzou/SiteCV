@@ -1,11 +1,53 @@
-import { useRef, useState } from 'react'
-import { clientWork, education, identity, research } from '../content/profile'
+import { useEffect, useRef, useState } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { usePyPIDownloads } from '../hooks/usePyPIDownloads'
+import { useReducedMotion } from '../hooks/useReducedMotion'
+import { clientWork, education, identity, research, stats, workedWith } from '../content/profile'
 import { reviews } from '../content/reviews'
+import { accentBorder, accentGroupHoverText, accentText } from '../lib/accents'
 
+gsap.registerPlugin(ScrollTrigger)
+
+// Integers get the same thousands grouping the PyPI hook uses, so the tile and
+// the project card agree; decimals are shown as-is (4.0, not 4).
+const formatNumber = (n: number, decimals: number) =>
+  decimals > 0 ? n.toFixed(decimals) : Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+
+/** Counts up to `value` when scrolled into view; with reduced motion it just shows the number. */
+const CountUp = ({ value, decimals = 0 }: { value: number; decimals?: number }) => {
+  const reducedMotion = useReducedMotion()
+  const ref = useRef<HTMLSpanElement>(null)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el || reducedMotion) return
+    // Resume from whatever is on screen: the live PyPI count can land after the
+    // first tween has already run, and restarting from 0 would look like a glitch.
+    const counter = { n: parseFloat(el.textContent?.replace(/\s/g, '') || '0') || 0 }
+    const ctx = gsap.context(() => {
+      gsap.to(counter, {
+        n: value,
+        duration: 2,
+        ease: 'power2.out',
+        onUpdate: () => {
+          el.textContent = formatNumber(counter.n, decimals)
+        },
+        scrollTrigger: { trigger: el, start: 'top 85%' },
+      })
+    })
+    return () => ctx.revert()
+  }, [value, decimals, reducedMotion])
+
+  return <span ref={ref}>{reducedMotion ? formatNumber(value, decimals) : formatNumber(0, decimals)}</span>
+}
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null)
   const [reviewsPaused, setReviewsPaused] = useState(false)
+  const { downloads: pypiDownloads, pepyUrl } = usePyPIDownloads('pythonmetatrader5')
+  // The hook's error fallback is the string "42,000+", which is not a live number.
+  const livePypi = pypiDownloads && /^[\d ]+$/.test(pypiDownloads) ? parseInt(pypiDownloads.replace(/\s/g, ''), 10) : null
 
   return (
     <section
@@ -49,6 +91,66 @@ const About = () => {
               →
             </span>
           </a>
+        </div>
+
+        {/* Headline numbers. The PyPI count is live, shares its request with
+            the project card, and links to the source, so it is a verifiable
+            figure rather than a claim. */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {stats.map((stat) => {
+            const live = stat.pypiPackage && livePypi !== null ? livePypi : null
+            return (
+              <div
+                key={stat.label}
+                className={`glass rounded-lg p-6 text-center hover-glow border ${accentBorder[stat.accent]}`}
+              >
+                <p className={`font-display font-bold text-4xl md:text-5xl mb-2 ${accentText[stat.accent]}`}>
+                  <CountUp value={live ?? stat.value} decimals={stat.decimals} />
+                  {live === null && stat.suffix}
+                </p>
+                <p className="font-mono text-sm text-gray-400 flex items-center justify-center gap-2">
+                  {stat.label}
+                  {stat.pypiPackage && (
+                    <a
+                      href={pepyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-1 bg-cyber-blue/20 text-cyber-blue hover:bg-cyber-green/20 hover:text-cyber-green transition-colors text-[10px] rounded"
+                    >
+                      [verify]
+                    </a>
+                  )}
+                </p>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Worked with */}
+        <div className="mb-16">
+          <p className="font-mono text-xs text-gray-500 text-center mb-6">WORKED WITH</p>
+          <div className="marquee-container">
+            <div className="marquee-track">
+              {/* Five copies: the keyframe travels -20%, exactly one set, so the loop is seamless. */}
+              {Array.from({ length: 5 }, (_, copy) => (
+                <div
+                  key={copy}
+                  className="marquee-content"
+                  aria-hidden={copy > 0 ? true : undefined}
+                  data-marquee-copy={copy > 0 ? true : undefined}
+                >
+                  {workedWith.map((org) => (
+                    <div key={org.name} className="group flex flex-col items-center flex-shrink-0">
+                      <span className={`font-display font-bold text-2xl md:text-3xl text-white/60 transition-colors ${accentGroupHoverText[org.accent]}`}>
+                        {org.name}
+                      </span>
+                      <span className="font-mono text-xs text-gray-500">{org.detail}</span>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Recommendation section */}
