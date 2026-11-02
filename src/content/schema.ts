@@ -138,14 +138,15 @@ const personNode = () => ({
     occupationLocation: { '@type': 'Country', name: 'Poland' },
     skills: focusAreas.flatMap((area) => area.items),
   },
-  hasCredential: [
-    {
+  /** Only completed qualifications — the degree is still in progress and must not read as obtained. */
+  hasCredential: education
+    .filter((entry) => !/present/i.test(entry.period))
+    .map((entry) => ({
       '@type': 'EducationalOccupationalCredential',
-      credentialCategory: 'degree',
-      name: education[0].degree,
-      recognizedBy: { '@type': 'EducationalOrganization', name: education[0].school },
-    },
-  ],
+      credentialCategory: 'diploma',
+      name: entry.degree,
+      recognizedBy: { '@type': 'EducationalOrganization', name: entry.school },
+    })),
   alumniOf: education.map((entry) => ({
     '@type': 'EducationalOrganization',
     name: entry.school,

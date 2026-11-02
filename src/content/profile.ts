@@ -148,7 +148,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: 'KONIK',
-    tagline: 'Multi-tenant automation platform · Lead developer & architect',
+    tagline: 'Multi-tenant automation platform · Lead backend developer',
     accent: 'purple',
     featured: true,
     problem:
@@ -233,12 +233,21 @@ export const projects: Project[] = [
 /** Dates and responsibilities from the existing CV; keep the public timeline concise. */
 export const experience = [
   {
-    period: '03.2026 - 08.2026', role: 'Lead Developer / System Architect',
+    /**
+     * Under NDA: no client name, no industry, no supplier names, no internal
+     * system names — anywhere (site, PDF, llms.txt). Describe systems by function.
+     */
+    period: '09.2026 - 11.2026', role: 'Backend & Automation Engineer (contract)',
+    company: 'B2B e-commerce automation (under NDA)', location: 'Poland, Remote',
+    highlights: ['Built supplier-integration, RFQ-automation and content-generation services for a multi-country B2B e-commerce business, with LLM extraction behind human approval.', 'Took over a legacy PIM / dropshipping system: closed a critical authentication vulnerability, fixed margin calculation and added continuous delivery with automatic rollback.'],
+  },
+  {
+    period: '03.2026 - 08.2026', role: 'Lead Backend Developer',
     company: 'KonikSystems · KONIK', location: 'Remote',
     highlights: ['Owned architecture and development of a multi-tenant automation platform.', 'Delivered tenant isolation, workflow orchestration, integrations and automated test and delivery pipelines.'],
   },
   {
-    period: '09.2025 - 02.2026', role: 'System Architect',
+    period: '09.2025 - 02.2026', role: 'Backend Engineer',
     company: 'Randlab Software · Anatomy Project', location: 'Remote',
     highlights: ['Designed and deployed the backend for a Medical University of Silesia education platform.', 'Integrated university Active Directory authentication and built the API, production environments and CI/CD.'],
   },
@@ -387,17 +396,20 @@ export const clientWork = {
 export const education = [
   {
     period: '10.2024 – Present',
-    degree: 'B.Eng. in Computer Science, Cybersecurity (part-time)',
-    school: 'WSB National Louis University',
-    location: 'Cracow, Poland',
+    degree: 'B.Eng. in Computer Science, Cybersecurity — in progress (part-time)',
+    school: 'WSB-National Louis University',
+    location: 'Nowy Sącz, Poland',
   },
   {
-    period: 'Completed',
+    period: '2019 – 2024',
     degree: 'Mechatronics Technician',
     school: 'Technical School of Electrical Engineering and Mechanics',
     location: 'Nowy Sącz, Poland',
   },
 ]
+
+/** Served from public/; regenerate with `npm run cv:pdf` after changing src/content/cv.ts or anything it reads here. */
+export const cvPdf = { href: '/Wiktor_Jelen_CV.pdf', label: 'Download CV (PDF)' }
 
 export const languages = [
   'Polish — native',

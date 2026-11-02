@@ -2,6 +2,7 @@ import type { Plugin } from 'vite'
 import { aboutGraph, scriptTag } from '../src/content/schema'
 import {
   clientWork,
+  cvPdf,
   education,
   experience,
   focusAreas,
@@ -81,6 +82,7 @@ const renderAbout = (): string => {
 <dt>Education</dt><dd>${esc(education[0].degree)}, ${esc(education[0].school)}</dd>
 <dt>Languages</dt><dd>${esc(languages.join(' · '))}</dd>
 <dt>Contact</dt><dd><a href="mailto:${esc(identity.email)}">${esc(identity.email)}</a></dd>
+<dt>CV</dt><dd><a href="${esc(cvPdf.href)}">${esc(cvPdf.label)}</a></dd>
 </dl>
 </section>`)
 
