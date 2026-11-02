@@ -176,6 +176,62 @@ export const projects: Project[] = [
     ],
     pypiPackage: 'pythonmetatrader5',
   },
+  /*
+   * Four systems from the 09–11.2026 contract. Under NDA: named by function,
+   * never by the client, its industry, its suppliers or internal codenames.
+   */
+  {
+    name: "Supplier Integration Platform",
+    tagline: "B2B e-commerce client (under NDA) · 2026",
+    accent: "green",
+    featured: true,
+    problem:
+      "A B2B e-commerce business buys from over a hundred suppliers, and each one exposes prices and stock differently: B2B panels on WooCommerce, PrestaShop, Shopify, Odoo and other platforms, file feeds, or nothing but an email inbox. And the ERP imports the result every hour, so one broken scraper can quietly shrink the catalogue.",
+    solution:
+      "Split the integration service out of a legacy system and grew it from 59 to 109 connected suppliers (89 domestic, 20 EU) covering 73,000+ products — I wrote 197 of its 207 commits. Playwright scrapers and API clients pull purchase prices and stock; suppliers without a panel get quote requests sent automatically through the Gmail API, and their replies (email body, PDF, XLSX, images) are read by an LLM and approved by the customer-service team in an admin panel. Catalogues are published as SHA-256-checked versions with an atomic swap, and a drop of more than 20% blocks publication. CI audits secrets and system boundaries; deploys switch atomically and roll back automatically; 20 ADRs record the decisions.",
+    stack: ["Node.js 24", "Express 5", "MongoDB", "Playwright", "OpenAI API", "Gmail API", "GitHub Actions"],
+    metric: "59 → 109 suppliers · 830 tests",
+    links: [],
+  },
+  {
+    name: "RFQ Automation Service",
+    tagline: "B2B e-commerce client (under NDA) · 2026",
+    accent: "blue",
+    featured: true,
+    problem:
+      "The sales team sourced quotes by hand: read the customer request, guess which suppliers carry each item, write to each of them, then compare offers arriving in different units and currencies.",
+    solution:
+      "Designed and built from scratch in 8 days. The service takes a request from a salesperson by email, extracts the line items with an LLM into a strict JSON schema, and picks up to 25 suppliers from four data sources with a stated reason for each choice — 11 of 12 correct picks when replayed against historical quotes. It drafts the requests for approval, compares offers in net price per unit and splits quantities between suppliers. Clean Architecture, DDD, ports & adapters and the Result pattern, with layer boundaries enforced in CI by dependency-cruiser. Security follows OWASP ASVS L2 and WSTG: 23 of 23 scenarios passed, Semgrep and secret scanning block merges, the recipient allowlist is enforced in code and senders are verified with SPF/DKIM.",
+    stack: ["Node.js 24 (ESM)", "Clean Architecture / DDD", "TDD", "LLM structured outputs", "Semgrep", "dependency-cruiser"],
+    metric: "Built in 8 days · 445 tests · ASVS L2",
+    links: [],
+  },
+  {
+    name: "Marketing Content Generator",
+    tagline: "B2B e-commerce client (under NDA) · 2026",
+    accent: "pink",
+    featured: false,
+    problem:
+      "Marketing had to publish a steady stream of social posts for a large, constantly changing catalogue, across several language markets, without promoting products that are out of stock or making claims EU consumer law forbids.",
+    solution:
+      "Built from scratch in 5 days and running in production. The tool plans a month of Facebook and Instagram posts from live catalogue data — stock, bestsellers, promotions, product rotation — and produces the copy, images in four formats and a 10-second video for each post, in every language market with regional prices. Generated copy is checked automatically against the Omnibus Directive and Directive 2024/825 on green claims; a batch generator handles up to 200 products per run. Background removal runs locally on ONNX (BiRefNet); jobs go through a pg-boss queue. CI/CD with automatic rollback, Google sign-in restricted to the company domain; 132 commits, 60 PRs, 23 ADRs.",
+    stack: ["TypeScript", "Fastify 5", "React 19", "PostgreSQL 17 / Drizzle", "pg-boss", "OpenAI", "Runway", "ffmpeg", "ONNX Runtime"],
+    metric: "Built in 5 days · ~390 tests · in production",
+    links: [],
+  },
+  {
+    name: "PIM & Dropshipping Takeover",
+    tagline: "B2B e-commerce client (under NDA) · 2026",
+    accent: "yellow",
+    featured: false,
+    problem:
+      "A product-information and dropshipping system inherited from a previous team, with no delivery pipeline, secrets committed to the code and margins that did not add up.",
+    solution:
+      "Reviewed the code, wrote down the technical debt, then shipped 144 commits and closed about 80 tasks in 3 days. Closed a critical hole — a public endpoint that issued an administrator token without logging in — rotated the JWT keys and removed hard-coded secrets. Fixed margin calculation (it was computed from the gross price), added protection against ordering twice from a supplier, live exchange rates from the national bank and daily order limits. Extended supplier integrations from 6 to 12 (~1.34M offers), with product cards created automatically from Open Icecat. Built continuous delivery from zero: GitHub Actions, a least-privilege deploy account, automatic rollback, a pre-push test gate and worker health checks.",
+    stack: ["Laravel 12", "Angular 21", "MySQL", "Redis", "Docker", "GitHub Actions"],
+    metric: "6 → 12 suppliers · ~1.34M offers",
+    links: [],
+  },
   {
     name: 'TradeLockerBot',
     tagline: 'Trading automation system',
