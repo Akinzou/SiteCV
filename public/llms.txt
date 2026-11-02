@@ -45,7 +45,7 @@ Wiktor Jeleń (also written without Polish diacritics as "Wiktor Jelen"; online 
 "Yelon") is a backend and platform engineer based in Cracow, Poland. He builds
 multi-tenant production systems, infrastructure and security-critical backends, and
 wrote PythonMetaTrader5, an open-source order-execution library with more than
-42,000 downloads on PyPI.
+43,000 downloads on PyPI.
 
 canonical page: https://yelon.dev/
 about page:     https://yelon.dev/about
@@ -70,7 +70,7 @@ Background:
 - Designed and deployed a backend serving 450+ concurrent users for the Medical University of Silesia
 - Supplier-integration, RFQ and content automation for a B2B e-commerce business (2026, under NDA):
   109 supplier integrations, LLM extraction behind human approval, OWASP ASVS L2, 1,600+ tests
-- Open source author: PythonMetaTrader5, 42,000+ PyPI downloads, used against real capital
+- Open source author: PythonMetaTrader5, 43,000+ PyPI downloads, used against real capital
 - Cross-cultural R&D experience (EU-China collaboration, Shenzhen)
 - Security-focused engineering (OWASP Top 10, LDAP/AD IAM, JWT, tenant isolation)
 
@@ -123,7 +123,7 @@ Paid client work (second track, alongside software and infrastructure):
 
 Independent R&D:
 - Built the execution layer first: PythonMetaTrader5, an open-source order-execution
-  library for MetaTrader 5 (42,000+ downloads)
+  library for MetaTrader 5 (43,000+ downloads)
 - Now working a layer above it, in machine learning: evolutionary computation, where
   genetic algorithms breed and select trading strategies instead of them being
   hand-written. StrategyQuant X generates strategy populations; survivors are

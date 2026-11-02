@@ -46,7 +46,7 @@ const About = () => {
   const sectionRef = useRef<HTMLElement>(null)
   const [reviewsPaused, setReviewsPaused] = useState(false)
   const { downloads: pypiDownloads, pepyUrl } = usePyPIDownloads('pythonmetatrader5')
-  // The hook's error fallback is the string "42,000+", which is not a live number.
+  // The hook's error fallback is the string "43,000+", which is not a live number.
   const livePypi = pypiDownloads && /^[\d ]+$/.test(pypiDownloads) ? parseInt(pypiDownloads.replace(/\s/g, ''), 10) : null
 
   return (

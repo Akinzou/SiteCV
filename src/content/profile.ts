@@ -22,7 +22,7 @@ export const identity = {
    * read, which "I design and build things" on its own is not.
    */
   definition:
-    "I'm Wiktor Jeleń, a backend and platform engineer based in Cracow, Poland. I build multi-tenant production systems, infrastructure and security-critical backends, and I wrote PythonMetaTrader5, an open-source library with over 42,000 PyPI downloads.",
+    "I'm Wiktor Jeleń, a backend and platform engineer based in Cracow, Poland. I build multi-tenant production systems, infrastructure and security-critical backends, and I wrote PythonMetaTrader5, an open-source library with over 43,000 PyPI downloads.",
   location: 'Cracow, Poland',
   email: 'root@yelon.dev',
   phone: '+48 576 706 766',
@@ -63,7 +63,7 @@ export const qa: { question: string; answer: string }[] = [
   {
     question: 'Who is Wiktor Jeleń?',
     answer:
-      'Wiktor Jeleń is a backend and platform engineer based in Cracow, Poland. He builds multi-tenant production systems, infrastructure and security-critical backends, and is the author of PythonMetaTrader5, an open-source order-execution library with more than 42,000 downloads on PyPI.',
+      'Wiktor Jeleń is a backend and platform engineer based in Cracow, Poland. He builds multi-tenant production systems, infrastructure and security-critical backends, and is the author of PythonMetaTrader5, an open-source order-execution library with more than 43,000 downloads on PyPI.',
   },
   {
     question: 'What does Wiktor Jeleń work on?',
@@ -78,7 +78,7 @@ export const qa: { question: string; answer: string }[] = [
   {
     question: 'What is PythonMetaTrader5?',
     answer:
-      'PythonMetaTrader5 is an open-source Python library written by Wiktor Jeleń that wraps the MetaTrader 5 terminal API for algorithmic trading. It normalizes order placement, handles the full set of broker return codes and adds the safeguards the native API leaves out, so a strategy can run against a live account. It has passed 42,000 downloads on PyPI.',
+      'PythonMetaTrader5 is an open-source Python library written by Wiktor Jeleń that wraps the MetaTrader 5 terminal API for algorithmic trading. It normalizes order placement, handles the full set of broker return codes and adds the safeguards the native API leaves out, so a strategy can run against a live account. It has passed 43,000 downloads on PyPI.',
   },
   {
     question: 'Does Wiktor Jeleń take client work?',
@@ -169,12 +169,68 @@ export const projects: Project[] = [
     solution:
       'A Python layer over MetaTrader 5 built for algorithmic trading: order normalization, full retcode handling and safeguards that keep execution stable against real capital.',
     stack: ['Python', 'MetaTrader 5 API', 'PyPI'],
-    metric: '42,000+ PyPI downloads',
+    metric: '43,000+ PyPI downloads',
     links: [
       { label: 'GitHub', href: 'https://github.com/Akinzou/MetaTrader5-Python' },
       { label: 'PyPI', href: 'https://pypi.org/project/PythonMetaTrader5/' },
     ],
     pypiPackage: 'pythonmetatrader5',
+  },
+  /*
+   * Four systems from the 09–11.2026 contract. Under NDA: named by function,
+   * never by the client, its industry, its suppliers or internal codenames.
+   */
+  {
+    name: "Supplier Integration Platform",
+    tagline: "B2B e-commerce client (under NDA) · 2026",
+    accent: "green",
+    featured: true,
+    problem:
+      "A B2B e-commerce business buys from over a hundred suppliers, and each one exposes prices and stock differently: B2B panels on WooCommerce, PrestaShop, Shopify, Odoo and other platforms, file feeds, or nothing but an email inbox. And the ERP imports the result every hour, so one broken scraper can quietly shrink the catalogue.",
+    solution:
+      "Split the integration service out of a legacy system and grew it from 59 to 109 connected suppliers (89 domestic, 20 EU) covering 73,000+ products — I wrote 197 of its 207 commits. The platform runs two branches. Automatic suppliers: Playwright scrapers and API clients pull purchase prices and stock straight from their B2B panels. Manual suppliers, who have no panel: the system emails them through the Gmail API asking for current prices and stock, on a schedule built to protect the relationship — a person answers on the other side, so requests are paced instead of fired on every sync. Their replies come in whatever form that person chooses — figures typed in the email body, an XLSX or PDF attachment, or a photo of a document read with OCR — and an LLM turns each one into the same structure, which the customer-service team approves in an admin panel before it reaches the catalogue. Catalogues are published as SHA-256-checked versions with an atomic swap, and a drop of more than 20% blocks publication. CI audits secrets and system boundaries; deploys switch atomically and roll back automatically; 20 ADRs record the decisions.",
+    stack: ["Node.js 24", "Express 5", "MongoDB", "Playwright", "OpenAI API", "Gmail API", "GitHub Actions"],
+    metric: "59 → 109 suppliers · 830 tests",
+    links: [],
+  },
+  {
+    name: "RFQ Automation Service",
+    tagline: "B2B e-commerce client (under NDA) · 2026",
+    accent: "blue",
+    featured: true,
+    problem:
+      "The sales team sourced quotes by hand: read the customer request, guess which suppliers carry each item, write to each of them, then compare offers arriving in different units and currencies.",
+    solution:
+      "Designed and built from scratch in 8 days. The service takes a request from a salesperson by email, extracts the line items with an LLM into a strict JSON schema, and picks up to 25 suppliers from four data sources with a stated reason for each choice — 11 of 12 correct picks when replayed against historical quotes. It drafts the requests for approval and then handles the supplier replies by email, which arrive in whatever shape each supplier prefers: stock and price written in the body of the email, an XLSX attachment, or a photo of a document, which goes through OCR. Every reply is normalized to the same structure, offers are compared in net price per unit, and quantities are split between suppliers. Clean Architecture, DDD, ports & adapters and the Result pattern, with layer boundaries enforced in CI by dependency-cruiser. Security follows OWASP ASVS L2 and WSTG: 23 of 23 scenarios passed, Semgrep and secret scanning block merges, the recipient allowlist is enforced in code and senders are verified with SPF/DKIM.",
+    stack: ["Node.js 24 (ESM)", "Clean Architecture / DDD", "TDD", "LLM structured outputs", "Semgrep", "dependency-cruiser"],
+    metric: "Built in 8 days · 445 tests · ASVS L2",
+    links: [],
+  },
+  {
+    name: "Marketing Content Generator",
+    tagline: "B2B e-commerce client (under NDA) · 2026",
+    accent: "pink",
+    featured: false,
+    problem:
+      "Marketing had to publish a steady stream of social posts for a large, constantly changing catalogue, across several language markets, without promoting products that are out of stock or making claims EU consumer law forbids.",
+    solution:
+      "Built from scratch in 5 days and running in production, with a full Shoper integration: the tool reads the live catalogue — stock, bestsellers, promotions, product rotation — and plans a month of Facebook and Instagram posts from it. Graphics and videos cost nothing to produce: they are composed from templates, with product photos cut out by a background-removal model running locally on ONNX (BiRefNet), in four image formats plus a 10-second video per post. When a product is discounted, the layout adds a sale badge, the percentage off and the lowest price from the previous 30 days, as the Omnibus Directive requires. The OpenAI API is used only for text: Polish copy, then translation into 15 languages with product and market context, because a plain machine translator kept getting technical terms wrong; prices follow each region’s currency. Copy is also checked against Directive 2024/825 on green claims, and a batch generator handles up to 200 products per run. Jobs run through a pg-boss queue; CI/CD with automatic rollback and Google sign-in restricted to the company domain; 132 commits and 60 PRs.",
+    stack: ["TypeScript", "Fastify 5", "React 19", "PostgreSQL 17 / Drizzle", "pg-boss", "Shoper API", "OpenAI API", "ffmpeg", "ONNX Runtime"],
+    metric: "Built in 5 days · ~390 tests · in production",
+    links: [],
+  },
+  {
+    name: "PIM & Dropshipping Takeover",
+    tagline: "B2B e-commerce client (under NDA) · 2026",
+    accent: "yellow",
+    featured: false,
+    problem:
+      "A product-information and dropshipping system inherited from a previous team, with no delivery pipeline, secrets committed to the code and margins that did not add up.",
+    solution:
+      "Reviewed the code, wrote down the technical debt, then shipped 144 commits and closed about 80 tasks in 3 days. Closed a critical hole — a public endpoint that issued an administrator token without logging in — rotated the JWT keys and removed hard-coded secrets. Fixed margin calculation (it was computed from the gross price), added protection against ordering twice from a supplier, live exchange rates from the national bank and daily order limits. Extended supplier integrations from 6 to 12 (~1.34M offers), with product cards created automatically from Open Icecat. Built continuous delivery from zero: GitHub Actions, a least-privilege deploy account, automatic rollback, a pre-push test gate and worker health checks.",
+    stack: ["Laravel 12", "Angular 21", "MySQL", "Redis", "Docker", "GitHub Actions"],
+    metric: "6 → 12 suppliers · ~1.34M offers",
+    links: [],
   },
   {
     name: 'TradeLockerBot',
@@ -239,7 +295,12 @@ export const experience = [
      */
     period: '09.2026 - 11.2026', role: 'Backend & Automation Engineer (contract)',
     company: 'B2B e-commerce automation (under NDA)', location: 'Poland, Remote',
-    highlights: ['Built supplier-integration, RFQ-automation and content-generation services for a multi-country B2B e-commerce business, with LLM extraction behind human approval.', 'Took over a legacy PIM / dropshipping system: closed a critical authentication vulnerability, fixed margin calculation and added continuous delivery with automatic rollback.'],
+    highlights: [
+      'Extended a supplier-catalogue integration platform from 59 to 109 supplier integrations covering 73,000+ products: automatic suppliers scraped from their B2B panels (WooCommerce, PrestaShop, Shopify, Odoo and others) with Playwright or read through APIs, and manual suppliers emailed for current prices and stock on a schedule that protects the relationship, whose replies (email text, XLSX, PDF or a photo read with OCR) are parsed by an LLM and approved by the team in an admin panel. Catalogues are published as SHA-256-checked versions with atomic swaps, and a drop of more than 20% blocks publication; 830 automated tests.',
+      'Designed and built from scratch in 8 days an RFQ automation service: it takes a request from the sales team by email, extracts line items with an LLM into a strict JSON schema, matches up to 25 suppliers from four data sources and prepares the requests; supplier replies with stock and price — written in the email body, sent as XLSX or as a photo read with OCR — are normalized, compared per unit and quantities split between suppliers. Clean Architecture, DDD, ports & adapters and TDD with layers enforced in CI; 445 tests including golden tests on real requests and 13 prompt-injection scenarios against the live model; security to OWASP ASVS L2 / WSTG with 23 of 23 scenarios passed, Semgrep and secret scanning gating every merge.',
+      'Built from scratch in 5 days a marketing-content generator now in production (TypeScript, Fastify, React, PostgreSQL, pg-boss) with a full Shoper integration: it plans a month of posts from the live catalogue and composes images in four formats and a 10-second video from templates at no generation cost, adding a sale badge, the discount and the 30-day lowest price (Omnibus) for discounted products; the OpenAI API writes the Polish copy and translates it into 15 languages with product context; ~390 tests, CI/CD with automatic rollback.',
+      'Took over a legacy PIM / dropshipping system (Laravel, Angular, MySQL, Redis, Docker): reviewed the code and documented the technical debt, closed a critical vulnerability where a public endpoint issued an admin token without login, rotated JWT keys and removed hard-coded secrets, fixed margin calculation, added protection against duplicate supplier orders, and extended integrations from 6 to 12 suppliers (~1.34M offers). Set up continuous delivery from scratch with a least-privilege deploy account and automatic rollback. Across all four systems: 1,600+ automated tests and CI/CD with automatic rollback.',
+    ],
   },
   {
     period: '03.2026 - 08.2026', role: 'Lead Backend Developer',
@@ -298,7 +359,7 @@ export type Stat = {
  * first `experience` entry so it never goes stale.
  */
 export const stats: Stat[] = [
-  { label: 'PyPI Downloads', value: 42000, suffix: '+', accent: 'blue', pypiPackage: 'pythonmetatrader5' },
+  { label: 'PyPI Downloads', value: 43000, suffix: '+', accent: 'blue', pypiPackage: 'pythonmetatrader5' },
   { label: 'Concurrent Users', value: 450, suffix: '+', accent: 'purple' },
   { label: 'Years Commercial Experience', value: yearsOfExperience, suffix: '', accent: 'green', decimals: 1 },
 ]
