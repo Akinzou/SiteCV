@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "cv:pdf": "node scripts/build-cv.mjs"
+    "cv:pdf": "node scripts/build-cv.mjs",
+    "cv:check": "node scripts/check-cv.mjs",
+    "prepare": "node scripts/install-hooks.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^9.117.3",
