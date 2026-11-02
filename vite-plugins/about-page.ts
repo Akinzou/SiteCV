@@ -10,6 +10,7 @@ import {
   languages,
   profiles,
   projects,
+  howIWork,
   qa,
   research,
 } from '../src/content/profile'
@@ -100,6 +101,7 @@ const renderAbout = (): string => {
   parts.push(`<section id="in-my-words"><h2>In my own words</h2>
 <p class="snap-statement">${esc(identity.definition)}</p>
 <p class="snap-statement">I work system-first. Architecture, invariants and failure modes get decided before implementation, and behaviour is held in place by tests and explicit constraints rather than by convention — because the systems I am usually asked to build are the ones where a quiet failure is expensive: tenant data that must not leak across a boundary, an order that must not be sent twice, an authentication path that a whole faculty depends on during an exam.</p>
+${list(howIWork.points, '')}
 <p class="snap-statement">The second track is hardware. I spent a year on R&D with a printer manufacturer in Shenzhen and have taken paid embedded Linux and firmware work continuously since 2022. It is not a hobby next to the software work; it is the reason I am comfortable at the layer where the two meet.</p>
 </section>`)
 

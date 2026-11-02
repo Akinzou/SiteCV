@@ -493,6 +493,26 @@ export const education = [
 /** Served from public/; regenerate with `npm run cv:pdf` after changing src/content/cv.ts or anything it reads here. */
 export const cvPdf = { href: '/Wiktor_Jelen_CV.pdf', label: 'Download CV (PDF)' }
 
+/**
+ * "How I work", stated as things that were actually built rather than as a
+ * philosophy. Every line is checkable against the experience and projects
+ * above; no claim without a mechanism behind it.
+ */
+export const howIWork = {
+  intro:
+    'System-first: invariants and failure modes are decided before implementation, then held in place by tests and hard gates rather than by convention. In practice:',
+  points: [
+    'Tenant isolation enforced in PostgreSQL row-level security, with isolation-leak tests that fail the CI build.',
+    'Long-running processes orchestrated as Temporal.io workflows and tested in TestWorkflowEnvironment.',
+    '1,600+ automated tests and CI/CD with automatic rollback across four production systems in my last engagement.',
+    'Security verified, not asserted: OWASP ASVS L2 / WSTG with 23 of 23 scenarios passed, 13 prompt-injection scenarios run against the live model, Semgrep and secret scanning blocking merges.',
+    'Data that others depend on published as SHA-256-checked versions with an atomic swap; a catalogue drop of more than 20% blocks publication.',
+    'University Active Directory authentication behind a platform serving 450+ concurrent users.',
+  ],
+  remote: 'Fully remote, cross-cultural collaboration (EU–China).',
+  tags: ['Temporal Orchestration', 'PostgreSQL RLS', 'CI/CD with Rollback', 'OWASP ASVS L2', 'Integration & e2e Testing', 'Multi-provider AI'],
+}
+
 export const languages = [
   'Polish — native',
   'English — working proficiency (EU–China R&D collaboration, international clients)',

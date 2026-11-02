@@ -3,7 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { usePyPIDownloads } from '../hooks/usePyPIDownloads'
 import { useReducedMotion } from '../hooks/useReducedMotion'
-import { clientWork, education, identity, research, stats, workedWith } from '../content/profile'
+import { clientWork, education, howIWork, identity, research, stats, workedWith } from '../content/profile'
 import { reviews } from '../content/reviews'
 import { accentBorder, accentGroupHoverText, accentText } from '../lib/accents'
 
@@ -448,33 +448,25 @@ const About = () => {
 
         <div className="glass rounded-lg p-8 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-pink" />
-          <p className="text-gray-300 leading-relaxed max-w-3xl">
-            I work system-first: define architecture, invariants and failure modes before implementation.
-            I use automation and modern development tooling aggressively to shorten the feedback loop,
-            while relying on tests, observability and explicit system constraints to verify behavior.
-          </p>
-          <p className="text-gray-400 leading-relaxed max-w-3xl mt-4 text-sm">
-            I'm comfortable with fully-remote, cross-cultural collaboration (EU–China).
-          </p>
+          <p className="text-gray-300 leading-relaxed max-w-3xl">{howIWork.intro}</p>
+          <ul className="mt-4 space-y-2 max-w-3xl">
+            {howIWork.points.map((point) => (
+              <li key={point} className="flex gap-3 text-sm text-gray-300 leading-relaxed">
+                <span className="text-cyber-blue flex-shrink-0">▸</span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-gray-400 leading-relaxed max-w-3xl mt-4 text-sm">{howIWork.remote}</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <span className="px-3 py-1 text-xs font-mono border border-cyber-blue/30 text-cyber-blue rounded">
-              Temporal Orchestration
-            </span>
-            <span className="px-3 py-1 text-xs font-mono border border-cyber-purple/30 text-cyber-purple rounded">
-              PostgreSQL RLS
-            </span>
-            <span className="px-3 py-1 text-xs font-mono border border-cyber-green/30 text-cyber-green rounded">
-              CI/CD
-            </span>
-            <span className="px-3 py-1 text-xs font-mono border border-cyber-pink/30 text-cyber-pink rounded">
-              Integration &amp; e2e Testing
-            </span>
-            <span className="px-3 py-1 text-xs font-mono border border-cyber-blue/30 text-cyber-blue rounded">
-              Multi-provider AI
-            </span>
-            <span className="px-3 py-1 text-xs font-mono border border-cyber-purple/30 text-cyber-purple rounded">
-              External API Integrations
-            </span>
+            {howIWork.tags.map((tag, i) => (
+              <span
+                key={tag}
+                className={`px-3 py-1 text-xs font-mono border rounded ${['border-cyber-blue/30 text-cyber-blue', 'border-cyber-purple/30 text-cyber-purple', 'border-cyber-green/30 text-cyber-green', 'border-cyber-pink/30 text-cyber-pink'][i % 4]}`}
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
 

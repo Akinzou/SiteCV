@@ -27,7 +27,7 @@ LinkedIn: yelon
 
 /* SITE */
 
-Last update: 2026-09-05
+Last update: 2026-11-02
 Language: English / Polish
 Standards: HTML5, CSS3, ES2022
 Stack: React 18, TypeScript 5, Three.js, GSAP, TailwindCSS
