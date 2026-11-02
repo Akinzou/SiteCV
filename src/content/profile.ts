@@ -190,7 +190,7 @@ export const projects: Project[] = [
     solution:
       "Split the integration service out of a legacy system and grew it from 59 to 109 connected suppliers (89 domestic, 20 EU) covering 73,000+ products — I wrote 197 of its 207 commits. The platform runs two branches. Automatic suppliers: Playwright scrapers and API clients pull purchase prices and stock straight from their B2B panels. Manual suppliers, who have no panel: the system emails them through the Gmail API asking for current prices and stock, on a schedule built to protect the relationship — a person answers on the other side, so requests are paced instead of fired on every sync. Their replies come in whatever form that person chooses — figures typed in the email body, an XLSX or PDF attachment, or a photo of a document read with OCR — and an LLM turns each one into the same structure, which the customer-service team approves in an admin panel before it reaches the catalogue. Catalogues are published as SHA-256-checked versions with an atomic swap, and a drop of more than 20% blocks publication. CI audits secrets and system boundaries; deploys switch atomically and roll back automatically; 20 ADRs record the decisions.",
     stack: ["Node.js 24", "Express 5", "MongoDB", "Playwright", "OpenAI API", "Gmail API", "GitHub Actions"],
-    metric: "59 → 109 suppliers · 830 tests",
+    metric: "59 → 109 suppliers · 830 tests · in production",
     links: [],
   },
   {
@@ -203,7 +203,7 @@ export const projects: Project[] = [
     solution:
       "Designed and built from scratch in 8 days. The service takes a request from a salesperson by email, extracts the line items with an LLM into a strict JSON schema, and picks up to 25 suppliers from four data sources with a stated reason for each choice — 11 of 12 correct picks when replayed against historical quotes. It drafts the requests for approval and then handles the supplier replies by email, which arrive in whatever shape each supplier prefers: stock and price written in the body of the email, an XLSX attachment, or a photo of a document, which goes through OCR. Every reply is normalized to the same structure, offers are compared in net price per unit, and quantities are split between suppliers. Clean Architecture, DDD, ports & adapters and the Result pattern, with layer boundaries enforced in CI by dependency-cruiser. Security follows OWASP ASVS L2 and WSTG: 23 of 23 scenarios passed, Semgrep and secret scanning block merges, the recipient allowlist is enforced in code and senders are verified with SPF/DKIM.",
     stack: ["Node.js 24 (ESM)", "Clean Architecture / DDD", "TDD", "LLM structured outputs", "Semgrep", "dependency-cruiser"],
-    metric: "Built in 8 days · 445 tests · ASVS L2",
+    metric: "Built in 8 days · 445 tests · in production",
     links: [],
   },
   {
@@ -229,7 +229,7 @@ export const projects: Project[] = [
     solution:
       "Reviewed the code, wrote down the technical debt, then shipped 144 commits and closed about 80 tasks in 3 days. Closed a critical hole — a public endpoint that issued an administrator token without logging in — rotated the JWT keys, removed hard-coded secrets and stopped an API key leaking through error messages. Fixed margin calculation (it was computed from the gross price), added protection against ordering twice from a supplier, live exchange rates from the national bank and daily order limits. Built 12 supplier integrations from zero (~1.34M offers), with product cards created automatically from Open Icecat. Built continuous delivery from zero: GitHub Actions, a least-privilege deploy account, automatic rollback, a pre-push test gate and worker health checks.",
     stack: ["Laravel 12", "Angular 21", "MySQL", "Redis", "Docker", "GitHub Actions"],
-    metric: "0 → 12 suppliers · ~1.34M offers",
+    metric: "0 → 12 suppliers · ~1.34M offers · in production",
     links: [],
   },
   {
@@ -300,7 +300,7 @@ export const experience = [
       'Designed and built from scratch in 8 days an RFQ automation service: it takes a request from the sales team by email, extracts line items with an LLM into a strict JSON schema, matches up to 25 suppliers from four data sources and prepares the requests; supplier replies with stock and price — written in the email body, sent as XLSX or as a photo read with OCR — are normalized, compared per unit and quantities split between suppliers. Clean Architecture, DDD, ports & adapters and TDD with layers enforced in CI; 445 tests including golden tests on real requests and 13 prompt-injection scenarios against the live model; security to OWASP ASVS L2 / WSTG with 23 of 23 scenarios passed, Semgrep and secret scanning gating every merge.',
       'Built from scratch in 5 days a marketing-content generator now in production (TypeScript, Fastify, React, PostgreSQL, pg-boss) with a full Shoper integration: it plans a month of posts from the live catalogue and composes images in four formats and a 10-second video from templates at no generation cost, adding a sale badge, the discount and the 30-day lowest price (Omnibus) for discounted products; the OpenAI API writes the Polish copy and translates it into 15 languages with product context; ~390 tests, CI/CD with automatic rollback.',
       'Took over a legacy PIM / dropshipping system (Laravel, Angular, MySQL, Redis, Docker): reviewed the code and documented the technical debt, closed a critical vulnerability where a public endpoint issued an admin token without login, rotated JWT keys, removed hard-coded secrets, stopped an API key leaking through error messages, fixed margin calculation, added protection against duplicate supplier orders, and built 12 supplier integrations from zero (~1.34M offers). Set up continuous delivery from scratch with a least-privilege deploy account and automatic rollback.',
-      'Across all four systems: 1,600+ automated tests, CI/CD with automatic rollback, and secret scanning and Semgrep gates on every merge.',
+      'All four systems run in production, with 1,600+ automated tests, CI/CD with automatic rollback, and secret scanning and Semgrep gates on every merge.',
     ],
   },
   {

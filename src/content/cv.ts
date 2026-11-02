@@ -38,7 +38,7 @@ export const cv = {
     href: pypiProject.links.find((link) => link.label === 'PyPI')!.href,
   },
   summary:
-    'Backend and automation engineer working in TypeScript, Node.js, NestJS, Python and SQL. I build integrations, workflow automation and LLM-backed services, held in place by automated tests (1,600+ in my last engagement), CI/CD with automatic rollback and security gates. AI-native development daily — Claude Code, OpenAI Codex, Antigravity.',
+    'Backend and automation engineer working in TypeScript, Node.js, NestJS, Python and SQL. I build integrations, workflow automation and LLM-backed services, held in place by automated tests (1,600+ across four production systems), CI/CD with automatic rollback and security gates. AI-native development daily — Claude Code, OpenAI Codex, Antigravity.',
   pdfHref: identity.site + cvPdf.href,
 }
 
