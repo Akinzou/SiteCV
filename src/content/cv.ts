@@ -46,7 +46,7 @@ export const cv = {
 const bullets: Record<string, string[]> = {
   '09.2026 - 11.2026': [
     'Extended a supplier-catalogue integration platform from 59 to 109 supplier integrations (73,000+ products): B2B panel scraping with Playwright, APIs, and LLM extraction of emailed offers (PDF, XLSX) behind human approval. Versioned publishing with SHA-256 checks and a guard against a >20% catalogue drop; 830 tests.',
-    'Designed and built from scratch in 8 days an RFQ automation service: LLM extraction to a strict JSON schema, supplier matching across 4 data sources, offer comparison. Clean Architecture, TDD, 445 tests incl. 13 prompt-injection scenarios against the live model; OWASP ASVS L2 / WSTG — 23 of 23 scenarios passed.',
+    'Built from scratch in 8 days an RFQ automation service: LLM extraction to a strict JSON schema, supplier matching across 4 data sources, replies parsed from email text, XLSX or photos (OCR). Clean Architecture, TDD, 445 tests incl. 13 prompt-injection scenarios; OWASP ASVS L2 — 23 of 23 scenarios passed.',
     'Built from scratch in 5 days a multilingual marketing-content generator now in production (TypeScript, Fastify, React, PostgreSQL, job queue): copy, images and video from catalogue data, automated compliance checks, ~390 tests.',
     'Took over a legacy PIM / dropshipping system (Laravel, Angular, MySQL, Redis, Docker): closed a critical vulnerability (unauthenticated endpoint issuing an admin token), fixed margin calculation, extended supplier integrations from 6 to 12 (~1.34M offers) and set up CD with automatic rollback.',
   ],
