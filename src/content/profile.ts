@@ -299,33 +299,54 @@ export const experience = [
       'Extended a supplier-catalogue integration platform from 59 to 109 supplier integrations covering 73,000+ products: automatic suppliers scraped from their B2B panels (WooCommerce, PrestaShop, Shopify, Odoo and others) with Playwright or read through APIs, and manual suppliers emailed for current prices and stock on a schedule that protects the relationship, whose replies (email text, XLSX, PDF or a photo read with OCR) are parsed by an LLM and approved by the team in an admin panel. Catalogues are published as SHA-256-checked versions with atomic swaps, and a drop of more than 20% blocks publication; 830 automated tests.',
       'Designed and built from scratch in 8 days an RFQ automation service: it takes a request from the sales team by email, extracts line items with an LLM into a strict JSON schema, matches up to 25 suppliers from four data sources and prepares the requests; supplier replies with stock and price — written in the email body, sent as XLSX or as a photo read with OCR — are normalized, compared per unit and quantities split between suppliers. Clean Architecture, DDD, ports & adapters and TDD with layers enforced in CI; 445 tests including golden tests on real requests and 13 prompt-injection scenarios against the live model; security to OWASP ASVS L2 / WSTG with 23 of 23 scenarios passed, Semgrep and secret scanning gating every merge.',
       'Built from scratch in 5 days a marketing-content generator now in production (TypeScript, Fastify, React, PostgreSQL, pg-boss) with a full Shoper integration: it plans a month of posts from the live catalogue and composes images in four formats and a 10-second video from templates at no generation cost, adding a sale badge, the discount and the 30-day lowest price (Omnibus) for discounted products; the OpenAI API writes the Polish copy and translates it into 15 languages with product context; ~390 tests, CI/CD with automatic rollback.',
-      'Took over a legacy PIM / dropshipping system (Laravel, Angular, MySQL, Redis, Docker): reviewed the code and documented the technical debt, closed a critical vulnerability where a public endpoint issued an admin token without login, rotated JWT keys and removed hard-coded secrets, fixed margin calculation, added protection against duplicate supplier orders, and extended integrations from 6 to 12 suppliers (~1.34M offers). Set up continuous delivery from scratch with a least-privilege deploy account and automatic rollback. Across all four systems: 1,600+ automated tests and CI/CD with automatic rollback.',
+      'Took over a legacy PIM / dropshipping system (Laravel, Angular, MySQL, Redis, Docker): reviewed the code and documented the technical debt, closed a critical vulnerability where a public endpoint issued an admin token without login, rotated JWT keys and removed hard-coded secrets, fixed margin calculation, added protection against duplicate supplier orders, and extended integrations from 6 to 12 suppliers (~1.34M offers). Set up continuous delivery from scratch with a least-privilege deploy account and automatic rollback.',
+      'Across all four systems: 1,600+ automated tests, CI/CD with automatic rollback, and secret scanning and Semgrep gates on every merge.',
     ],
   },
   {
     period: '03.2026 - 08.2026', role: 'Lead Backend Developer',
     company: 'KonikSystems · KONIK', location: 'Remote',
-    highlights: ['Owned architecture and development of a multi-tenant automation platform.', 'Delivered tenant isolation, workflow orchestration, integrations and automated test and delivery pipelines.'],
+    highlights: [
+      'Lead developer and architect of a multi-tenant automation platform with a TypeScript/NestJS backend, Temporal.io orchestration and a React dashboard; primary contributor to the codebase.',
+      'Designed tenant isolation in PostgreSQL using row-level security, with automated isolation-leak tests running in CI.',
+      'Built the test and delivery pipeline: unit and integration tests, Temporal TestWorkflowEnvironment, Playwright, and a multi-stage GitHub Actions CI/CD.',
+      'Designed the integration layer: Stripe, Google Ads/Analytics, Meta API, social publishing, scraping and enrichment, and a video processing pipeline.',
+      'Built the LLM and generative-AI integration layer — Claude, GPT and Gemini APIs, MCP, Flux/LoRA and Whisper — together with the evaluation harness for AI output quality.',
+    ],
   },
   {
     period: '09.2025 - 02.2026', role: 'Backend Engineer',
     company: 'Randlab Software · Anatomy Project', location: 'Remote',
-    highlights: ['Designed and deployed the backend for a Medical University of Silesia education platform.', 'Integrated university Active Directory authentication and built the API, production environments and CI/CD.'],
+    highlights: [
+      'Designed and deployed a scalable backend (NestJS 11, TypeORM, MySQL 8) for 450+ concurrent users of a Medical University of Silesia platform.',
+      'Integrated authentication with the university Active Directory (LDAP) and JWT-based authorization; hardened the API with OWASP Top 10 audits, strict input validation (Zod) and data sanitization.',
+      'Designed a REST API with a Swagger/OpenAPI contract — pagination, filtering and sorting pushed down to the database rather than into application memory — plus unit and integration tests in Jest.',
+      'Set up production environments (Ubuntu, Nginx reverse proxy, SSL, PM2) and CI/CD pipelines in GitHub Actions.',
+    ],
   },
   {
     period: '08.2024 - 08.2025', role: 'R&D Systems Engineer',
     company: 'GEEETECH', location: 'Remote · Shenzhen R&D team',
-    highlights: ['Owned system integration, Klipper firmware optimization and A10M component redesign.', 'Coordinated technical requirements between European stakeholders and the Shenzhen team.'],
+    highlights: [
+      'Owned system integration and Klipper firmware optimization for the Shenzhen R&D hub, working fully remotely and self-directed.',
+      'Redesigned structural components of the A10M printer in Fusion 360 and optimized stepper motor control.',
+      'Coordinated technical requirements between European stakeholders and the Shenzhen R&D team.',
+    ],
   },
   {
     period: '04.2023 - 07.2024', role: 'Sales Systems Consultant',
     company: 'Randlab Software (Polsat Plus Group)', location: 'Remote',
-    highlights: ['Automated client documentation and configured sales offers for POS, telemarketing and mobile channels.'],
+    highlights: [
+      'Automated client documentation generation and configured complex sales offers for POS, telemarketing and mobile sales channels.',
+    ],
   },
   {
     period: '09.2022 - 03.2023', role: 'Embedded / ThingsBoard Specialist',
     company: 'Randlab Software', location: 'Nowy Sącz, Poland',
-    highlights: ['Built pipe impedance monitoring with ThingsBoard, embedded C++ firmware, web interfaces and AWS alerts.'],
+    highlights: [
+      'Built a pipe impedance monitoring system for the heating industry on ThingsBoard.',
+      'Integrated hardware (C++) with web interfaces and implemented AWS-based alerting.',
+    ],
   },
 ]
 
