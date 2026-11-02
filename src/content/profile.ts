@@ -22,7 +22,7 @@ export const identity = {
    * read, which "I design and build things" on its own is not.
    */
   definition:
-    "I'm Wiktor Jeleń, a backend and platform engineer based in Cracow, Poland. I build multi-tenant production systems, infrastructure and security-critical backends, and I wrote PythonMetaTrader5, an open-source library with over 42,000 PyPI downloads.",
+    "I'm Wiktor Jeleń, a backend and platform engineer based in Cracow, Poland. I build multi-tenant production systems, infrastructure and security-critical backends, and I wrote PythonMetaTrader5, an open-source library with over 43,000 PyPI downloads.",
   location: 'Cracow, Poland',
   email: 'root@yelon.dev',
   phone: '+48 576 706 766',
@@ -63,7 +63,7 @@ export const qa: { question: string; answer: string }[] = [
   {
     question: 'Who is Wiktor Jeleń?',
     answer:
-      'Wiktor Jeleń is a backend and platform engineer based in Cracow, Poland. He builds multi-tenant production systems, infrastructure and security-critical backends, and is the author of PythonMetaTrader5, an open-source order-execution library with more than 42,000 downloads on PyPI.',
+      'Wiktor Jeleń is a backend and platform engineer based in Cracow, Poland. He builds multi-tenant production systems, infrastructure and security-critical backends, and is the author of PythonMetaTrader5, an open-source order-execution library with more than 43,000 downloads on PyPI.',
   },
   {
     question: 'What does Wiktor Jeleń work on?',
@@ -78,7 +78,7 @@ export const qa: { question: string; answer: string }[] = [
   {
     question: 'What is PythonMetaTrader5?',
     answer:
-      'PythonMetaTrader5 is an open-source Python library written by Wiktor Jeleń that wraps the MetaTrader 5 terminal API for algorithmic trading. It normalizes order placement, handles the full set of broker return codes and adds the safeguards the native API leaves out, so a strategy can run against a live account. It has passed 42,000 downloads on PyPI.',
+      'PythonMetaTrader5 is an open-source Python library written by Wiktor Jeleń that wraps the MetaTrader 5 terminal API for algorithmic trading. It normalizes order placement, handles the full set of broker return codes and adds the safeguards the native API leaves out, so a strategy can run against a live account. It has passed 43,000 downloads on PyPI.',
   },
   {
     question: 'Does Wiktor Jeleń take client work?',
@@ -169,7 +169,7 @@ export const projects: Project[] = [
     solution:
       'A Python layer over MetaTrader 5 built for algorithmic trading: order normalization, full retcode handling and safeguards that keep execution stable against real capital.',
     stack: ['Python', 'MetaTrader 5 API', 'PyPI'],
-    metric: '42,000+ PyPI downloads',
+    metric: '43,000+ PyPI downloads',
     links: [
       { label: 'GitHub', href: 'https://github.com/Akinzou/MetaTrader5-Python' },
       { label: 'PyPI', href: 'https://pypi.org/project/PythonMetaTrader5/' },
@@ -239,7 +239,12 @@ export const experience = [
      */
     period: '09.2026 - 11.2026', role: 'Backend & Automation Engineer (contract)',
     company: 'B2B e-commerce automation (under NDA)', location: 'Poland, Remote',
-    highlights: ['Built supplier-integration, RFQ-automation and content-generation services for a multi-country B2B e-commerce business, with LLM extraction behind human approval.', 'Took over a legacy PIM / dropshipping system: closed a critical authentication vulnerability, fixed margin calculation and added continuous delivery with automatic rollback.'],
+    highlights: [
+      'Extended a supplier-catalogue integration platform from 59 to 109 supplier integrations covering 73,000+ products: scraping B2B panels across WooCommerce, PrestaShop, Shopify, Odoo and others with Playwright, supplier APIs, and automated quote requests by email whose replies (body, PDF, XLSX, images) are read by an LLM and approved by the sales team in an admin panel. Catalogues are published as SHA-256-checked versions with atomic swaps, and a drop of more than 20% blocks publication; 830 automated tests.',
+      'Designed and built from scratch in 8 days an RFQ automation service: it takes a request from the sales team by email, extracts line items with an LLM into a strict JSON schema, matches up to 25 suppliers from four data sources, prepares the requests, compares offers per unit and splits quantities between suppliers. Clean Architecture, DDD, ports & adapters and TDD with layers enforced in CI; 445 tests including golden tests on real requests and 13 prompt-injection scenarios against the live model; security to OWASP ASVS L2 / WSTG with 23 of 23 scenarios passed, Semgrep and secret scanning gating every merge.',
+      'Built from scratch in 5 days a marketing-content generator now in production (TypeScript, Fastify, React, PostgreSQL, pg-boss): it plans a month of posts from live catalogue data (stock, bestsellers, promotions) and produces copy, images in four formats and a 10-second video for each, in multiple languages with regional prices and automated compliance checks of the copy; ~390 tests, CI/CD with automatic rollback, Google sign-in restricted to the company domain.',
+      'Took over a legacy PIM / dropshipping system (Laravel, Angular, MySQL, Redis, Docker): reviewed the code and documented the technical debt, closed a critical vulnerability where a public endpoint issued an admin token without login, rotated JWT keys and removed hard-coded secrets, fixed margin calculation, added protection against duplicate supplier orders, and extended integrations from 6 to 12 suppliers (~1.34M offers). Set up continuous delivery from scratch with a least-privilege deploy account and automatic rollback.',
+    ],
   },
   {
     period: '03.2026 - 08.2026', role: 'Lead Backend Developer',
@@ -298,7 +303,7 @@ export type Stat = {
  * first `experience` entry so it never goes stale.
  */
 export const stats: Stat[] = [
-  { label: 'PyPI Downloads', value: 42000, suffix: '+', accent: 'blue', pypiPackage: 'pythonmetatrader5' },
+  { label: 'PyPI Downloads', value: 43000, suffix: '+', accent: 'blue', pypiPackage: 'pythonmetatrader5' },
   { label: 'Concurrent Users', value: 450, suffix: '+', accent: 'purple' },
   { label: 'Years Commercial Experience', value: yearsOfExperience, suffix: '', accent: 'green', decimals: 1 },
 ]
