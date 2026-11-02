@@ -1,7 +1,7 @@
 import { useReducedMotion } from '../hooks/useReducedMotion'
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
-import { focusAreas, identity } from '../content/profile'
+import { cvPdf, focusAreas, identity } from '../content/profile'
 import { accentBorder, accentText } from '../lib/accents'
 
 // Typewriter component
@@ -177,6 +177,7 @@ const Hero = () => {
         <div ref={ctaRef} className="flex flex-wrap justify-center gap-3 mb-10 opacity-0">
           <a href="#projects" className="w-56 flex items-center justify-center gap-1 px-5 py-3 rounded border border-cyber-blue/50 bg-cyber-blue/10 text-cyber-blue hover:bg-cyber-blue/20 transition-colors">Explore projects <span aria-hidden="true">&darr;</span></a>
           <a href="#contact" className="w-56 flex items-center justify-center px-5 py-3 rounded border border-gray-600 text-gray-200 hover:bg-white/5 transition-colors">Get in touch</a>
+          <a href={cvPdf.href} download className="w-56 flex items-center justify-center gap-1 px-5 py-3 rounded border border-cyber-green/50 bg-cyber-green/10 text-cyber-green hover:bg-cyber-green/20 transition-colors">{cvPdf.label} <span aria-hidden="true">&darr;</span></a>
         </div>
 
         {/* Focus areas — what to know in the first five seconds. */}

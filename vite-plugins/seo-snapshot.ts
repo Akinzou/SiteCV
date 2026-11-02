@@ -2,6 +2,7 @@ import type { Plugin } from 'vite'
 import { homeGraph, scriptTag } from '../src/content/schema'
 import {
   clientWork,
+  cvPdf,
   education,
   experience,
   focusAreas,
@@ -46,7 +47,7 @@ const renderSnapshot = (): string => {
 <p class="snap-role">${esc(identity.role)}</p>
 <p class="snap-statement">${esc(identity.definition)}</p>
 <p class="snap-statement">${esc(identity.statement)}</p>
-<p class="snap-meta">${esc(identity.location)} · <a href="mailto:${esc(identity.email)}">${esc(identity.email)}</a> · <a href="tel:${identity.phone.replace(/\s/g, '')}">${esc(identity.phone)}</a> · <a href="${esc(identity.github)}">GitHub</a> · <a href="${esc(identity.linkedin)}">LinkedIn</a></p>
+<p class="snap-meta">${esc(identity.location)} · <a href="mailto:${esc(identity.email)}">${esc(identity.email)}</a> · <a href="tel:${identity.phone.replace(/\s/g, '')}">${esc(identity.phone)}</a> · <a href="${esc(identity.github)}">GitHub</a> · <a href="${esc(identity.linkedin)}">LinkedIn</a> · <a href="${esc(cvPdf.href)}">${esc(cvPdf.label)}</a></p>
 <p class="snap-meta"><a href="/about">About Wiktor Jeleń →</a></p>
 </header>`)
 

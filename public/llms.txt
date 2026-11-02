@@ -67,7 +67,9 @@ Background:
 - Primary contributor to a large multi-tenant TypeScript platform (2026): Temporal.io
   orchestration, PostgreSQL row-level security with isolation tests enforced in CI,
   multi-stage GitHub Actions delivery, multi-provider LLM integration layer
-- Architected a backend serving 450+ concurrent users for the Medical University of Silesia
+- Designed and deployed a backend serving 450+ concurrent users for the Medical University of Silesia
+- Supplier-integration, RFQ and content automation for a B2B e-commerce business (2026, under NDA):
+  109 supplier integrations, LLM extraction behind human approval, OWASP ASVS L2, 1,600+ tests
 - Open source author: PythonMetaTrader5, 42,000+ PyPI downloads, used against real capital
 - Cross-cultural R&D experience (EU-China collaboration, Shenzhen)
 - Security-focused engineering (OWASP Top 10, LDAP/AD IAM, JWT, tenant isolation)
@@ -80,14 +82,19 @@ Core skills:
 - Additional: React, C++, embedded systems, Fusion 360
 - Languages: Polish (native), English (working proficiency)
 
-Employment history (kept here for reference; the site itself does not list roles,
-they belong to the CV, which is tailored per application):
-- 03.2026-08.2026  Lead Developer / System Architect, KonikSystems (KONIK), remote.
+Employment history (the same timeline is in the Experience section of the site and in
+the one-page CV at https://yelon.dev/Wiktor_Jelen_CV.pdf):
+- 09.2026-11.2026  Backend & Automation Engineer (contract), B2B e-commerce automation
+  (under NDA), Poland, remote. Supplier-catalogue integration platform extended from 59 to
+  109 supplier integrations; RFQ automation service built from scratch (Clean Architecture,
+  TDD, OWASP ASVS L2); multilingual marketing-content generator in production; took over a
+  legacy PIM / dropshipping system (closed a critical auth vulnerability, CD with rollback).
+- 03.2026-08.2026  Lead Backend Developer, KonikSystems (KONIK), remote.
   Multi-tenant automation platform: TypeScript/NestJS backend, Temporal.io orchestration,
   React dashboard, PostgreSQL row-level security with isolation-leak tests in CI,
   multi-stage GitHub Actions CI/CD, integrations (Stripe, Google Ads/Analytics, Meta API,
   video pipeline), and the LLM / generative-AI integration layer with an evaluation harness.
-- 09.2025-02.2026  System Architect, Randlab Software (Anatomy Project), remote.
+- 09.2025-02.2026  Backend Engineer, Randlab Software (Anatomy Project), remote.
   NestJS 11 / TypeORM / MySQL 8 backend for 450+ concurrent users at the Medical University
   of Silesia; LDAP/Active Directory auth, JWT, OWASP Top 10 hardening, Swagger/OpenAPI REST
   contract, Jest tests, Ubuntu/Nginx/PM2 production environments and GitHub Actions CI/CD.
@@ -102,9 +109,9 @@ they belong to the CV, which is tailored per application):
   interfaces and AWS-based alerting.
 
 Education:
-- 10.2024-present  B.Eng. Computer Science, Cybersecurity (part-time), WSB National Louis
-  University, Cracow
-- completed        Mechatronics Technician, Technical School of Electrical Engineering and
+- 10.2024-present  B.Eng. Computer Science, Cybersecurity, in progress (part-time),
+  WSB-National Louis University, Nowy Sacz
+- 2019-2024        Mechatronics Technician, Technical School of Electrical Engineering and
   Mechanics, Nowy Sacz
 
 Paid client work (second track, alongside software and infrastructure):

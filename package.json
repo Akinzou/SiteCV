@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cv:pdf": "node scripts/build-cv.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^9.117.3",
