@@ -53,7 +53,7 @@ const bullets: Record<string, string[]> = {
   '03.2026 - 08.2026': [
     'Lead developer of a multi-tenant automation platform: TypeScript/NestJS backend, Temporal.io workflow orchestration, React dashboard.',
     'Designed tenant isolation with PostgreSQL row-level security, with isolation-leak tests enforced in CI; multi-stage GitHub Actions pipeline.',
-    'Built the integration layer (Stripe, Google Ads/Analytics, Meta API, n8n) and a multi-provider LLM layer (Claude, GPT, Gemini, MCP) with an evaluation harness.',
+    'Built the integration layer (Stripe, Google Ads/Analytics, Meta API, n8n) and a multi-provider LLM layer (Claude, OpenAI, Gemini, MCP) with an evaluation harness.',
   ],
   '09.2025 - 02.2026': [
     'Designed and deployed a NestJS 11 / MySQL backend for 450+ concurrent users of a Medical University of Silesia platform.',
