@@ -88,12 +88,13 @@ the one-page CV at https://yelon.dev/Wiktor_Jelen_CV.pdf):
   (under NDA), Poland, remote. Four systems, all in production: supplier-catalogue integration platform extended from 59 to
   109 supplier integrations; RFQ automation service built from scratch (Clean Architecture,
   TDD, OWASP ASVS L2); multilingual marketing-content generator; took over a
-  legacy PIM / dropshipping system (closed a critical auth vulnerability, CD with rollback).
+  legacy PIM / dropshipping system (closed a critical auth vulnerability, CD with rollback);
+  Google Workspace integrated through Google OAuth.
 - 03.2026-08.2026  Lead Backend Developer, KonikSystems (KONIK), remote.
   Multi-tenant automation platform: TypeScript/NestJS backend, Temporal.io orchestration,
   React dashboard, PostgreSQL row-level security with isolation-leak tests in CI,
   multi-stage GitHub Actions CI/CD, integrations (Stripe, Google Ads/Analytics, Meta API,
-  video pipeline), and the LLM / generative-AI integration layer with an evaluation harness.
+  n8n workflows, video pipeline), and the LLM / generative-AI integration layer with an evaluation harness.
 - 09.2025-02.2026  Backend Engineer, Randlab Software (Anatomy Project), remote.
   NestJS 11 / TypeORM / MySQL 8 backend for 450+ concurrent users at the Medical University
   of Silesia; LDAP/Active Directory auth, JWT, OWASP Top 10 hardening, Swagger/OpenAPI REST

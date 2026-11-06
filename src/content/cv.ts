@@ -53,7 +53,7 @@ const bullets: Record<string, string[]> = {
   '03.2026 - 08.2026': [
     'Lead developer of a multi-tenant automation platform: TypeScript/NestJS backend, Temporal.io workflow orchestration, React dashboard.',
     'Designed tenant isolation with PostgreSQL row-level security, with isolation-leak tests enforced in CI; multi-stage GitHub Actions pipeline.',
-    'Built the integration layer (Stripe, Google Ads/Analytics, Meta API) and a multi-provider LLM layer (Claude, GPT, Gemini, MCP) with an evaluation harness.',
+    'Built the integration layer (Stripe, Google Ads/Analytics, Meta API, n8n) and a multi-provider LLM layer (Claude, GPT, Gemini, MCP) with an evaluation harness.',
   ],
   '09.2025 - 02.2026': [
     'Designed and deployed a NestJS 11 / MySQL backend for 450+ concurrent users of a Medical University of Silesia platform.',
@@ -79,7 +79,7 @@ export const cvExperience = experience.map((entry) => ({
 export const cvSkills: { label: string; items: string }[] = [
   { label: 'Backend', items: 'TypeScript, Node.js, NestJS, Express, Fastify, Python, FastAPI, PHP / Laravel, REST / OpenAPI' },
   { label: 'Data', items: 'PostgreSQL (row-level security), MySQL, MongoDB, Redis' },
-  { label: 'Automation & AI', items: 'Temporal.io, Playwright, job queues, OpenAI / Claude / Gemini APIs, structured outputs, MCP, prompt-injection testing' },
+  { label: 'Automation & AI', items: 'Temporal.io, n8n, Playwright, job queues, OpenAI / Claude / Gemini APIs, structured outputs, MCP, prompt-injection testing, Google Workspace (OAuth)' },
   { label: 'Platform & security', items: 'Linux, Docker, Nginx, systemd, GitHub Actions CI/CD, OWASP ASVS / Top 10, Semgrep, LDAP / AD, JWT' },
   { label: 'Engineering practice', items: 'TDD, Clean Architecture / DDD, ADRs, Jest, Vitest, Playwright E2E' },
 ]
