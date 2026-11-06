@@ -154,8 +154,8 @@ export const projects: Project[] = [
     problem:
       'An automation platform needs to coordinate external services and AI workflows while keeping each tenant’s data isolated.',
     solution:
-      'Designed the TypeScript/NestJS backend with Temporal workflow orchestration and PostgreSQL row-level security. Built isolation-leak tests in CI, external-service integrations and a multi-provider AI layer with an evaluation harness.',
-    stack: ['TypeScript', 'NestJS', 'Temporal.io', 'PostgreSQL RLS', 'GitHub Actions'],
+      'Designed the TypeScript/NestJS backend with Temporal workflow orchestration and PostgreSQL row-level security. Built isolation-leak tests in CI, external-service integrations and n8n workflows, plus a multi-provider AI layer with an evaluation harness.',
+    stack: ['TypeScript', 'NestJS', 'Temporal.io', 'n8n', 'PostgreSQL RLS', 'GitHub Actions'],
     metric: '03–08.2026 · Architecture & delivery',
     links: [],
   },
@@ -300,6 +300,7 @@ export const experience = [
       'Designed and built from scratch in 8 days an RFQ automation service: it takes a request from the sales team by email, extracts line items with an LLM into a strict JSON schema, matches up to 25 suppliers from four data sources and prepares the requests; supplier replies with stock and price — written in the email body, sent as XLSX or as a photo read with OCR — are normalized, compared per unit and quantities split between suppliers. Clean Architecture, DDD, ports & adapters and TDD with layers enforced in CI; 445 tests including golden tests on real requests and 13 prompt-injection scenarios against the live model; security to OWASP ASVS L2 / WSTG with 23 of 23 scenarios passed, Semgrep and secret scanning gating every merge.',
       'Built from scratch in 5 days a marketing-content generator now in production (TypeScript, Fastify, React, PostgreSQL, pg-boss) with a full Shoper integration: it plans a month of posts from the live catalogue and composes images in four formats and a 10-second video from templates at no generation cost, adding a sale badge, the discount and the 30-day lowest price (Omnibus) for discounted products; the OpenAI API writes the Polish copy and translates it into 15 languages with product context; ~390 tests, CI/CD with automatic rollback.',
       'Took over a legacy PIM / dropshipping system (Laravel, Angular, MySQL, Redis, Docker): reviewed the code and documented the technical debt, closed a critical vulnerability where a public endpoint issued an admin token without login, rotated JWT keys, removed hard-coded secrets, stopped an API key leaking through error messages, fixed margin calculation, added protection against duplicate supplier orders, and built 12 supplier integrations from zero (~1.34M offers). Set up continuous delivery from scratch with a least-privilege deploy account and automatic rollback.',
+      'Integrated the company Google Workspace through Google OAuth for the email-driven workflows.',
       'All four systems run in production, with 1,600+ automated tests, CI/CD with automatic rollback, and secret scanning and Semgrep gates on every merge.',
     ],
   },
@@ -310,7 +311,7 @@ export const experience = [
       'Lead developer and architect of a multi-tenant automation platform with a TypeScript/NestJS backend, Temporal.io orchestration and a React dashboard; primary contributor to the codebase.',
       'Designed tenant isolation in PostgreSQL using row-level security, with automated isolation-leak tests running in CI.',
       'Built the test and delivery pipeline: unit and integration tests, Temporal TestWorkflowEnvironment, Playwright, and a multi-stage GitHub Actions CI/CD.',
-      'Designed the integration layer: Stripe, Google Ads/Analytics, Meta API, social publishing, scraping and enrichment, and a video processing pipeline.',
+      'Designed the integration layer: Stripe, Google Ads/Analytics, Meta API, social publishing, scraping and enrichment, n8n workflows, and a video processing pipeline.',
       'Built the LLM and generative-AI integration layer — Claude, GPT and Gemini APIs, MCP, Flux/LoRA and Whisper — together with the evaluation harness for AI output quality.',
     ],
   },
@@ -413,7 +414,7 @@ export const skillGroups: { title: string; accent: Accent; items: string[] }[] =
   {
     title: 'Platform & Infrastructure',
     accent: 'purple',
-    items: ['Linux', 'Docker', 'GitHub Actions', 'Nginx', 'AWS', 'Hetzner', 'CI/CD'],
+    items: ['Linux', 'Docker', 'GitHub Actions', 'Nginx', 'AWS', 'Hetzner', 'CI/CD', 'n8n', 'Google Workspace'],
   },
   {
     title: 'Security',
