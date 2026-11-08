@@ -75,11 +75,11 @@ Background:
 - Security-focused engineering (OWASP Top 10, LDAP/AD IAM, JWT, tenant isolation)
 
 Core skills:
-- Backend & data: TypeScript, Node.js, NestJS, Temporal.io, PostgreSQL, Redis, MySQL, FastAPI
-- Platform & infrastructure: Linux, Docker, GitHub Actions, Nginx, AWS, Hetzner, CI/CD
+- Backend & data: TypeScript, Node.js, NestJS, Temporal.io, Python, FastAPI, Django / DRF, SQLAlchemy, PostgreSQL, MySQL, MongoDB, Redis
+- Platform & infrastructure: Linux, Docker, Kubernetes, Terraform, GitHub Actions, Nginx, AWS, GCP, Azure, Hetzner, CI/CD
 - Security: PostgreSQL RLS, IAM, LDAP/AD, JWT, OWASP, TLS
-- AI & automation: Claude / OpenAI / Gemini APIs, MCP, output evals, Flux/LoRA, Whisper
-- Additional: React, C++, embedded systems, Fusion 360
+- AI & automation: Claude / OpenAI / Gemini APIs, MCP, RAG and vector search, LangChain / LangGraph, output evals, Flux/LoRA, Whisper
+- Additional: React, Next.js, Vue.js, C++, embedded systems, Fusion 360
 - Languages: Polish (native), English (working proficiency)
 
 Employment history (the same timeline is in the Experience section of the site and in

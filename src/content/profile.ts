@@ -122,6 +122,8 @@ export const focusAreas: { title: string; accent: Accent; items: string[] }[] = 
     items: [
       'Multi-provider LLM layer',
       'Model Context Protocol',
+      'RAG / vector search',
+      'LangChain / LangGraph',
       'Evaluation harnesses',
       'Media & speech pipelines',
     ],
@@ -409,12 +411,15 @@ export const skillGroups: { title: string; accent: Accent; items: string[] }[] =
       'MySQL',
       'Python',
       'FastAPI',
+      'Django / DRF',
+      'SQLAlchemy',
+      'MongoDB',
     ],
   },
   {
     title: 'Platform & Infrastructure',
     accent: 'purple',
-    items: ['Linux', 'Docker', 'GitHub Actions', 'Nginx', 'AWS', 'Hetzner', 'CI/CD', 'n8n', 'Google Workspace'],
+    items: ['Linux', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions', 'Nginx', 'AWS', 'GCP', 'Azure', 'Hetzner', 'CI/CD', 'n8n', 'Google Workspace'],
   },
   {
     title: 'Security',
@@ -427,6 +432,8 @@ export const skillGroups: { title: string; accent: Accent; items: string[] }[] =
     items: [
       'Claude / OpenAI / Gemini APIs',
       'Model Context Protocol',
+      'RAG / vector search',
+      'LangChain / LangGraph',
       'Evaluation harnesses',
       'Flux / LoRA',
       'Whisper',
@@ -435,7 +442,7 @@ export const skillGroups: { title: string; accent: Accent; items: string[] }[] =
   {
     title: 'Additional',
     accent: 'yellow',
-    items: ['React', 'C++', 'Embedded systems', 'Fusion 360'],
+    items: ['React', 'Next.js', 'Vue.js', 'C++', 'Embedded systems', 'Fusion 360'],
   },
 ]
 

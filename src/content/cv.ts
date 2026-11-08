@@ -77,11 +77,11 @@ export const cvExperience = experience.map((entry) => ({
 }))
 
 export const cvSkills: { label: string; items: string }[] = [
-  { label: 'Backend', items: 'TypeScript, Node.js, NestJS, Express, Fastify, Python, FastAPI, PHP / Laravel, REST / OpenAPI' },
-  { label: 'Data', items: 'PostgreSQL (row-level security), MySQL, MongoDB, Redis' },
-  { label: 'Automation & AI', items: 'Temporal.io, n8n, Playwright, job queues, OpenAI / Claude / Gemini APIs, structured outputs, MCP, prompt-injection testing, Google Workspace (OAuth)' },
-  { label: 'Platform & security', items: 'Linux, Docker, Nginx, systemd, GitHub Actions CI/CD, OWASP ASVS / Top 10, Semgrep, LDAP / AD, JWT' },
-  { label: 'Engineering practice', items: 'TDD, Clean Architecture / DDD, ADRs, Jest, Vitest, Playwright E2E' },
+  { label: 'Backend', items: 'TypeScript, Node.js, NestJS, Express, Fastify, Python, FastAPI, Django / DRF, SQLAlchemy / Alembic, asyncio, PHP / Laravel, REST / OpenAPI, microservices; React, Next.js, Vue.js' },
+  { label: 'Data', items: 'PostgreSQL (row-level security), MySQL, MongoDB, Redis, vector databases (pgvector)' },
+  { label: 'Automation & AI', items: 'Temporal.io, n8n, Playwright, OpenAI / Claude / Gemini APIs, structured outputs, MCP, RAG, embeddings, LangChain / LangGraph, prompt-injection testing, Google Workspace (OAuth)' },
+  { label: 'Platform & security', items: 'Linux, Docker, Kubernetes, Terraform, AWS, GCP, Azure, Nginx, GitHub Actions CI/CD, observability, OWASP ASVS / Top 10, Semgrep, LDAP / AD, JWT' },
+  { label: 'Engineering practice', items: 'TDD, Clean Architecture / DDD, ADRs, Jest, Vitest, pytest, Playwright E2E, Scrum / Agile' },
 ]
 
 export const cvEducation = education
