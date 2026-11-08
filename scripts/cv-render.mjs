@@ -41,9 +41,9 @@ export const renderHtml = ({ cv, cvExperience, cvSkills, cvEducation, cvLanguage
 <meta name="author" content="${esc(cv.name)}">
 <meta name="description" content="${esc(cv.headline)} CV">
 <style>
-  @page { size: A4; margin: 9mm 13mm; }
+  @page { size: A4; margin: 8mm 13mm; }
   * { box-sizing: border-box; }
-  body { margin: 0; color: #111; font-family: Arial, Helvetica, sans-serif; font-size: 8.9pt; line-height: 1.25; }
+  body { margin: 0; color: #111; font-family: Arial, Helvetica, sans-serif; font-size: 8.9pt; line-height: 1.22; }
   a { color: inherit; text-decoration: none; }
   h1 { margin: 0; font-size: 18pt; }
   .headline { margin: 1px 0 3px; font-size: 10.5pt; font-weight: bold; color: #0f3d5c; }
@@ -61,7 +61,7 @@ export const renderHtml = ({ cv, cvExperience, cvSkills, cvEducation, cvLanguage
   li { margin: 0 0 1px; text-indent: -8px; padding-left: 8px; }
   li::before { content: "• "; }
   .skills p { margin-bottom: 1px; }
-  .consent { margin-top: 7px; color: #666; font-size: 6.6pt; line-height: 1.25; }
+  .consent { margin-top: 4px; color: #666; font-size: 6.6pt; line-height: 1.25; }
 </style>
 </head>
 <body>
