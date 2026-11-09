@@ -76,7 +76,7 @@ Background:
 
 Core skills:
 - Backend & data: TypeScript, Node.js, NestJS, Temporal.io, Python, FastAPI, Django / DRF, PHP / Laravel, SQLAlchemy, PostgreSQL, MySQL, MongoDB, Redis
-- Platform & infrastructure: Linux, Docker, Kubernetes, Terraform, GitHub Actions, Nginx, AWS, GCP, Azure, Hetzner, CI/CD
+- Platform & infrastructure: Git (GitHub, GitLab, GitHub Actions), Linux, Docker, Kubernetes, Terraform, Nginx, AWS, GCP, Azure, Hetzner, CI/CD
 - Security: PostgreSQL RLS, IAM, LDAP/AD, JWT, OWASP, TLS
 - AI & automation: Claude / OpenAI / Gemini APIs, MCP, RAG and vector search, LangChain / LangGraph, output evals, Flux/LoRA, Whisper
 - Additional: React, Next.js, Vue.js, C++, embedded systems, Fusion 360
