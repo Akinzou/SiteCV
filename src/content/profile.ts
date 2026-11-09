@@ -420,7 +420,7 @@ export const skillGroups: { title: string; accent: Accent; items: string[] }[] =
   {
     title: 'Platform & Infrastructure',
     accent: 'purple',
-    items: ['Linux', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions', 'Nginx', 'AWS', 'GCP', 'Azure', 'Hetzner', 'CI/CD', 'n8n', 'Google Workspace'],
+    items: ['Git (GitHub, GitLab, GitHub Actions)', 'Linux', 'Docker', 'Kubernetes', 'Terraform', 'Nginx', 'AWS', 'GCP', 'Azure', 'Hetzner', 'CI/CD', 'n8n', 'Google Workspace'],
   },
   {
     title: 'Security',
