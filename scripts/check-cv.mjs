@@ -9,7 +9,8 @@
  *      current PyPI figure.
  *   3. The local per-offer base CVs (local/job-search/CV_WiktorJelen_Backend_
  *      {EN,PL}.html, gitignored, skipped when absent) carry every period, the
- *      EN one every role, both the current PyPI figure and education years.
+ *      EN one every role, both the current PythonMetaTrader5 PyPI figure
+ *      ("44,000+" / "ponad 44 tys.") and education years.
  *   4. Nothing under NDA leaks into any of them.
  *
  * Wired as a git pre-commit hook (scripts/install-hooks.mjs).
@@ -36,7 +37,7 @@ const textOf = (html) =>
 
 const pypi = profile.stats.find((stat) => stat.pypiPackage)
 const pypiEn = `${pypi.value.toLocaleString('en-US')}+`
-const pypiPl = `${pypi.value.toLocaleString('en-US').replace(/,/g, ' ')}+`
+const pypiPl = `ponad ${Math.floor(pypi.value / 1000)} tys.`
 const dash = (period) => period.replace(' - ', ' – ')
 
 /** Client, industry, suppliers and internal codenames of the NDA engagement. */
@@ -76,9 +77,11 @@ for (const { lang, pypiFigure, roles } of local) {
     if (!text.includes(dash(entry.period))) fail(where, `missing period ${dash(entry.period)}`)
     if (roles && !text.includes(entry.role.replace(' (contract)', ''))) fail(where, `missing role "${entry.role}"`)
   }
-  const stale = [...text.matchAll(/(\d{2}[ ,]\d{3})\+ (?:PyPI downloads|pobrań z PyPI)/g)].map((m) => `${m[1]}+`)
-  if (!stale.length) fail(where, 'no PyPI download figure found')
-  for (const figure of stale) if (figure !== pypiFigure) fail(where, `PyPI figure ${figure}, expected ${pypiFigure}`)
+  // The stat is PythonMetaTrader5's; other packages (capitalcom) carry their own figures.
+  const pmt5 = text.slice(Math.max(0, text.indexOf('PythonMetaTrader5')))
+  const figure = pmt5.match(/(\d{2},\d{3}\+) PyPI downloads|(ponad \d+ tys\.) pobrań z PyPI/)
+  if (!figure) fail(where, 'no PythonMetaTrader5 PyPI download figure found')
+  else if ((figure[1] ?? figure[2]) !== pypiFigure) fail(where, `PyPI figure ${figure[1] ?? figure[2]}, expected ${pypiFigure}`)
   for (const entry of profile.education) {
     const years = entry.period.match(/\d{4}/g) ?? []
     for (const year of years) if (!text.includes(year)) fail(where, `education year ${year} missing`)

@@ -45,7 +45,7 @@ Wiktor Jeleń (also written without Polish diacritics as "Wiktor Jelen"; online 
 "Yelon") is a backend and platform engineer based in Cracow, Poland. He builds
 multi-tenant production systems, infrastructure and security-critical backends, and
 wrote PythonMetaTrader5, an open-source order-execution library with more than
-43,000 downloads on PyPI.
+44,000 downloads on PyPI.
 
 canonical page: https://yelon.dev/
 about page:     https://yelon.dev/about
@@ -70,7 +70,7 @@ Background:
 - Designed and deployed a backend serving 450+ concurrent users for the Medical University of Silesia
 - Supplier-integration, RFQ and content automation for a B2B e-commerce business (2026, under NDA):
   109 supplier integrations, LLM extraction behind human approval, OWASP ASVS L2, 1,600+ tests
-- Open source author: PythonMetaTrader5, 43,000+ PyPI downloads, used against real capital
+- Open source author: PythonMetaTrader5, 44,000+ PyPI downloads, used against real capital
 - Cross-cultural R&D experience (EU-China collaboration, Shenzhen)
 - Security-focused engineering (OWASP Top 10, LDAP/AD IAM, JWT, tenant isolation)
 
@@ -84,14 +84,14 @@ Core skills:
 
 Employment history (the same timeline is in the Experience section of the site and in
 the one-page CV at https://yelon.dev/Wiktor_Jelen_CV.pdf):
-- 09.2026-11.2026  Backend & Automation Engineer (contract), B2B e-commerce automation
+- 09.2026-11.2026  Backend Engineer (contract), B2B e-commerce automation
   (under NDA), Poland, remote. Four systems, all in production: supplier-catalogue integration platform extended from 59 to
   109 supplier integrations; RFQ automation service built from scratch (Clean Architecture,
   TDD, OWASP ASVS L2); multilingual marketing-content generator; took over a
   legacy PIM / dropshipping system (closed a critical auth vulnerability, CD with rollback);
   OpenAI and Claude APIs; Google Workspace integrated through Google OAuth.
 - 03.2026-08.2026  Lead Backend Developer, KonikSystems (KONIK), remote.
-  Multi-tenant automation platform: TypeScript/NestJS backend, Temporal.io orchestration,
+  Led the architecture and a team of two developers on a multi-tenant automation platform: TypeScript/NestJS backend, Temporal.io orchestration,
   React dashboard, PostgreSQL row-level security with isolation-leak tests in CI,
   multi-stage GitHub Actions CI/CD, integrations (Stripe, Google Ads/Analytics, Meta API,
   n8n workflows, video pipeline), and the LLM / generative-AI integration layer (Claude, OpenAI, Gemini APIs) with an evaluation harness.
@@ -100,14 +100,14 @@ the one-page CV at https://yelon.dev/Wiktor_Jelen_CV.pdf):
   of Silesia; LDAP/Active Directory auth, JWT, OWASP Top 10 hardening, Swagger/OpenAPI REST
   contract, Jest tests, Ubuntu/Nginx/PM2 production environments and GitHub Actions CI/CD.
 - 08.2024-08.2025  R&D Systems Engineer, GEEETECH R&D Department, Shenzhen China / remote.
-  System integration and Klipper firmware optimization; A10M structural redesign in
+  System integration and Klipper firmware optimization in Python; A10M structural redesign in
   Fusion 360; coordinated technical requirements between European stakeholders and the
   Shenzhen R&D team.
-- 04.2023-07.2024  Sales Systems Consultant, Randlab Software (Polsat Plus Group), remote.
-  Automated client documentation generation for POS, telemarketing and mobile sales.
-- 09.2022-03.2023  Embedded / ThingsBoard Specialist, Randlab Software, Nowy Sacz.
-  Pipe impedance monitoring for the heating industry; C++ hardware integration with web
-  interfaces and AWS-based alerting.
+- 04.2023-07.2024  Sales Systems & Automation Specialist, Randlab Software (Polsat Plus Group), remote.
+  Automated client document generation in Python (docxtpl) for POS, telemarketing and mobile sales.
+- 09.2022-03.2023  Backend & IoT Developer, Randlab Software, Nowy Sacz.
+  Node.js backend for pipe impedance monitoring in the heating industry on ThingsBoard;
+  C++ hardware integration with web interfaces and AWS-based alerting.
 
 Education:
 - 10.2024-present  B.Eng. Computer Science, Cybersecurity, in progress (part-time),
@@ -124,7 +124,7 @@ Paid client work (second track, alongside software and infrastructure):
 
 Independent R&D:
 - Built the execution layer first: PythonMetaTrader5, an open-source order-execution
-  library for MetaTrader 5 (43,000+ downloads)
+  library for MetaTrader 5 (44,000+ downloads)
 - Now working a layer above it, in machine learning: evolutionary computation, where
   genetic algorithms breed and select trading strategies instead of them being
   hand-written. StrategyQuant X generates strategy populations; survivors are
