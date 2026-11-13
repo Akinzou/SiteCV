@@ -22,7 +22,7 @@ const pypiStat = stats.find((stat) => stat.pypiPackage)!
 
 export const cv = {
   name: identity.name,
-  headline: 'Backend / Automation Engineer',
+  headline: 'Backend Engineer — TypeScript / Node.js, PostgreSQL, Python',
   contact: {
     location: identity.location,
     phone: identity.phone,
@@ -38,7 +38,7 @@ export const cv = {
     href: pypiProject.links.find((link) => link.label === 'PyPI')!.href,
   },
   summary:
-    'Backend and automation engineer working in TypeScript, Node.js, NestJS, Python and SQL. I build integrations, workflow automation and LLM-backed services, held in place by automated tests (1,600+ across four production systems), CI/CD with automatic rollback and security gates. AI-native development daily — Claude Code, OpenAI Codex, Antigravity.',
+    'Backend engineer (4+ years, since 2022) working in TypeScript, Node.js, NestJS, PostgreSQL and Python. I build integrations, workflow automation and LLM-backed services, held in place by automated tests (1,600+ across four production systems), CI/CD with automatic rollback and security gates. AI-native development daily — Claude Code, OpenAI Codex, Antigravity.',
   pdfHref: identity.site + cvPdf.href,
 }
 
@@ -51,7 +51,7 @@ const bullets: Record<string, string[]> = {
     'Took over a legacy PIM / dropshipping system (PHP / Laravel, Angular, MySQL, Redis, Docker): closed a critical vulnerability (unauthenticated endpoint issuing an admin token) and an API key leaking through error messages, fixed margin calculation, built 12 supplier integrations from zero (~1.34M offers) and set up CD with automatic rollback.',
   ],
   '03.2026 - 08.2026': [
-    'Lead developer of a multi-tenant automation platform: TypeScript/NestJS backend, Temporal.io workflow orchestration, React dashboard.',
+    'Led a team of two developers and the architecture of a multi-tenant automation platform: TypeScript/NestJS, Temporal.io, React.',
     'Designed tenant isolation with PostgreSQL row-level security, with isolation-leak tests enforced in CI; multi-stage GitHub Actions pipeline.',
     'Built the integration layer (Stripe, Google Ads/Analytics, Meta API, n8n) and a multi-provider LLM layer (Claude, OpenAI, Gemini, MCP) with an evaluation harness.',
   ],
@@ -60,13 +60,13 @@ const bullets: Record<string, string[]> = {
     'University Active Directory (LDAP) authentication with JWT, OWASP Top 10 hardening, OpenAPI REST contract, Jest tests, GitHub Actions CI/CD.',
   ],
   '08.2024 - 08.2025': [
-    'System integration, Klipper firmware optimization and component redesign; coordinated requirements between European stakeholders and the Shenzhen team.',
+    'System integration and Klipper firmware optimization in Python, component redesign in Fusion 360; coordinated requirements between European stakeholders and the Shenzhen team.',
   ],
   '04.2023 - 07.2024': [
-    'Automated client documentation generation and configured sales offers for POS, telemarketing and mobile channels.',
+    'Automated client document generation in Python (docxtpl); configured sales offers for POS, telemarketing and mobile channels.',
   ],
   '09.2022 - 03.2023': [
-    'Pipe impedance monitoring on ThingsBoard: embedded C++ firmware, web interface and AWS alerting.',
+    'Node.js backend for pipe impedance monitoring on ThingsBoard: hardware (C++) integration and AWS alerting.',
   ],
 }
 

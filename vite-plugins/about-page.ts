@@ -73,13 +73,13 @@ const renderAbout = (): string => {
    * it only works if it can stand alone with no surrounding context.
    */
   parts.push(`<section id="summary">
-<p class="doc-lede">Wiktor Jeleń is a backend and platform engineer based in Cracow, Poland. He builds multi-tenant production systems, infrastructure and security-critical backends, and wrote PythonMetaTrader5, an open-source order-execution library with more than 43,000 downloads on PyPI.</p>
+<p class="doc-lede">Wiktor Jeleń is a backend and platform engineer based in Cracow, Poland. He builds multi-tenant production systems, infrastructure and security-critical backends, and wrote PythonMetaTrader5, an open-source order-execution library with more than 44,000 downloads on PyPI.</p>
 <dl class="doc-facts">
 <dt>Name</dt><dd>${esc(identity.name)} (Wiktor Jelen)</dd>
 <dt>Role</dt><dd>${esc(identity.role)}</dd>
 <dt>Based in</dt><dd>${esc(identity.location)} · EU citizen · works remotely</dd>
 <dt>Focus</dt><dd>${esc(focusAreas.map((area) => area.title).join(' · '))}</dd>
-<dt>Open source</dt><dd>PythonMetaTrader5 — 43,000+ PyPI downloads</dd>
+<dt>Open source</dt><dd>PythonMetaTrader5 — 44,000+ PyPI downloads</dd>
 <dt>Education</dt><dd>${esc(education[0].degree)}, ${esc(education[0].school)}</dd>
 <dt>Languages</dt><dd>${esc(languages.join(' · '))}</dd>
 <dt>Contact</dt><dd><a href="mailto:${esc(identity.email)}">${esc(identity.email)}</a></dd>
@@ -168,7 +168,7 @@ const document = (): string => `<!DOCTYPE html>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Wiktor Jeleń — Backend &amp; Platform Engineer in Cracow</title>
-    <meta name="description" content="Who Wiktor Jeleń is: a backend and platform engineer based in Cracow, Poland, author of PythonMetaTrader5 (43,000+ PyPI downloads), working on multi-tenant systems, infrastructure and AI integration." />
+    <meta name="description" content="Who Wiktor Jeleń is: a backend and platform engineer based in Cracow, Poland, author of PythonMetaTrader5 (44,000+ PyPI downloads), working on multi-tenant systems, infrastructure and AI integration." />
     <meta name="author" content="${esc(identity.name)}" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
     <link rel="canonical" href="https://yelon.dev/about" />

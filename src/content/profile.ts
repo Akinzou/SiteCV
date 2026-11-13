@@ -22,7 +22,7 @@ export const identity = {
    * read, which "I design and build things" on its own is not.
    */
   definition:
-    "I'm Wiktor Jeleń, a backend and platform engineer based in Cracow, Poland. I build multi-tenant production systems, infrastructure and security-critical backends, and I wrote PythonMetaTrader5, an open-source library with over 43,000 PyPI downloads.",
+    "I'm Wiktor Jeleń, a backend and platform engineer based in Cracow, Poland. I build multi-tenant production systems, infrastructure and security-critical backends, and I wrote PythonMetaTrader5, an open-source library with over 44,000 PyPI downloads.",
   location: 'Cracow, Poland',
   email: 'root@yelon.dev',
   phone: '+48 576 706 766',
@@ -63,7 +63,7 @@ export const qa: { question: string; answer: string }[] = [
   {
     question: 'Who is Wiktor Jeleń?',
     answer:
-      'Wiktor Jeleń is a backend and platform engineer based in Cracow, Poland. He builds multi-tenant production systems, infrastructure and security-critical backends, and is the author of PythonMetaTrader5, an open-source order-execution library with more than 43,000 downloads on PyPI.',
+      'Wiktor Jeleń is a backend and platform engineer based in Cracow, Poland. He builds multi-tenant production systems, infrastructure and security-critical backends, and is the author of PythonMetaTrader5, an open-source order-execution library with more than 44,000 downloads on PyPI.',
   },
   {
     question: 'What does Wiktor Jeleń work on?',
@@ -78,7 +78,7 @@ export const qa: { question: string; answer: string }[] = [
   {
     question: 'What is PythonMetaTrader5?',
     answer:
-      'PythonMetaTrader5 is an open-source Python library written by Wiktor Jeleń that wraps the MetaTrader 5 terminal API for algorithmic trading. It normalizes order placement, handles the full set of broker return codes and adds the safeguards the native API leaves out, so a strategy can run against a live account. It has passed 43,000 downloads on PyPI.',
+      'PythonMetaTrader5 is an open-source Python library written by Wiktor Jeleń that wraps the MetaTrader 5 terminal API for algorithmic trading. It normalizes order placement, handles the full set of broker return codes and adds the safeguards the native API leaves out, so a strategy can run against a live account. It has passed 44,000 downloads on PyPI.',
   },
   {
     question: 'Does Wiktor Jeleń take client work?',
@@ -171,7 +171,7 @@ export const projects: Project[] = [
     solution:
       'A Python layer over MetaTrader 5 built for algorithmic trading: order normalization, full retcode handling and safeguards that keep execution stable against real capital.',
     stack: ['Python', 'MetaTrader 5 API', 'PyPI'],
-    metric: '43,000+ PyPI downloads',
+    metric: '44,000+ PyPI downloads',
     links: [
       { label: 'GitHub', href: 'https://github.com/Akinzou/MetaTrader5-Python' },
       { label: 'PyPI', href: 'https://pypi.org/project/PythonMetaTrader5/' },
@@ -295,7 +295,7 @@ export const experience = [
      * Under NDA: no client name, no industry, no supplier names, no internal
      * system names — anywhere (site, PDF, llms.txt). Describe systems by function.
      */
-    period: '09.2026 - 11.2026', role: 'Backend & Automation Engineer (contract)',
+    period: '09.2026 - 11.2026', role: 'Backend Engineer (contract)',
     company: 'B2B e-commerce automation (under NDA)', location: 'Poland, Remote',
     highlights: [
       'Extended a supplier-catalogue integration platform from 59 to 109 supplier integrations covering 73,000+ products: automatic suppliers scraped from their B2B panels (WooCommerce, PrestaShop, Shopify, Odoo and others) with Playwright or read through APIs, and manual suppliers emailed for current prices and stock on a schedule that protects the relationship, whose replies (email text, XLSX, PDF or a photo read with OCR) are parsed by an LLM and approved by the team in an admin panel. Catalogues are published as SHA-256-checked versions with atomic swaps, and a drop of more than 20% blocks publication; 830 automated tests.',
@@ -310,7 +310,7 @@ export const experience = [
     period: '03.2026 - 08.2026', role: 'Lead Backend Developer',
     company: 'KonikSystems · KONIK', location: 'Remote',
     highlights: [
-      'Lead developer and architect of a multi-tenant automation platform with a TypeScript/NestJS backend, Temporal.io orchestration and a React dashboard; primary contributor to the codebase.',
+      'Led the architecture and development of a multi-tenant automation platform (TypeScript / NestJS, PostgreSQL, Temporal.io, React dashboard) and a team of two developers, while remaining the primary contributor to the codebase.',
       'Designed tenant isolation in PostgreSQL using row-level security, with automated isolation-leak tests running in CI.',
       'Built the test and delivery pipeline: unit and integration tests, Temporal TestWorkflowEnvironment, Playwright, and a multi-stage GitHub Actions CI/CD.',
       'Designed the integration layer: Stripe, Google Ads/Analytics, Meta API, social publishing, scraping and enrichment, n8n workflows, and a video processing pipeline.',
@@ -331,23 +331,23 @@ export const experience = [
     period: '08.2024 - 08.2025', role: 'R&D Systems Engineer',
     company: 'GEEETECH', location: 'Remote · Shenzhen R&D team',
     highlights: [
-      'Owned system integration and Klipper firmware optimization for the Shenzhen R&D hub, working fully remotely and self-directed.',
+      'Owned system integration and Klipper firmware optimization in Python for the Shenzhen R&D hub, working fully remotely and self-directed.',
       'Redesigned structural components of the A10M printer in Fusion 360 and optimized stepper motor control.',
       'Coordinated technical requirements between European stakeholders and the Shenzhen R&D team.',
     ],
   },
   {
-    period: '04.2023 - 07.2024', role: 'Sales Systems Consultant',
+    period: '04.2023 - 07.2024', role: 'Sales Systems & Automation Specialist',
     company: 'Randlab Software (Polsat Plus Group)', location: 'Remote',
     highlights: [
       'Automated client documentation generation and configured complex sales offers for POS, telemarketing and mobile sales channels.',
     ],
   },
   {
-    period: '09.2022 - 03.2023', role: 'Embedded / ThingsBoard Specialist',
+    period: '09.2022 - 03.2023', role: 'Backend & IoT Developer',
     company: 'Randlab Software', location: 'Nowy Sącz, Poland',
     highlights: [
-      'Built a pipe impedance monitoring system for the heating industry on ThingsBoard.',
+      'Built the Node.js backend for a sensor-based pipe impedance monitoring system for the heating industry on the ThingsBoard IoT platform.',
       'Integrated hardware (C++) with web interfaces and implemented AWS-based alerting.',
     ],
   },
@@ -383,7 +383,7 @@ export type Stat = {
  * first `experience` entry so it never goes stale.
  */
 export const stats: Stat[] = [
-  { label: 'PyPI Downloads', value: 43000, suffix: '+', accent: 'blue', pypiPackage: 'pythonmetatrader5' },
+  { label: 'PyPI Downloads', value: 44000, suffix: '+', accent: 'blue', pypiPackage: 'pythonmetatrader5' },
   { label: 'Concurrent Users', value: 450, suffix: '+', accent: 'purple' },
   { label: 'Years Commercial Experience', value: yearsOfExperience, suffix: '', accent: 'green', decimals: 1 },
 ]
