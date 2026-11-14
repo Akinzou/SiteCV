@@ -268,8 +268,8 @@ export const projects: Project[] = [
     problem:
       'The A10M printer had structural and motion-control weaknesses that firmware tuning alone could not compensate for.',
     solution:
-      'Structural redesign of printer components in Fusion 360, combined with Klipper firmware optimization and improved stepper motor control.',
-    stack: ['Fusion 360', 'Klipper', 'C++', 'CAD'],
+      'Ported the printer to Klipper on a new mainboard with a Linux host, optimized it for faster printing with improved stepper motor control, and redesigned structural components in Fusion 360.',
+    stack: ['Klipper', 'Linux', 'Python', 'Fusion 360', 'CAD'],
     metric: 'Shenzhen R&D',
     links: [],
   },
@@ -331,7 +331,7 @@ export const experience = [
     period: '08.2024 - 08.2025', role: 'R&D Systems Engineer',
     company: 'GEEETECH', location: 'Remote · Shenzhen R&D team',
     highlights: [
-      'Owned system integration and Klipper firmware optimization in Python for the Shenzhen R&D hub, working fully remotely and self-directed.',
+      'Ported the A10M 3D printer from its stock firmware to Klipper: replaced the mainboard, set up the Linux host and optimized Klipper (Python) for faster printing, working fully remotely and self-directed.',
       'Redesigned structural components of the A10M printer in Fusion 360 and optimized stepper motor control.',
       'Coordinated technical requirements between European stakeholders and the Shenzhen R&D team.',
     ],
@@ -340,7 +340,7 @@ export const experience = [
     period: '04.2023 - 07.2024', role: 'Sales Systems & Automation Specialist',
     company: 'Randlab Software (Polsat Plus Group)', location: 'Remote',
     highlights: [
-      'Automated client documentation generation and configured complex sales offers for POS, telemarketing and mobile sales channels.',
+      'Automated generation of all customer documents issued in sales in Python (docxtpl), and configured complex sales offers for POS, telemarketing and mobile sales channels.',
     ],
   },
   {
