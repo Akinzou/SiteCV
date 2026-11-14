@@ -100,11 +100,13 @@ the one-page CV at https://yelon.dev/Wiktor_Jelen_CV.pdf):
   of Silesia; LDAP/Active Directory auth, JWT, OWASP Top 10 hardening, Swagger/OpenAPI REST
   contract, Jest tests, Ubuntu/Nginx/PM2 production environments and GitHub Actions CI/CD.
 - 08.2024-08.2025  R&D Systems Engineer, GEEETECH R&D Department, Shenzhen China / remote.
-  System integration and Klipper firmware optimization in Python; A10M structural redesign in
+  Ported the A10M 3D printer from its stock firmware to Klipper: replaced the mainboard, set up
+  the Linux host and optimized Klipper (Python) for faster printing; A10M structural redesign in
   Fusion 360; coordinated technical requirements between European stakeholders and the
   Shenzhen R&D team.
 - 04.2023-07.2024  Sales Systems & Automation Specialist, Randlab Software (Polsat Plus Group), remote.
-  Automated client document generation in Python (docxtpl) for POS, telemarketing and mobile sales.
+  Automated generation of all customer documents issued in sales in Python (docxtpl);
+  configured complex sales offers for POS, telemarketing and mobile sales channels.
 - 09.2022-03.2023  Backend & IoT Developer, Randlab Software, Nowy Sacz.
   Node.js backend for pipe impedance monitoring in the heating industry on ThingsBoard;
   C++ hardware integration with web interfaces and AWS-based alerting.

@@ -60,10 +60,10 @@ const bullets: Record<string, string[]> = {
     'University Active Directory (LDAP) authentication with JWT, OWASP Top 10 hardening, OpenAPI REST contract, Jest tests, GitHub Actions CI/CD.',
   ],
   '08.2024 - 08.2025': [
-    'System integration and Klipper firmware optimization in Python, component redesign in Fusion 360; coordinated requirements between European stakeholders and the Shenzhen team.',
+    'Ported the A10M 3D printer to Klipper: new mainboard, Linux host, Klipper (Python) optimized for faster printing; component redesign in Fusion 360; coordinated requirements between European stakeholders and the Shenzhen team.',
   ],
   '04.2023 - 07.2024': [
-    'Automated client document generation in Python (docxtpl); configured sales offers for POS, telemarketing and mobile channels.',
+    'Automated generation of all customer documents issued in sales in Python (docxtpl); configured sales offers for POS, telemarketing and mobile channels.',
   ],
   '09.2022 - 03.2023': [
     'Node.js backend for pipe impedance monitoring on ThingsBoard: hardware (C++) integration and AWS alerting.',
