@@ -17,8 +17,8 @@
 
 import { cvPdf, education, experience, identity, languages, projects, stats } from './profile'
 
-const pypiProject = projects.find((project) => project.pypiPackage)!
-const pypiStat = stats.find((stat) => stat.pypiPackage)!
+const pypiProject = projects.find((project) => project.pypiPackage === 'pythonmetatrader5')!
+const pypiStat = stats.find((stat) => stat.pypiPackage === 'pythonmetatrader5')!
 
 export const cv = {
   name: identity.name,

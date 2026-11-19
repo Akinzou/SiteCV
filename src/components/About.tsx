@@ -46,7 +46,7 @@ const About = () => {
   const sectionRef = useRef<HTMLElement>(null)
   const [reviewsPaused, setReviewsPaused] = useState(false)
   const { downloads: pypiDownloads, pepyUrl } = usePyPIDownloads('pythonmetatrader5')
-  // The hook's error fallback is the string "44,000+", which is not a live number.
+  // null when both pepy and ClickHouse fail; the tile then shows the static stat.
   const livePypi = pypiDownloads && /^[\d ]+$/.test(pypiDownloads) ? parseInt(pypiDownloads.replace(/\s/g, ''), 10) : null
 
   return (
