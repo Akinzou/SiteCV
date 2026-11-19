@@ -169,7 +169,7 @@ export const projects: Project[] = [
     problem:
       'The native Python API for MetaTrader 5 is low-level: raw retcodes, inconsistent data shapes, and no safeguards standing between a strategy and a live account. A naive retry after a timeout can send the same order twice.',
     solution:
-      'A typed, thread-safe Python layer over the official MetaTrader5 package: order normalization, typed errors instead of raw return codes, and bounded retries that never fire after a timeout. CI runs ruff, mypy and Semgrep, plus pytest with a 100% line and branch coverage gate on Python 3.10–3.14 and a Windows job against the real MetaTrader 5 package; 16 ADRs record the design decisions.',
+      'A typed, thread-safe Python layer over the official MetaTrader5 package: order normalization, typed errors instead of raw return codes, and bounded retries that never fire after a timeout. CI runs ruff, mypy and Semgrep, plus pytest with a 100% line and branch coverage gate on Python 3.10–3.14 and a Windows job against the real MetaTrader 5 package; 15 ADRs record the design decisions.',
     stack: ['Python', 'MetaTrader 5 API', 'pytest', 'mypy', 'ruff', 'Semgrep', 'GitHub Actions', 'PyPI'],
     metric: '45,000+ PyPI downloads',
     links: [
