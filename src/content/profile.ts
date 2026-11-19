@@ -22,7 +22,7 @@ export const identity = {
    * read, which "I design and build things" on its own is not.
    */
   definition:
-    "I'm Wiktor Jeleń, a backend and platform engineer based in Cracow, Poland. I build multi-tenant production systems, infrastructure and security-critical backends, and I wrote PythonMetaTrader5, an open-source library with over 44,000 PyPI downloads.",
+    "I'm Wiktor Jeleń, a backend and platform engineer based in Cracow, Poland. I build multi-tenant production systems, infrastructure and security-critical backends, and I wrote two open-source Python trading libraries: PythonMetaTrader5, with over 45,000 PyPI downloads, and CapitalCom, a client for the Capital.com broker API, with over 10,000.",
   location: 'Cracow, Poland',
   email: 'root@yelon.dev',
   phone: '+48 576 706 766',
@@ -63,7 +63,7 @@ export const qa: { question: string; answer: string }[] = [
   {
     question: 'Who is Wiktor Jeleń?',
     answer:
-      'Wiktor Jeleń is a backend and platform engineer based in Cracow, Poland. He builds multi-tenant production systems, infrastructure and security-critical backends, and is the author of PythonMetaTrader5, an open-source order-execution library with more than 44,000 downloads on PyPI.',
+      'Wiktor Jeleń is a backend and platform engineer based in Cracow, Poland. He builds multi-tenant production systems, infrastructure and security-critical backends, and is the author of PythonMetaTrader5, an open-source order-execution library with more than 45,000 downloads on PyPI, and of CapitalCom, an open-source Python client for the Capital.com API with more than 10,000.',
   },
   {
     question: 'What does Wiktor Jeleń work on?',
@@ -78,7 +78,7 @@ export const qa: { question: string; answer: string }[] = [
   {
     question: 'What is PythonMetaTrader5?',
     answer:
-      'PythonMetaTrader5 is an open-source Python library written by Wiktor Jeleń that wraps the MetaTrader 5 terminal API for algorithmic trading. It normalizes order placement, handles the full set of broker return codes and adds the safeguards the native API leaves out, so a strategy can run against a live account. It has passed 44,000 downloads on PyPI.',
+      'PythonMetaTrader5 is an open-source Python library written by Wiktor Jeleń that wraps the MetaTrader 5 terminal API for algorithmic trading. It normalizes order placement, handles the full set of broker return codes and adds the safeguards the native API leaves out, so a strategy can run against a live account. It has passed 45,000 downloads on PyPI.',
   },
   {
     question: 'Does Wiktor Jeleń take client work?',
@@ -163,15 +163,15 @@ export const projects: Project[] = [
   },
   {
     name: 'PythonMetaTrader5',
-    tagline: 'Open-source order-execution library',
+    tagline: 'Open-source trading library · since 07.2023',
     accent: 'blue',
     featured: true,
     problem:
-      'The native Python API for MetaTrader 5 is low-level: raw retcodes, inconsistent data shapes, and no safeguards standing between a strategy and a live account.',
+      'The native Python API for MetaTrader 5 is low-level: raw retcodes, inconsistent data shapes, and no safeguards standing between a strategy and a live account. A naive retry after a timeout can send the same order twice.',
     solution:
-      'A Python layer over MetaTrader 5 built for algorithmic trading: order normalization, full retcode handling and safeguards that keep execution stable against real capital.',
-    stack: ['Python', 'MetaTrader 5 API', 'PyPI'],
-    metric: '44,000+ PyPI downloads',
+      'A typed, thread-safe Python layer over the official MetaTrader5 package: order normalization, typed errors instead of raw return codes, and bounded retries that never fire after a timeout. CI runs ruff, mypy and Semgrep, plus pytest with a 100% line and branch coverage gate on Python 3.10–3.14 and a Windows job against the real MetaTrader 5 package; 16 ADRs record the design decisions.',
+    stack: ['Python', 'MetaTrader 5 API', 'pytest', 'mypy', 'ruff', 'Semgrep', 'GitHub Actions', 'PyPI'],
+    metric: '45,000+ PyPI downloads',
     links: [
       { label: 'GitHub', href: 'https://github.com/Akinzou/MetaTrader5-Python' },
       { label: 'PyPI', href: 'https://pypi.org/project/PythonMetaTrader5/' },
@@ -236,16 +236,36 @@ export const projects: Project[] = [
   },
   {
     name: 'TradeLockerBot',
-    tagline: 'Trading automation system',
+    tagline: 'TradingView webhook trading bot · since 05.2024',
     accent: 'purple',
     featured: true,
     problem:
       'TradingView can only fire a plain, unauthenticated HTTP webhook. Anything listening on a guessable URL is eventually found by a scanner — and this endpoint opens positions on a live account.',
     solution:
-      'FastAPI service translating TradingView alerts into TradeLocker orders, with the webhook path generated as a random secret that is printed once at startup and never again. Shipped as a Docker image built by GitHub Actions.',
-    stack: ['Python', 'FastAPI', 'uvicorn', 'Docker', 'GitHub Actions'],
-    metric: 'Docker image · CI/CD',
-    links: [{ label: 'GitHub', href: 'https://github.com/Akinzou/TradeLockerBot' }],
+      'FastAPI service translating TradingView alerts into TradeLocker orders, with the webhook path generated as a random secret that is printed once at startup and never again. pytest with a 99% coverage gate, Semgrep and hash-pinned dependencies; the Docker image is published to GHCR only after CI passes, and 31 ADRs record the design decisions.',
+    stack: ['Python', 'FastAPI', 'uvicorn', 'pytest', 'Semgrep', 'Docker', 'GHCR', 'GitHub Actions'],
+    metric: 'Docker image on GHCR · 99% coverage',
+    links: [
+      { label: 'GitHub', href: 'https://github.com/Akinzou/TradeLockerBot' },
+      { label: 'Docker image', href: 'https://github.com/Akinzou/TradeLockerBot/pkgs/container/tradelocker_bot' },
+    ],
+  },
+  {
+    name: 'CapitalCom',
+    tagline: 'Open-source Capital.com API client · since 06.2025',
+    accent: 'yellow',
+    featured: true,
+    problem:
+      'A broker API client has to survive expiring sessions and rate limits, and an order is only final once the broker confirms the deal. Mocked tests alone cannot show that the client still matches the live API.',
+    solution:
+      'Python client for the Capital.com REST and WebSocket API, built on ports and adapters: session renewal, rate limiting and deal confirmation, with 98% test coverage (pytest, mypy). A contract-test workflow logs in to a Capital.com demo account and opens and closes real positions on every pull request, every night, and against the version published on PyPI; 13 ADRs record the design decisions.',
+    stack: ['Python', 'REST', 'WebSocket', 'Ports & adapters', 'pytest', 'mypy', 'GitHub Actions', 'PyPI'],
+    metric: '10,000+ PyPI downloads',
+    links: [
+      { label: 'GitHub', href: 'https://github.com/Akinzou/CapitalCom' },
+      { label: 'PyPI', href: 'https://pypi.org/project/capitalcom/' },
+    ],
+    pypiPackage: 'capitalcom',
   },
   {
     name: 'Anatomy Project',
@@ -383,7 +403,7 @@ export type Stat = {
  * first `experience` entry so it never goes stale.
  */
 export const stats: Stat[] = [
-  { label: 'PyPI Downloads', value: 44000, suffix: '+', accent: 'blue', pypiPackage: 'pythonmetatrader5' },
+  { label: 'PyPI Downloads', value: 45000, suffix: '+', accent: 'blue', pypiPackage: 'pythonmetatrader5' },
   { label: 'Concurrent Users', value: 450, suffix: '+', accent: 'purple' },
   { label: 'Years Commercial Experience', value: yearsOfExperience, suffix: '', accent: 'green', decimals: 1 },
 ]

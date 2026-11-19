@@ -70,10 +70,11 @@ export const usePyPIDownloads = (packageName: string) => {
         // pepy unavailable or its markup changed: ask ClickHouse instead.
         const total = await fetchClickHouseTotal(packageName)
         if (total) setDownloads(formatCount(total))
-        else setDownloads('44,000+')
+        else setDownloads(null)
       } catch (error) {
         console.error('Failed to fetch PyPI downloads:', error)
-        setDownloads('44,000+') // fallback
+        // Leave downloads null: each caller falls back to its own static figure.
+        setDownloads(null)
       } finally {
         setLoading(false)
       }

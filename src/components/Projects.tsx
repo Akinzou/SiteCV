@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { usePyPIDownloads } from '../hooks/usePyPIDownloads'
-import { projects } from '../content/profile'
+import { projects, type Project } from '../content/profile'
 import { accentBorder, accentText } from '../lib/accents'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -15,6 +15,33 @@ const GitHubIcon = () => (
 )
 
 /**
+ * Headline figure for a card. A card with a PyPI package shows its own live
+ * count and a [verify] link to its own pepy page; every other card, and a
+ * package whose count could not be fetched, shows the static `metric`.
+ */
+const ProjectMetric = ({ project }: { project: Project }) => {
+  if (!project.pypiPackage) return <>{project.metric}</>
+  return <LivePypiMetric project={project} packageName={project.pypiPackage} />
+}
+
+const LivePypiMetric = ({ project, packageName }: { project: Project; packageName: string }) => {
+  const { downloads, pepyUrl } = usePyPIDownloads(packageName)
+  return (
+    <>
+      {downloads ? `${downloads} PyPI downloads` : project.metric}
+      <a
+        href={pepyUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-1 bg-cyber-blue/20 text-cyber-blue hover:bg-cyber-green/20 hover:text-cyber-green transition-colors text-[10px] rounded"
+      >
+        [verify]
+      </a>
+    </>
+  )
+}
+
+/**
  * Case-study shape (problem → solution → stack → links) rather than a title and
  * a row of technology tags. The tags say what was touched; only the problem
  * says whether the work was worth doing.
@@ -22,8 +49,6 @@ const GitHubIcon = () => (
 const Projects = () => {
   const reducedMotion = useReducedMotion()
   const sectionRef = useRef<HTMLElement>(null)
-  const { downloads: pypiDownloads, pepyUrl } = usePyPIDownloads('pythonmetatrader5')
-
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (reducedMotion) return
@@ -65,11 +90,6 @@ const Projects = () => {
 
         <div className="projects-list space-y-8">
           {projects.map((project) => {
-            const metric =
-              project.pypiPackage && pypiDownloads
-                ? `${pypiDownloads} PyPI downloads`
-                : project.metric
-
             return (
               <article
                 key={project.name}
@@ -78,17 +98,7 @@ const Projects = () => {
                 <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 mb-1">
                   <h3 className="min-w-0 break-words font-display font-bold text-xl sm:text-2xl text-white">{project.name}</h3>
                   <span className="font-mono text-xs text-gray-400 flex items-center gap-2">
-                    {metric}
-                    {project.pypiPackage && (
-                      <a
-                        href={pepyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-1 bg-cyber-blue/20 text-cyber-blue hover:bg-cyber-green/20 hover:text-cyber-green transition-colors text-[10px] rounded"
-                      >
-                        [verify]
-                      </a>
-                    )}
+                    <ProjectMetric project={project} />
                   </span>
                 </div>
 
