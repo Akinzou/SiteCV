@@ -119,8 +119,8 @@ the one-page CV at https://yelon.dev/Wiktor_Jelen_CV.pdf):
 Education:
 - 10.2024-present  B.Eng. Computer Science, Cybersecurity, in progress (part-time),
   WSB-National Louis University, Nowy Sacz
-- 2019-2024        Mechatronics Technician, Technical School of Electrical Engineering and
-  Mechanics, Nowy Sacz
+- Mechatronics Technician, Technical School of Electrical Engineering and Mechanics,
+  Nowy Sacz
 
 Paid client work (second track, alongside software and infrastructure):
 - Independent technical consulting in embedded Linux, Armbian, Klipper, Marlin and
