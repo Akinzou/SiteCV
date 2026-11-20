@@ -512,7 +512,7 @@ export const education = [
     location: 'Nowy Sącz, Poland',
   },
   {
-    period: '2019 – 2024',
+    period: '',
     degree: 'Mechatronics Technician',
     school: 'Technical School of Electrical Engineering and Mechanics',
     location: 'Nowy Sącz, Poland',
