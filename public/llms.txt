@@ -45,7 +45,8 @@ Wiktor Jeleń (also written without Polish diacritics as "Wiktor Jelen"; online 
 "Yelon") is a backend and platform engineer based in Cracow, Poland. He builds
 multi-tenant production systems, infrastructure and security-critical backends, and
 wrote PythonMetaTrader5, an open-source order-execution library with more than
-44,000 downloads on PyPI.
+45,000 downloads on PyPI, and CapitalCom, an open-source Python client for the
+Capital.com API with more than 10,000.
 
 canonical page: https://yelon.dev/
 about page:     https://yelon.dev/about
@@ -70,7 +71,11 @@ Background:
 - Designed and deployed a backend serving 450+ concurrent users for the Medical University of Silesia
 - Supplier-integration, RFQ and content automation for a B2B e-commerce business (2026, under NDA):
   109 supplier integrations, LLM extraction behind human approval, OWASP ASVS L2, 1,600+ tests
-- Open source author: PythonMetaTrader5, 44,000+ PyPI downloads, used against real capital
+- Open source author: PythonMetaTrader5, 45,000+ PyPI downloads, used against real capital
+  (100% line and branch coverage gate); CapitalCom, a Capital.com REST and WebSocket client,
+  10,000+ PyPI downloads, contract-tested in CI on a demo account (98% coverage);
+  TradeLockerBot, a FastAPI service turning TradingView alerts into TradeLocker orders,
+  shipped as a Docker image on GHCR (99% coverage)
 - Cross-cultural R&D experience (EU-China collaboration, Shenzhen)
 - Security-focused engineering (OWASP Top 10, LDAP/AD IAM, JWT, tenant isolation)
 
@@ -126,7 +131,7 @@ Paid client work (second track, alongside software and infrastructure):
 
 Independent R&D:
 - Built the execution layer first: PythonMetaTrader5, an open-source order-execution
-  library for MetaTrader 5 (44,000+ downloads)
+  library for MetaTrader 5 (45,000+ downloads)
 - Now working a layer above it, in machine learning: evolutionary computation, where
   genetic algorithms breed and select trading strategies instead of them being
   hand-written. StrategyQuant X generates strategy populations; survivors are
@@ -163,7 +168,7 @@ sections:
   - name: Client Work
     description: Paid consulting in embedded Linux, firmware and hardware, with public reviews
   - name: Projects
-    description: Case studies (problem, solution, stack, links) including PythonMetaTrader5
+    description: Case studies (problem, solution, stack, links) including PythonMetaTrader5, CapitalCom and TradeLockerBot
   - name: Interests & R&D
     description: Machine learning and evolutionary computation applied to algorithmic trading
   - name: Contact

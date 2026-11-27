@@ -10,7 +10,7 @@
  *   3. The local per-offer base CVs (local/job-search/CV_WiktorJelen_Backend_
  *      {EN,PL}.html, gitignored, skipped when absent) carry every period, the
  *      EN one every role, both the current PythonMetaTrader5 PyPI figure
- *      ("44,000+" / "ponad 44 tys.") and education years.
+ *      ("45,000+" / "ponad 45 tys.") and education years.
  *   4. Nothing under NDA leaks into any of them.
  *
  * Wired as a git pre-commit hook (scripts/install-hooks.mjs).
@@ -35,7 +35,7 @@ const textOf = (html) =>
     .replace(/&lt;/g, '<')
     .replace(/\s+/g, ' ')
 
-const pypi = profile.stats.find((stat) => stat.pypiPackage)
+const pypi = profile.stats.find((stat) => stat.pypiPackage === 'pythonmetatrader5')
 const pypiEn = `${pypi.value.toLocaleString('en-US')}+`
 const pypiPl = `ponad ${Math.floor(pypi.value / 1000)} tys.`
 const dash = (period) => period.replace(' - ', ' – ')

@@ -104,7 +104,7 @@ const personNode = () => ({
   disambiguatingDescription:
     'Polish backend and platform engineer based in Cracow, author of the open-source PythonMetaTrader5 library.',
   description:
-    'Wiktor Jeleń is a backend and platform engineer based in Cracow, Poland. He builds multi-tenant production systems, infrastructure and security-critical backends, and wrote PythonMetaTrader5, an open-source order-execution library with more than 44,000 PyPI downloads.',
+    'Wiktor Jeleń is a backend and platform engineer based in Cracow, Poland. He builds multi-tenant production systems, infrastructure and security-critical backends, and wrote PythonMetaTrader5, an open-source order-execution library with more than 45,000 PyPI downloads, and CapitalCom, an open-source Python client for the Capital.com API with more than 10,000.',
   url: SITE,
   mainEntityOfPage: { '@id': ids.profilePage },
   image: `${SITE}/yelon.png`,
